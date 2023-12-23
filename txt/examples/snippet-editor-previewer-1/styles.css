@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+#editor-container {
+    height: 20rem;
+    position: fixed;
+    width: 100%;
+}
+#editor-buttons {
+    background-color: #f2f2f2;
+    padding: 10px;
+    align-items: center;
+}
+#editor-buttons button {
+    margin: 5px;
+}
+#result-container {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.editor {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+#snippetEditor-buttons {
+    background: grey;
+}
+textarea, iframe {
+    width: 100%;
+    height: 14.4rem;
+}

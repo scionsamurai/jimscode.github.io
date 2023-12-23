@@ -1,0 +1,127 @@
+
+.tag-span a {
+    margin: 0.4rem;
+    padding: 0.4rem;
+    border-radius: 0.6rem;
+    display: ruby-base;
+}
+.fixed-position {
+    position: sticky;
+    top: 2rem;
+}
+.menu-span a p {
+    /* line-height: 1.15rem;
+    font-size: 0.95rem; */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    margin: 0.4rem;
+    padding: 0.4rem;
+    color: var(--font-color);
+    display: ruby-base;
+}
+.trending_spans h2 {
+    /* font-size: 0.9rem; */
+    color: var(--font-color);
+    font-family: Helvetica, Arial;
+    font-weight: 700;
+    letter-spacing: normal;
+    /* line-height: 1.2rem; */
+    overflow-wrap: break-word;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    vertical-align: baseline;
+    word-break: break-word;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.postDiv {
+    animation: slideInRight 1.2s ease-in-out;
+}
+
+#all_posts_section div ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    .postVar {
+        width: 50%;
+        &:nth-child(even) {
+            margin-top: 7rem;
+        }
+        &:nth-child(odd) {
+            margin-top: 1rem;
+        }
+        &:first-child {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #all_posts_section div ul .postVar {
+        width: 100%;
+        margin-top: 6px !important;
+    }
+
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.sidebar_button {
+    display: none;
+}
+
+
+*|*:any-link h2 {
+    color: var(--primary);
+}
+*|*:any-link:visited h2 {
+    color: var(--primary-clicked);
+}
+
+.abtn {
+    background: var(--opposite-font-color);
+    text-decoration: none;
+    border: 2px solid var(--font-color);
+    border-radius: 4px;
+    margin: 4px;
+    padding: 2px;
+}
+.abtn:hover {
+    background-color: var(--background-color-second);
+    color: var(--primary-clicked);
+}
+.post-link {
+    padding: 5px;
+}
+.front p {
+    text-align: center;
+}
+
+.btn-link h2 {
+    text-align: center;
+}

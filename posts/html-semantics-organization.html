@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Navigate the world of HTML semantics and organization to unleash the full potential of web development. Learn the benefits of semantic HTML, best practices for organized documents, and tips to avoid common pitfalls in accessibility and code structure.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>HTML Semantics and Organization - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+ </head>
+ <body>
+  <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+  <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+  <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+  <div class="wrapper">
+   <div id="lqh7yk9rss">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">    <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+     <div class="sidebar_checkbox_hack">
+      <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">      <p class="emoji_active_memo">Back to Post</p>
+      <img src="/images/favicon-32x32.png" alt="">
+</label>
+     </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>    </div>
+    <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+     <form method="get" action="http://www.google.com/search" class="no-js-search">
+      <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+      <button type="submit" value="Search!" class="no-js-search__button">
+Search      </button>
+      <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+     </form>
+    </div>
+</span>    <div class="color-pallete">
+     <label for="night"></label>
+     <label for="day"></label>
+    </div>
+    <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+    </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">    <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+    </div>
+    <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>   </div>
+   <div id="lqh7yk9rkv">
+    <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+     <div class="banner">
+     </div>
+    </div>
+    <div role="main" class="main-content">
+     <div class="post-container">
+      <div class="post">
+       <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Level Up Your HTML Skills: Semantics and Organization</h1>
+       <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
+       <picture class="banner_picture" id="lqh7yk9xbb">
+        <source srcset="/images/html-semantics-organization-banner.webp" type="image/webp" class="banner-image">
+         <source srcset="/images/html-semantics-organization-banner-png.png" type="image/png" class="banner-image">
+          <img src="" alt="Visual representation showcasing the importance of HTML semantics through interconnected and organized boxes." class="banner-image">
+         </picture>
+         <br>
+         <div id="lqh7yk9x5d">
+<span id="lqh7yka4xv">          <h2 id="Why-HTML-is-the-Backbone-of-the-Web" class="pointer">Why HTML is the Backbone of the Web<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>As a refresher, HTML provides structure and meaning to web content through elements like <span class="special_quote">&lt;p&gt;</span> , <span class="special_quote">&lt;h1&gt;</span> , <span class="special_quote">&lt;img&gt;</span> . It forms the foundation that makes up webpages and web applications.</p>
+          <br>
+          <p>However, why exactly is HTML so fundamental for front-end development?</p>
+          <br>
+          <p>With HTML markup, web browsers will know how to display a web document's text, images, forms, and other elements accurately.</p>
+          <br>
+          <p>HTML elements provide browsers with critical information like:</p>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>Headings</strong> to emphasize sections</li>
+           <li> <strong>Paragraphs</strong> to separate blocks of text</li>
+           <li> <strong>Links</strong> to connect to other pages</li>
+           <li> <strong>Lists</strong> to organize information</li>
+           <li> <strong>Images</strong> and multimedia to convey visuals/audio</li>
+          </ul>
+          <br>
+          <p>Additionally, HTML conveys logical structure and hierarchy. The sequencing and nesting of tags give web documents their layout and relationships between sections.</p>
+          <br>
+          <p>For example, a level-one heading denotes a main section, with level-two headings for subsections nested under it. HTML establishes this hierarchy.</p>
+          <br>
+          <p>While technologies like CSS and JavaScript are also crucial in web design, they depend on the underlying HTML elements to function:</p>
+          <br>
+          <ul class="ul_class">
+           <li>CSS cannot style content without HTML tags to target</li>
+           <li>JavaScript requires HTML structure to manipulate</li>
+          </ul>
+          <br>
+          <p>So HTML forms the basic building blocks that enable the rest of a web page's functionality.</p>
+          <br>
+          <p>As the universal markup language that all web browsers understand, proficiency in HTML is an indispensable skill for anyone looking to build websites or web applications. Understanding semantics and proper document structure allows for the creating of robust, adaptable sites.</p>
+          <br>
+          <p>Without the backbone of HTML, the web as we know it would not exist!</p>
+          <br>
+          <h2 id="The-Importance-of-HTML-Semantics" class="pointer">The Importance of HTML Semantics<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Semantics refers to using HTML elements correctly based on their intended meaning rather than just for appearance and, for example, using <span class="special_quote">&lt;h1&gt;</span> headings appropriately to emphasize important topics rather than to make text bigger.</p>
+          <br>
+          <h3>Key Semantic Elements</h3>
+          <br>
+          <h4> <span class="special_quote">&lt;header&gt;</span> - Specifies a header section, like a site-wide header containing the logo, site title, and main navigation menu:</h4>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7ykad0d">&lt;header&gt;
+ &lt;h1&gt;My Website&lt;/h1&gt;
+ &lt;nav&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/nav&gt;
+ &lt;/header&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <h4> <span class="special_quote">&lt;nav&gt;</span> - Contains navigation links, such as a sidebar for site navigation:</h4>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7ykadjw">&lt;nav&gt;
+ &lt;h2&gt;Blog Posts&lt;/h2&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href="#"&gt;Post 1&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="#"&gt;Post 2&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/nav&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <h4> <span class="special_quote">&lt;article&gt;</span> - Denotes an article, like a blog post or news article:</h4>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7ykaddc">&lt;article&gt;
+ &lt;h1&gt;Article Title&lt;/h1&gt;
+ &lt;p&gt;Article content...&lt;/p&gt;
+ &lt;/article&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <p>Using semantic elements like these makes your HTML more understandable and maintainable, especially for collaborative projects:</p>
+          <br>
+          <ul class="ul_class">
+           <li>The code delineates distinct sections like headers and articles</li>
+           <li>Other developers can grasp component purpose at a glance</li>
+           <li>Refactoring and updating code is simpler</li>
+          </ul>
+          <br>
+          <p>To improve your own projects, properly structure pages with <span class="special_quote">&lt;header&gt;</span> , <span class="special_quote">&lt;footer&gt;</span> , <span class="special_quote">&lt;nav&gt;</span> , and <span class="special_quote">&lt;main&gt;</span> elements. Use <span class="special_quote">&lt;section&gt;</span> and <span class="special_quote">&lt;article&gt;</span> tags to further divide content into meaningful, organized sections.</p>
+          <br>
+          <h3>The Benefits of Writing Semantic HTML</h3>
+          <br>
+          <p>Some benefits of semantic HTML:</p>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>Accessibility:</strong> Semantic elements allow screen readers to interpret page content better, improving the experience for visually impaired users.</li>
+           <li> <strong>SEO:</strong> Search engines give more weight to semantically meaningful content, boosting page rankings.</li>
+           <li> <strong>Collaboration:</strong> Code is easier to interpret for other developers collaborating on a project.</li>
+          </ul>
+          <br>
+          <h2 id="Using-Non-Semantic-Elements-the-Right-Way" class="pointer">Using Non-Semantic Elements the Right Way<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Non-semantic elements like <span class="special_quote">&lt;div&gt;</span> and <span class="special_quote">&lt;span&gt;</span> have their place in web development. However, balance and caution are key when using them:</p>
+          <br>
+          <p> <strong>Use Sparingly, With Purpose</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Focus on leveraging native semantic elements first that match your content type</li>
+           <li>Only use <span class="special_quote">&lt;div&gt;</span> / <span class="special_quote">&lt;span&gt;</span> when there is no suitable semantic alternative</li>
+           <li>Ensure they serve a clear organizational purpose, not just visual styling</li>
+          </ul>
+          <br>
+          <p> <strong>Maintain Overall Semantic Structure</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Always nest non-semantic elements within parent semantic tags</li>
+           <li>Use IDs and classes to indicate their relationship to the semantic content</li>
+          </ul>
+          <br>
+          <p> <strong>Consider Alternatives</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Can the layout be achieved with CSS properties instead?</li>
+           <li>Can you add semantic meaning to ARIA roles and attributes?</li>
+          </ul>
+          <br>
+          <p> <strong>Prioritize Accessibility</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Do not let non-semantic elements obstruct logical page flow</li>
+           <li>Support screen readers by pairing with textual context</li>
+          </ul>
+          <br>
+          <p> <strong>Clarify Reasoning with Comments</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Annotate non-semantic element usage for future maintainability</li>
+           <li>Helps other developers quickly interpret the purpose</li>
+          </ul>
+          <br>
+          <p>Include non-semantic elements without allowing them to undermine document structure or accessibility. Comments, IDs/classes, and judicious use preserve semantics.</p>
+          <br>
+          <h2 id="The-Key-Benefits-of-Organized-HTML-Documents" class="pointer">The Key Benefits of Organized HTML Documents<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Well-structured HTML documents with consistent formatting bring major advantages:</p>
+          <br>
+          <p> <strong>Better Collaboration</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Clean structure with logical sections aids understanding between developers</li>
+           <li>Quicker onboarding as new team members grasp projects faster</li>
+           <li>More efficient code sharing without confusion</li>
+          </ul>
+          <br>
+          <p> <strong>Improved Consistency</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Code is easier to update thanks to readability and reduced duplication</li>
+           <li>Reusable patterns and components become apparent</li>
+           <li>Refactoring complexity is lowered with modular code</li>
+          </ul>
+          <br>
+          <p> <strong>Additional Perks</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Promotes coding best practices and standards</li>
+           <li>Boosts development speed when finding code blocks</li>
+           <li>Simplifies version control tracking of changes</li>
+          </ul>
+          <br>
+          <p> <strong>Recommended Practices</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Descriptive ID and class names</li>
+           <li>Related elements nested logically</li>
+           <li>Consistent indentation conveying hierarchy</li>
+           <li>Explanatory comments for complex parts</li>
+          </ul>
+          <br>
+          <p>Organized code isn't just tidier - it directly enables better collaboration, consistency, and project maintainability. Teams that invest time in structuring HTML documents will reap significant dividends.</p>
+          <br>
+          <h3>Head and Body Sections</h3>
+          <br>
+          <p>The HTML document is split into <span class="special_quote">&lt;head&gt;</span> and <span class="special_quote">&lt;body&gt;</span> .</p>
+          <br>
+          <p>The <span class="special_quote">&lt;head&gt;</span> contains metadata like title, links, and scripts. The <span class="special_quote">&lt;body&gt;</span> holds visible page content. Keeping each section organized makes development easier.</p>
+          <br>
+          <h3>Formatting and Indentation</h3>
+          <br>
+          <p>Proper indentation visually conveys element relationships, improving code comprehension:</p>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7ykafk4">&lt;header&gt;
+     &lt;nav&gt;
+         &lt;ul&gt;
+             &lt;li&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+     &lt;/nav&gt;
+ &lt;/header&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <h2 id="Interactive-Forms-and-Elements" class="pointer">Interactive Forms and Elements<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Semantic forms using <span class="special_quote">&lt;form&gt;</span> , <span class="special_quote">&lt;input&gt;</span> , <span class="special_quote">&lt;button&gt;</span> , etc. create intuitive interfaces. Anchor tags like <span class="special_quote">&lt;a href="#"&gt;</span> enable smooth scrolling between sections. Prioritize user experience with these interactive features.</p>
+          <br>
+          <h3>Crafting Better Web Forms</h3>
+          <br>
+          <p> <strong>Keep it Clear and Concise</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Only request necessary information</li>
+           <li>Use descriptive labels and avoid ambiguity</li>
+           <li>Logically group-related fields</li>
+           <li>Provide visual cues to guide users</li>
+          </ul>
+          <br>
+          <p> <strong>Ensure Accessibility</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>All fields must have associated labels</li>
+           <li>Use proper input types like <span class="special_quote">email</span> and <span class="special_quote">date</span> </li>
+           <li>Support keyboard navigation without a mouse</li>
+           <li>Offer helpful and actionable error messages</li>
+          </ul>
+          <br>
+          <p> <strong>Optimize User Experience</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Progressive disclosure of optional fields</li>
+           <li>Real-time validation and auto-completion</li>
+           <li>Responsive design working on all devices</li>
+           <li>Test accessibility with developer tools</li>
+          </ul>
+          <br>
+          <p> <strong>Include Supportive Features</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Clear calls to action on submit and save</li>
+           <li>Progress indicators displaying form status</li>
+           <li>Option to save and resume later</li>
+           <li>Continually test and refine with users</li>
+          </ul>
+          <br>
+          <p>Following these best practices results in intuitive forms that improve conversion rates and accessibility. User-centered design should be the top priority when creating effective web forms.</p>
+          <br>
+          <h2 id="Comment-As-You-Go" class="pointer">Comment As You Go<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Comments explain code intention:</p>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7ykaftr">&lt;!-- Navigation Section --&gt;
+ &lt;nav&gt;...&lt;/nav&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <p>Clarify complex sections so others (and future you) can understand the logic.</p>
+          <br>
+          <h2 id="Common-pitfalls" class="pointer">Common pitfalls<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p> <strong>Semantics Mistakes</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Using <span class="special_quote">&lt;div&gt;</span> and <span class="special_quote">&lt;span&gt;</span> when semantic elements like <span class="special_quote">&lt;nav&gt;</span> or <span class="special_quote">&lt;header&gt;</span> would be more appropriate</li>
+           <li>Applying HTML5 tags without understanding their meaning</li>
+           <li>Using <span class="special_quote">&lt;h1-6&gt;</span> headings out of order, skipping levels</li>
+           <li>Providing inadequate text alternatives for images and multimedia</li>
+           <li>Not marking up landmark regions like navigation and content</li>
+          </ul>
+          <br>
+          <p> <strong>Organization Issues</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Nesting elements in ways that don't reflect logical relationships</li>
+           <li>Inconsistent indentation, making code difficult to scan</li>
+           <li>Excessive/redundant divs with no clear purpose</li>
+           <li>Overuse of non-semantic elements obscuring meaning</li>
+           <li>Not splitting structure into <span class="special_quote">&lt;head&gt;</span> metadata and <span class="special_quote">&lt;body&gt;</span> content</li>
+           <li>Omitting comments to explain complex parts of code</li>
+          </ul>
+          <br>
+          <p> <strong>Accessibility Problems</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Lack of textual context for visual elements</li>
+           <li>Images without alternate text descriptions</li>
+           <li>Poor color contrast issues for low-vision users</li>
+           <li>No landmarks for screen reader navigation</li>
+           <li>Keyboard/mouse-only interaction not supported</li>
+          </ul>
+          <br>
+          <p> <strong>Tips to Avoid Pitfalls</strong> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Validate code with online tools</li>
+           <li>Use accessibility checkers in dev tools</li>
+           <li>Work on projects collaboratively</li>
+           <li>Reference web standards and best practices</li>
+           <li>Perform regular code reviews</li>
+          </ul>
+          <br>
+          <p>Putting in the effort upfront to learn semantics and organization pays off through more robust, maintainable websites.</p>
+          <br>
+          <h2 id="Keep-Pushing-Your-HTML-Skills" class="pointer">Keep Pushing Your HTML Skills<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>As you continue learning HTML, explore advanced concepts like SVG graphics, complex forms, multimedia, and APIs to unlock more possibilities. Pair your HTML abilities with CSS and JavaScript to fully control website behavior and presentation.</p>
+          <br>
+          <p>What aspects of HTML semantics and organization do you want to master? Share your thoughts below!</p>
+</span>         </div>
+         <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/text-basics" class="btn-cta pad">Previous Post</a></span><span style="display: block;" class="next_button" data-original-css="display: block;"><a href="/posts/adding-media-to-page" class="btn-cta pad">Next Post</a></span>         </div>
+        </div>
+        <div class="share-links">
+         <div id="lqh7yk9yzq">
+          <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+          <input type="checkbox" id="share-toggle">
+          <ul id="share-links">
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">Facebook</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">Twitter</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">LinkedIn</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/html-semantics-organization&amp;media=https://www.jimscode.blog/images/html-semantics-organization-banner-png.png&amp;description=level%20up%20your%20html%20skills%20semantics%20and%20organization" target="_blank">Pinterest</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">Reddit</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">WhatsApp</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=level%20up%20your%20html%20skills%20semantics%20and%20organization&amp;body=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">Email</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/html-semantics-organization" target="_blank">Instagram</a></li>
+          </ul>
+          <br>
+         </div>
+        </div>
+       </div>
+       <aside class="sidebar">
+        <br>
+        <div class="about-me">
+         <br>
+         <div class="avatar-container">
+          <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+         </div>
+         <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+         <hr>
+         <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+        </div>
+        <br>
+        <div class="about-post">
+         <p class="large-text">Tags</p>
+         <hr>
+         <ul id="lqh7yk9w1r" style="display: contents; line-height: 2rem;">
+          <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
+          <li id="tagVar_organization" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/organization" class="btn-cta">organization</a></li>
+          <li id="tagVar_semantics" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/semantics" class="btn-cta">semantics</a></li>
+          <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web dev" class="btn-cta">web dev</a></li>
+         </ul>
+         <br>
+        </div>
+        <div class="headers">
+         <div role="navigation" id="toc">
+          <h3>In this article</h3>
+          <hr>
+          <nav aria-label="Table of Contents">
+           <ul role="list">
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Why-HTML-is-the-Backbone-of-the-Web">Why HTML is the Backbone of the Web</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#The-Importance-of-HTML-Semantics">The Importance of HTML Semantics</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Using-Non-Semantic-Elements-the-Right-Way">Using Non-Semantic Elements the Right Way</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#The-Key-Benefits-of-Organized-HTML-Documents">The Key Benefits of Organized HTML Documents</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Interactive-Forms-and-Elements">Interactive Forms and Elements</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Comment-As-You-Go">Comment As You Go</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Common-pitfalls">Common pitfalls</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Keep-Pushing-Your-HTML-Skills">Keep Pushing Your HTML Skills</a></li>
+           </ul>
+          </nav>
+         </div>
+         <div class="affiliate">
+          <h3>Affiliate links</h3>
+          <p>Check out this great product:<a href="#">Product Name</a></p>
+          <div id="lqh7yka098">
+           <p>sidebar</p>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="lqh7yk9skt">
+      <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+       <br>
+       <br>
+       <div class="footer-content">
+        <div class="footer-section">
+         <h4>About</h4>
+         <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+        </div>
+        <div class="footer-section">
+         <h4>Contact</h4>
+         <p>Email: admin@jimscode.blog</p>
+        </div>
+        <ul class="footer-section" id="lqh7ykakqz">
+         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+        </ul>
+        <div class="footer-disclaimer">
+         <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+        </div>
+        <div class="footer-bottom">
+         <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+        </div>
+       </div>
+      </footer>
+     </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#lqh7ykakqz{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#lqh7yk9xbb{ display: block;}#lqh7yk9w1r{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#lqh7ykakqz{ display: flex; flex-direction: column;}
+}     </style>
+    </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area');    </script>
+   </body>
+  </html>

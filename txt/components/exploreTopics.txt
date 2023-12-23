@@ -1,0 +1,12 @@
+h2# Explore a Topic
+-~- [: justify-content: space-around !important; :] w<1200
+@g: each /txt/json/tags.json as tagX[: display: flex; flex-wrap: wrap; justify-content: space-between; :]
+    ~:q |: span :|{: tag-span :}
+        ~:q |: a href='/tags/{# tagX['name'] #}' :|{: tag-a btn-cta :}
+           |{# tagX['name'] #}
+        ~:q |: a :|
+    ~:q |: span :|
+@g: each /txt/json/tags.json as tagX[: display: flex; flex-wrap: wrap; justify-content: space-between; :]
+
+
+~:a |: hr :|

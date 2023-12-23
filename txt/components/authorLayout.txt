@@ -1,0 +1,30 @@
+~:q |: div :|{: layout-container :}[: display:flex; justify-content: center; :]
+    ~:q |: main :|{: max-width-container :}[: max-width: 1400px; min-height:10rem; :]
+        @s: trending
+        -~- [: flex-flow: column-reverse; align-items: center; :] w<1400
+        ~:q |: div :|{: posts_and_side :}[: display: flex; justify-content: space-evenly; flex-direction: column-reverse; :]#: posts_and_side :#
+            -~- [: width: unset !important; :] w<950
+            ~:q |: section :|{: all_posts_area :}[:min-height: 30rem; :]#: all_posts_section :#
+            
+                -~- [: display: flex; justify-content: space-around; :] w<1400
+                @s: allposts
+            ~:q |: section :|
+            -~- [: width: 92vw !important; :] w<1400
+            ~:q |: aside :|{: side_area :}[: margin-left: 1rem; :]#: aside_el :#
+
+                ~:q |: div :|{: about-me :}[: display: flex; :]
+                
+                    ~:q |: div :|{: avatar-container :}
+                        ~:q |: img data-src='{# author_data.gravatar #}' alt='Avatar' :|{: lazyload profile-picture :}[: display: block; margin: auto; :]
+                    ~:q |: div :|
+                    ~:q |: div :|{: right-side :}
+                        h3# About: {# author_data.name #}
+                        |<hr>
+                        {# author_data.long_about #}
+                    ~:q |: div :|
+                ~:q |: div :|
+                
+            ~:q |: aside :|
+        ~:q |: div :|
+    ~:q |: main :|
+~:q |: div :|

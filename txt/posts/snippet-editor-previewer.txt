@@ -1,0 +1,180 @@
+json_id: 8 in /txt/json/posts.json
+title: Snippet Editor - JimsCode
+path: /{# website_url #}/posts/snippet-editor-previewer
+js: /txt/js/get_home.js
+js: /txt/js/my_generator.js
+js: /txt/js/highlight.js
+css: /txt/css/monokaisublime.css
+acdnjs: hljs.highlightAll();
+js: /txt/js/code_editor.js
+js: /txt/js/post.js
+js: /txt/js/site_funcs.js
+js: /txt/js/site_variables.js
+ag: /txt/js/ongenerated.js
+ag: setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();
+at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
+ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area');
+css: /txt/css/global.css
+css: /txt/css/post.css
+css: /txt/css/footer.css
+css: /txt/css/tabbedinfo.css
+css: /txt/css/flipcard.css
+css: /txt/css/snippettester.css
+-----
+@f: /txt/components/nav.txt
+@f: /txt/components/postlayout.txt :f@
+    @s: postcontent :s@
+        @md markdown
+            Having an effective snippet editor and previewer for developers working on static blogs can streamline the coding process. Rather than constantly uploading changes to a live server, you can quickly preview your HTML, CSS, and JS in a straightforward interface.
+
+            This post will explore a basic implementation that allows editing and previewing snippets in the browser itself. While services exist to achieve this, many developers may seek to create custom solutions.
+
+            ## Examining the Code Structure
+
+            :ce |: editor1ID :|/txt/examples/snippet-editor-previewer-1/index.html
+            :ce |: editor1ID :|/txt/examples/snippet-editor-previewer-1/test.js
+            :ce |: editor1ID :|/txt/examples/snippet-editor-previewer-1/styles.css
+            @ce editor1ID
+
+            The provided code uses HTML, CSS, and JS to:
+
+            1. Create an **editor interface** with buttons and textareas for code snippets
+            2. Display a **live preview** in an iframe that compiles and renders the code
+
+            Some key elements:
+
+            - Editor buttons to switch between HTML/CSS/JS
+            - Textareas to write code 
+            - An iframe to display compiled results
+            - A ~~createCodeEditor~~ function that handles setup
+
+            ## Setting Up the Editor Container
+
+            The ~~createCodeEditor~~ function handles creating the entire editor interface. It takes in code snippets and a target container ID.
+
+            For instance, invoking with:
+
+            '''js
+            createCodeEditor(htmlCode, cssCode, jsCode, 'target-container');
+            '''
+
+            ## Styling for a Clean Design
+
+            Some CSS styles are provided for visual polish:
+
+            '''css
+            #editor-container {
+            |    height: 20rem;
+            }
+
+            #editor-buttons button {
+            |    margin: 5px;
+            }
+
+            #result-container {
+            |    border: none;
+            |    width: 100%;
+            |    height: 100%;
+            }
+            '''
+
+            This ensures a minimal viable editor with well-spaced buttons and an iframe filling the window.
+
+            ## Handy Editor Buttons 
+
+            The editor features intuitively-labeled buttons:
+
+            - HTML - Display HTML snippet editor
+            - CSS - Display CSS snippet editor 
+            - JS - Display JavaScript snippet editor
+            - Run - Compile all code and display in iframe
+
+            These allow easy navigation between different code sections.
+
+            ## Code Snippet Editors
+
+            The HTML, CSS, and JavaScript snippet editors are implemented as simple ~~<textarea>~~ elements with a common ~~editor~~ class.
+
+            Showing/hiding each one is handled by adding/removing a ~~.display: none;~~ style rule.
+
+            ## Live Preview with iframes
+
+            To preview compiled code, the script writes the HTML, CSS, and JS into a single HTML string. This gets written into an ~~<iframe>~~ to be rendered as a preview:
+
+            '''js
+            const resultHTML = &#96;<html>
+            <head>
+            |    <style>&#36;{css}</style>
+            </head>
+            <body>
+            |    &#36;{html}
+            |    <script>&#36;{js}</script>
+            </body>
+            </html>&#96;;
+            '''
+
+            The iframe provides an encapsulated view of how edited code would function together on a live page.
+
+            ## Usage Example
+            
+            For his static blog, Jimmy could leverage this editor by providing starter code like:
+            ~:q |: div role='tablist' :|{: tabs :}
+                @tg |: tab-group-1 :|#: tab1-id-1 :#html
+                    '''html
+                    <h1>Hello World</h1> 
+                    '''
+                @tg |: tab-group-1 :|#: tab1-id-1 :#html
+                @tg |: tab-group-1 :|#: tab1-id-2 :#css
+                    '''css
+                    body {
+                    |    background: blue; 
+                    }
+                    '''
+                @tg |: tab-group-1 :|#: tab1-id-2 :#css
+                @tg |: tab-group-1 :|#: tab1-id-3 :#js
+                    '''js 
+                    console.log("Hello, World!");
+                    '''
+                @tg |: tab-group-1 :|#: tab1-id-3 :#js
+            ~:q |: div :|
+
+            This would give an editable starting point for continuing development while instantly viewing any changes.
+
+            ## Conclusion
+
+            In just over 60 lines of code, we built an easy snippet editor with live preview - no web server required! While basic, it demonstrates the key functionality to aid developers working on static sites.
+
+            Feel free to customize and enhance this code further for your own projects. We'd love to see what improvements or integrations you come up with, so please share your experiences!
+
+            ## Commonly Asked Questions
+
+            @ds What is an iframe in HTML?
+                An ~~iframe~~, or inline frame, is an HTML element that embeds another HTML page within the current page. It creates a window within the parent page to display content from another source, commonly used for embedding videos, advertisements, and interactive content.
+            @ds What is an iframe in HTML?
+            @ds What are the advantages and disadvantages of using iframes?
+                ### Iframe Advantages
+                - **Easy to embed content:** Simple way to embed content from other sources without modifying the parent page's code.
+                - **Content isolation:** Iframes isolate embedded content, preventing interference with the parent page's functionality.
+                - **Dynamic content:** Can be used to embed dynamic content, such as live updates from social media feeds or stock tickers.
+                ### Iframe Disadvantages
+                - **Performance impact:** Can add to the loading time, especially with large or complex content.
+                - **Accessibility concerns:** May make it more challenging for screen readers and assistive technologies to access the page's content.
+                - **Security vulnerabilities:** Can be used to inject malicious scripts or code.
+            @ds What are the advantages and disadvantages of using iframes?
+            @ds Other Options for Snippet Editors with Live Preview
+                A few online options offer more advanced features:
+
+                - **CodePen:** Popular online code editor for HTML, CSS, and JavaScript code with live preview.
+                - **JSFiddle:** Another online code editor allowing you to write and preview HTML, CSS, and JavaScript code.
+                - **Codeply:** Web-based code editor with features like real-time editing and collaboration.
+            @ds Other Options for Snippet Editors with Live Preview
+
+        @md markdown
+    @s: postcontent :s@
+    @s: sidebar_advert :s@
+        sidebar
+    @s: sidebar_advert :s@
+@f: /txt/components/postlayout.txt :f@
+@f: /txt/components/footer.txt
+
+

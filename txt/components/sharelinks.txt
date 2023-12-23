@@ -1,0 +1,14 @@
+~:q |: label for='share-toggle' :|#: share-btn :#{: btn-cta :}
+|Share <span class='share_post_text'>post?</span>
+~:q |: label :|
+~:q |: input type='checkbox' :|#: share-toggle :#
+~:q |: ul :|#: share-links :#
+    li# [: list-style: none; :]<a href='https://www.facebook.com/sharer/sharer.php?u={# url_path.substring(1) #}' target='_blank'>Facebook</a>
+    li# [: list-style: none; :]<a href='https://twitter.com/intent/tweet?url={# url_path.substring(1) #}' target='_blank'>Twitter</a>
+    li# [: list-style: none; :]<a href='https://www.linkedin.com/shareArticle?url={# url_path.substring(1) #}' target='_blank'>LinkedIn</a>
+    li# [: list-style: none; :]<a href='https://pinterest.com/pin/create/button/?url={# url_path.substring(1) #}&media={# website_url + json_data.image #}&description={# createSlug(json_data.post_title) #}' target='_blank'>Pinterest</a>
+    li# [: list-style: none; :]<a href='https://www.reddit.com/submit?url={# url_path.substring(1) #}' target='_blank'>Reddit</a>
+    li# [: list-style: none; :]<a href='whatsapp://send?text={# url_path.substring(1) #}' target='_blank'>WhatsApp</a>
+    li# [: list-style: none; :]<a href='mailto:?subject={# createSlug(json_data.post_title) #}&body={# url_path.substring(1) #}' target='_blank'>Email</a>
+    li# [: list-style: none; :]<a href='https://www.instagram.com/share?url={# url_path.substring(1) #}' target='_blank'>Instagram</a>
+~:q |: ul :|

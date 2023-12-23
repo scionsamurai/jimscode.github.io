@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unleash the power of media on your website! Explore the nuances of incorporating images, audio, video, and vector graphics. From file optimization to responsive design, this guide provides the insights you need for a visually stunning and performant web presence.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>Adding Media - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+ </head>
+ <body>
+  <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+  <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+  <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+  <div class="wrapper">
+   <div id="lqh7yfgi2r">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">    <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+     <div class="sidebar_checkbox_hack">
+      <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">      <p class="emoji_active_memo">Back to Post</p>
+      <img src="/images/favicon-32x32.png" alt="">
+</label>
+     </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>    </div>
+    <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+     <form method="get" action="http://www.google.com/search" class="no-js-search">
+      <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+      <button type="submit" value="Search!" class="no-js-search__button">
+Search      </button>
+      <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+     </form>
+    </div>
+</span>    <div class="color-pallete">
+     <label for="night"></label>
+     <label for="day"></label>
+    </div>
+    <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+    </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">    <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+    </div>
+    <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>   </div>
+   <div id="lqh7yfgi1s">
+    <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+     <div class="banner">
+     </div>
+    </div>
+    <div role="main" class="main-content">
+     <div class="post-container">
+      <div class="post">
+       <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Enhancing Your Webpages with Images, Audio, Video and Vector Graphics</h1>
+       <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
+       <picture class="banner_picture" id="lqh7yfgl5j">
+        <source srcset="/images/enhance-with-media-banner.webp" type="image/webp" class="banner-image">
+         <source srcset="/images/enhance-with-media-banner-png.png" type="image/png" class="banner-image">
+          <img src="" alt="" class="banner-image">
+         </picture>
+         <br>
+         <div id="lqh7yfgmer">
+<span id="lqh7yfgwot">          <p>Adding different media types like images, audio, video, and vector graphics can make your web pages more dynamic, engaging, and fun for visitors. For example, you can welcome users with a hero image, explain a concept with an animation, liven up a blog post with embedded media, or even add ambient background music to create a certain mood.</p>
+          <br>
+          <p>!<a href="https://i.postimg.cc/YCvxmKDM/hero-image.jpg">Hero Image Example</a></p>
+          <br>
+          <p> <em>Example of a hero image on a website (Image credit: UI Design Daily)</em> </p>
+          <br>
+          <p>However, incorporating media comes with challenges around optimization, accessibility, compatibility, and performance. File sizes and formats must be appropriate for the web, media needs to work across devices, and loading times should be kept in mind. However, following best practices around preparation, formats, and implementation will help overcome these hurdles.</p>
+          <br>
+          <h2 id="Adding-Images" class="pointer">Adding Images<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Images can instantly catch the user's eye and communicate visual information quickly. When adding images to your webpages:</p>
+          <br>
+          <ul class="ul_class">
+           <li>JPEG is best for complex photographic images with many colors. PNG works well for images with transparency like logos. SVG can create resolution-independent vector graphics.</li>
+           <li>Resize and compress images to optimize file size. Use tools like ImageMagick to automate this.</li>
+          </ul>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7yfh3qm">&lt;img src="small-file-size-image.jpg" alt="Optimized Image"&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <ul class="ul_class">
+           <li>Include width and height attributes on the HTML <span class="special_quote">img</span> tag so the browser can reserve space before loading.</li>
+           <li>For responsive design, generate multiple-size images and use srcset and sizes attributes to serve the right one.</li>
+          </ul>
+          <br>
+          <h2 id="Adding-Audio" class="pointer">Adding Audio<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Audio can help set the atmosphere or be used for sound effects. To effectively add audio:</p>
+          <br>
+          <ul class="ul_class">
+           <li>MP3 works universally, but OGG also provides good compression for compatibility.</li>
+           <li>Use normalized audio levels and trim unnecessary silence to keep file sizes small.</li>
+           <li>Test audio files in multiple browsers. Preload audio for better performance.</li>
+          </ul>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7yfh31v">&lt;audio controls&gt;
+ &lt;source src="background-music.ogg" type="audio/ogg"&gt;
+ &lt;source src="background-music.mp3" type="audio/mpeg"&gt;
+ &lt;/audio&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <ul class="ul_class">
+           <li>Be mindful of copyrights. Avoid unauthorized use of commercial music.</li>
+          </ul>
+          <br>
+          <p> <em>Example background music clip:<a href="https://www.freesound.org/data/previews/416/416969_3340727-lq.mp3">Listen</a></em> </p>
+          <br>
+          <h2 id="Adding-Video" class="pointer">Adding Video<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Video greatly engages users but also needs more optimization and bandwidth.</p>
+          <br>
+          <ul class="ul_class">
+           <li>MP4 video with H264 encoding and AAC audio provides broad support.</li>
+           <li>Use YouTube or Vimeo to host videos for bandwidth savings and then embed them into your site.</li>
+          </ul>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7yfh3q5">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <ul class="ul_class">
+           <li>Keep videos short and succinct. Optimize encoding settings for smaller file sizes.</li>
+           <li>Make use of captions, transcripts and metadata tags for accessibility.</li>
+          </ul>
+          <br>
+          <p> <em>Example video:<a href="https://www.youtube.com/embed/yU7jJ2NbPnA">Watch</a></em> </p>
+          <br>
+          <h2 id="Using-Vector-Graphics" class="pointer">Using Vector Graphics<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Vector graphics like SVG scale infinitely without pixelation. SVG is well-supported by modern browsers and has several benefits:</p>
+          <br>
+          <ul class="ul_class">
+           <li>SVGs keep their crispness on high-resolution screens like Retina displays.</li>
+           <li>Because they are defined mathematically, file sizes are smaller than raster images.</li>
+          </ul>
+          <br>
+          <p>!<a href="https://www.svgrepo.com/show/117055/small-duck.svg">SVG Logo Example</a></p>
+          <br>
+          <p> <em>Logo created as an SVG</em> </p>
+          <br>
+          <ul class="ul_class">
+           <li>Elements can be manipulated and animated with CSS and JavaScript.</li>
+           <li>Use Illustrator, Sketch or Inkscape to export existing artwork to SVG.</li>
+           <li>For interactive graphics, Snap.svg, D3.js and other frameworks are helpful.</li>
+          </ul>
+          <br>
+          <p>There are some limitations though. Complex SVGs can cause performance issues. Fallbacks may be needed for full support in older browsers.</p>
+          <br>
+          <h2 id="Image-Dimensions-and-Breakpoints" class="pointer">Image Dimensions and Breakpoints<span class="anchor-image">⚓</span></h2>
+          <br>
+          <h3>Recommended Dimensions:</h3>
+          <br>
+          <p>Determining the ideal image dimensions involves considering the various devices your audience might use. While the specifics may vary based on your website's design, here are some general guidelines:</p>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>Desktop:</strong> For large desktop screens, aim for images around 1200 pixels wide for standard content and up to 1920 pixels for full-width banners or hero images.</li>
+           <li> <strong>Tablet:</strong> Optimize images for tablets by targeting widths around 768 pixels. This ensures a seamless experience on both landscape and portrait orientations.</li>
+           <li> <strong>Mobile:</strong> With the prevalence of mobile browsing, images around 320 to 480 pixels wide cater to smaller screens without compromising quality.</li>
+          </ul>
+          <br>
+          <h3>Breakpoints:</h3>
+          <br>
+          <p>Implementing responsive design involves setting breakpoints where the layout adjusts to accommodate different screen sizes. Consider defining breakpoints based on common device widths, such as 768 pixels for tablets and 480 pixels for mobile devices.</p>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqh7yfh5cl">/* Example CSS Media Queries for Responsive Images */
+ @media screen and (max-width: 768px) {
+ img {
+ width: 100%; /* Adjust as needed */
+ }
+ }
+ 
+ @media screen and (max-width: 480px) {
+ img {
+ width: 100%; /* Adjust as needed */
+ }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
+          <br>
+          <h2 id="Image-Compression" class="pointer">Image Compression<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>Determining the optimal compression level involves finding a balance between file size and noticeable quality loss. While tools like ImageMagick can automate this process, a general guideline is to experiment with compression ratios and observe the impact on image quality.</p>
+          <br>
+          <h3>Compression Tools:</h3>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>ImageOptim:</strong> An easy-to-use tool that employs various optimization techniques without compromising quality.</li>
+           <li> <strong>TinyPNG:</strong> Ideal for compressing PNG images while maintaining transparency.</li>
+           <li> <strong>JPEG-Optimizer:</strong> Specifically designed for JPEG images, allowing you to find the right balance between size and quality.</li>
+          </ul>
+          <br>
+          <p>Remember to regularly check the visual impact of compression to ensure your images maintain the desired quality.</p>
+          <br>
+          <h2 id="Audio-and-Video-Encoding-Settings" class="pointer">Audio and Video Encoding Settings<span class="anchor-image">⚓</span></h2>
+          <br>
+          <h3>Audio Encoding:</h3>
+          <br>
+          <p>When incorporating audio into your webpages, the choice of encoding settings affects both file size and compatibility.</p>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>MP3:</strong> Universally supported, offering good compression. Use a bitrate around 128-192 kbps to balance quality and file size.</li>
+          </ul>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>OGG:</strong> A solid alternative with efficient compression. Aim for a similar bitrate as MP3 for comparable quality.</li>
+          </ul>
+          <br>
+          <h3>Video Encoding:</h3>
+          <br>
+          <p>Videos demand more bandwidth and careful consideration of encoding settings.</p>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>MP4 (H.264 video, AAC audio):</strong> Widely supported across browsers and devices. Use this format for broad compatibility.</li>
+          </ul>
+          <br>
+          <ul class="ul_class">
+           <li> <strong>WebM:</strong> An open-source alternative with efficient compression. Consider this format for additional browser support.</li>
+          </ul>
+          <br>
+          <h3>Video Length and Quality:</h3>
+          <br>
+          <p>Keep videos concise to maintain viewer engagement. Experiment with different encoding settings to find the right balance between file size and video quality. Aim for a resolution that suits your layout while avoiding unnecessarily high resolutions that may impact performance.</p>
+          <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqh7yfh6qm">&lt;!-- Example Video Embed with MP4 and WebM formats --&gt;
+ &lt;video width="640" height="360" controls&gt;
+ &lt;source src="example-video.mp4" type="video/mp4"&gt;
+ &lt;source src="example-video.webm" type="video/webm"&gt;
+ Your browser does not support the video tag.
+ &lt;/video&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+          <br>
+          <p>Remember to test your audio and video files across various browsers to ensure a seamless user experience.</p>
+          <br>
+          <p>By fine-tuning image dimensions, employing responsive design, and optimizing audio and video encoding settings, you pave the way for a visually stunning and performant web experience. Feel free to experiment, iterate, and test to find the optimal balance for your specific content and audience.</p>
+          <br>
+          <h2 id="Alternatives-and-Enhancements" class="pointer">Alternatives and Enhancements<span class="anchor-image">⚓</span></h2>
+          <br>
+          <p>As you explore the realm of media-rich web content, it's essential to consider alternative formats and enhancements that can add flair to your webpages. One intriguing question often arises: When is it better to use an animated GIF instead of a video? Let's dive into this and explore additional enhancements for your web media.</p>
+          <br>
+          <h3>Animated GIFs vs. Videos</h3>
+          <br>
+          <h4>When to Choose an Animated GIF:</h4>
+          <br>
+          <p>1. <strong>Simplicity and Autoplay:</strong> Animated GIFs are simple to implement and automatically play without user interaction. If your goal is to convey a short and straightforward message without the need for audio or complex interactions, an animated GIF might be the better choice.</p>
+          <p>2. <strong>Wide Browser Support:</strong> GIFs enjoy broad support across various browsers, making them a reliable choice for compatibility.</p>
+          <p>3. <strong>Micro-Interactions:</strong> Use animated GIFs for subtle, eye-catching micro-interactions, such as highlighting a call-to-action button or drawing attention to specific details within an image.</p>
+          <p>4. <strong>Loading Times:</strong> In scenarios where fast loading times are crucial, animated GIFs might outperform videos. They are typically smaller in file size and load quickly, making them suitable for quick visual enhancements.</p>
+          <br>
+          <h4>When to Opt for Videos:</h4>
+          <br>
+          <p>1. <strong>Complex Narratives:</strong> If your content requires a more intricate narrative, audio, or higher visual fidelity, videos are the go-to choice. They provide a platform for storytelling, demonstrations, and conveying emotions more effectively.</p>
+          <p>2. <strong>Interaction and Control:</strong> Videos offer better control over playback, allowing users to pause, rewind, and adjust volume. This is essential for content that demands user interaction or provides detailed information.</p>
+          <p>3. <strong>Quality and Resolution:</strong> For scenarios where high-quality visuals are paramount, such as product showcases or tutorial videos, the superior resolution and compression capabilities of videos make them the preferred option.</p>
+          <p>4. <strong>SEO and Analytics:</strong> Videos are more SEO-friendly, and platforms like YouTube provide valuable analytics. If your goal is to leverage search engine optimization or track user engagement, videos are the superior choice.</p>
+          <br>
+          <h3>Additional Enhancements</h3>
+          <br>
+          <h4>1. <strong>Cinemagraphs:</strong> </h4>
+          <ul class="ul_class">
+           <li>Combine the allure of a static image with subtle, looping animations. Cinemagraphs provide an elegant and eye-catching alternative to traditional GIFs.</li>
+          </ul>
+          <br>
+          <h4>2. <strong>Interactive Infographics:</strong> </h4>
+          <ul class="ul_class">
+           <li>Transform static information into engaging, interactive infographics. Tools like D3.js and Chart.js allow you to create dynamic charts and graphs that respond to user interactions.</li>
+          </ul>
+          <br>
+          <h4>3. <strong>Parallax Scrolling:</strong> </h4>
+          <ul class="ul_class">
+           <li>Implement parallax scrolling effects to add depth and dimension to your webpages. This technique involves moving background elements at a different speed than foreground elements, creating a captivating visual experience.</li>
+          </ul>
+          <br>
+          <h4>4. <strong>360-Degree Images:</strong> </h4>
+          <ul class="ul_class">
+           <li>Enhance user engagement by incorporating 360-degree images. This immersive experience allows users to explore a scene by dragging or swiping interactively.</li>
+          </ul>
+          <br>
+          <h4>5. <strong>Virtual Reality (VR) Content:</strong> </h4>
+          <ul class="ul_class">
+           <li>For cutting-edge experiences, consider incorporating VR content. This can range from 360-degree videos to fully immersive virtual reality environments.</li>
+          </ul>
+          <br>
+          <h4>6. <strong>Web Animations API:</strong> </h4>
+          <ul class="ul_class">
+           <li>Explore the capabilities of the Web Animations API to create smooth, performant animations directly in the browser. This provides fine-grained control over animation timelines and playback.</li>
+          </ul>
+          <br>
+          <h1>Conclusion</h1>
+          <br>
+          <p>Adding rich media can transform static websites, but requires following best practices. Ensure your media is optimized, usable, and performs well. Refer to websites like Tympanus and Awwwards for creative examples of media use. With a little diligence, you can make engaging websites full of images, graphics, sound and motion.</p>
+          <br>
+          <p>Let me know if these examples help illustrate the concepts or if you'd like me to add any other specifics. I'm happy to revise and refine this further.</p>
+          <br>
+</span>         </div>
+         <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/html-semantics-organization" class="btn-cta pad">Previous Post</a></span><span style="display: block;" class="next_button" data-original-css="display: block;"><a href="/posts/html-and-css-essentials" class="btn-cta pad">Next Post</a></span>         </div>
+        </div>
+        <div class="share-links">
+         <div id="lqh7yfgno4">
+          <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+          <input type="checkbox" id="share-toggle">
+          <ul id="share-links">
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">Facebook</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">Twitter</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">LinkedIn</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/adding-media-to-page&amp;media=https://www.jimscode.blog/images/enhance-with-media-banner-png.png&amp;description=enhancing%20your%20webpages%20with%20images%20audio%20video%20and%20vector%20graphics%20" target="_blank">Pinterest</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">Reddit</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">WhatsApp</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=enhancing%20your%20webpages%20with%20images%20audio%20video%20and%20vector%20graphics%20&amp;body=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">Email</a></li>
+           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/adding-media-to-page" target="_blank">Instagram</a></li>
+          </ul>
+          <br>
+         </div>
+        </div>
+       </div>
+       <aside class="sidebar">
+        <br>
+        <div class="about-me">
+         <br>
+         <div class="avatar-container">
+          <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+         </div>
+         <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+         <hr>
+         <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+        </div>
+        <br>
+        <div class="about-post">
+         <p class="large-text">Tags</p>
+         <hr>
+         <ul id="lqh7yfgk7o" style="display: contents; line-height: 2rem;">
+          <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
+          <li id="tagVar_media" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/media" class="btn-cta">media</a></li>
+          <li id="tagVar_image" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/image" class="btn-cta">image</a></li>
+          <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web dev" class="btn-cta">web dev</a></li>
+         </ul>
+         <br>
+        </div>
+        <div class="headers">
+         <div role="navigation" id="toc">
+          <h3>In this article</h3>
+          <hr>
+          <nav aria-label="Table of Contents">
+           <ul role="list">
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Adding-Images">Adding Images</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Adding-Audio">Adding Audio</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Adding-Video">Adding Video</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Using-Vector-Graphics">Using Vector Graphics</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Image-Dimensions-and-Breakpoints">Image Dimensions and Breakpoints</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Image-Compression">Image Compression</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Audio-and-Video-Encoding-Settings">Audio and Video Encoding Settings</a></li>
+            <hr>
+            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Alternatives-and-Enhancements">Alternatives and Enhancements</a></li>
+           </ul>
+          </nav>
+         </div>
+         <div class="affiliate">
+          <h3>Affiliate links</h3>
+          <p>Check out this great product:<a href="#">Product Name</a></p>
+          <div id="lqh7yfgsr0">
+           <p>sidebar</p>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="lqh7yfgibz">
+      <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+       <br>
+       <br>
+       <div class="footer-content">
+        <div class="footer-section">
+         <h4>About</h4>
+         <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+        </div>
+        <div class="footer-section">
+         <h4>Contact</h4>
+         <p>Email: admin@jimscode.blog</p>
+        </div>
+        <ul class="footer-section" id="lqh7yfhbnh">
+         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+        </ul>
+        <div class="footer-disclaimer">
+         <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+        </div>
+        <div class="footer-bottom">
+         <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+        </div>
+       </div>
+      </footer>
+     </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#lqh7yfhbnh{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#lqh7yfgl5j{ display: block;}#lqh7yfgk7o{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#lqh7yfhbnh{ display: flex; flex-direction: column;}
+}     </style>
+    </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area');    </script>
+   </body>
+  </html>

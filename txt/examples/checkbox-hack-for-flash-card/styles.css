@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.flashcard {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.flashcard input[type="checkbox"] {
+    display: none;
+}
+
+.flashcard input[type="checkbox"]:checked + label {
+    transform: rotateY(180deg);
+}
+
+.flashcard input[type="checkbox"]:checked + label .front {
+    display: none;
+}
+
+.flashcard label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    background-color: #f0f0f0;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flashcard .front,
+.flashcard .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden; /* Add this line */
+}
+
+.flashcard .back {
+    transform: rotateY(180deg);
+}

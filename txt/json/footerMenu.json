@@ -1,0 +1,15 @@
+[{
+    "id": 1,
+    "name": "Privacy",
+    "link": "/privacy-policy"
+},
+{
+    "id": 2,
+    "name": "Terms",
+    "link": "/terms-of-service"
+},
+{
+    "id": 3,
+    "name": "about",
+    "link": "/about-us"
+}]

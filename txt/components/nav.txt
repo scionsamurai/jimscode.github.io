@@ -1,0 +1,33 @@
+~:q |: span role='navigation' :|#: navID :#{: navbar :}[: display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem; :]
+    ~:q |: div :|{: name-and-icon :}[: padding: 0 8px; :]
+        ~:q |: div :|{: sidebar_checkbox_hack :}
+            ~:q |: label for='sidebar_checkbox' onclick='window.scrollTo(0,0)' :|{: sidebar_button pointer :}
+                Back to Post{: emoji_active_memo :}
+                ![Jims emoji icon](/images/favicon-32x32.png)
+            ~:q |: label :|
+        ~:q |: div :|
+        ~:q |: a href='/' :|{: home-link {# window.location.pathname == '/' ? 'noclick' : '' #} :}startA[: text-decoration: none; :]
+            ~:a |: span :|{# website_name #}[: width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important; :]
+        ~:q |: a :|
+    ~:q |: div :|
+    ~:q |: div role='search' :|{: navbar_right :}[: margin: auto 2rem auto 0; :]#: search_area :#
+        ~:q |: form method='get' action='http://www.google.com/search' :|{: no-js-search :}
+            ~:q |: input type='text' name='q' size='15' :|{: no-js-search__input :}#: search :#
+            ~:a |: button type='submit' value='Search!' :|{: no-js-search__button :}Search
+            ~:q |: input type='checkbox' name='sitesearch' value={# website_url.split('www.')[1] #} checked :|{: no-js-search__checkbox :}[: display: none; :]
+        ~:q |: form :|
+    ~:q |: div :|
+~:q |: span :|
+~:q |: div :|{: color-pallete :}
+    ~:a |: label for='night' :|
+    ~:a |: label for='day' :|
+~:q |: div :|
+~:a |: div :|#: star-area :#[: position: fixed; :]
+~s: {: display-block :} this.scrollY > 650
+-~- [: right: 2.2rem; left: unset !important; :] w<1350 w>950
+-~- [: display: none !important; :] w<750
+~:q |: a href='#top-of-site' aria-label='Scroll to top' onclick='window.scrollTo(0,0)' onkeypress='if(event.keyCode===13){window.scrollTo(0,0)}' tabindex='0' :|{: pointer :}#: arrow-div-id :#[: background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none; :]
+    ~:a |: div :|{: up arrow :}#: backToTopArrow :#[: width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem; :]
+    -~- [:right: 1rem; :] w<1350
+    Back to top[: display: none; :]#: TopArrowText :#
+~:q |: a :|

@@ -1,0 +1,36 @@
+title: [tag]
+meta-description: [tag_meta]
+page: [tag_page]
+
+path: /txt/json/posts.json
+
+js: /txt/js/site_funcs.js
+js: /txt/js/get_home.js
+js: /txt/js/site_variables.js
+js: /txt/js/my_generator.js
+css: /txt/css/global.css
+css: /txt/css/home.css
+css: /txt/css/footer.css
+css: /txt/css/flipcard.css
+ag: /txt/js/ongenerated.js
+at: getHTML('target');
+ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area');
+-----
+@f: /txt/components/nav.txt
+~:q |: div :|{: banner-div :}[: min-height: 20rem; height: 100vh; :]
+    ~:q |: div :|{: banner :}
+    ~:q |: div :|
+~:q |: div :|
+~:q |: div :|{: tag-banner :}[: height: 5rem; width: 100%; display: flex; justify-content: space-around; :]
+    -~- [: font-size: x-large !important; align-content: center; justify-content: space-around; display: flex; flex-flow: column; :] w<750
+    h1# Exploring: {# generating_tag #}[: font-size: xxx-large; :]
+~:q |: div :|
+@f: /txt/components/bloglayout.txt :f@
+    @s: allposts :s@
+        -~- [: display: block; max-width: 85vw; :] w<1200
+        @g: each /txt/json/tag_posts.json as postVar
+            @f: /txt/components/contentCard.txt
+        @g: each /txt/json/tag_posts.json as postVar
+    @s: allposts :s@
+@f: /txt/components/bloglayout.txt :f@
+@f: /txt/components/footer.txt

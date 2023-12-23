@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+      <channel>
+        <title>Jims Code Blog</title>
+        <link>https://www.jimscode.blog</link>
+        <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
+        <language>en-US</language>
+        <item>
+      <title>Building a Simple Snippet Editor and Previewer for Static Blogs</title>
+      <link>https://www.jimscode.blog/posts/snippet-editor-previewer</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Take control of your static blog development with a homemade snippet editor and previewer. This post guides you through a basic implementation, allowing you to edit and preview HTML, CSS, and JS seamlessly. Explore customization possibilities and share your enhancements with the developer community.</description>
+      
+      <category>html</category>
+<category>css</category>
+<category>web dev</category>
+<category>editor</category>
+<category>previewer</category>
+    </item>
+<item>
+      <title>Take Your CSS Skills to the Next Level</title>
+      <link>https://www.jimscode.blog/posts/take-css-to-next-level</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Elevate your CSS proficiency with this comprehensive guide! Master advanced selectors, explore pseudo-classes, pseudo-elements, and attribute selectors. Dive into responsive design, animations, transitions, and preprocessors like SASS. Enhance your web development skills and stay ahead in the dynamic world of CSS.</description>
+      
+      <category>intermediate</category>
+<category>css</category>
+<category>web dev</category>
+    </item>
+<item>
+      <title>Creating and Testing HTML Files: A Comprehensive Guide for Beginners</title>
+      <link>https://www.jimscode.blog/posts/creating-testing-html-files</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Embark on your HTML journey with this beginner's guide! Learn the essentials of creating and testing HTML files, explore common elements, and dive into debugging using browser developer tools. Get ready to build your own webpages from scratch.</description>
+      
+      <category>html</category>
+<category>testing</category>
+<category>web dev</category>
+    </item>
+<item>
+      <title>Understanding the Checkbox Hack for Creating Flip Cards</title>
+      <link>https://www.jimscode.blog/posts/checkbox-hack-for-flash-card</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Explore the power of the checkbox hack in HTML and CSS to create engaging flip cards. Learn how to leverage this technique for interactive components like toggle cards, product displays, and information boxes. Enhance your web design skills with native HTML and CSS magic.</description>
+      
+      <category>html</category>
+<category>css</category>
+<category>web dev</category>
+    </item>
+<item>
+      <title>HTML and CSS Essentials: A Comprehensive Guide for Beginners</title>
+      <link>https://www.jimscode.blog/posts/html-and-css-essentials</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Dive into the world of web design with a solid foundation in HTML and CSS. This beginner-friendly guide covers key concepts, specificity in CSS, combining HTML and CSS, and best practices to empower you on your coding journey.</description>
+      
+      <category>html</category>
+<category>css</category>
+<category>web dev</category>
+    </item>
+<item>
+      <title>Enhancing Your Webpages with Images, Audio, Video and Vector Graphics </title>
+      <link>https://www.jimscode.blog/posts/adding-media-to-page</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Unleash the power of media on your website! Explore the nuances of incorporating images, audio, video, and vector graphics. From file optimization to responsive design, this guide provides the insights you need for a visually stunning and performant web presence.</description>
+      
+      <category>html</category>
+<category>media</category>
+<category>image</category>
+<category>web dev</category>
+    </item>
+<item>
+      <title>Level Up Your HTML Skills: Semantics and Organization</title>
+      <link>https://www.jimscode.blog/posts/html-semantics-organization</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Navigate the world of HTML semantics and organization to unleash the full potential of web development. Learn the benefits of semantic HTML, best practices for organized documents, and tips to avoid common pitfalls in accessibility and code structure.</description>
+      
+      <category>html</category>
+<category>organization</category>
+<category>semantics</category>
+<category>web dev</category>
+    </item>
+<item>
+      <title>Mastering Text Basics on Websites - A Guide for New Developers</title>
+      <link>https://www.jimscode.blog/posts/text-basics</link>
+      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
+      <description>Learn HTML text fundamentals - proper formatting and structure techniques for headings, lists, text styles, special characters, and more. Essential skills for web developers.</description>
+      
+      <category>html</category>
+<category>text</category>
+<category>formatting</category>
+<category>web dev</category>
+    </item>
+      </channel>
+    </rss>

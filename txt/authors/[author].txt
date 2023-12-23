@@ -1,0 +1,32 @@
+title: [tag]
+meta-description: [tag_meta]
+page: [tag_page]
+
+path: /txt/json/posts.json
+
+js: /txt/js/site_funcs.js
+js: /txt/js/get_home.js
+js: /txt/js/site_variables.js
+js: /txt/js/my_generator.js
+ag: /txt/js/ongenerated.js
+css: /txt/css/global.css
+css: /txt/css/home.css
+css: /txt/css/footer.css
+css: /txt/css/flipcard.css
+at: getHTML('target');
+ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area');
+-----
+@f: /txt/components/nav.txt
+~:q |: div :|{: banner-div :}[: min-height: 20rem; height: 100vh; :]
+    ~:q |: div :|{: banner :}
+    ~:q |: div :|
+~:q |: div :|
+@f: /txt/components/authorLayout.txt :f@
+    @s: allposts :s@
+        -~- [: display: block; max-width: 85vw; :] w<1200
+        @g: each /txt/json/authors_posts.json as postVar
+            @f: /txt/components/contentCard.txt
+        @g: each /txt/json/authors_posts.json as postVar
+    @s: allposts :s@
+@f: /txt/components/authorLayout.txt :f@
+@f: /txt/components/footer.txt
