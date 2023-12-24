@@ -1,0 +1,59 @@
+@r: [: display: none; :] qID_1+qID_1_a
+##: [: color: red; :]Load settings file
+    Click the "load settings" button. Target/Open the settings file that should be saved in the same folder as this parser.
+    ##: test
+        test paragraph 1
+        h1# [: color: red; text-align: right; :]h1 test!
+        ~:q |: div :| [: display:flex; background: yellow; :]{: classNameX :}
+            h2# h2 test!
+            ~:q |: div :| [: display:flex; background: orange; :]#: divIDvalue :#{: classNameY classNameZ :}
+                h3# h3 test
+                h3# h3 test
+            ~:q |: div :|
+        ~:q |: div :|
+        ~~: subtab1
+        ~~: |: subtab1 :|[: background:green; :]Option1 right here
+            [: color: red; border-bottom: 2px solid; :]Testing p styling
+            but i will also add regular info
+
+            with info spaced a bit lower
+        ~~: |: subtab1 :|[: background:green; :]Option1 right here
+
+        ~~: |: subtab1 :|Option2 maybe
+            in this one ill add some collapsable info-boxes
+        ~~: |: subtab1 :|Option2 maybe
+
+        ~~: |: subtab1 :|maybe a third?
+            info here
+            ##: Select the columns to parse
+                ##: nested in columns
+                    we are here! nested in columns
+                    ~~: moreSubCols
+                    ~~: |: moreSubCols :| Why not
+                    sometext
+                    ~~: |: moreSubCols :| Why not
+                    ~~: |: moreSubCols :| more subcols
+                        
+                        ##: nested foldable
+                            h2# [: color: red; :]because i can!
+                        ##: nested foldable
+                    ~~: |: moreSubCols :| more subcols
+                    ~~: moreSubCols
+                ##: nested in columns
+                In the box that generates with the column names and checkboxes uncheck any columns you dont want in the output.
+            ##: Select the columns to parse
+
+            [: color: green; :]info here
+        ~~: |: subtab1 :|maybe a third?
+        ~~: subtab1
+        ##: nested in test
+            we are here! nested in test
+
+            h5# h5 test!
+            --- --- (horizontal rule)
+        ##: nested in test
+        ##: nested2 in test
+        now here
+        ##: nested2 in test
+    ##: test
+##: [: color: red; :]Load settings file

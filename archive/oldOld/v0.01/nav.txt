@@ -1,0 +1,7 @@
+~:q |: div :|#: navID :#{: navbar :}[: display:flex; background: orange; justify-content: space-between; padding: 1rem; :]
+    James Ruikka[: width: auto; margin: 0; padding: 11px 32px; :]
+    ~:q |: div :|{: navbar_right :}[: display:flex; :]
+        Projects[: width: auto; margin: 0; padding: 11px 0; :]
+        Blog[: width: auto; margin: 0; padding: 11px 2rem; :]
+    ~:q |: div :|
+~:q |: div :|
