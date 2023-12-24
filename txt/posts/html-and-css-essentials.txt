@@ -12,7 +12,7 @@ js: /txt/js/site_variables.js
 ag: /txt/js/ongenerated.js
 ag: setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();
 at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
-ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area');
+ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();
 css: /txt/css/global.css
 css: /txt/css/post.css
 css: /txt/css/footer.css

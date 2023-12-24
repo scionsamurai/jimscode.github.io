@@ -23,6 +23,7 @@
                     ~:a |: a href='{# json_data.subseq_post #}' :|Next Post{: btn-cta pad :}
                 ~:q |: span :|
             ~:q |: div :|
+            {# json_data.comments ? '<div class=giscus></div>' : '' #}
         ~:q |: div :|
         ~:q |: div :|{: share-links :}
             @f: /txt/components/sharelinks.txt

@@ -352,7 +352,7 @@ const custom_render_function = (input_unrendered_txt, target_div_id, open_files,
                     returned_html = `<div class="tab" role="tab"><input type="radio" id="${ID ? ID : radio_id}" name="${question_type}"><label for="${ID ? ID : radio_id}" tabindex="0" style="outline: none;">${adapted_string.substring(4)}</label><div class="content" role="tabpanel" aria-labelledby="${ID ? ID : radio_id}" id="${new_id}"></div></div>` + additional_html;
 
                 } else if (str_first_chars.substring(0,2) == "![") {
-                    returned_html = `<img src="${adapted_string.split('(')[1].split(')')[0]}" alt="${adapted_string.split(']').slice(2)}">`;
+                    returned_html = `<img src="${adapted_string.split('(')[1].split(')')[0]}" alt="${adapted_string.split(']')[0].slice(2)}">`;
                 } else if (str_first_chars == "@md ") {
                     const new_id = generate_UID();
                     additional_html = get_extra_html(responsive_rules, new_id);

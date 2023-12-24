@@ -272,3 +272,33 @@ function fallbackCopyTextToClipboard(text) {
     document.body.removeChild(textArea);
     console.log("Code copied successfully! (using fallback)");
 }
+
+function changeGiscusTheme() {
+    const nightRadioButton = document.getElementById('night');
+    const isNightTheme = nightRadioButton.checked;
+
+    // Determine the Giscus theme based on the state of the radio button
+    const theme = isNightTheme ? 'noborder_gray' : 'noborder_light';
+    console.log('theme', theme);
+
+    function sendMessage(message) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    sendMessage({
+        setConfig: {
+        theme: theme
+        }
+    });
+
+
+}
+
+const updateComments = () => {
+    const day_input = document.getElementById("day");
+    day_input.addEventListener('click', () => changeGiscusTheme());
+    const night_input = document.getElementById("night");
+    night_input.addEventListener('click', () => changeGiscusTheme());
+}

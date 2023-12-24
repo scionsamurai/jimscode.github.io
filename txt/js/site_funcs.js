@@ -103,7 +103,7 @@ function updateThemeCache() {
       localStorage.setItem('theme', 'day');
     } else if (nightRadio.checked) {
       localStorage.setItem('theme', 'night');
-    }
+    }   
 }
 
 function loadThemeCache() {
