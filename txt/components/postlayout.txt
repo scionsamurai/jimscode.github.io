@@ -46,7 +46,7 @@
             |<hr>
             -~- [: display: {# json_data.tags.length ? 'block' : 'none !important' #}; :] w>1
             @g: each {# JSON.stringify(json_data.tags) #} as tagVar[: display: contents; line-height: 2rem; :]
-                ~:a |: a href='/tags/{# tagVar #}' :|{# tagVar #}{: btn-cta :}
+                ~:a |: a href='/tags/{# createSlug(tagVar) #}' :|{# tagVar #}{: btn-cta :}
             @g: each {# JSON.stringify(json_data.tags) #} as tagVar[: display: contents; line-height: 2rem; :]
 
         ~:q |: div :|

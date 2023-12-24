@@ -43,202 +43,208 @@ window.addEventListener('load', function() {
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
  </head>
- <body>
-  <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
-  <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
-  <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
-  <div class="wrapper">
-   <div id="lqj13o6f82">
-<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">    <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
-     <div class="sidebar_checkbox_hack">
-      <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">      <p class="emoji_active_memo">Back to Post</p>
-      <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+  </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');  </script>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqjn4ubbgw">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
 </label>
+      </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>     </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
      </div>
-<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>    </div>
-    <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
-     <form method="get" action="http://www.google.com/search" class="no-js-search">
-      <input type="text" name="q" size="15" class="no-js-search__input" id="search">
-      <button type="submit" value="Search!" class="no-js-search__button">
-Search      </button>
-      <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
-     </form>
-    </div>
-</span>    <div class="color-pallete">
-     <label for="night"></label>
-     <label for="day"></label>
-    </div>
-    <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
-    </div>
-<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">    <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
-    </div>
-    <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
-</a>   </div>
-   <div id="lqj13o6g5a">
-    <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
-     <div class="banner">
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
      </div>
-    </div>
-    <div role="main" class="main-content">
-     <div class="post-container">
-      <div class="post">
-       <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">HTML and CSS Essentials: A Comprehensive Guide for Beginners</h1>
-       <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
-       <picture class="banner_picture" id="lqj13o6lhe">
-        <source srcset="/images/html-css-essentials-banner.webp" type="image/webp" class="banner-image">
-         <source srcset="/images/html-css-essentials-banner-png.png" type="image/png" class="banner-image">
-          <img src="" alt="" class="banner-image">
-         </picture>
-         <br>
-         <div id="lqj13o6nyq">
-<span id="lqj13o6u7q">          <p>Welcome to the world of web development! Mastering HTML and CSS is the key to creating visually appealing, user-friendly websites. This post will provide a solid foundation in HTML and CSS fundamentals.</p>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>    </div>
+    <div id="lqjn4ubbjp">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">HTML and CSS Essentials: A Comprehensive Guide for Beginners</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
+        <picture class="banner_picture" id="lqjn4ubgg6">
+         <source srcset="/images/html-css-essentials-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/html-css-essentials-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="" class="banner-image">
+          </picture>
           <br>
-          <h2 id="Introduction" class="pointer">Introduction<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>HTML gives web pages structure and meaning, while CSS controls visual styling like colors, fonts, and layout.</p>
-          <br>
-          <p>Well-structured HTML improves the semantic meaning of content, boosting accessibility, SEO, and user experience. Creative use of CSS brings web designs to life with captivating visuals tailored to your brand.</p>
-          <br>
-          <p>HTML and CSS are the backbone of robust, high-quality web development. Whether you want to create a simple blog or a complex web app, understanding HTML and CSS is essential.</p>
-          <br>
-          <p>We'll cover key concepts like elements, selectors, properties, and best practices. By the end, you will be ready to start building web pages with HTML and CSS. Let's jump in!</p>
-          <br>
-          <h2 id="HTML-Basics" class="pointer">HTML Basics<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>HTML stands for HyperText Markup Language. It provides the structural framework for web page content using markup elements.</p>
-          <br>
-          <p>For example, <span class="special_quote">&lt;h1&gt;</span> indicates a top-level heading while <span class="special_quote">&lt;p&gt;</span> indicates a paragraph. HTML elements tell browsers how to display content.</p>
-          <br>
-          <p>Here is a simple HTML document structure:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13o71ij">&lt;!DOCTYPE html&gt;
+          <div id="lqjn4ubh3z">
+<span id="lqjn4ubrvi">           <p>Welcome to the world of web development! Mastering HTML and CSS is the key to creating visually appealing, user-friendly websites. This post will provide a solid foundation in HTML and CSS fundamentals.</p>
+           <br>
+           <h2 id="Introduction" class="pointer">Introduction<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>HTML gives web pages structure and meaning, while CSS controls visual styling like colors, fonts, and layout.</p>
+           <br>
+           <p>Well-structured HTML improves the semantic meaning of content, boosting accessibility, SEO, and user experience. Creative use of CSS brings web designs to life with captivating visuals tailored to your brand.</p>
+           <br>
+           <p>HTML and CSS are the backbone of robust, high-quality web development. Whether you want to create a simple blog or a complex web app, understanding HTML and CSS is essential.</p>
+           <br>
+           <p>We'll cover key concepts like elements, selectors, properties, and best practices. By the end, you will be ready to start building web pages with HTML and CSS. Let's jump in!</p>
+           <br>
+           <h2 id="HTML-Basics" class="pointer">HTML Basics<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>HTML stands for HyperText Markup Language. It provides the structural framework for web page content using markup elements.</p>
+           <br>
+           <p>For example, <span class="special_quote">&lt;h1&gt;</span> indicates a top-level heading while <span class="special_quote">&lt;p&gt;</span> indicates a paragraph. HTML elements tell browsers how to display content.</p>
+           <br>
+           <p>Here is a simple HTML document structure:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4ubyef">&lt;!DOCTYPE html&gt;
  &lt;html&gt;
- &lt;head&gt;
- &lt;title&gt;Page Title&lt;/title&gt;
- &lt;/head&gt;
- &lt;body&gt;
- 
- &lt;h1&gt;My First Heading&lt;/h1&gt;
- 
- &lt;p&gt;My first paragraph.&lt;/p&gt;
- 
- &lt;/body&gt;
- &lt;/html&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <p>Some key HTML elements include:</p>
-          <br>
-          <ul class="ul_class">
-           <li> <span class="special_quote">&lt;h1&gt;</span> to <span class="special_quote">&lt;h6&gt;</span> - Headings</li>
-           <li> <span class="special_quote">&lt;p&gt;</span> - Paragraphs</li>
-           <li> <span class="special_quote">&lt;a&gt;</span> - Links</li>
-           <li> <span class="special_quote">&lt;ul&gt;</span> , <span class="special_quote">&lt;ol&gt;</span> - List items</li>
-           <li> <span class="special_quote">&lt;img&gt;</span> - Images</li>
-           <li> <span class="special_quote">&lt;table&gt;</span> , <span class="special_quote">&lt;tr&gt;</span> , <span class="special_quote">&lt;td&gt;</span> - Tables</li>
-           <li> <span class="special_quote">&lt;form&gt;</span> , <span class="special_quote">&lt;input&gt;</span> - Forms</li>
-           <li> <span class="special_quote">&lt;nav&gt;</span> , <span class="special_quote">&lt;header&gt;</span> , <span class="special_quote">&lt;footer&gt;</span> - Page sections</li>
-          </ul>
-          <br>
-          <p>Using semantic HTML elements rather than generic <span class="special_quote">&lt;div&gt;</span> or <span class="special_quote">&lt;span&gt;</span> improves accessibility, SEO, and readability. For example, a screen reader can identify a <span class="special_quote">&lt;nav&gt;</span> element as the navigation bar.</p>
-          <br>
-          <p>Well-structured HTML is the foundation for any quality web project.</p>
-          <br>
-          <h2 id="CSS-Basics" class="pointer">CSS Basics<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>CSS (Cascading Style Sheets) adds visual styling to HTML. With CSS, you can control colors, fonts, layouts, animations, and more.</p>
-          <br>
-          <p>The key building block of CSS is the selector. This targets an HTML element to style:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13o72wi">/* Element selector */
+   &lt;head&gt;
+     &lt;title&gt;Page Title&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+     &lt;h1&gt;My First Heading&lt;/h1&gt;
+     &lt;p&gt;My first paragraph.&lt;/p&gt;
+   &lt;/body&gt;
+ &lt;/html&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <p>Some key HTML elements include:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <span class="special_quote">&lt;h1&gt;</span> to <span class="special_quote">&lt;h6&gt;</span> - Headings</li>
+            <li> <span class="special_quote">&lt;p&gt;</span> - Paragraphs</li>
+            <li> <span class="special_quote">&lt;a&gt;</span> - Links</li>
+            <li> <span class="special_quote">&lt;ul&gt;</span> , <span class="special_quote">&lt;ol&gt;</span> - List items</li>
+            <li> <span class="special_quote">&lt;img&gt;</span> - Images</li>
+            <li> <span class="special_quote">&lt;table&gt;</span> , <span class="special_quote">&lt;tr&gt;</span> , <span class="special_quote">&lt;td&gt;</span> - Tables</li>
+            <li> <span class="special_quote">&lt;form&gt;</span> , <span class="special_quote">&lt;input&gt;</span> - Forms</li>
+            <li> <span class="special_quote">&lt;nav&gt;</span> , <span class="special_quote">&lt;header&gt;</span> , <span class="special_quote">&lt;footer&gt;</span> - Page sections</li>
+           </ul>
+           <br>
+           <p>Using semantic HTML elements rather than generic <span class="special_quote">&lt;div&gt;</span> or <span class="special_quote">&lt;span&gt;</span> improves accessibility, SEO, and readability. For example, a screen reader can identify a <span class="special_quote">&lt;nav&gt;</span> element as the navigation bar.</p>
+           <br>
+           <p>Well-structured HTML is the foundation for any quality web project.</p>
+           <br>
+           <h2 id="CSS-Basics" class="pointer">CSS Basics<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>CSS (Cascading Style Sheets) adds visual styling to HTML. With CSS, you can control colors, fonts, layouts, animations, and more.</p>
+           <br>
+           <p>The key building block of CSS is the selector. This targets an HTML element to style:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn4ubzg4">/* Element selector */
  p {
- color: red;
- font-size: 20px;
+   color: red;
+   font-size: 20px;
  }
  
  /* Class selector */
  .blue-text {
- color: blue;
+   color: blue;
  }
  
  /* ID selector */
  #main-heading {
- font-size: 36px;
- }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
-          <br>
-          <p>Common CSS selectors:</p>
-          <br>
-          <ul class="ul_class">
-           <li>Elements - <span class="special_quote">p</span> , <span class="special_quote">h1</span> </li>
-           <li>Classes - <span class="special_quote">.blue-text</span> </li>
-           <li>IDs - <span class="special_quote">#main-heading</span> </li>
-           <li>Universal - <span class="special_quote">*</span> </li>
-          </ul>
-          <br>
-          <p>Some popular CSS properties include:</p>
-          <br>
-          <ul class="ul_class">
-           <li> <span class="special_quote">color</span> - Text color</li>
-           <li> <span class="special_quote">font-size</span> - Font size</li>
-           <li> <span class="special_quote">background</span> - Background color</li>
-           <li> <span class="special_quote">margin</span> - Outer spacing</li>
-           <li> <span class="special_quote">padding</span> - Inner spacing</li>
-          </ul>
-          <br>
-          <p>With endless properties and selectors, CSS allows for creative visuals and layouts.</p>
-          <br>
-          <h2 id="CSS-Specificity" class="pointer">CSS Specificity<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>When styling web pages, developers often bang their heads to figure out why some CSS rules are applied over others. This conflict arises due to CSS specificity - determining which style declarations take precedence. Mastering specificity is key to genuinely advancing your CSS skills.</p>
-          <br>
-          <h3>The Specificity Hierarchy</h3>
-          <br>
-          <p>Each CSS selector carries a specificity weight. When multiple competing selectors target the same element, the browser follows an explicit hierarchy to determine the winner:</p>
-          <br>
-          <p>1. <strong>Inline styles</strong> - Applied directly to elements in HTML using a style attribute. Highest specificity.</p>
-          <p>2. <strong>IDs</strong> - Represented by <span class="special_quote">#</span> . More specific than classes and elements.</p>
-          <p>3. <strong>Classes, pseudo-classes, attributes</strong> - Denoted by <span class="special_quote">.</span> , <span class="special_quote">:</span> , <span class="special_quote">[]</span> . Higher specificity than type selectors.</p>
-          <p>4. <strong>Elements and pseudo-elements</strong> - Element names like <span class="special_quote">p</span> , <span class="special_quote">h1</span> , <span class="special_quote">div</span> . Least specific.</p>
-          <br>
-          <p>So, a class selector will override a basic element selector regardless of location in the stylesheet.</p>
-          <br>
-          <h3>Calculating the Specificity Score</h3>
-          <br>
-          <p>For complex situations, each selector type contributes a numeric value to generate an overall <em>specificity score</em> :</p>
-          <br>
-          <ul class="ul_class">
-           <li> <strong>1000 points</strong> per inline-style</li>
-           <li> <strong>100 points</strong> per ID</li>
-           <li> <strong>10 points</strong> per class, pseudo-class, attribute</li>
-           <li> <strong>1 point</strong> per element, pseudo-element</li>
-          </ul>
-          <br>
-          <p>The higher cumulative total wins out in applying styles.</p>
-          <br>
-          <p>Some examples:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13o72bd">p {} /* 1 element -&gt; SPECIFICITY: 0,0,0,1 */
+   font-size: 36px;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>Common CSS selectors:</p>
+           <br>
+           <ul class="ul_class">
+            <li>Elements - <span class="special_quote">p</span> , <span class="special_quote">h1</span> </li>
+            <li>Classes - <span class="special_quote">.blue-text</span> </li>
+            <li>IDs - <span class="special_quote">#main-heading</span> </li>
+            <li>Universal - <span class="special_quote">*</span> </li>
+           </ul>
+           <br>
+           <p>Some popular CSS properties include:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <span class="special_quote">color</span> - Text color</li>
+            <li> <span class="special_quote">font-size</span> - Font size</li>
+            <li> <span class="special_quote">background</span> - Background color</li>
+            <li> <span class="special_quote">margin</span> - Outer spacing</li>
+            <li> <span class="special_quote">padding</span> - Inner spacing</li>
+           </ul>
+           <br>
+           <p>With endless properties and selectors, CSS allows for creative visuals and layouts.</p>
+           <br>
+           <h2 id="CSS-Specificity" class="pointer">CSS Specificity<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>When styling web pages, developers often bang their heads to figure out why some CSS rules are applied over others. This conflict arises due to CSS specificity - determining which style declarations take precedence. Mastering specificity is key to genuinely advancing your CSS skills.</p>
+           <br>
+           <h3>The Specificity Hierarchy</h3>
+           <br>
+           <p>Each CSS selector carries a specificity weight. When multiple competing selectors target the same element, the browser follows an explicit hierarchy to determine the winner:</p>
+           <br>
+           <p>1. <strong>Inline styles</strong> - Applied directly to elements in HTML using a style attribute. Highest specificity.</p>
+           <p>2. <strong>IDs</strong> - Represented by <span class="special_quote">#</span> . More specific than classes and elements.</p>
+           <p>3. <strong>Classes, pseudo-classes, attributes</strong> - Denoted by <span class="special_quote">.</span> , <span class="special_quote">:</span> , <span class="special_quote">[]</span> . Higher specificity than type selectors.</p>
+           <p>4. <strong>Elements and pseudo-elements</strong> - Element names like <span class="special_quote">p</span> , <span class="special_quote">h1</span> , <span class="special_quote">div</span> . Least specific.</p>
+           <br>
+           <p>So, a class selector will override a basic element selector regardless of location in the stylesheet.</p>
+           <br>
+           <h3>Calculating the Specificity Score</h3>
+           <br>
+           <p>For complex situations, each selector type contributes a numeric value to generate an overall <em>specificity score</em> :</p>
+           <br>
+           <ul class="ul_class">
+            <li> <strong>1000 points</strong> per inline-style</li>
+            <li> <strong>100 points</strong> per ID</li>
+            <li> <strong>10 points</strong> per class, pseudo-class, attribute</li>
+            <li> <strong>1 point</strong> per element, pseudo-element</li>
+           </ul>
+           <br>
+           <p>The higher cumulative total wins out in applying styles.</p>
+           <br>
+           <p>Some examples:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn4uc0p5">p {} /* 1 element -&gt; SPECIFICITY: 0,0,0,1 */
  .class {} /* 1 class -&gt; SPECIFICITY: 0,0,1,0 */
- #id {} /* 1 ID -&gt; SPECIFICITY: 0,1,0,0 */</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
-          <br>
-          <h3>Real World Usage</h3>
-          <br>
-          <p>Understanding specificity enables total style control:</p>
-          <br>
-          <ul class="ul_class">
-           <li>Use <strong>IDs</strong> for strong overrides</li>
-           <li>Utilize <strong>classes</strong> for reusability without inflating scores</li>
-           <li>Allow <strong>cascading</strong> styles for maintainability</li>
-           <li>Employ <strong>!important</strong> as a last resort nuclear option</li>
-          </ul>
-          <br>
-          <p>Controlling specificity avoids chaotic, unwieldy stylesheets.</p>
-          <br>
-          <p>By mastering specificity hierarchies and scoring, you can precisely craft selector strategies that yield the intended styling behavior in any project.</p>
-          <br>
-          <h2 id="Combining-HTML-and-CSS" class="pointer">Combining HTML and CSS<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>To apply CSS to an HTML document, you need to link the CSS file using <span class="special_quote">&lt;link&gt;</span> or add inline CSS styles with <span class="special_quote">&lt;style&gt;</span> :</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13o72nv">&lt;!-- External CSS --&gt;
+ #id {} /* 1 ID -&gt; SPECIFICITY: 0,1,0,0 */</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <h3>Real World Usage</h3>
+           <br>
+           <p>Understanding specificity enables total style control:</p>
+           <br>
+           <ul class="ul_class">
+            <li>Use <strong>IDs</strong> for strong overrides</li>
+            <li>Utilize <strong>classes</strong> for reusability without inflating scores</li>
+            <li>Allow <strong>cascading</strong> styles for maintainability</li>
+            <li>Employ <strong>!important</strong> as a last resort nuclear option</li>
+           </ul>
+           <br>
+           <p>Controlling specificity avoids chaotic, unwieldy stylesheets.</p>
+           <br>
+           <p>By mastering specificity hierarchies and scoring, you can precisely craft selector strategies that yield the intended styling behavior in any project.</p>
+           <br>
+           <h2 id="Combining-HTML-and-CSS" class="pointer">Combining HTML and CSS<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>To apply CSS to an HTML document, you need to link the CSS file using <span class="special_quote">&lt;link&gt;</span> or add inline CSS styles with <span class="special_quote">&lt;style&gt;</span> :</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4uc0wa">&lt;!-- External CSS --&gt;
  &lt;head&gt;
      &lt;link rel="stylesheet" href="styles.css"&gt;
  &lt;/head&gt;
@@ -250,11 +256,11 @@ Search      </button>
              color: green;
          }
      &lt;/style&gt;
- &lt;/head&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <p>Then, use CSS selectors to target HTML elements:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13o72rn">/* styles.css */
+ &lt;/head&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <p>Then, use CSS selectors to target HTML elements:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn4uc009">/* styles.css */
  
  h1 {
      color: blue;
@@ -262,174 +268,174 @@ Search      </button>
  
  p {
      font-size: 18px;
- }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
-          <br>
-          <p>Remember that ID and class selectors have higher specificity when styling than element selectors. So <span class="special_quote">.blue-text</span> will override a <span class="special_quote">p</span> selector.</p>
-          <br>
-          <p>Additionally, some CSS properties are inherited from parent elements. For example, <span class="special_quote">font-family</span> applied to <span class="special_quote">&lt;body&gt;</span> will cascade to all child elements.</p>
-          <br>
-          <h2 id="Best-Practices" class="pointer">Best Practices<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>Here are some best practices for writing quality HTML and CSS:</p>
-          <br>
-          <p> <strong>HTML</strong> </p>
-          <br>
-          <ul class="ul_class">
-           <li>Use semantic elements like <span class="special_quote">&lt;header&gt;</span> , <span class="special_quote">&lt;nav&gt;</span> , <span class="special_quote">&lt;main&gt;</span> where possible</li>
-           <li>Write accessible alt text for all images</li>
-           <li>Validate markup with HTML validators</li>
-           <li>Indent nested elements for readability</li>
-           <li>Use meaningful class names like <span class="special_quote">.author-bio</span> </li>
-          </ul>
-          <br>
-          <p> <strong>CSS</strong> </p>
-          <br>
-          <ul class="ul_class">
-           <li>Organize rules by selector type or page section</li>
-           <li>Use consistent naming schemes like <span class="special_quote">.button</span> or <span class="special_quote">.card</span> </li>
-           <li>Break into smaller, reusable components</li>
-           <li>Leverage variables for brand colors</li>
-           <li>Add comments to explain parts of complex code</li>
-          </ul>
-          <br>
-          <p>Following standards and guidelines will improve your HTML and CSS skills over time.</p>
-          <br>
-          <h2 id="Tools" class="pointer">Tools<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>Having the right tools goes hand in hand with learning HTML and CSS:</p>
-          <br>
-          <ul class="ul_class">
-           <li> <strong>Text Editor:</strong> Visual Studio Code, Sublime Text, Atom</li>
-           <li> <strong>Browsers:</strong> Chrome, Firefox</li>
-          </ul>
-          <br>
-          <p>Helpful extensions include syntax highlighters, auto-formatters like Prettier, and validations like HTMLHint.</p>
-          <br>
-          <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>This guide covered the fundamentals of HTML and CSS. With an understanding of elements, selectors, properties, and best practices, you can start coding web pages!</p>
-          <br>
-          <p>Apply your skills to a simple landing page project for the next steps. Get creative! Then, continue growing as a developer by expanding into advanced techniques like CSS grids or JavaScript interactivity.</p>
-          <br>
-          <p>The web provides endless possibilities. You can bring your unique ideas to life on the web by combining quality HTML and CSS skills. Happy coding!</p>
-</span>          <br>
-         </div>
-         <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/adding-media-to-page" class="btn-cta pad">Previous Post</a></span><span style="display: block;" class="next_button" data-original-css="display: block;"><a href="checkbox-hack-for-flash-card" class="btn-cta pad">Next Post</a></span>         </div>
-         <p></p>
-         <div class="giscus">
-         </div>
-         <p></p>
-        </div>
-        <div class="share-links">
-         <div id="lqj13o6on7">
-          <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
-          <input type="checkbox" id="share-toggle">
-          <ul id="share-links">
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Facebook</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Twitter</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">LinkedIn</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/html-and-css-essentials&amp;media=https://www.jimscode.blog/images/html-css-essentials-banner-png.png&amp;description=html%20and%20css%20essentials%20a%20comprehensive%20guide%20for%20beginners" target="_blank">Pinterest</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Reddit</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">WhatsApp</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=html%20and%20css%20essentials%20a%20comprehensive%20guide%20for%20beginners&amp;body=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Email</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Instagram</a></li>
-          </ul>
-          <br>
-         </div>
-        </div>
-       </div>
-       <aside class="sidebar">
-        <br>
-        <div class="about-me">
-         <br>
-         <div class="avatar-container">
-          <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
-         </div>
-         <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-         <hr>
-         <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
-        </div>
-        <br>
-        <div class="about-post">
-         <p class="large-text">Tags</p>
-         <hr>
-         <ul id="lqj13o6jhi" style="display: contents; line-height: 2rem;">
-          <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
-          <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/css" class="btn-cta">css</a></li>
-          <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web dev" class="btn-cta">web dev</a></li>
-         </ul>
-         <br>
-        </div>
-        <div class="headers">
-         <div role="navigation" id="toc">
-          <h3>In this article</h3>
-          <hr>
-          <nav aria-label="Table of Contents">
-           <ul role="list">
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Introduction">Introduction</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#HTML-Basics">HTML Basics</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#CSS-Basics">CSS Basics</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#CSS-Specificity">CSS Specificity</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Combining-HTML-and-CSS">Combining HTML and CSS</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Best-Practices">Best Practices</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Tools">Tools</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a></li>
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>Remember that ID and class selectors have higher specificity when styling than element selectors. So <span class="special_quote">.blue-text</span> will override a <span class="special_quote">p</span> selector.</p>
+           <br>
+           <p>Additionally, some CSS properties are inherited from parent elements. For example, <span class="special_quote">font-family</span> applied to <span class="special_quote">&lt;body&gt;</span> will cascade to all child elements.</p>
+           <br>
+           <h2 id="Best-Practices" class="pointer">Best Practices<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Here are some best practices for writing quality HTML and CSS:</p>
+           <br>
+           <p> <strong>HTML</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Use semantic elements like <span class="special_quote">&lt;header&gt;</span> , <span class="special_quote">&lt;nav&gt;</span> , <span class="special_quote">&lt;main&gt;</span> where possible</li>
+            <li>Write accessible alt text for all images</li>
+            <li>Validate markup with HTML validators</li>
+            <li>Indent nested elements for readability</li>
+            <li>Use meaningful class names like <span class="special_quote">.author-bio</span> </li>
            </ul>
-          </nav>
+           <br>
+           <p> <strong>CSS</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Organize rules by selector type or page section</li>
+            <li>Use consistent naming schemes like <span class="special_quote">.button</span> or <span class="special_quote">.card</span> </li>
+            <li>Break into smaller, reusable components</li>
+            <li>Leverage variables for brand colors</li>
+            <li>Add comments to explain parts of complex code</li>
+           </ul>
+           <br>
+           <p>Following standards and guidelines will improve your HTML and CSS skills over time.</p>
+           <br>
+           <h2 id="Tools" class="pointer">Tools<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Having the right tools goes hand in hand with learning HTML and CSS:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <strong>Text Editor:</strong> Visual Studio Code, Sublime Text, Atom</li>
+            <li> <strong>Browsers:</strong> Chrome, Firefox</li>
+           </ul>
+           <br>
+           <p>Helpful extensions include syntax highlighters, auto-formatters like Prettier, and validations like HTMLHint.</p>
+           <br>
+           <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>This guide covered the fundamentals of HTML and CSS. With an understanding of elements, selectors, properties, and best practices, you can start coding web pages!</p>
+           <br>
+           <p>Apply your skills to a simple landing page project for the next steps. Get creative! Then, continue growing as a developer by expanding into advanced techniques like CSS grids or JavaScript interactivity.</p>
+           <br>
+           <p>The web provides endless possibilities. You can bring your unique ideas to life on the web by combining quality HTML and CSS skills. Happy coding!</p>
+</span>           <br>
+          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/adding-media-to-page" class="btn-cta pad">Previous Post</a></span><span style="display: block;" class="next_button" data-original-css="display: block;"><a href="checkbox-hack-for-flash-card" class="btn-cta pad">Next Post</a></span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
          </div>
-         <div class="affiliate">
-          <h3>Affiliate links</h3>
-          <p>Check out this great product:<a href="#">Product Name</a></p>
-          <div id="lqj13o6qcm">
-           <p>sidebar</p>
+         <div class="share-links">
+          <div id="lqjn4ubic0">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Facebook</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Twitter</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">LinkedIn</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/html-and-css-essentials&amp;media=https://www.jimscode.blog/images/html-css-essentials-banner-png.png&amp;description=html%20and%20css%20essentials%20a%20comprehensive%20guide%20for%20beginners" target="_blank">Pinterest</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Reddit</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">WhatsApp</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=html%20and%20css%20essentials%20a%20comprehensive%20guide%20for%20beginners&amp;body=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Email</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/html-and-css-essentials" target="_blank">Instagram</a></li>
+           </ul>
+           <br>
           </div>
          </div>
         </div>
-       </aside>
-      </div>
-     </div>
-     <div id="lqj13o6gbg">
-      <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
-       <br>
-       <br>
-       <div class="footer-content">
-        <div class="footer-section">
-         <h4>About</h4>
-         <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
-        </div>
-        <div class="footer-section">
-         <h4>Contact</h4>
-         <p>Email: admin@jimscode.blog</p>
-        </div>
-        <ul class="footer-section" id="lqj13o783f">
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
-        </ul>
-        <div class="footer-disclaimer">
-         <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
-        </div>
-        <div class="footer-bottom">
-         <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
-        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lqjn4ubfpp" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
+           <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/css" class="btn-cta">css</a></li>
+           <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web%20dev" class="btn-cta">web dev</a></li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Introduction">Introduction</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#HTML-Basics">HTML Basics</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#CSS-Basics">CSS Basics</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#CSS-Specificity">CSS Specificity</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Combining-HTML-and-CSS">Combining HTML and CSS</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Best-Practices">Best Practices</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Tools">Tools</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a></li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product:<a href="#">Product Name</a></p>
+           <div id="lqjn4ubmze">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
        </div>
-      </footer>
-     </div>
+      </div>
+      <div id="lqjn4ubbk2">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lqjn4uc6am">
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
 <style>
 @media only screen and (max-width : 1350px) and (min-width : 950px) {
 #arrow-div-id{ right: 2.2rem; left: unset !important;}
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqj13o783f{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lqjn4uc6am{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -437,15 +443,15 @@ Search      </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lqj13o6lhe{ display: block;}#lqj13o6jhi{ display: block;}
+#lqjn4ubgg6{ display: block;}#lqjn4ubfpp{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqj13o783f{ display: flex; flex-direction: column;}
-}     </style>
-    </div>
+#lqjn4uc6am{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
 <script>
-toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();    </script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
 <script>
 let giscusTheme = localStorage.getItem("theme");
         let giscusAttributes = {
@@ -458,7 +464,7 @@ let giscusTheme = localStorage.getItem("theme");
           "data-strict": "1",
           "data-reactions-enabled": "1",
           "data-emit-metadata": "0",
-          "data-theme":  giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
           "data-lang": "en",
           "data-loading": "lazy",
           "crossorigin": "anonymous",
@@ -467,6 +473,6 @@ let giscusTheme = localStorage.getItem("theme");
         
         let giscusScript = document.createElement("script");
         Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-        document.body.appendChild(giscusScript);    </script>
-   </body>
-  </html>
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

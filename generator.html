@@ -491,7 +491,7 @@ const generateIframe = (specified_x, targeting = "path", blog_title = "substring
         append_body_obj = result.append_body_obj;
         const favicon_html = '<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="manifest" href="/images/site.webmanifest"><link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#da532c"><meta name="theme-color" content="#ffffff">';
 
-        built_HTML += `${favicon_html}</head><body><input class="nodisplay" type="checkbox" id="sidebar_checkbox"><input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache"><input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked"><div class="wrapper">`;
+        built_HTML += `${favicon_html}</head>AnalyticsPlaceholder<body><input class="nodisplay" type="checkbox" id="sidebar_checkbox"><input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache"><input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked"><div class="wrapper">`;
           
         if (targeting === "path") {
           generated_files[file.path] = built_HTML;
@@ -630,21 +630,6 @@ window.addEventListener('message', event => {
     }
     
     if (tempDiv.getElementsByClassName('giscus').length) {
-      // body_scripts += `<script src='https://giscus.app/client.js' onload='changeGiscusTheme()'
-      //   data-repo='scionsamurai/jimscode.github.io'
-      //   data-repo-id='R_kgDOK8_rSw'
-      //   data-category='Announcements'
-      //   data-category-id='DIC_kwDOK8_rS84Cb9LP'
-      //   data-mapping='pathname'
-      //   data-strict='1'
-      //   data-reactions-enabled='1'
-      //   data-emit-metadata='1'
-      //   data-input-position='top'
-      //   data-theme='noborder_gray'
-      //   data-lang='en'
-      //   data-loading='lazy'
-      //   crossorigin='anonymous'
-      //   async><\/script>\n`;
       body_scripts += `<script>
         let giscusTheme = localStorage.getItem("theme");
         let giscusAttributes = {
@@ -657,7 +642,7 @@ window.addEventListener('message', event => {
           "data-strict": "1",
           "data-reactions-enabled": "1",
           "data-emit-metadata": "0",
-          "data-theme":  giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
           "data-lang": "en",
           "data-loading": "lazy",
           "crossorigin": "anonymous",
@@ -672,6 +657,17 @@ window.addEventListener('message', event => {
 
     // Clean up the temporary div
     tempDiv.remove();
+    generated_files[message['data'][0]] = generated_files[message['data'][0]].replace('AnalyticsPlaceholder', `
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN"><\/script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');
+        <\/script>
+      `);
     const before_wrapper = generated_files[message['data'][0]];
     const after_wrapper = `</div>${body_scripts}</body></html>`;
     const message_data = message['data'][1];

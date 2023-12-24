@@ -46,90 +46,99 @@ window.addEventListener('load', function() {
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
  </head>
- <body>
-  <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
-  <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
-  <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
-  <div class="wrapper">
-   <div id="lqj13xul8a">
-<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">    <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
-     <div class="sidebar_checkbox_hack">
-      <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">      <p class="emoji_active_memo">Back to Post</p>
-      <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+  </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');  </script>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqjn53yjf5">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
 </label>
+      </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>     </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
      </div>
-<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>    </div>
-    <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
-     <form method="get" action="http://www.google.com/search" class="no-js-search">
-      <input type="text" name="q" size="15" class="no-js-search__input" id="search">
-      <button type="submit" value="Search!" class="no-js-search__button">
-Search      </button>
-      <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
-     </form>
-    </div>
-</span>    <div class="color-pallete">
-     <label for="night"></label>
-     <label for="day"></label>
-    </div>
-    <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
-    </div>
-<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">    <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
-    </div>
-    <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
-</a>   </div>
-   <div id="lqj13xulie">
-    <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
-     <div class="banner">
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
      </div>
-    </div>
-    <div role="main" class="main-content">
-     <div class="post-container">
-      <div class="post">
-       <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Building a Simple Snippet Editor and Previewer for Static Blogs</h1>
-       <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
-       <picture class="banner_picture" id="lqj13xupqf">
-        <source srcset="/images/snippet-editor-banner.webp" type="image/webp" class="banner-image">
-         <source srcset="/images/snippet-editor-banner-png.png" type="image/png" class="banner-image">
-          <img src="" alt="" class="banner-image">
-         </picture>
-         <br>
-         <div id="lqj13xuqc8">
-<span id="lqj13xuvxf">          <p>Having an effective snippet editor and previewer for developers working on static blogs can streamline the coding process. Rather than constantly uploading changes to a live server, you can quickly preview your HTML, CSS, and JS in a straightforward interface.</p>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>    </div>
+    <div id="lqjn53yj2f">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Building a Simple Snippet Editor and Previewer for Static Blogs</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
+        <picture class="banner_picture" id="lqjn53yplk">
+         <source srcset="/images/snippet-editor-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/snippet-editor-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="" class="banner-image">
+          </picture>
           <br>
-          <p>This post will explore a basic implementation that allows editing and previewing snippets in the browser itself. While services exist to achieve this, many developers may seek to create custom solutions.</p>
-          <br>
-          <h2 id="Examining-the-Code-Structure" class="pointer">Examining the Code Structure<span class="anchor-image">⚓</span></h2>
-          <br>
-          <div id="editor1ID" class="codeEditor" data-files="[&quot;/txt/examples/snippet-editor-previewer-1/index.html&quot;,&quot;/txt/examples/snippet-editor-previewer-1/test.js&quot;,&quot;/txt/examples/snippet-editor-previewer-1/styles.css&quot;]">
-          </div>
-          <br>
-          <p>The provided code uses HTML, CSS, and JS to:</p>
-          <br>
-          <p>1. Create an <strong>editor interface</strong> with buttons and textareas for code snippets</p>
-          <p>2. Display a <strong>live preview</strong> in an iframe that compiles and renders the code</p>
-          <br>
-          <p>Some key elements:</p>
-          <br>
-          <ul class="ul_class">
-           <li>Editor buttons to switch between HTML/CSS/JS</li>
-           <li>Textareas to write code</li>
-           <li>An iframe to display compiled results</li>
-           <li>A <span class="special_quote">createCodeEditor</span> function that handles setup</li>
-          </ul>
-          <br>
-          <h2 id="Setting-Up-the-Editor-Container" class="pointer">Setting Up the Editor Container<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>The <span class="special_quote">createCodeEditor</span> function handles creating the entire editor interface. It takes in code snippets and a target container ID.</p>
-          <br>
-          <p>For instance, invoking with:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqj13xuzc9">createCodeEditor(htmlCode, cssCode, jsCode, 'target-container');</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">js</span></span></pre>
-          <br>
-          <h2 id="Styling-for-a-Clean-Design" class="pointer">Styling for a Clean Design<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>Some CSS styles are provided for visual polish:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13xuz00">#editor-container {
+          <div id="lqjn53yqu4">
+<span id="lqjn53ywh4">           <p>Having an effective snippet editor and previewer for developers working on static blogs can streamline the coding process. Rather than constantly uploading changes to a live server, you can quickly preview your HTML, CSS, and JS in a straightforward interface.</p>
+           <br>
+           <p>This post will explore a basic implementation that allows editing and previewing snippets in the browser itself. While services exist to achieve this, many developers may seek to create custom solutions.</p>
+           <br>
+           <h2 id="Examining-the-Code-Structure" class="pointer">Examining the Code Structure<span class="anchor-image">⚓</span></h2>
+           <br>
+           <div id="editor1ID" class="codeEditor" data-files="[&quot;/txt/examples/snippet-editor-previewer-1/index.html&quot;,&quot;/txt/examples/snippet-editor-previewer-1/test.js&quot;,&quot;/txt/examples/snippet-editor-previewer-1/styles.css&quot;]">
+           </div>
+           <br>
+           <p>The provided code uses HTML, CSS, and JS to:</p>
+           <br>
+           <p>1. Create an <strong>editor interface</strong> with buttons and textareas for code snippets</p>
+           <p>2. Display a <strong>live preview</strong> in an iframe that compiles and renders the code</p>
+           <br>
+           <p>Some key elements:</p>
+           <br>
+           <ul class="ul_class">
+            <li>Editor buttons to switch between HTML/CSS/JS</li>
+            <li>Textareas to write code</li>
+            <li>An iframe to display compiled results</li>
+            <li>A <span class="special_quote">createCodeEditor</span> function that handles setup</li>
+           </ul>
+           <br>
+           <h2 id="Setting-Up-the-Editor-Container" class="pointer">Setting Up the Editor Container<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>The <span class="special_quote">createCodeEditor</span> function handles creating the entire editor interface. It takes in code snippets and a target container ID.</p>
+           <br>
+           <p>For instance, invoking with:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqjn53z2gn">createCodeEditor(htmlCode, cssCode, jsCode, 'target-container');</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <h2 id="Styling-for-a-Clean-Design" class="pointer">Styling for a Clean Design<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Some CSS styles are provided for visual polish:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn53z23g">#editor-container {
      height: 20rem;
  }
  
@@ -141,34 +150,34 @@ Search      </button>
      border: none;
      width: 100%;
      height: 100%;
- }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
-          <br>
-          <p>This ensures a minimal viable editor with well-spaced buttons and an iframe filling the window.</p>
-          <br>
-          <h2 id="Handy-Editor-Buttons" class="pointer">Handy Editor Buttons<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>The editor features intuitively-labeled buttons:</p>
-          <br>
-          <ul class="ul_class">
-           <li>HTML - Display HTML snippet editor</li>
-           <li>CSS - Display CSS snippet editor</li>
-           <li>JS - Display JavaScript snippet editor</li>
-           <li>Run - Compile all code and display in iframe</li>
-          </ul>
-          <br>
-          <p>These allow easy navigation between different code sections.</p>
-          <br>
-          <h2 id="Code-Snippet-Editors" class="pointer">Code Snippet Editors<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>The HTML, CSS, and JavaScript snippet editors are implemented as simple <span class="special_quote">&lt;textarea&gt;</span> elements with a common <span class="special_quote">editor</span> class.</p>
-          <br>
-          <p>Showing/hiding each one is handled by adding/removing a <span class="special_quote">.display: none;</span> style rule.</p>
-          <br>
-          <h2 id="Live-Preview-with-iframes" class="pointer">Live Preview with iframes<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>To preview compiled code, the script writes the HTML, CSS, and JS into a single HTML string. This gets written into an <span class="special_quote">&lt;iframe&gt;</span> to be rendered as a preview:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqj13xv0wh">const resultHTML = `&lt;html&gt;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>This ensures a minimal viable editor with well-spaced buttons and an iframe filling the window.</p>
+           <br>
+           <h2 id="Handy-Editor-Buttons" class="pointer">Handy Editor Buttons<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>The editor features intuitively-labeled buttons:</p>
+           <br>
+           <ul class="ul_class">
+            <li>HTML - Display HTML snippet editor</li>
+            <li>CSS - Display CSS snippet editor</li>
+            <li>JS - Display JavaScript snippet editor</li>
+            <li>Run - Compile all code and display in iframe</li>
+           </ul>
+           <br>
+           <p>These allow easy navigation between different code sections.</p>
+           <br>
+           <h2 id="Code-Snippet-Editors" class="pointer">Code Snippet Editors<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>The HTML, CSS, and JavaScript snippet editors are implemented as simple <span class="special_quote">&lt;textarea&gt;</span> elements with a common <span class="special_quote">editor</span> class.</p>
+           <br>
+           <p>Showing/hiding each one is handled by adding/removing a <span class="special_quote">.display: none;</span> style rule.</p>
+           <br>
+           <h2 id="Live-Preview-with-iframes" class="pointer">Live Preview with iframes<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>To preview compiled code, the script writes the HTML, CSS, and JS into a single HTML string. This gets written into an <span class="special_quote">&lt;iframe&gt;</span> to be rendered as a preview:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqjn53z3yy">const resultHTML = `&lt;html&gt;
  &lt;head&gt;
      &lt;style&gt;${css}&lt;/style&gt;
  &lt;/head&gt;
@@ -176,206 +185,206 @@ Search      </button>
      ${html}
      &lt;script&gt;${js}&lt;/script&gt;
  &lt;/body&gt;
- &lt;/html&gt;`;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">js</span></span></pre>
-          <br>
-          <p>The iframe provides an encapsulated view of how edited code would function together on a live page.</p>
-          <br>
-          <h2 id="Usage-Example" class="pointer">Usage Example<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>For his static blog, Jimmy could leverage this editor by providing starter code like:</p>
-          <div role="tablist" class="tabs">
-           <div class="tab" role="tab">
-            <input type="radio" id="tab1-id-1" name="tab-group-1" role="tab" tabindex="0" aria-selected="true" checked="checked">
-            <label for="tab1-id-1" tabindex="0" style="outline: none;">html</label>
-            <div class="content" role="tabpanel" aria-labelledby="tab1-id-1" id="lqj13xv1rr">
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13xv4bt">&lt;h1&gt;Hello World&lt;/h1&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
+ &lt;/html&gt;`;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>The iframe provides an encapsulated view of how edited code would function together on a live page.</p>
+           <br>
+           <h2 id="Usage-Example" class="pointer">Usage Example<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>For his static blog, Jimmy could leverage this editor by providing starter code like:</p>
+           <div role="tablist" class="tabs">
+            <div class="tab" role="tab">
+             <input type="radio" id="tab1-id-1" name="tab-group-1" role="tab" tabindex="0" aria-selected="true" checked="checked">
+             <label for="tab1-id-1" tabindex="0" style="outline: none;">html</label>
+             <div class="content" role="tabpanel" aria-labelledby="tab1-id-1" id="lqjn53z4g6">
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn53z70g">&lt;h1&gt;Hello World&lt;/h1&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+             </div>
             </div>
-           </div>
-           <div class="tab" role="tab">
-            <input type="radio" id="tab1-id-2" name="tab-group-1" role="tab" tabindex="0" aria-selected="false">
-            <label for="tab1-id-2" tabindex="0" style="outline: none;">css</label>
-            <div class="content" role="tabpanel" aria-labelledby="tab1-id-2" id="lqj13xv1eb" hidden="">
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13xv42x">body {
+            <div class="tab" role="tab">
+             <input type="radio" id="tab1-id-2" name="tab-group-1" role="tab" tabindex="0" aria-selected="false">
+             <label for="tab1-id-2" tabindex="0" style="outline: none;">css</label>
+             <div class="content" role="tabpanel" aria-labelledby="tab1-id-2" id="lqjn53z4i1" hidden="">
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn53z7nz">body {
      background: blue;
- }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+             </div>
+            </div>
+            <div class="tab" role="tab">
+             <input type="radio" id="tab1-id-3" name="tab-group-1" role="tab" tabindex="0" aria-selected="false">
+             <label for="tab1-id-3" tabindex="0" style="outline: none;">js</label>
+             <div class="content" role="tabpanel" aria-labelledby="tab1-id-3" id="lqjn53z47y" hidden="">
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqjn53z7jd">console.log("Hello, World!");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+             </div>
             </div>
            </div>
-           <div class="tab" role="tab">
-            <input type="radio" id="tab1-id-3" name="tab-group-1" role="tab" tabindex="0" aria-selected="false">
-            <label for="tab1-id-3" tabindex="0" style="outline: none;">js</label>
-            <div class="content" role="tabpanel" aria-labelledby="tab1-id-3" id="lqj13xv1p7" hidden="">
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqj13xv5u0">console.log("Hello, World!");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This would give an editable starting point for continuing development while instantly viewing any changes.</p>
+           <br>
+           <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>In just over 60 lines of code, we built an easy snippet editor with live preview - no web server required! While basic, it demonstrates the key functionality to aid developers working on static sites.</p>
+           <br>
+           <p>Feel free to customize and enhance this code further for your own projects. We'd love to see what improvements or integrations you come up with, so please share your experiences!</p>
+           <br>
+           <h2 id="Commonly-Asked-Questions" class="pointer">Commonly Asked Questions<span class="anchor-image">⚓</span></h2>
+           <br>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What is an iframe in HTML?</summary>
+            <div id="lqjn53z4nl">
+             <p>An <span class="special_quote">iframe</span> , or inline frame, is an HTML element that embeds another HTML page within the current page. It creates a window within the parent page to display content from another source, commonly used for embedding videos, advertisements, and interactive content.</p>
             </div>
-           </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What are the advantages and disadvantages of using iframes?</summary>
+            <div id="lqjn53z5vy">
+             <h3>Iframe Advantages</h3>
+             <ul class="ul_class">
+              <li> <strong>Easy to embed content:</strong> Simple way to embed content from other sources without modifying the parent page's code.</li>
+              <li> <strong>Content isolation:</strong> Iframes isolate embedded content, preventing interference with the parent page's functionality.</li>
+              <li> <strong>Dynamic content:</strong> Can be used to embed dynamic content, such as live updates from social media feeds or stock tickers.</li>
+             </ul>
+             <h3>Iframe Disadvantages</h3>
+             <ul class="ul_class">
+              <li> <strong>Performance impact:</strong> Can add to the loading time, especially with large or complex content.</li>
+              <li> <strong>Accessibility concerns:</strong> May make it more challenging for screen readers and assistive technologies to access the page's content.</li>
+              <li> <strong>Security vulnerabilities:</strong> Can be used to inject malicious scripts or code.</li>
+             </ul>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">Other Options for Snippet Editors with Live Preview</summary>
+            <div id="lqjn53z5s4">
+             <p>A few online options offer more advanced features:</p>
+             <br>
+             <ul class="ul_class">
+              <li> <strong>CodePen:</strong> Popular online code editor for HTML, CSS, and JavaScript code with live preview.</li>
+              <li> <strong>JSFiddle:</strong> Another online code editor allowing you to write and preview HTML, CSS, and JavaScript code.</li>
+              <li> <strong>Codeply:</strong> Web-based code editor with features like real-time editing and collaboration.</li>
+             </ul>
+            </div>
+           </details>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/take-css-to-next-level" class="btn-cta pad">Previous Post</a></span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"><a href="0" class="btn-cta pad">Next Post</a></span>          </div>
+          <p></p>
+          <div class="giscus">
           </div>
-          <br>
-          <p>This would give an editable starting point for continuing development while instantly viewing any changes.</p>
-          <br>
-          <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>In just over 60 lines of code, we built an easy snippet editor with live preview - no web server required! While basic, it demonstrates the key functionality to aid developers working on static sites.</p>
-          <br>
-          <p>Feel free to customize and enhance this code further for your own projects. We'd love to see what improvements or integrations you come up with, so please share your experiences!</p>
-          <br>
-          <h2 id="Commonly-Asked-Questions" class="pointer">Commonly Asked Questions<span class="anchor-image">⚓</span></h2>
-          <br>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What is an iframe in HTML?</summary>
-           <div id="lqj13xv16q">
-            <p>An <span class="special_quote">iframe</span> , or inline frame, is an HTML element that embeds another HTML page within the current page. It creates a window within the parent page to display content from another source, commonly used for embedding videos, advertisements, and interactive content.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What are the advantages and disadvantages of using iframes?</summary>
-           <div id="lqj13xv1nl">
-            <h3>Iframe Advantages</h3>
-            <ul class="ul_class">
-             <li> <strong>Easy to embed content:</strong> Simple way to embed content from other sources without modifying the parent page's code.</li>
-             <li> <strong>Content isolation:</strong> Iframes isolate embedded content, preventing interference with the parent page's functionality.</li>
-             <li> <strong>Dynamic content:</strong> Can be used to embed dynamic content, such as live updates from social media feeds or stock tickers.</li>
-            </ul>
-            <h3>Iframe Disadvantages</h3>
-            <ul class="ul_class">
-             <li> <strong>Performance impact:</strong> Can add to the loading time, especially with large or complex content.</li>
-             <li> <strong>Accessibility concerns:</strong> May make it more challenging for screen readers and assistive technologies to access the page's content.</li>
-             <li> <strong>Security vulnerabilities:</strong> Can be used to inject malicious scripts or code.</li>
-            </ul>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">Other Options for Snippet Editors with Live Preview</summary>
-           <div id="lqj13xv1l5">
-            <p>A few online options offer more advanced features:</p>
-            <br>
-            <ul class="ul_class">
-             <li> <strong>CodePen:</strong> Popular online code editor for HTML, CSS, and JavaScript code with live preview.</li>
-             <li> <strong>JSFiddle:</strong> Another online code editor allowing you to write and preview HTML, CSS, and JavaScript code.</li>
-             <li> <strong>Codeply:</strong> Web-based code editor with features like real-time editing and collaboration.</li>
-            </ul>
-           </div>
-          </details>
-          <br>
-</span>         </div>
-         <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/take-css-to-next-level" class="btn-cta pad">Previous Post</a></span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"><a href="0" class="btn-cta pad">Next Post</a></span>         </div>
-         <p></p>
-         <div class="giscus">
+          <p></p>
          </div>
-         <p></p>
+         <div class="share-links">
+          <div id="lqjn53yrr4">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Facebook</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Twitter</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">LinkedIn</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/snippet-editor-previewer&amp;media=https://www.jimscode.blog/images/snippet-editor-banner-png.png&amp;description=building%20a%20simple%20snippet%20editor%20and%20previewer%20for%20static%20blogs" target="_blank">Pinterest</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Reddit</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">WhatsApp</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=building%20a%20simple%20snippet%20editor%20and%20previewer%20for%20static%20blogs&amp;body=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Email</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Instagram</a></li>
+           </ul>
+           <br>
+          </div>
+         </div>
         </div>
-        <div class="share-links">
-         <div id="lqj13xurpq">
-          <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
-          <input type="checkbox" id="share-toggle">
-          <ul id="share-links">
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Facebook</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Twitter</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">LinkedIn</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/snippet-editor-previewer&amp;media=https://www.jimscode.blog/images/snippet-editor-banner-png.png&amp;description=building%20a%20simple%20snippet%20editor%20and%20previewer%20for%20static%20blogs" target="_blank">Pinterest</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Reddit</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">WhatsApp</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=building%20a%20simple%20snippet%20editor%20and%20previewer%20for%20static%20blogs&amp;body=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Email</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/snippet-editor-previewer" target="_blank">Instagram</a></li>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lqjn53yni6" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
+           <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/css" class="btn-cta">css</a></li>
+           <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web%20dev" class="btn-cta">web dev</a></li>
+           <li id="tagVar_editor" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/editor" class="btn-cta">editor</a></li>
+           <li id="tagVar_previewer" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/previewer" class="btn-cta">previewer</a></li>
           </ul>
           <br>
          </div>
-        </div>
-       </div>
-       <aside class="sidebar">
-        <br>
-        <div class="about-me">
-         <br>
-         <div class="avatar-container">
-          <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
-         </div>
-         <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-         <hr>
-         <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
-        </div>
-        <br>
-        <div class="about-post">
-         <p class="large-text">Tags</p>
-         <hr>
-         <ul id="lqj13xuok1" style="display: contents; line-height: 2rem;">
-          <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
-          <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/css" class="btn-cta">css</a></li>
-          <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web dev" class="btn-cta">web dev</a></li>
-          <li id="tagVar_editor" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/editor" class="btn-cta">editor</a></li>
-          <li id="tagVar_previewer" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/previewer" class="btn-cta">previewer</a></li>
-         </ul>
-         <br>
-        </div>
-        <div class="headers">
-         <div role="navigation" id="toc">
-          <h3>In this article</h3>
-          <hr>
-          <nav aria-label="Table of Contents">
-           <ul role="list">
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Examining-the-Code-Structure">Examining the Code Structure</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Setting-Up-the-Editor-Container">Setting Up the Editor Container</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Styling-for-a-Clean-Design">Styling for a Clean Design</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Handy-Editor-Buttons">Handy Editor Buttons</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Code-Snippet-Editors">Code Snippet Editors</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Live-Preview-with-iframes">Live Preview with iframes</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Usage-Example">Usage Example</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Commonly-Asked-Questions">Commonly Asked Questions</a></li>
-           </ul>
-          </nav>
-         </div>
-         <div class="affiliate">
-          <h3>Affiliate links</h3>
-          <p>Check out this great product:<a href="#">Product Name</a></p>
-          <div id="lqj13xute4">
-           <p>sidebar</p>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Examining-the-Code-Structure">Examining the Code Structure</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Setting-Up-the-Editor-Container">Setting Up the Editor Container</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Styling-for-a-Clean-Design">Styling for a Clean Design</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Handy-Editor-Buttons">Handy Editor Buttons</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Code-Snippet-Editors">Code Snippet Editors</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Live-Preview-with-iframes">Live Preview with iframes</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Usage-Example">Usage Example</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Commonly-Asked-Questions">Commonly Asked Questions</a></li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product:<a href="#">Product Name</a></p>
+           <div id="lqjn53yt8z">
+            <p>sidebar</p>
+           </div>
           </div>
          </div>
-        </div>
-       </aside>
-      </div>
-     </div>
-     <div id="lqj13xul9q">
-      <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
-       <br>
-       <br>
-       <div class="footer-content">
-        <div class="footer-section">
-         <h4>About</h4>
-         <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
-        </div>
-        <div class="footer-section">
-         <h4>Contact</h4>
-         <p>Email: admin@jimscode.blog</p>
-        </div>
-        <ul class="footer-section" id="lqj13xv8ab">
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
-        </ul>
-        <div class="footer-disclaimer">
-         <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
-        </div>
-        <div class="footer-bottom">
-         <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
-        </div>
+        </aside>
        </div>
-      </footer>
-     </div>
+      </div>
+      <div id="lqjn53ykng">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lqjn53zc30">
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
 <style>
 @media only screen and (max-width : 1350px) and (min-width : 950px) {
 #arrow-div-id{ right: 2.2rem; left: unset !important;}
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqj13xv8ab{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lqjn53zc30{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -383,17 +392,17 @@ Search      </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lqj13xupqf{ display: block;}#lqj13xuok1{ display: block;}
+#lqjn53yplk{ display: block;}#lqjn53yni6{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqj13xv8ab{ display: flex; flex-direction: column;}
-}     </style>
-    </div>
+#lqjn53zc30{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
 <script>
-toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();    </script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
 <script>
-createCodeEditor(["/txt/examples/snippet-editor-previewer-1/index.html","/txt/examples/snippet-editor-previewer-1/test.js","/txt/examples/snippet-editor-previewer-1/styles.css"],`editor1ID`);    </script>
+createCodeEditor(["/txt/examples/snippet-editor-previewer-1/index.html","/txt/examples/snippet-editor-previewer-1/test.js","/txt/examples/snippet-editor-previewer-1/styles.css"],`editor1ID`);     </script>
 <script>
 let giscusTheme = localStorage.getItem("theme");
         let giscusAttributes = {
@@ -406,7 +415,7 @@ let giscusTheme = localStorage.getItem("theme");
           "data-strict": "1",
           "data-reactions-enabled": "1",
           "data-emit-metadata": "0",
-          "data-theme":  giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
           "data-lang": "en",
           "data-loading": "lazy",
           "crossorigin": "anonymous",
@@ -415,6 +424,6 @@ let giscusTheme = localStorage.getItem("theme");
         
         let giscusScript = document.createElement("script");
         Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-        document.body.appendChild(giscusScript);    </script>
-   </body>
-  </html>
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

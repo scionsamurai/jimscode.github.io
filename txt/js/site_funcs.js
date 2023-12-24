@@ -217,11 +217,24 @@ function addHeaderListeners() {
     // Add event listeners for copying anchor links
     document.querySelectorAll('h2').forEach(h2Element => {
         const anchor = h2Element.querySelector('.anchor-image');
-        anchor.addEventListener('click', (event) => {
-            copy_anchorlink(event, h2Element);
-        });
-        h2Element.addEventListener('click', (event) => {
-            copy_anchorlink(event, h2Element);
-        });
+        if (anchor) {
+            anchor.addEventListener('click', (event) => {
+                copy_anchorlink(event, h2Element);
+            });
+            h2Element.addEventListener('click', (event) => {
+                copy_anchorlink(event, h2Element);
+            });
+        }
     });
 }
+
+
+function createSlug(blogTitle) {
+    // Convert to lowercase and replace spaces with %20
+    const encodedSlug = blogTitle.toLowerCase().replace(/\s+/g, '%20');
+  
+    // Remove other special characters
+    const cleanSlug = encodedSlug.replace(/[^\w%20]+/g, '');
+  
+    return cleanSlug;
+  }

@@ -29,208 +29,217 @@ window.addEventListener('load', function() {
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
  </head>
- <body>
-  <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
-  <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
-  <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
-  <div class="wrapper">
-   <div id="lqiv7ynky7">
-<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">    <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
-     <div class="sidebar_checkbox_hack">
-      <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">      <p class="emoji_active_memo">Back to Post</p>
-      <img src="/images/favicon-32x32.png" alt="">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+  </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');  </script>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqjn6azcr9">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
 </label>
+      </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>     </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
      </div>
-<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>    </div>
-    <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
-     <form method="get" action="http://www.google.com/search" class="no-js-search">
-      <input type="text" name="q" size="15" class="no-js-search__input" id="search">
-      <button type="submit" value="Search!" class="no-js-search__button">
-Search      </button>
-      <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
-     </form>
-    </div>
-</span>    <div class="color-pallete">
-     <label for="night"></label>
-     <label for="day"></label>
-    </div>
-    <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
-    </div>
-<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">    <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
-    </div>
-    <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
-</a>   </div>
-   <div style="min-height: 20rem; height: 100vh;" class="banner-div" data-original-css="min-height: 20rem; height: 100vh;">
-    <div class="banner">
-    </div>
-   </div>
-   <div style="height: 5rem; width: 100%; display: flex; justify-content: space-around;" class="tag-banner" data-original-css="height: 5rem; width: 100%; display: flex; justify-content: space-around;">
-    <h1 style="font-size: xxx-large;" id="lqiv7ynlba" data-original-css="font-size: xxx-large;">Exploring: css</h1>
-   </div>
-   <div id="lqiv7ynlu5">
-    <div style="display:flex; justify-content: center; z-index: 2; position: relative;" class="layout-container" data-original-css="display:flex; justify-content: center; z-index: 2; position: relative;">
-     <main role="main" style="max-width: 1400px; min-height:10rem; width: 100%;" class="max-width-container" id="lqiv7ynoiv" data-original-css="max-width: 1400px; min-height:10rem; width: 100%;">
-      <div id="lqiv7ynovu">
-      </div>
-      <div style="display: flex; justify-content: space-evenly;" class="posts_and_side" id="posts_and_side" data-original-css="display: flex; justify-content: space-evenly;">
-       <section style="min-height: 30rem; max-width: 100%;" class="all_posts_area" id="all_posts_section" data-original-css="min-height: 30rem; max-width: 100%;">
-        <div id="lqiv7yno90">
-         <ul id="lqiv7ynobn">
-          <li id="postVar_8" class="postVar">          <div id="lqiv7ynpuj">
-           <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
-            <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
-             <input type="checkbox" id="checkbox_8" tabindex="0" style="display: none;" data-original-css="display: none;">
-             <label for="checkbox_8" aria-label="Toggle Card" class="container"><span class="card-front">             <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqiv7ynqhk" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
-<a href="/posts/snippet-editor-previewer" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">              <h2>Building a Simple Snippet Editor and Previewer for Static Blogs</h2>
-</a>              <img src="/images/snippet-editor-banner-png_thumb.png" class="image">
-              <p>Click for more info, click title to go to post.</p>
-             </div>
-</span><span class="card-back">             <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-               <p>Sat, Dec 23 2023 12:37:41 GMT</p>
-              </div>
-              <p>Take control of your static blog development with a homemade snippet editor and previewer. This post guides you through a basic implementation, allowing you to edit and preview HTML, CSS, and JS seamlessly. Explore customization possibilities and share your enhancements with the developer community.</p>
-              <p>Tags:<a class="abtn" href="/tags/html">html</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web" dev="">web dev</a><a class="abtn" href="/tags/editor">editor</a><a class="abtn" href="/tags/previewer">previewer</a></p>
-              <br>
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
-<a href="/posts/snippet-editor-previewer" class="post-link btn-cta">Go to post→</a>              </div>
-             </div>
-</span><span class="additional-text">             <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
-</span></label>
-            </div>
-           </article>
-           <br>
-          </div>
-</li>
-          <li id="postVar_7" class="postVar">          <div id="lqiv7ynu60">
-           <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
-            <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
-             <input type="checkbox" id="checkbox_7" tabindex="0" style="display: none;" data-original-css="display: none;">
-             <label for="checkbox_7" aria-label="Toggle Card" class="container"><span class="card-front">             <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqiv7ynugu" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
-<a href="/posts/take-css-to-next-level" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">              <h2>Take Your CSS Skills to the Next Level</h2>
-</a>              <img src="/images/css-next-level-banner-png_thumb.png" class="image">
-              <p>Click for more info, click title to go to post.</p>
-             </div>
-</span><span class="card-back">             <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-               <p>Sat, Dec 23 2023 12:37:41 GMT</p>
-              </div>
-              <p>Elevate your CSS proficiency with this comprehensive guide! Master advanced selectors, explore pseudo-classes, pseudo-elements, and attribute selectors. Dive into responsive design, animations, transitions, and preprocessors like SASS. Enhance your web development skills and stay ahead in the dynamic world of CSS.</p>
-              <p>Tags:<a class="abtn" href="/tags/intermediate">intermediate</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web" dev="">web dev</a></p>
-              <br>
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
-<a href="/posts/take-css-to-next-level" class="post-link btn-cta">Go to post→</a>              </div>
-             </div>
-</span><span class="additional-text">             <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
-</span></label>
-            </div>
-           </article>
-           <br>
-          </div>
-</li>
-          <li id="postVar_5" class="postVar">          <div id="lqiv7ynvna">
-           <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
-            <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
-             <input type="checkbox" id="checkbox_5" tabindex="0" style="display: none;" data-original-css="display: none;">
-             <label for="checkbox_5" aria-label="Toggle Card" class="container"><span class="card-front">             <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqiv7ynvtw" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
-<a href="/posts/checkbox-hack-for-flash-card" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">              <h2>Understanding the Checkbox Hack for Creating Flip Cards</h2>
-</a>              <img src="/images/checkbox-hack-flip-cards-banner-png_thumb.png" class="image">
-              <p>Click for more info, click title to go to post.</p>
-             </div>
-</span><span class="card-back">             <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-               <p>Sat, Dec 23 2023 12:37:41 GMT</p>
-              </div>
-              <p>Explore the power of the checkbox hack in HTML and CSS to create engaging flip cards. Learn how to leverage this technique for interactive components like toggle cards, product displays, and information boxes. Enhance your web design skills with native HTML and CSS magic.</p>
-              <p>Tags:<a class="abtn" href="/tags/html">html</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web" dev="">web dev</a></p>
-              <br>
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
-<a href="/posts/checkbox-hack-for-flash-card" class="post-link btn-cta">Go to post→</a>              </div>
-             </div>
-</span><span class="additional-text">             <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
-</span></label>
-            </div>
-           </article>
-           <br>
-          </div>
-</li>
-          <li id="postVar_4" class="postVar">          <div id="lqiv7ynxo8">
-           <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
-            <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
-             <input type="checkbox" id="checkbox_4" tabindex="0" style="display: none;" data-original-css="display: none;">
-             <label for="checkbox_4" aria-label="Toggle Card" class="container"><span class="card-front">             <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqiv7ynxwh" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
-<a href="/posts/html-and-css-essentials" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">              <h2>HTML and CSS Essentials: A Comprehensive Guide for Beginners</h2>
-</a>              <img src="/images/html-css-essentials-banner-png_thumb.png" class="image">
-              <p>Click for more info, click title to go to post.</p>
-             </div>
-</span><span class="card-back">             <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-               <p>Sat, Dec 23 2023 12:37:41 GMT</p>
-              </div>
-              <p>Dive into the world of web design with a solid foundation in HTML and CSS. This beginner-friendly guide covers key concepts, specificity in CSS, combining HTML and CSS, and best practices to empower you on your coding journey.</p>
-              <p>Tags:<a class="abtn" href="/tags/html">html</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web" dev="">web dev</a></p>
-              <br>
-              <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
-               <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
-<a href="/posts/html-and-css-essentials" class="post-link btn-cta">Go to post→</a>              </div>
-             </div>
-</span><span class="additional-text">             <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
-</span></label>
-            </div>
-           </article>
-           <br>
-          </div>
-</li>
-         </ul>
-        </div>
-        <div id="pagination_links">
-        </div>
-       </section>
-      </div>
-     </main>
-    </div>
-   </div>
-   <div id="lqiv7ynlqk">
-    <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
-     <br>
-     <br>
-     <div class="footer-content">
-      <div class="footer-section">
-       <h4>About</h4>
-       <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
-      </div>
-      <div class="footer-section">
-       <h4>Contact</h4>
-       <p>Email: admin@jimscode.blog</p>
-      </div>
-      <ul class="footer-section" id="lqiv7ynyw0">
-       <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
-       <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
-       <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
-      </ul>
-      <div class="footer-disclaimer">
-       <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
-      </div>
-      <div class="footer-bottom">
-       <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
-      </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
      </div>
-    </footer>
-   </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>    </div>
+    <div style="min-height: 20rem; height: 100vh;" class="banner-div" data-original-css="min-height: 20rem; height: 100vh;">
+     <div class="banner">
+     </div>
+    </div>
+    <div style="height: 5rem; width: 100%; display: flex; justify-content: space-around;" class="tag-banner" data-original-css="height: 5rem; width: 100%; display: flex; justify-content: space-around;">
+     <h1 style="font-size: xxx-large;" id="lqjn6azdgr" data-original-css="font-size: xxx-large;">Exploring: css</h1>
+    </div>
+    <div id="lqjn6azdzp">
+     <div style="display:flex; justify-content: center; z-index: 2; position: relative;" class="layout-container" data-original-css="display:flex; justify-content: center; z-index: 2; position: relative;">
+      <main role="main" style="max-width: 1400px; min-height:10rem; width: 100%;" class="max-width-container" id="lqjn6azgh5" data-original-css="max-width: 1400px; min-height:10rem; width: 100%;">
+       <div id="lqjn6azg0h">
+       </div>
+       <div style="display: flex; justify-content: space-evenly;" class="posts_and_side" id="posts_and_side" data-original-css="display: flex; justify-content: space-evenly;">
+        <section style="min-height: 30rem; max-width: 100%; min-width: 60vw;" class="all_posts_area" id="all_posts_section" data-original-css="min-height: 30rem; max-width: 100%; min-width: 60vw;">
+         <div id="lqjn6azg4k">
+          <ul id="lqjn6azhnv">
+           <li id="postVar_8" class="postVar">           <div id="lqjn6azi3c">
+            <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
+             <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
+              <input type="checkbox" id="checkbox_8" tabindex="0" style="display: none;" data-original-css="display: none;">
+              <label for="checkbox_8" aria-label="Toggle Card" class="container"><span class="card-front">              <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqjn6azjf1" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
+<a href="/posts/snippet-editor-previewer" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">               <h2>Building a Simple Snippet Editor and Previewer for Static Blogs</h2>
+</a>               <img src="/images/snippet-editor-banner-png_thumb.png" class="image">
+               <p>Click for more info, click title to go to post.</p>
+              </div>
+</span><span class="card-back">              <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+                <p>Sat, Dec 23 2023 12:37:41 GMT</p>
+               </div>
+               <p>Take control of your static blog development with a homemade snippet editor and previewer. This post guides you through a basic implementation, allowing you to edit and preview HTML, CSS, and JS seamlessly. Explore customization possibilities and share your enhancements with the developer community.</p>
+               <p>Tags:<a class="abtn" href="/tags/html">html</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web%20dev">web dev</a><a class="abtn" href="/tags/editor">editor</a><a class="abtn" href="/tags/previewer">previewer</a></p>
+               <br>
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
+<a href="/posts/snippet-editor-previewer" class="post-link btn-cta">Go to post→</a>               </div>
+              </div>
+</span><span class="additional-text">              <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
+</span></label>
+             </div>
+            </article>
+            <br>
+           </div>
+</li>
+           <li id="postVar_7" class="postVar">           <div id="lqjn6aznqv">
+            <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
+             <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
+              <input type="checkbox" id="checkbox_7" tabindex="0" style="display: none;" data-original-css="display: none;">
+              <label for="checkbox_7" aria-label="Toggle Card" class="container"><span class="card-front">              <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqjn6azovw" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
+<a href="/posts/take-css-to-next-level" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">               <h2>Take Your CSS Skills to the Next Level</h2>
+</a>               <img src="/images/css-next-level-banner-png_thumb.png" class="image">
+               <p>Click for more info, click title to go to post.</p>
+              </div>
+</span><span class="card-back">              <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+                <p>Sat, Dec 23 2023 12:37:41 GMT</p>
+               </div>
+               <p>Elevate your CSS proficiency with this comprehensive guide! Master advanced selectors, explore pseudo-classes, pseudo-elements, and attribute selectors. Dive into responsive design, animations, transitions, and preprocessors like SASS. Enhance your web development skills and stay ahead in the dynamic world of CSS.</p>
+               <p>Tags:<a class="abtn" href="/tags/intermediate">intermediate</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web%20dev">web dev</a></p>
+               <br>
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
+<a href="/posts/take-css-to-next-level" class="post-link btn-cta">Go to post→</a>               </div>
+              </div>
+</span><span class="additional-text">              <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
+</span></label>
+             </div>
+            </article>
+            <br>
+           </div>
+</li>
+           <li id="postVar_5" class="postVar">           <div id="lqjn6azpfg">
+            <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
+             <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
+              <input type="checkbox" id="checkbox_5" tabindex="0" style="display: none;" data-original-css="display: none;">
+              <label for="checkbox_5" aria-label="Toggle Card" class="container"><span class="card-front">              <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqjn6azpm7" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
+<a href="/posts/checkbox-hack-for-flash-card" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">               <h2>Understanding the Checkbox Hack for Creating Flip Cards</h2>
+</a>               <img src="/images/checkbox-hack-flip-cards-banner-png_thumb.png" class="image">
+               <p>Click for more info, click title to go to post.</p>
+              </div>
+</span><span class="card-back">              <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+                <p>Sat, Dec 23 2023 12:37:41 GMT</p>
+               </div>
+               <p>Explore the power of the checkbox hack in HTML and CSS to create engaging flip cards. Learn how to leverage this technique for interactive components like toggle cards, product displays, and information boxes. Enhance your web design skills with native HTML and CSS magic.</p>
+               <p>Tags:<a class="abtn" href="/tags/html">html</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web%20dev">web dev</a></p>
+               <br>
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
+<a href="/posts/checkbox-hack-for-flash-card" class="post-link btn-cta">Go to post→</a>               </div>
+              </div>
+</span><span class="additional-text">              <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
+</span></label>
+             </div>
+            </article>
+            <br>
+           </div>
+</li>
+           <li id="postVar_4" class="postVar">           <div id="lqjn6azrzy">
+            <article style="display: flex;" class="postDiv displayOnScroll flex" data-original-css="display: flex;">
+             <div style="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;" class="postDiv_main_content" data-original-css="flex-grow: 1; min-height: 8rem; display: flex; flex-flow: column; justify-content: space-around; width: 100%;">
+              <input type="checkbox" id="checkbox_4" tabindex="0" style="display: none;" data-original-css="display: none;">
+              <label for="checkbox_4" aria-label="Toggle Card" class="container"><span class="card-front">              <div style="background: var(--background-color-second); max-width: 460px; padding: 1rem;" class="card front" id="lqjn6azr81" data-original-css="background: var(--background-color-second); max-width: 460px; padding: 1rem;">
+<a href="/posts/html-and-css-essentials" style="min-height: 40px; display: block;" class="btn-link" data-original-css="min-height: 40px; display: block;">               <h2>HTML and CSS Essentials: A Comprehensive Guide for Beginners</h2>
+</a>               <img src="/images/html-css-essentials-banner-png_thumb.png" class="image">
+               <p>Click for more info, click title to go to post.</p>
+              </div>
+</span><span class="card-back">              <div style="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;" class="card back" data-original-css="background: var(--background-color-second); height: fit-content; min-height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p>By:<a class="abtn" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+                <p>Sat, Dec 23 2023 12:37:41 GMT</p>
+               </div>
+               <p>Dive into the world of web design with a solid foundation in HTML and CSS. This beginner-friendly guide covers key concepts, specificity in CSS, combining HTML and CSS, and best practices to empower you on your coding journey.</p>
+               <p>Tags:<a class="abtn" href="/tags/html">html</a><a class="abtn" href="/tags/css">css</a><a class="abtn" href="/tags/web%20dev">web dev</a></p>
+               <br>
+               <div style="display: flex; justify-content: space-between;" data-original-css="display: flex; justify-content: space-between;">
+                <p style="text-align: end;" data-original-css="text-align: end;">Click for front of card</p>
+<a href="/posts/html-and-css-essentials" class="post-link btn-cta">Go to post→</a>               </div>
+              </div>
+</span><span class="additional-text">              <p>This is a card element with general information/links about the post on the front and a description of the post on the back. You can click to flip this card.</p>
+</span></label>
+             </div>
+            </article>
+            <br>
+           </div>
+</li>
+          </ul>
+         </div>
+         <div id="pagination_links">
+         </div>
+        </section>
+       </div>
+      </main>
+     </div>
+    </div>
+    <div id="lqjn6azdr3">
+     <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+      <br>
+      <br>
+      <div class="footer-content">
+       <div class="footer-section">
+        <h4>About</h4>
+        <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+       </div>
+       <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: admin@jimscode.blog</p>
+       </div>
+       <ul class="footer-section" id="lqjn6azsb1">
+        <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+        <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+        <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+       </ul>
+       <div class="footer-disclaimer">
+        <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+       </div>
+       <div class="footer-bottom">
+        <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+       </div>
+      </div>
+     </footer>
+    </div>
 <style>
 @media only screen and (max-width : 1350px) and (min-width : 950px) {
 #arrow-div-id{ right: 2.2rem; left: unset !important;}
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqiv7ynlba{ font-size: x-large !important; align-content: center; justify-content: space-around; display: flex; flex-flow: column;}#lqiv7ynyw0{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lqjn6azdgr{ font-size: x-large !important; align-content: center; justify-content: space-around; display: flex; flex-flow: column;}#lqjn6azsb1{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -238,7 +247,7 @@ Search      </button>
 }
 
 @media only screen and (max-width : 1400px) {
-#lqiv7ynoiv{ max-width: 100% !important;}#posts_and_side{ flex-flow: column-reverse; align-items: center;}#lqiv7yno90{ display: flex; justify-content: space-around;}
+#lqjn6azgh5{ max-width: 100% !important;}#posts_and_side{ flex-flow: column-reverse; align-items: center;}#lqjn6azg4k{ display: flex; justify-content: space-around;}
 }
 
 @media only screen and (max-width : 950px) {
@@ -246,18 +255,18 @@ Search      </button>
 }
 
 @media only screen and (max-width : 600px) {
-#lqiv7ynqhk{ padding: 0 !important;}#lqiv7ynugu{ padding: 0 !important;}#lqiv7ynvtw{ padding: 0 !important;}#lqiv7ynxwh{ padding: 0 !important;}
+#lqjn6azjf1{ padding: 0 !important;}#lqjn6azovw{ padding: 0 !important;}#lqjn6azpm7{ padding: 0 !important;}#lqjn6azr81{ padding: 0 !important;}
 }
 
 @media only screen and (max-width : 1200px) {
-#lqiv7ynobn{ display: block; max-width: 85vw;}
+#lqjn6azhnv{ display: block; max-width: 85vw;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqiv7ynyw0{ display: flex; flex-direction: column;}
-}   </style>
-  </div>
+#lqjn6azsb1{ display: flex; flex-direction: column;}
+}    </style>
+   </div>
 <script>
-toggle_nightmode();loadThemeCache();generateSearchElements('search_area');  </script>
- </body>
-</html>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area');   </script>
+  </body>
+ </html>

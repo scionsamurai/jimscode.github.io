@@ -3,7 +3,9 @@ title: HTML CSS Essentials - JimsCode
 path: /{# website_url #}/posts/html-and-css-essentials
 js: /txt/js/get_home.js
 js: /txt/js/my_generator.js
+at: /txt/js/injected_gen_funcs.js
 js: /txt/js/highlight.js
+at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
 css: /txt/css/monokaisublime.css
 acdnjs: hljs.highlightAll();
 js: /txt/js/post.js
@@ -11,7 +13,6 @@ js: /txt/js/site_funcs.js
 js: /txt/js/site_variables.js
 ag: /txt/js/ongenerated.js
 ag: setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();
-at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
 ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();
 css: /txt/css/global.css
 css: /txt/css/post.css
@@ -46,16 +47,13 @@ css: /txt/css/flipcard.css
             '''html
             <!DOCTYPE html> 
             <html>
-            <head>
-            <title>Page Title</title>
-            </head>
-            <body>
-
-            <h1>My First Heading</h1>
-            
-            <p>My first paragraph.</p>
-            
-            </body>
+            |  <head>
+            |    <title>Page Title</title>
+            |  </head>
+            |  <body>
+            |    <h1>My First Heading</h1>
+            |    <p>My first paragraph.</p>
+            |  </body>
             </html>
             '''
 
@@ -83,18 +81,18 @@ css: /txt/css/flipcard.css
             '''css
             /* Element selector */
             p {
-            color: red; 
-            font-size: 20px;
+            |  color: red; 
+            |  font-size: 20px;
             }
 
             /* Class selector */  
             .blue-text {
-            color: blue;
+            |  color: blue;
             } 
 
             /* ID selector */
             #main-heading {
-            font-size: 36px;
+            |  font-size: 36px;
             }
             '''
 

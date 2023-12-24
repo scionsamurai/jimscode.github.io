@@ -46,369 +46,378 @@ window.addEventListener('load', function() {
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
  </head>
- <body>
-  <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
-  <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
-  <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
-  <div class="wrapper">
-   <div id="lqj13j9civ">
-<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">    <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
-     <div class="sidebar_checkbox_hack">
-      <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">      <p class="emoji_active_memo">Back to Post</p>
-      <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+  </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');  </script>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqjn4pg3p3">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
 </label>
+      </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>     </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
      </div>
-<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>    </div>
-    <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
-     <form method="get" action="http://www.google.com/search" class="no-js-search">
-      <input type="text" name="q" size="15" class="no-js-search__input" id="search">
-      <button type="submit" value="Search!" class="no-js-search__button">
-Search      </button>
-      <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
-     </form>
-    </div>
-</span>    <div class="color-pallete">
-     <label for="night"></label>
-     <label for="day"></label>
-    </div>
-    <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
-    </div>
-<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">    <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
-    </div>
-    <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
-</a>   </div>
-   <div id="lqj13j9csv">
-    <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
-     <div class="banner">
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
      </div>
-    </div>
-    <div role="main" class="main-content">
-     <div class="post-container">
-      <div class="post">
-       <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Mastering Text Basics on Websites - A Guide for New Developers</h1>
-       <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
-       <picture class="banner_picture" id="lqj13j9izs">
-        <source srcset="/images/text-basics-banner.webp" type="image/webp" class="banner-image">
-         <source srcset="/images/text-basics-banner-png.png" type="image/png" class="banner-image">
-          <img src="" alt="A creative depiction of HTML as the bedrock, resembling the initial phases of a house construction site. Visualize the digital landscape with HTML forming a robust foundation, seamlessly intertwining with architectural elements. Experience the metaphorical construction of a website, where unfinished walls signify the ongoing development. This dynamic image vividly captures the integral role of HTML in shaping the evolving web development panorama." class="banner-image">
-         </picture>
-         <br>
-         <div id="lqj13j9i2x">
-<span id="lqj13j9pir">          <p>As a new web developer, getting a solid grasp of how to structure and style text on webpages is an essential skill. Properly formatting text makes the content on your sites easier to read and understand for users. It also helps organize information in a clear way.</p>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>    </div>
+    <div id="lqjn4pg3vw">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Mastering Text Basics on Websites - A Guide for New Developers</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
+        <picture class="banner_picture" id="lqjn4pg9gb">
+         <source srcset="/images/text-basics-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/text-basics-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="A creative depiction of HTML as the bedrock, resembling the initial phases of a house construction site. Visualize the digital landscape with HTML forming a robust foundation, seamlessly intertwining with architectural elements. Experience the metaphorical construction of a website, where unfinished walls signify the ongoing development. This dynamic image vividly captures the integral role of HTML in shaping the evolving web development panorama." class="banner-image">
+          </picture>
           <br>
-          <p>In this post, we'll cover some key text fundamentals that every aspiring web dev should know. We'll look at headings, lists, formatting, and special characters. Learn these basics well and you'll be on your way to creating polished sites!</p>
-          <br>
-          <h2 id="Headings---The-Signposts-of-Your-Content" class="pointer">Headings - The Signposts of Your Content<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>Headings act like signposts that orient users and provide an outline for your content.</p>
-          <br>
-          <p>They establish a hierarchy that breaks up text into logical sections. Pages become skimmable and readers can quickly find what they're looking for.</p>
-          <br>
-          <p>For example, the headings in this post make it easy to jump to different topics.</p>
-          <br>
-          <p>In HTML, you can have six levels of headings, <span class="special_quote">&lt;h1&gt;</span> to <span class="special_quote">&lt;h6&gt;</span> , to segment your content.</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9woh">&lt;h1&gt;Heading Level 1&lt;/h1&gt;
- &lt;h2&gt;Heading Level 2&lt;/h2&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <p>Use <span class="special_quote">&lt;h1&gt;</span> for your main page heading, and lower levels for subsections. Don't skip levels just to make text bigger.</p>
-          <br>
-          <p>With CSS you can customize their appearance:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13j9w21">h1, h2 {
+          <div id="lqjn4pga32">
+<span id="lqjn4pghit">           <p>As a new web developer, getting a solid grasp of how to structure and style text on webpages is an essential skill. Properly formatting text makes the content on your sites easier to read and understand for users. It also helps organize information in a clear way.</p>
+           <br>
+           <p>In this post, we'll cover some key text fundamentals that every aspiring web dev should know. We'll look at headings, lists, formatting, and special characters. Learn these basics well and you'll be on your way to creating polished sites!</p>
+           <br>
+           <h2 id="Headings---The-Signposts-of-Your-Content" class="pointer">Headings - The Signposts of Your Content<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Headings act like signposts that orient users and provide an outline for your content.</p>
+           <br>
+           <p>They establish a hierarchy that breaks up text into logical sections. Pages become skimmable and readers can quickly find what they're looking for.</p>
+           <br>
+           <p>For example, the headings in this post make it easy to jump to different topics.</p>
+           <br>
+           <p>In HTML, you can have six levels of headings, <span class="special_quote">&lt;h1&gt;</span> to <span class="special_quote">&lt;h6&gt;</span> , to segment your content.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgpl3">&lt;h1&gt;Heading Level 1&lt;/h1&gt;
+ &lt;h2&gt;Heading Level 2&lt;/h2&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <p>Use <span class="special_quote">&lt;h1&gt;</span> for your main page heading, and lower levels for subsections. Don't skip levels just to make text bigger.</p>
+           <br>
+           <p>With CSS you can customize their appearance:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn4pgpkw">h1, h2 {
      font-size: 32px;
      font-weight: bold;
- }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
-          <br>
-          <p>Headings help structure your content in a meaningful way for users.</p>
-          <br>
-          <h2 id="Lists---Organizing-Information-Visually" class="pointer">Lists - Organizing Information Visually<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>Lists neatly present information in scannable vertical stacks. They come in two main flavors:</p>
-          <br>
-          <h3>Ordered Lists</h3>
-          <br>
-          <p>Ordered lists are numbered sequences, like step-by-step instructions:</p>
-          <br>
-          <p>1. Mix cake ingredients</p>
-          <p>2. Pour batter into pan</p>
-          <p>3. Bake at 350°F</p>
-          <br>
-          <p>You create them in HTML with the <span class="special_quote">&lt;ol&gt;</span> tag:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9w28">&lt;ol&gt;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>Headings help structure your content in a meaningful way for users.</p>
+           <br>
+           <h2 id="Lists---Organizing-Information-Visually" class="pointer">Lists - Organizing Information Visually<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Lists neatly present information in scannable vertical stacks. They come in two main flavors:</p>
+           <br>
+           <h3>Ordered Lists</h3>
+           <br>
+           <p>Ordered lists are numbered sequences, like step-by-step instructions:</p>
+           <br>
+           <p>1. Mix cake ingredients</p>
+           <p>2. Pour batter into pan</p>
+           <p>3. Bake at 350°F</p>
+           <br>
+           <p>You create them in HTML with the <span class="special_quote">&lt;ol&gt;</span> tag:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgp46">&lt;ol&gt;
      &lt;li&gt;Sign up for web hosting&lt;/li&gt;
      &lt;li&gt;Install WordPress&lt;/li&gt;
      &lt;li&gt;Choose a theme&lt;/li&gt;
      &lt;li&gt;Customize your site&lt;/li&gt;
- &lt;/ol&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <h3>Unordered Lists</h3>
-          <br>
-          <p>Unordered lists use bullets to mark non-sequential items, like shopping lists:</p>
-          <br>
-          <ul class="ul_class">
-           <li>Milk</li>
-           <li>Eggs</li>
-           <li>Bread</li>
-          </ul>
-          <br>
-          <p>These are defined with the <span class="special_quote">&lt;ul&gt;</span> tag:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9xcd">&lt;ul&gt;
+ &lt;/ol&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <h3>Unordered Lists</h3>
+           <br>
+           <p>Unordered lists use bullets to mark non-sequential items, like shopping lists:</p>
+           <br>
+           <ul class="ul_class">
+            <li>Milk</li>
+            <li>Eggs</li>
+            <li>Bread</li>
+           </ul>
+           <br>
+           <p>These are defined with the <span class="special_quote">&lt;ul&gt;</span> tag:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgqoa">&lt;ul&gt;
      &lt;li&gt;HTML&lt;/li&gt;
      &lt;li&gt;CSS&lt;/li&gt;
      &lt;li&gt;JavaScript&lt;/li&gt;
- &lt;/ul&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <p>Lists can be nested inside each other to convey hierarchy...</p>
-          <br>
-          <h2 id="Formatting---Making-Text-Stand-Out" class="pointer"> <strong>Formatting</strong> - Making Text <em>Stand</em> Out<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p> <strong>Bold</strong> and <em>italic</em> text help emphasize important points or phrases.</p>
-          <br>
-          <p>In HTML, use the <span class="special_quote">&lt;strong&gt;</span> and <span class="special_quote">&lt;em&gt;</span> tags instead of <span class="special_quote">&lt;b&gt;</span> and <span class="special_quote">&lt;i&gt;</span> :</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9xj5">&lt;strong&gt;This text is bold.&lt;/strong&gt;
+ &lt;/ul&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <p>Lists can be nested inside each other to convey hierarchy...</p>
+           <br>
+           <h2 id="Formatting---Making-Text-Stand-Out" class="pointer"> <strong>Formatting</strong> - Making Text <em>Stand</em> Out<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p> <strong>Bold</strong> and <em>italic</em> text help emphasize important points or phrases.</p>
+           <br>
+           <p>In HTML, use the <span class="special_quote">&lt;strong&gt;</span> and <span class="special_quote">&lt;em&gt;</span> tags instead of <span class="special_quote">&lt;b&gt;</span> and <span class="special_quote">&lt;i&gt;</span> :</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgqnk">&lt;strong&gt;This text is bold.&lt;/strong&gt;
  
- &lt;em&gt;This text is italicized.&lt;/em&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <p>Formatting text appropriately aids readability and draws attention to key messages.</p>
-          <br>
-          <h2 id="Special-Characters---Enhancing-Text" class="pointer">Special Characters - Enhancing Text<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>Special characters like © ® TM ¶ § ☺ let you add non-standard symbols to your pages.</p>
-          <br>
-          <p>To include them, use HTML entity codes like <span class="special_quote">&amp;copy;</span> for © and <span class="special_quote">&amp;trade;</span> for TM.</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9xb3">&amp;copy; - copyright symbol
- &amp;trade; - trademark</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <p>You can also put special characters directly into CSS:</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqj13j9xqs">p::before {
+ &lt;em&gt;This text is italicized.&lt;/em&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <p>Formatting text appropriately aids readability and draws attention to key messages.</p>
+           <br>
+           <h2 id="Special-Characters---Enhancing-Text" class="pointer">Special Characters - Enhancing Text<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Special characters like © ® TM ¶ § ☺ let you add non-standard symbols to your pages.</p>
+           <br>
+           <p>To include them, use HTML entity codes like <span class="special_quote">&amp;copy;</span> for © and <span class="special_quote">&amp;trade;</span> for TM.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgqac">&amp;copy; - copyright symbol
+ &amp;trade; - trademark</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <p>You can also put special characters directly into CSS:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqjn4pgqe4">p::before {
      content: '♥ ';
- }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">css</span></span></pre>
-          <br>
-          <p>Special characters provide useful shorthand like © and fun icons like ☺️. But use them in moderation.</p>
-          <br>
-          <h2 id="Accessibility-Considerations" class="pointer">Accessibility Considerations<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>When structuring and formatting text on webpages, it's important to consider accessibility. We want to ensure content is perceivable, operable, understandable, and robust for all users.</p>
-          <br>
-          <p>Some key guidelines include:</p>
-          <br>
-          <h3>Writing Semantic HTML</h3>
-          <br>
-          <p>Use HTML elements for their intended meaning, not just presentation. For example, use headings to communicate document structure rather than to make text bigger. Screen readers rely on proper tag usage.</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9yg5">&lt;h1&gt;Heading Level 1&lt;/h1&gt;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>Special characters provide useful shorthand like © and fun icons like ☺️. But use them in moderation.</p>
+           <br>
+           <h2 id="Accessibility-Considerations" class="pointer">Accessibility Considerations<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>When structuring and formatting text on webpages, it's important to consider accessibility. We want to ensure content is perceivable, operable, understandable, and robust for all users.</p>
+           <br>
+           <p>Some key guidelines include:</p>
+           <br>
+           <h3>Writing Semantic HTML</h3>
+           <br>
+           <p>Use HTML elements for their intended meaning, not just presentation. For example, use headings to communicate document structure rather than to make text bigger. Screen readers rely on proper tag usage.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgqma">&lt;h1&gt;Heading Level 1&lt;/h1&gt;
  
- &lt;p&gt;Paragraph text...&lt;/p&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <h3>Add Alternative Text</h3>
-          <br>
-          <p>Images should have descriptive alt text through the <span class="special_quote">alt</span> attribute. Assistive technologies like screen readers use this.</p>
-          <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13j9ym6">&lt;img src='graphic.png' alt='Flowchart showing web dev process'&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-          <br>
-          <h3>Contrast and Readability</h3>
-          <br>
-          <p>Ensure sufficient color contrast between text and backgrounds. Avoid walls of italicized or justified text which are hard to decipher. Break content into manageable chunks.</p>
-          <br>
-          <h3>Focus Indicators</h3>
-          <br>
-          <p>Use CSS to style visible keyboard focus indicators on interactive elements to help sighted keyboard users.</p>
-          <br>
-          <p>There are many other considerations like captions, ARIA roles, semantic CSS selectors, and more we could dive into as well. But following basic semantic structure, alt text, contrast, focus, and good document flow goes a long way!</p>
-          <br>
-          <br>
-          <h2 id="Commonly-Asked-Questions" class="pointer">Commonly Asked Questions<span class="anchor-image">⚓</span></h2>
-          <br>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">How to display HTML code as plain text in a browser?</summary>
-           <div id="lqj13j9zgu">
-            <p>You can use HTML entities to display HTML code as plain text on a webpage. These special characters begin with '&amp;' and end with ';', which display reserved characters or special characters as plain text.</p>
-            <br>
-            <p>For example, to display closing script tags without actually closing a script on the page:</p>
-            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqj13ja2yp">&amp;lt;/script&amp;gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link"></span><span class="link_and_copy__text">html</span></span></pre>
-            <br>
-            <p>The <span class="special_quote">&amp;lt;</span> entity will display a literal <span class="special_quote">&lt;</span> character instead of being interpreted as the start of a tag. And <span class="special_quote">&amp;gt;</span> will display a literal <span class="special_quote">&gt;</span> rather than the end of a tag.</p>
-            <br>
-            <p>So this code snippet will simply show <span class="special_quote">&lt;/script&gt;</span> as text on the page rather than causing errors by prematurely closing an actual script element. The HTML entities prevent the browser from parsing the characters as real markup.</p>
+ &lt;p&gt;Paragraph text...&lt;/p&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <h3>Add Alternative Text</h3>
+           <br>
+           <p>Images should have descriptive alt text through the <span class="special_quote">alt</span> attribute. Assistive technologies like screen readers use this.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgqx8">&lt;img src='graphic.png' alt='Flowchart showing web dev process'&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <h3>Contrast and Readability</h3>
+           <br>
+           <p>Ensure sufficient color contrast between text and backgrounds. Avoid walls of italicized or justified text which are hard to decipher. Break content into manageable chunks.</p>
+           <br>
+           <h3>Focus Indicators</h3>
+           <br>
+           <p>Use CSS to style visible keyboard focus indicators on interactive elements to help sighted keyboard users.</p>
+           <br>
+           <p>There are many other considerations like captions, ARIA roles, semantic CSS selectors, and more we could dive into as well. But following basic semantic structure, alt text, contrast, focus, and good document flow goes a long way!</p>
+           <br>
+           <br>
+           <h2 id="Commonly-Asked-Questions" class="pointer">Commonly Asked Questions<span class="anchor-image">⚓</span></h2>
+           <br>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">How to display HTML code as plain text in a browser?</summary>
+            <div id="lqjn4pgr2s">
+             <p>You can use HTML entities to display HTML code as plain text on a webpage. These special characters begin with '&amp;' and end with ';', which display reserved characters or special characters as plain text.</p>
+             <br>
+             <p>For example, to display closing script tags without actually closing a script on the page:</p>
+             <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqjn4pgtza">&amp;lt;/script&amp;gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+             <br>
+             <p>The <span class="special_quote">&amp;lt;</span> entity will display a literal <span class="special_quote">&lt;</span> character instead of being interpreted as the start of a tag. And <span class="special_quote">&amp;gt;</span> will display a literal <span class="special_quote">&gt;</span> rather than the end of a tag.</p>
+             <br>
+             <p>So this code snippet will simply show <span class="special_quote">&lt;/script&gt;</span> as text on the page rather than causing errors by prematurely closing an actual script element. The HTML entities prevent the browser from parsing the characters as real markup.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">Is HTML considered text or plain text?</summary>
+            <div id="lqjn4pgr5i">
+             <p>HTML includes formatting, images, and other rich content, whereas plain text does not have any formatting or images. So HTML is not considered plain text.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">How can text be edited in HTML?</summary>
+            <div id="lqjn4pgro8">
+             <p>Text in HTML can be edited directly in the HTML source code in the browser. When you double-click on text on a webpage, it allows you to edit just that content. Making changes this way and pressing enter will update the text on the page immediately.</p>
+             <br>
+             <p>However, these changes only happen locally on your machine, in the browser. To make the changes persist for all users, you need to update the actual HTML source code that serves the webpage. Typically this HTML file lives on a web server. So text edits made directly in the browser are temporary and only visible to you.</p>
+             <br>
+             <p>Updating the raw HTML document on the server and reloading the page is how the changes can be persisted and seen by all visitors. So while quick text edits are possible right in the browser, to make them 'stick' long-term requires modifying the source HTML file that generates the page.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What distinguishes HTML from CSS?</summary>
+            <div id="lqjn4pgr5u">
+             <p>HTML is used to structure the actual content of a web page, like text, images, videos etc. CSS is used to control the style and layout - fonts, colors, positioning etc.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What is a hyperlink in HTML?</summary>
+            <div id="lqjn4pgrec">
+             <p>The <span class="special_quote">&lt;a&gt;</span> anchor tag defines a hyperlink in HTML, allowing users to click and navigate from one page to another. The key <span class="special_quote">href</span> attribute specifies the destination of the link.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">How can text be displayed verbatim in HTML?</summary>
+            <div id="lqjn4pgrcu">
+             <p>The <span class="special_quote">&lt;pre&gt;</span> HTML tag represents preformatted text that is displayed exactly as written in the source code, respecting whitespace and line breaks. It uses a fixed-width font by default.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What constitutes basic text formatting in HTML?</summary>
+            <div id="lqjn4pgrfh">
+             <p>Basic text formatting includes making text bold with <span class="special_quote">&lt;b&gt;</span> , italicized with <span class="special_quote">&lt;i&gt;</span> , underlined using <span class="special_quote">&lt;u&gt;</span> , different font sizes and colors, subscript and superscript, and more. This allows styling text easily.</p>
+            </div>
+           </details>
+           <details role="group">
+            <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What are some key HTML text fundamentals?</summary>
+            <div id="lqjn4pgrcq">
+             <p>Key HTML text fundamentals include headings using tags like <span class="special_quote">&lt;h1&gt;</span> through <span class="special_quote">&lt;h6&gt;</span> , paragraphs with <span class="special_quote">&lt;p&gt;</span> , emphasized text with <span class="special_quote">&lt;em&gt;</span> , strong importance with <span class="special_quote">&lt;strong&gt;</span> , lists using <span class="special_quote">&lt;ul&gt;</span> , <span class="special_quote">&lt;ol&gt;</span> and <span class="special_quote">&lt;li&gt;</span> , displaying preformatted text as-is with <span class="special_quote">&lt;pre&gt;</span> , and hyperlinks using anchor <span class="special_quote">&lt;a&gt;</span> tags.</p>
+            </div>
+           </details>
+           <br>
+           <h2 id="Keep-Practicing-" class="pointer">Keep Practicing!<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>With these fundamentals under your belt, you're ready to start honing your text skills on real web projects. Keep experimenting and learning - happy coding!</p>
+           <br>
+           <div id="editor1ID" class="codeEditor" data-files="[&quot;/txt/examples/text-basics/index.html&quot;,&quot;/txt/examples/text-basics/styles.css&quot;]">
            </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">Is HTML considered text or plain text?</summary>
-           <div id="lqj13j9z1a">
-            <p>HTML includes formatting, images, and other rich content, whereas plain text does not have any formatting or images. So HTML is not considered plain text.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">How can text be edited in HTML?</summary>
-           <div id="lqj13j9z2r">
-            <p>Text in HTML can be edited directly in the HTML source code in the browser. When you double-click on text on a webpage, it allows you to edit just that content. Making changes this way and pressing enter will update the text on the page immediately.</p>
-            <br>
-            <p>However, these changes only happen locally on your machine, in the browser. To make the changes persist for all users, you need to update the actual HTML source code that serves the webpage. Typically this HTML file lives on a web server. So text edits made directly in the browser are temporary and only visible to you.</p>
-            <br>
-            <p>Updating the raw HTML document on the server and reloading the page is how the changes can be persisted and seen by all visitors. So while quick text edits are possible right in the browser, to make them 'stick' long-term requires modifying the source HTML file that generates the page.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What distinguishes HTML from CSS?</summary>
-           <div id="lqj13j9zny">
-            <p>HTML is used to structure the actual content of a web page, like text, images, videos etc. CSS is used to control the style and layout - fonts, colors, positioning etc.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What is a hyperlink in HTML?</summary>
-           <div id="lqj13j9zk2">
-            <p>The <span class="special_quote">&lt;a&gt;</span> anchor tag defines a hyperlink in HTML, allowing users to click and navigate from one page to another. The key <span class="special_quote">href</span> attribute specifies the destination of the link.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">How can text be displayed verbatim in HTML?</summary>
-           <div id="lqj13j9zr4">
-            <p>The <span class="special_quote">&lt;pre&gt;</span> HTML tag represents preformatted text that is displayed exactly as written in the source code, respecting whitespace and line breaks. It uses a fixed-width font by default.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What constitutes basic text formatting in HTML?</summary>
-           <div id="lqj13ja0zy">
-            <p>Basic text formatting includes making text bold with <span class="special_quote">&lt;b&gt;</span> , italicized with <span class="special_quote">&lt;i&gt;</span> , underlined using <span class="special_quote">&lt;u&gt;</span> , different font sizes and colors, subscript and superscript, and more. This allows styling text easily.</p>
-           </div>
-          </details>
-          <details role="group">
-           <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What are some key HTML text fundamentals?</summary>
-           <div id="lqj13ja0xq">
-            <p>Key HTML text fundamentals include headings using tags like <span class="special_quote">&lt;h1&gt;</span> through <span class="special_quote">&lt;h6&gt;</span> , paragraphs with <span class="special_quote">&lt;p&gt;</span> , emphasized text with <span class="special_quote">&lt;em&gt;</span> , strong importance with <span class="special_quote">&lt;strong&gt;</span> , lists using <span class="special_quote">&lt;ul&gt;</span> , <span class="special_quote">&lt;ol&gt;</span> and <span class="special_quote">&lt;li&gt;</span> , displaying preformatted text as-is with <span class="special_quote">&lt;pre&gt;</span> , and hyperlinks using anchor <span class="special_quote">&lt;a&gt;</span> tags.</p>
-           </div>
-          </details>
-          <br>
-          <h2 id="Keep-Practicing-" class="pointer">Keep Practicing!<span class="anchor-image">⚓</span></h2>
-          <br>
-          <p>With these fundamentals under your belt, you're ready to start honing your text skills on real web projects. Keep experimenting and learning - happy coding!</p>
-          <br>
-          <div id="editor1ID" class="codeEditor" data-files="[&quot;/txt/examples/text-basics/index.html&quot;,&quot;/txt/examples/text-basics/styles.css&quot;]">
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: none !important;" class="prev_button" data-original-css="display: none !important;"><a href="0" class="btn-cta pad">Previous Post</a></span><span style="display: block;" class="next_button" data-original-css="display: block;"><a href="/posts/html-semantics-organization" class="btn-cta pad">Next Post</a></span>          </div>
+          <p></p>
+          <div class="giscus">
           </div>
-          <br>
-</span>         </div>
-         <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-<span style="display: none !important;" class="prev_button" data-original-css="display: none !important;"><a href="0" class="btn-cta pad">Previous Post</a></span><span style="display: block;" class="next_button" data-original-css="display: block;"><a href="/posts/html-semantics-organization" class="btn-cta pad">Next Post</a></span>         </div>
-         <p></p>
-         <div class="giscus">
+          <p></p>
          </div>
-         <p></p>
+         <div class="share-links">
+          <div id="lqjn4pgbqo">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/text-basics" target="_blank">Facebook</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/text-basics" target="_blank">Twitter</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/text-basics" target="_blank">LinkedIn</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/text-basics&amp;media=https://www.jimscode.blog/images/text-basics-banner-png.png&amp;description=mastering%20text%20basics%20on%20websites%20%20a%20guide%20for%20new%20developers" target="_blank">Pinterest</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/text-basics" target="_blank">Reddit</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/text-basics" target="_blank">WhatsApp</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=mastering%20text%20basics%20on%20websites%20%20a%20guide%20for%20new%20developers&amp;body=https://www.jimscode.blog/posts/text-basics" target="_blank">Email</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/text-basics" target="_blank">Instagram</a></li>
+           </ul>
+           <br>
+          </div>
+         </div>
         </div>
-        <div class="share-links">
-         <div id="lqj13j9j8f">
-          <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
-          <input type="checkbox" id="share-toggle">
-          <ul id="share-links">
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/text-basics" target="_blank">Facebook</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/text-basics" target="_blank">Twitter</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/text-basics" target="_blank">LinkedIn</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/text-basics&amp;media=https://www.jimscode.blog/images/text-basics-banner-png.png&amp;description=mastering%20text%20basics%20on%20websites%20%20a%20guide%20for%20new%20developers" target="_blank">Pinterest</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/text-basics" target="_blank">Reddit</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/text-basics" target="_blank">WhatsApp</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=mastering%20text%20basics%20on%20websites%20%20a%20guide%20for%20new%20developers&amp;body=https://www.jimscode.blog/posts/text-basics" target="_blank">Email</a></li>
-           <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/text-basics" target="_blank">Instagram</a></li>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lqjn4pg8g6" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
+           <li id="tagVar_text" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/text" class="btn-cta">text</a></li>
+           <li id="tagVar_formatting" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/formatting" class="btn-cta">formatting</a></li>
+           <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web%20dev" class="btn-cta">web dev</a></li>
           </ul>
           <br>
          </div>
-        </div>
-       </div>
-       <aside class="sidebar">
-        <br>
-        <div class="about-me">
-         <br>
-         <div class="avatar-container">
-          <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
-         </div>
-         <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
-         <hr>
-         <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
-        </div>
-        <br>
-        <div class="about-post">
-         <p class="large-text">Tags</p>
-         <hr>
-         <ul id="lqj13j9g3s" style="display: contents; line-height: 2rem;">
-          <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
-          <li id="tagVar_text" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/text" class="btn-cta">text</a></li>
-          <li id="tagVar_formatting" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/formatting" class="btn-cta">formatting</a></li>
-          <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web dev" class="btn-cta">web dev</a></li>
-         </ul>
-         <br>
-        </div>
-        <div class="headers">
-         <div role="navigation" id="toc">
-          <h3>In this article</h3>
-          <hr>
-          <nav aria-label="Table of Contents">
-           <ul role="list">
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Headings---The-Signposts-of-Your-Content">Headings - The Signposts of Your Content</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Lists---Organizing-Information-Visually">Lists - Organizing Information Visually</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Formatting---Making-Text-Stand-Out">Formatting - Making Text Stand Out</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Special-Characters---Enhancing-Text">Special Characters - Enhancing Text</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Accessibility-Considerations">Accessibility Considerations</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Commonly-Asked-Questions">Commonly Asked Questions</a></li>
-            <hr>
-            <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Keep-Practicing-">Keep Practicing!</a></li>
-           </ul>
-          </nav>
-         </div>
-         <div class="affiliate">
-          <h3>Affiliate links</h3>
-          <p>Check out this great product:<a href="#">Product Name</a></p>
-          <div id="lqj13j9mjl">
-           <p>sidebar</p>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Headings---The-Signposts-of-Your-Content">Headings - The Signposts of Your Content</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Lists---Organizing-Information-Visually">Lists - Organizing Information Visually</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Formatting---Making-Text-Stand-Out">Formatting - Making Text Stand Out</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Special-Characters---Enhancing-Text">Special Characters - Enhancing Text</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Accessibility-Considerations">Accessibility Considerations</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Commonly-Asked-Questions">Commonly Asked Questions</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Keep-Practicing-">Keep Practicing!</a></li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product:<a href="#">Product Name</a></p>
+           <div id="lqjn4pgdaw">
+            <p>sidebar</p>
+           </div>
           </div>
          </div>
-        </div>
-       </aside>
-      </div>
-     </div>
-     <div id="lqj13j9dgz">
-      <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
-       <br>
-       <br>
-       <div class="footer-content">
-        <div class="footer-section">
-         <h4>About</h4>
-         <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
-        </div>
-        <div class="footer-section">
-         <h4>Contact</h4>
-         <p>Email: admin@jimscode.blog</p>
-        </div>
-        <ul class="footer-section" id="lqj13ja6zn">
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
-         <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
-        </ul>
-        <div class="footer-disclaimer">
-         <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
-        </div>
-        <div class="footer-bottom">
-         <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
-        </div>
+        </aside>
        </div>
-      </footer>
-     </div>
+      </div>
+      <div id="lqjn4pg3ue">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lqjn4pgxp4">
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
 <style>
 @media only screen and (max-width : 1350px) and (min-width : 950px) {
 #arrow-div-id{ right: 2.2rem; left: unset !important;}
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqj13ja6zn{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lqjn4pgxp4{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -416,17 +425,17 @@ Search      </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lqj13j9izs{ display: block;}#lqj13j9g3s{ display: block;}
+#lqjn4pg9gb{ display: block;}#lqjn4pg8g6{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqj13ja6zn{ display: flex; flex-direction: column;}
-}     </style>
-    </div>
+#lqjn4pgxp4{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
 <script>
-toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();    </script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
 <script>
-createCodeEditor(["/txt/examples/text-basics/index.html","/txt/examples/text-basics/styles.css"],`editor1ID`);    </script>
+createCodeEditor(["/txt/examples/text-basics/index.html","/txt/examples/text-basics/styles.css"],`editor1ID`);     </script>
 <script>
 let giscusTheme = localStorage.getItem("theme");
         let giscusAttributes = {
@@ -439,7 +448,7 @@ let giscusTheme = localStorage.getItem("theme");
           "data-strict": "1",
           "data-reactions-enabled": "1",
           "data-emit-metadata": "0",
-          "data-theme":  giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
           "data-lang": "en",
           "data-loading": "lazy",
           "crossorigin": "anonymous",
@@ -448,6 +457,6 @@ let giscusTheme = localStorage.getItem("theme");
         
         let giscusScript = document.createElement("script");
         Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-        document.body.appendChild(giscusScript);    </script>
-   </body>
-  </html>
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

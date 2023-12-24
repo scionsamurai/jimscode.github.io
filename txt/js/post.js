@@ -200,15 +200,6 @@ function buildHeaderLinks() {
     nav.appendChild(navList);
     
 }
-function createSlug(blogTitle) {
-    // Convert to lowercase and replace spaces with %20
-    const encodedSlug = blogTitle.toLowerCase().replace(/\s+/g, '%20');
-  
-    // Remove other special characters
-    const cleanSlug = encodedSlug.replace(/[^\w%20]+/g, '');
-  
-    return cleanSlug;
-}
 
 function closeShareLinks() {
     const shareToggle = document.getElementById('share-toggle');
@@ -279,7 +270,6 @@ function changeGiscusTheme() {
 
     // Determine the Giscus theme based on the state of the radio button
     const theme = isNightTheme ? 'noborder_gray' : 'noborder_light';
-    console.log('theme', theme);
 
     function sendMessage(message) {
         const iframe = document.querySelector('iframe.giscus-frame');

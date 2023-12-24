@@ -19,7 +19,7 @@
                         {# postVar['date'] #}
                     ~:q |: div :|
                     {# postVar['description'] #}
-                    Tags: {# postVar['tags'].map(item => '<a class=abtn href=' + '/tags/' + item + '>' + item + '</a>').join('&#32;'); #}
+                    Tags: {# postVar['tags'].map(item => '<a class=abtn href=' + '/tags/' + createSlug(item) + '>' + item + '</a>').join('&#32;'); #}
 
                     ~:q |: div :|[: display: flex; justify-content: space-between; :]
                         Click for front of card[: text-align: end; :]

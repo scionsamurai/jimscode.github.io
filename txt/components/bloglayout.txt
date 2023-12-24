@@ -5,7 +5,7 @@
         -~- [: flex-flow: column-reverse; align-items: center; :] w<1400
         ~:q |: div :|{: posts_and_side :}[: display: flex; justify-content: space-evenly; :]#: posts_and_side :#
             -~- [: width: unset !important; :] w<950
-            ~:q |: section :|{: all_posts_area :}[:min-height: 30rem; max-width: 100%; :]#: all_posts_section :#
+            ~:q |: section :|{: all_posts_area :}[:min-height: 30rem; max-width: 100%; min-width: 60vw; :]#: all_posts_section :#
                 -~- [: display: flex; justify-content: space-around; :] w<1400
                 @s: allposts
                 ~:q |: div :|#: pagination_links :#
