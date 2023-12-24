@@ -491,7 +491,11 @@ pre {
   pointer-events: none; }
 
 .link_and_copy__copy_link {
-  display: none; }
+  display: none;
+  font-size: 1.25rem; }
+
+.hljs-pre .hljs {
+  min-height: 3rem; }
 
 .hljs:hover + .hljs__link_and_copy .link_and_copy__copy_link {
   display: block; }
