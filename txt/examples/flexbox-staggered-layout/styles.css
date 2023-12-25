@@ -5,7 +5,7 @@ body {
     background: yellow;
     height: 10rem;
     margin: 5px;
-    width: 48%
+    width: 40%
   }
   .item:nth-child(even) {
     margin-top: 5rem;
@@ -22,4 +22,5 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
