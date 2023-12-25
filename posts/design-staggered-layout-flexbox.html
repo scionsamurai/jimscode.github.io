@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tired of boxy grid layouts? Give your designs captivating visual flair with staggered layouts powered by Flexbox. This CSS tutorial breaks down Flexbox before guiding you to build a stunning slanted layout step-by-step.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>Flexbox Layout - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/code_editor.js'>
+  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/snippettester.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+   </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');   </script>
+  </head>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqk69z6zr0">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+</label>
+      </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>     </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
+     </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
+     </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>    </div>
+    <div id="lqk69z6z82">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Design a Staggered Layout with Flexbox</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sun, Dec 24 2023 23:26:24 GMT</p>
+        <picture class="banner_picture" id="lqk69z74da">
+         <source srcset="/images/staggered-flexbox-layout-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/staggered-flexbox-layout-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="Circles in a staggered formation." class="banner-image">
+          </picture>
+          <br>
+          <div id="lqk69z75q6">
+<span id="lqk69z7c26">           <p>Welcome, budding web developers! In the ever-evolving landscape of web design, mastering CSS becomes a crucial skill on the journey to becoming a proficient developer. If you're just stepping into the world of web development, you might be exploring ways to add flair and uniqueness to your layouts. That's where staggered layouts come into play, and we're here to guide you through the process of creating them using the powerful tool in your CSS arsenal – Flexbox.</p>
+           <br>
+           <p>Picture this: visually striking designs that captivate your audience and keep them engaged. Staggered layouts offer an aesthetic appeal that goes beyond the ordinary grid structures, and today, we're diving into the realm of CSS Flexbox to unlock the secrets behind their creation.</p>
+           <br>
+           <p> <strong>Purpose of the Blog Post</strong> </p>
+           <br>
+           <p>Our mission here is clear - to empower you with the knowledge and skills to craft mesmerizing staggered layouts effortlessly. No need for complex JavaScript solutions; we'll harness the flexibility of CSS Flexbox to achieve stunning results. By the end of this journey, you'll not only have a solid understanding of Flexbox but also a mastery of the nth-child pseudo-class, a versatile tool in your toolkit for dynamic and engaging layouts.</p>
+           <br>
+           <p>Now, let's embark on this adventure together, where casual meets formal, and enthusiasm fuels your path to becoming a more adept web developer. Ready to bring your web designs to life? Let's get started!</p>
+           <br>
+           <h2 id="What-is-Flexbox-" class="pointer">What is Flexbox?<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p> <em>Definition:</em> </p>
+           <br>
+           <p>Flexbox, short for Flexible Box Layout, is a powerful CSS layout model designed to simplify the creation of flexible and responsive web layouts. Its core purpose is to provide a more efficient way to structure and align elements within a container, especially in scenarios where the size of these elements is unknown or dynamic. Flexbox ensures that your designs remain adaptive and visually appealing across various devices and screen sizes.</p>
+           <br>
+           <p> <em>Purpose and Benefits:</em> </p>
+           <br>
+           <p>The primary goal of Flexbox is to make web development more user-friendly by offering a comprehensive set of tools for layout management. Its benefits include:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <strong>Effortless Alignment:</strong> Flexbox excels in effortlessly aligning elements both horizontally and vertically, saving developers from the complexities of older layout models.</li>
+            <li> <strong>Dynamic Sizing:</strong> It enables the creation of layouts that adapt seamlessly to varying content sizes, making it ideal for responsive design.</li>
+            <li> <strong>Space Distribution:</strong> Flexbox simplifies the distribution of available space along a single axis or both axes, ensuring optimal use of screen real estate.</li>
+           </ul>
+           <br>
+           <p> <em>Main Concepts:</em> </p>
+           <br>
+           <p>Flexbox revolves around key concepts, each playing a crucial role in achieving flexible layouts:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <strong>Flex Container:</strong> The parent element that holds a set of flex items.</li>
+            <li> <strong>Flex Items:</strong> The child elements within the flex container.</li>
+            <li> <strong>Main Axis and Cross Axis:</strong> The main axis is the primary axis along which flex items are laid out, and the cross axis is perpendicular to the main axis.</li>
+           </ul>
+           <br>
+           <p>Example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqk69z7ien">.container {
+     display: flex;
+     flex-direction: row; /* or column, depending on the main axis */
+     justify-content: space-between; /* align items along the main axis */
+     align-items: center; /* align items along the cross axis */
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p> <em>Use Cases:</em> </p>
+           <br>
+           <p>Flexbox is particularly valuable in various scenarios:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <strong>Navigation Menus:</strong> Creating horizontally or vertically aligned navigation menus.</li>
+            <li> <strong>Equal Height Columns:</strong> Achieving equal height columns within a container.</li>
+            <li> <strong>Centering Elements:</strong> Effortlessly centering elements both horizontally and vertically.</li>
+           </ul>
+           <br>
+           <p> <em>Comparison with CSS Grid:</em> </p>
+           <br>
+           <p>While both Flexbox and CSS Grid are layout systems in CSS, they serve different purposes. Flexbox is best suited for one-dimensional layouts, such as rows or columns, making it ideal for components within a layout. On the other hand, CSS Grid is designed for two-dimensional layouts, offering more control over both rows and columns. Flexbox is often used within CSS Grid to manage the alignment of items along a single axis.</p>
+           <br>
+           <p> <em>Browser Compatibility:</em> </p>
+           <br>
+           <p>Flexbox enjoys broad browser support, making it a reliable choice for modern web development. It is compatible with all major browsers, including Chrome, Firefox, Safari, Edge, and Internet Explorer 11 and newer.</p>
+           <br>
+           <h2 id="Building-the-Staggered-Layout-with-Flexbox" class="pointer">Building the Staggered Layout with Flexbox<span class="anchor-image">⚓</span></h2>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqk69z7j3w">&lt;ul id="ulID"&gt;
+     &lt;li class="item"&gt;Item1&lt;/li&gt;
+     &lt;li class="item"&gt;Item2&lt;/li&gt;
+     &lt;li class="item"&gt;Item3&lt;/li&gt;
+     &lt;li class="item"&gt;Item4&lt;/li&gt;
+     &lt;li class="item"&gt;Item5&lt;/li&gt;
+     &lt;li class="item"&gt;Item6&lt;/li&gt;
+     &lt;li class="item"&gt;Item7&lt;/li&gt;
+     &lt;li class="item"&gt;Item8&lt;/li&gt;
+ &lt;/ul&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqk69z7j60">.item {
+     background: yellow;
+     height: 10rem;
+     margin: 5px;
+ }
+ #ulID {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <p data-conditional-css="lqk69z7hpq:::\|/" style="">Often our sites will have boring lists like the one in code above. I didn’t want this style of post because it seemed a waist of space to have one list item per row. So I set out to figure out a CSS solution to my layout issue.</p>
+           <br>
+           <p>I start by adjusting the width of my list items to be only 48%, and set the <span class="special_quote">&lt;ul&gt;</span> element to have a display of flex with flex-wrap set to wrap. Updated CSS is below.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqk69z7jjd">body {
+     margin: 0;
+ }
+ .item {
+     background: yellow;
+     height: 10rem;
+     margin: 5px;
+     width: 48%
+ }
+ #ulID {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     flex-wrap: wrap;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <p data-conditional-css="lqk69z7hra:::\|/" style="">At this point we should have at least 2 items per row. Now we will bust our our nth-child pseudo class to stagger this beautiful layout. With styles noted below we should finally have our staggered layout!</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqk69z7jqy">.item:nth-child(even) {
+     margin-top: 5rem;
+ }
+ .item:nth-child(odd) {
+     margin-top: 1rem;
+ }
+ .item:first-child {
+     margin-top: 0;
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <h3>Useful CSS Selectors</h3>
+           <br>
+           <p>As we saw when creating our staggered layout, CSS selectors are invaluable tools that allow us to target specific elements for styling. Let's get better acquainted with some relevant selectors.</p>
+           <br>
+           <p> <strong>nth-child Selector</strong> </p>
+           <br>
+           <p>The nth-child selector targets elements based on their position amongst sibling elements inside a parent container. It has the following syntax:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqk69z7jpy">:nth-child(an+b) {
+ /* styles here */
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>Where <span class="special_quote">a</span> represents a cycle size, <span class="special_quote">n</span> is a counter (starts at 0), and <span class="special_quote">b</span> is an offset value.</p>
+           <br>
+           <p>Some common examples:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <span class="special_quote">:nth-child(odd)</span> - Selects odd numbered child elements</li>
+            <li> <span class="special_quote">:nth-child(even)</span> - Selects even numbered child elements</li>
+            <li> <span class="special_quote">:nth-child(3n+1)</span> - Selects every 3rd child element, offset by 1</li>
+           </ul>
+           <br>
+           <p>This makes nth-child useful for assigning alternating styles, like we did for the staggered layout.</p>
+           <br>
+           <p> <strong>first-child Selector</strong> </p>
+           <br>
+           <p>The <span class="special_quote">:first-child</span> selector specifically targets just the first child element within a parent container. This came in handy for removing the top margin from the first flex item.</p>
+           <br>
+           <p> <strong>Additional Selectors</strong> </p>
+           <br>
+           <p>Here are some other helpful selectors to be aware of:</p>
+           <br>
+           <ul class="ul_class">
+            <li> <span class="special_quote">:last-child</span> - Selects the last child element</li>
+            <li> <span class="special_quote">:only-child</span> - Selects if it's the sole child element</li>
+            <li> <span class="special_quote">:first-of-type</span> - Selects first of a particular type of element</li>
+           </ul>
+           <br>
+           <br>
+           <h2 id="Final-edits-for-responsive-design" class="pointer">Final edits for responsive design<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>If you are like me you might want the items to be back to 1 item per row on mobile devices, we can accomplish that with the final addition of code bellow.</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqk69z7kkd">@media only screen and (max-width: 800px) {
+ #ulID {
+     display: block;
+ }
+ .item {
+     width: 100%;
+     margin: 0 !important;
+ }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
+           <br>
+           <p>The below meta element needed to be added to my html head tag to get the media queries to work on chrome. I found this odd becaues my test file worked without it.</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqk69z7k88">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+           <br>
+           <div id="editor1ID" class="codeEditor" data-files="[&quot;/txt/examples/flexbox-staggered-layout/index.html&quot;,&quot;/txt/examples/flexbox-staggered-layout/styles.css&quot;]">
+           </div>
+           <br>
+           <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
+           <p>And that's a wrap! By now, you should have a foundational understanding of how to leverage the power of CSS Flexbox to create visually captivating staggered layouts.</p>
+           <br>
+           <p>Equipped with this foundation, we coded a staggered layout step-by-step, utilizing percentage-based widths, flex wrapping, and the nth-child pseudo-class. Witness the transformation of a mundane vertical list into a dynamic staggered grid.</p>
+           <br>
+           <p>As you journey ahead building your own web projects, do revisit these concepts. Experiment with creative layouts, unleash your inner artist with Flexbox properties, and most importantly - have fun bringing your visions to life! The world of CSS is your oyster, and you now have a powerful new tool to craft beautiful web interfaces.</p>
+           <p>Hope you enjoyed this quick CSS tutorial on staggered layouts. Happy coding!</p>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/snippet-editor-previewer" class="btn-cta pad">Previous Post</a></span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"><a href="0" class="btn-cta pad">Next Post</a></span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
+         </div>
+         <div class="share-links">
+          <div id="lqk69z76nd">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">Facebook</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">Twitter</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">LinkedIn</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/design-staggered-layout-flexbox&amp;media=https://www.jimscode.blog/images/staggered-flexbox-layout-banner-png.png&amp;description=design%20a%20staggered%20layout%20with%20flexbox" target="_blank">Pinterest</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">Reddit</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">WhatsApp</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=design%20a%20staggered%20layout%20with%20flexbox&amp;body=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">Email</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/design-staggered-layout-flexbox" target="_blank">Instagram</a></li>
+           </ul>
+           <br>
+          </div>
+         </div>
+        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lqk69z73g8" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/css" class="btn-cta">css</a></li>
+           <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web%20dev" class="btn-cta">web dev</a></li>
+           <li id="tagVar_flexbox" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/flexbox" class="btn-cta">flexbox</a></li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#What-is-Flexbox-">What is Flexbox?</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Building-the-Staggered-Layout-with-Flexbox">Building the Staggered Layout with Flexbox</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Final-edits-for-responsive-design">Final edits for responsive design</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a></li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product:<a href="#">Product Name</a></p>
+           <div id="lqk69z79g7">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div id="lqk69z6zpn">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lqk69z7v8l">
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#lqk69z7v8l{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#lqk69z74da{ display: block;}#lqk69z73g8{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#lqk69z7v8l{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
+<script>
+createCodeEditor(["/txt/examples/flexbox-staggered-layout/index.html","/txt/examples/flexbox-staggered-layout/styles.css"],`editor1ID`);     </script>
+<script>
+let giscusTheme = localStorage.getItem("theme");
+        let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "scionsamurai/jimscode.github.io",
+          "data-repo-id": "R_kgDOK8_rSw",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOK8_rS84Cb9LP",
+          "data-mapping": "pathname",
+          "data-strict": "1",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "crossorigin": "anonymous",
+          "async": "",
+        };
+        
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

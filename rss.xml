@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Design a Staggered Layout with Flexbox</title>
+      <link>https://www.jimscode.blog/posts/design-staggered-layout-flexbox</link>
+      <pubDate>Sun, Dec 24 2023 23:26:24 GMT</pubDate>
+      <description>Tired of boxy grid layouts? Give your designs captivating visual flair with staggered layouts powered by Flexbox. This CSS tutorial breaks down Flexbox before guiding you to build a stunning slanted layout step-by-step.</description>
+      
+      <category>css</category>
+<category>web dev</category>
+<category>flexbox</category>
+    </item>
+<item>
       <title>Building a Simple Snippet Editor and Previewer for Static Blogs</title>
       <link>https://www.jimscode.blog/posts/snippet-editor-previewer</link>
       <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>

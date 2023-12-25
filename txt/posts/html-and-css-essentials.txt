@@ -3,7 +3,6 @@ title: HTML CSS Essentials - JimsCode
 path: /{# website_url #}/posts/html-and-css-essentials
 js: /txt/js/get_home.js
 js: /txt/js/my_generator.js
-at: /txt/js/injected_gen_funcs.js
 js: /txt/js/highlight.js
 at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
 css: /txt/css/monokaisublime.css

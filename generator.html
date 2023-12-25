@@ -491,7 +491,7 @@ const generateIframe = (specified_x, targeting = "path", blog_title = "substring
         append_body_obj = result.append_body_obj;
         const favicon_html = '<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="manifest" href="/images/site.webmanifest"><link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#da532c"><meta name="theme-color" content="#ffffff">';
 
-        built_HTML += `${favicon_html}</head>AnalyticsPlaceholder<body><input class="nodisplay" type="checkbox" id="sidebar_checkbox"><input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache"><input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked"><div class="wrapper">`;
+        built_HTML += `${favicon_html}AnalyticsPlaceholder</head><body><input class="nodisplay" type="checkbox" id="sidebar_checkbox"><input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache"><input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked"><div class="wrapper">`;
           
         if (targeting === "path") {
           generated_files[file.path] = built_HTML;
