@@ -184,7 +184,7 @@ css: /txt/css/snippettester.css
 
             ## Final edits for responsive design
             
-            If you are like me you might want the items to be back to 1 item per row on mobile devices, we can accomplish that with the final addition of code bellow.
+            If you are like me you might want the items to be back to one item per row on mobile devices, we can accomplish that with the final addition of code bellow.
             '''css
             @media only screen and (max-width: 800px) {
             #ulID {
