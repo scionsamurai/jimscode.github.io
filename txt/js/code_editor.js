@@ -58,15 +58,20 @@ function createCodeEditor(file_list, containerId) { // htmlCode, cssCode, jsCode
             jsButton.className = 'btn-cta';
             leftEditorButtons.appendChild(jsButton);
 
-            const runButton = document.createElement('button');
-            runButton.textContent = 'Run';
-            runButton.className = 'btn-cta';
-            rightEditorButtons.appendChild(runButton);
+            const popOutButton = document.createElement('button');
+            popOutButton.innerHTML = '&#9974;';
+            popOutButton.className = 'btn-cta';
+            rightEditorButtons.appendChild(popOutButton);
 
             const downloadButton = document.createElement('button');
             downloadButton.textContent = 'Download';
             downloadButton.className = 'btn-cta';
             rightEditorButtons.appendChild(downloadButton);
+
+            const runButton = document.createElement('button');
+            runButton.textContent = 'Run';
+            runButton.className = 'btn-cta';
+            rightEditorButtons.appendChild(runButton);
 
             const htmlEditor = document.createElement('textarea');
             htmlEditor.setAttribute('spellcheck', false);
@@ -91,6 +96,19 @@ function createCodeEditor(file_list, containerId) { // htmlCode, cssCode, jsCode
             iframe.style.display = 'none';
             snippetEditorContainer.appendChild(iframe);
 
+            function popOut(html, css, js) {
+                const popOutWindow = window.open('', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=600');
+                popOutWindow.html = html;
+                popOutWindow.css = css;
+                popOutWindow.js = js;
+        
+                popOutWindow.document.open();
+                popOutWindow.document.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/txt/css/snippettester.css"><link rel="stylesheet" href="/txt/css/snippettester_popup.css"><script src="/txt/js/popout_code_editor.js"><\/script></head><body><div id="target-container"></div><script>window.onload = () => createCodeEditor(html, css, js, 'target-container');<\/script></body></html>`);
+        
+                popOutWindow.document.close();
+            }
+
+            popOutButton.addEventListener('click', () => popOut(htmlEditor.value, cssEditor.value, jsEditor.value));
             htmlButton.addEventListener('click', () => showEditor(htmlEditor));
             cssButton.addEventListener('click', () => showEditor(cssEditor));
             jsButton.addEventListener('click', () => showEditor(jsEditor));
