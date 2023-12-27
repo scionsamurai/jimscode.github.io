@@ -1,0 +1,42 @@
+json_id: 8 in /txt/json/posts.json
+title: Snippet Editor - JimsCode
+path: /{# website_url #}/posts/snippet-editor-previewer
+js: /txt/js/get_home.js
+js: /txt/js/my_generator.js
+js: /txt/js/highlight.js
+css: /txt/css/monokaisublime.css
+acdnjs: hljs.highlightAll();
+js: /txt/js/code_editor.js
+js: /txt/js/post.js
+js: /txt/js/site_funcs.js
+js: /txt/js/site_variables.js
+ag: /txt/js/ongenerated.js
+ag: setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();
+at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
+ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();
+css: /txt/css/global.css
+css: /txt/css/post.css
+css: /txt/css/footer.css
+css: /txt/css/tabbedinfo.css
+css: /txt/css/flipcard.css
+css: /txt/css/snippettester.css
+-----
+@f: /txt/components/nav.txt
+@f: /txt/components/postlayout.txt :f@
+    @s: postcontent :s@
+        @md markdown
+
+            :ce |: editor1ID :|/txt/examples/image-puzzle/index.html
+            :ce |: editor1ID :|/txt/examples/image-puzzle/test.js
+            :ce |: editor1ID :|/txt/examples/image-puzzle/styles.css
+            @ce editor1ID
+
+        @md markdown
+    @s: postcontent :s@
+    @s: sidebar_advert :s@
+        sidebar
+    @s: sidebar_advert :s@
+@f: /txt/components/postlayout.txt :f@
+@f: /txt/components/footer.txt
+
+

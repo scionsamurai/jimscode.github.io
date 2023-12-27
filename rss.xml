@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Javascript Basics</title>
+      <link>https://www.jimscode.blog/posts/javascript-basics</link>
+      <pubDate>Wed, Dec 27 2023 01:35:27 GMT</pubDate>
+      <description>Unlock the power of JavaScript with our in-depth tutorial! From navigating the browser console to grasping variable scopes and naming conventions, this post covers it all. Delve into the world of strings, numbers, and arrays, and gain a thorough understanding of boolean data types and comparison operators. Discover the nuances of loose vs. strict comparison, and explore the intricacies of type conversions using functions like parseInt and parseFloat. Elevate your JavaScript proficiency with this comprehensive guide.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>Design a Staggered Layout with Flexbox</title>
       <link>https://www.jimscode.blog/posts/design-staggered-layout-flexbox</link>
       <pubDate>Sun, Dec 24 2023 23:26:24 GMT</pubDate>

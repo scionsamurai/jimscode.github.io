@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog</loc>
-    <lastmod>2023-12-24</lastmod>
+    <lastmod>2023-12-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,6 +39,18 @@
   <url>
     <loc>https://www.jimscode.blog/posts/html-semantics-organization</loc>
     <lastmod>2023-12-23</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/posts/javascript-basics</loc>
+    <lastmod>2023-12-26</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/posts/making-image-puzzle</loc>
+    <lastmod>2023-12-26</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -80,7 +92,7 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/authors/jimmy-ruikka</loc>
-    <lastmod>2023-12-24</lastmod>
+    <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -104,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/tags/web dev</loc>
-    <lastmod>2023-12-24</lastmod>
+    <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -165,6 +177,12 @@
   <url>
     <loc>https://www.jimscode.blog/tags/flexbox</loc>
     <lastmod>2023-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/javascript</loc>
+    <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

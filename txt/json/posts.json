@@ -149,7 +149,7 @@
     "description": "Take control of your static blog development with a homemade snippet editor and previewer. This post guides you through a basic implementation, allowing you to edit and preview HTML, CSS, and JS seamlessly. Explore customization possibilities and share your enhancements with the developer community.",
     "authorid" : 1,
     "date" : "Sat, Dec 23 2023 12:37:41 GMT",
-    "tags": ["html", "css", "web dev", "editor", "previewer"],
+    "tags": ["html", "css", "web dev", "editor", "previewer", "javascript"],
     "image": "/images/snippet-editor-banner-png.png" ,
     "webp_image": "/images/snippet-editor-banner.webp",
     "image_thumb": "/images/snippet-editor-banner-png_thumb.png",
@@ -180,10 +180,32 @@
     "comments": true,
     "link": "/posts/design-staggered-layout-flexbox",
     "prev_post": "/posts/snippet-editor-previewer",
-    "subseq_post": 0,
+    "subseq_post": "/posts/javascript-basics",
     "category": "HTML/CSS basics",
     "category_title": "Flexbox Staggered Layout"
 
+},
+{
+    "id": 10,
+    "post_title" : "Javascript Basics",
+    "description": "Unlock the power of JavaScript with our in-depth tutorial! From navigating the browser console to grasping variable scopes and naming conventions, this post covers it all. Delve into the world of strings, numbers, and arrays, and gain a thorough understanding of boolean data types and comparison operators. Discover the nuances of loose vs. strict comparison, and explore the intricacies of type conversions using functions like parseInt and parseFloat. Elevate your JavaScript proficiency with this comprehensive guide.",
+    "authorid" : 1,
+    "date" : "Wed, Dec 27 2023 01:35:27 GMT",
+    "tags": ["javascript", "web dev"],
+    "image": "/images/javascript-basics-banner-png.png" ,
+    "webp_image": "/images/javascript-basics-banner.webp",
+    "image_thumb": "/images/javascript-basics-banner-png_thumb.png",
+    "banner_alt": "Picture of square toy-like robots waiting for the order to clean the messy area they surround.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/javascript-basics",
+    "prev_post": "/posts/design-staggered-layout-flexbox",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "Javascript Basics"
+
 }
+
 
 ]
