@@ -304,7 +304,7 @@ css: /txt/css/flipcard.css
             - OR ~~||~~ 
             - NOT ~~!~~
 
-            ### AND ~~&&~~ 
+            ### The AND ~~&&~~ Operator 
 
             The AND operator ~~&&~~ returns true if both operands are true:
             '''js
@@ -317,7 +317,7 @@ css: /txt/css/flipcard.css
 
             This allows enforcing multiple conditions easily.
 
-            ### OR ~~||~~
+            ### The OR ~~||~~ Operator
 
             The OR operator ~~||~~ returns true if either one of the operands is true: 
             '''js
@@ -330,7 +330,7 @@ css: /txt/css/flipcard.css
 
             This allows checking multiple paths to be true.
 
-            ## Logical NOT ~~!~~
+            ## Logical NOT ~~!~~ Operator
 
             The NOT operator (!) flips or negates a boolean value from true to false and vice versa:
             '''js
@@ -345,7 +345,7 @@ css: /txt/css/flipcard.css
 
             Logical operators like AND, OR and NOT allow creating complex conditional checks and boolean logic flows.
 
-            ## Break & Continue
+            ## Break & Continue Statements
 
             Break and continue statements allow additional control within loops.
 

@@ -173,7 +173,7 @@ function generateRSSItem(item) {
       <title>${item.post_title}</title>
       <link>https://www.jimscode.blog${item.link}</link>
       <pubDate>${item.date}</pubDate>
-      <description>${item.description}</description>
+      <description>${item.description.replaceAll('&', 'and')}</description>
       ${item.author ? `<author>${item.author}</author>` : ""}
       ${item.tags ? item.tags.map(tag => `<category>${tag}</category>`).join("\n") : ""}
     </item>`;

@@ -1,0 +1,33 @@
+json_id: 12 in /txt/json/posts.json
+title: JS Functions & Methods - JimsCode
+path: /{# website_url #}/posts/javascript-functions-methods
+js: /txt/js/get_home.js
+js: /txt/js/my_generator.js
+js: /txt/js/highlight.js
+at: buildHeaderLinks();getHTML('target');hljs.highlightAll();
+css: /txt/css/monokaisublime.css
+acdnjs: hljs.highlightAll();
+js: /txt/js/post.js
+js: /txt/js/site_funcs.js
+js: /txt/js/site_variables.js
+ag: /txt/js/ongenerated.js
+ag: setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();
+ab: toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();
+css: /txt/css/global.css
+css: /txt/css/post.css
+css: /txt/css/footer.css
+css: /txt/css/tabbedinfo.css
+css: /txt/css/flipcard.css
+-----
+@f: /txt/components/nav.txt
+@f: /txt/components/postlayout.txt :f@
+    @s: postcontent :s@
+        @md markdown
+
+        @md markdown
+    @s: postcontent :s@
+    @s: sidebar_advert :s@
+        sidebar
+    @s: sidebar_advert :s@
+@f: /txt/components/postlayout.txt :f@
+@f: /txt/components/footer.txt
