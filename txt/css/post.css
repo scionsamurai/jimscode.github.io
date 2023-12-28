@@ -70,7 +70,8 @@ hr {
       .headers #toc nav ul {
         list-style: none;
         margin: 0;
-        padding: 0; }
+        padding: 0;
+        font-size: 1rem; }
       .headers #toc nav li {
         margin: 2px 0; }
       .headers #toc nav::-webkit-scrollbar {
@@ -236,3 +237,14 @@ hr {
 
 code {
   overflow: scroll; }
+
+table {
+  color: var(--font-color);
+  background: var(--opposite-font-color); }
+  table thead tr th {
+    font-size: 1.3rem;
+    text-decoration: underline;
+    background: var(--background-color-dark); }
+  table th {
+    border: 1px solid;
+    padding: 0.5rem; }

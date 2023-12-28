@@ -201,9 +201,30 @@
     "comments": true,
     "link": "/posts/javascript-basics",
     "prev_post": "/posts/design-staggered-layout-flexbox",
-    "subseq_post": 0,
+    "subseq_post": "/posts/javascript-control-flow",
     "category": "JS basics",
     "category_title": "Javascript Basics"
+
+},
+{
+    "id": 11,
+    "post_title" : "Javascript Control Flow",
+    "description": "Master control flow in JavaScript with this comprehensive guide. Learn all about for, while and do while loops, if else conditionals, switch statements, break, continue & more with examples.",
+    "authorid" : 1,
+    "date" : "Thu, Dec 28 2023 02:03:12 GMT",
+    "tags": ["javascript", "web dev"],
+    "image": "/images/js-control-flow-banner-png.png" ,
+    "webp_image": "/images/js-control-flow-banner.webp",
+    "image_thumb": "/images/js-control-flow-banner-png_thumb.png",
+    "banner_alt": "Picture of students working around geared machines.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/javascript-control-flow",
+    "prev_post": "/posts/javascript-basics",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "Javascript Control Flow"
 
 }
 

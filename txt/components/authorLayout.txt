@@ -8,6 +8,8 @@
             
                 -~- [: display: flex; justify-content: space-around; :] w<1400
                 @s: allposts
+                ~:q |: div :|#: pagination_links :#
+                ~:q |: div :|
             ~:q |: section :|
             -~- [: width: 92vw !important; :] w<1400
             ~:q |: aside :|{: side_area :}[: margin-left: 1rem; :]#: aside_el :#

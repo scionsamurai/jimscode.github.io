@@ -62,18 +62,18 @@ css: /txt/css/flipcard.css
                 '''js
                 // Var declarations are globally scoped or function scoped
                 var age = 25; // Can be accessed anywhere in this javascript file
-                            // Can also be accessed by any function 
+                |            // Can also be accessed by any function 
 
                 function getAge() {
-                return age; // Works even though var age is declared outside 
+                |    return age; // Works even though var age is declared outside 
                 }
 
                 // Let and const are block scoped 
                 if (true) {
-                let name = "John"; // Accessible only inside this block
+                |    let name = "John"; // Accessible only inside this block
 
-                // Gives error outside block
-                console.log(name); 
+                |    // Gives error outside block
+                |    console.log(name); 
                 }
 
                 // Best practice is to use const by default
@@ -85,8 +85,8 @@ css: /txt/css/flipcard.css
 
                 // Don't use var as it can cause unintended consequences 
                 if (true) {
-                var test = 1; 
-                // test is still available outside this block
+                |    var test = 1; 
+                |    // test is still available outside this block
                 }
                 console.log(test); // Works even though defined inside block
                 '''
@@ -172,10 +172,10 @@ css: /txt/css/flipcard.css
 
             Useful string methods include:
 
-            - length - Gets string length
-            - indexOf() - Returns index of substring 
-            - slice() - Extracts section of string
-            - toUpperCase() - Converts string to uppercase
+            - ~~length~~ - Gets string length
+            - ~~indexOf()~~ - Returns index of substring 
+            - ~~slice()~~ - Extracts section of string
+            - ~~toUpperCase()~~ - Converts string to uppercase
 
             And many more!
 

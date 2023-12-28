@@ -133,18 +133,18 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2 {
     font-size: 1.8rem;
 }
-h3, h4 {
+h3 {
     font-size: 1.5rem;
 }
-h5, h6 {
+h4, h5, h6 {
     font-size: 1.2rem;
 }
 
-p {
+p, ul {
     font-size: 1.2rem;
     color: var(--font-color);
     line-height: 1.5;
-    margin: 1rem 0;
+    margin: 0;
     letter-spacing: 0.1em;
 }
   
@@ -292,7 +292,7 @@ p, h1, h2, h3, h4, h5, h6, li {
       font-size: 1.2rem;
     }
     /* Paragraphs */
-    p {
+    p, ul {
       font-size: 1rem;
       line-height: 1.3;
     }

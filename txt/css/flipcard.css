@@ -85,7 +85,9 @@ input[type=checkbox]:checked ~ .container .back {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  z-index: 999999;
+  position: relative; }
   #pagination_links .numbered {
     display: flex;
     overflow: scroll; }

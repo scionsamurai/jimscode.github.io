@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Javascript Control Flow</title>
+      <link>https://www.jimscode.blog/posts/javascript-control-flow</link>
+      <pubDate>Thu, Dec 28 2023 02:03:12 GMT</pubDate>
+      <description>Master control flow in JavaScript with this comprehensive guide. Learn all about for, while and do while loops, if else conditionals, switch statements, break, continue & more with examples.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>Javascript Basics</title>
       <link>https://www.jimscode.blog/posts/javascript-basics</link>
       <pubDate>Wed, Dec 27 2023 01:35:27 GMT</pubDate>
@@ -35,6 +44,7 @@
 <category>web dev</category>
 <category>editor</category>
 <category>previewer</category>
+<category>javascript</category>
     </item>
 <item>
       <title>Take Your CSS Skills to the Next Level</title>

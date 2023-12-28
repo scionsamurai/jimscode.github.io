@@ -271,7 +271,18 @@ const custom_render_function = (input_unrendered_txt, target_div_id, open_files,
                     if (!styles && !classes && !ID) returned_html = `</${question_type}>`; else returned_html = `<${question_type} ${all_attribs}  ${extra_elements.join(" ")}>` + additional_html;
                 } else if (str_first_chars == "~:a ")
                     returned_html = `<${question_type} ${all_attribs} ${extra_elements.join(" ")} >${adapted_string.substring(4)}</${question_type}>` + additional_html;
-                else if (inp_str.substring(0,1) == "|")
+                else if (inp_str.substring(0,3) == "|| ") {
+                    if (/\|\|/.test(inp_str.substring(0, inp_str.length -1).substring(2))) {
+                        returned_html = '<table><thead><tr>';
+                        inp_str.substring(0, inp_str.length -1).substring(2).split('||').filter(i => i).forEach(x => returned_html += `<th>${x}</th>`); 
+                        returned_html += '</tr></thead><tbody>';
+                    } else if (/\|/.test(inp_str.substring(0, inp_str.length -1).substring(2))) {
+                        returned_html = '<tr>';
+                        inp_str.substring(0, inp_str.length -1).substring(2).split('|').filter(i => i).forEach(x => returned_html += `<th>${x}</th>`);
+                        returned_html += '</tr>';
+                        if (inp_str.endsWith('||')) returned_html += '</tbody></table>'
+                      }
+                } else if (inp_str.substring(0,1) == "|")
                     returned_html = `${adapted_string.substring(1)}` + additional_html;
                 else if (str_first_chars == "@i: ")
                     returned_html = initial_innerHTML + additional_html;

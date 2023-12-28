@@ -103,6 +103,8 @@ input[type=checkbox]:checked ~ .container .back {
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 2rem;
+    z-index: 999999;
+    position: relative;
     .numbered {
         display: flex;
         overflow: scroll;
