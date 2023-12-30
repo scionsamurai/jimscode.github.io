@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>A Walk Through the CSS Combinators</title>
+      <link>https://www.jimscode.blog/posts/css-combinators</link>
+      <pubDate>Sat, Dec 30 2023 18:05:49 GMT</pubDate>
+      <description>Master CSS combinators like descendant, child, sibling and understand pseudo-classes for precise selection superpowers. This guide with examples covers all you need for efficient, resilient styling.</description>
+      
+      <category>css</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>Javascript Functions and Methods</title>
       <link>https://www.jimscode.blog/posts/javascript-functions-methods</link>
       <pubDate>Sat, Dec 30 2023 15:57:26 GMT</pubDate>

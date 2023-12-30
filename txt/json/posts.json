@@ -243,9 +243,30 @@
     "comments": true,
     "link": "/posts/javascript-functions-methods",
     "prev_post": "/posts/javascript-control-flow",
-    "subseq_post": 0,
+    "subseq_post": "/posts/css-combinators",
     "category": "JS basics",
     "category_title": "Javascript Functions and Methods"
+
+},
+{
+    "id": 13,
+    "post_title" : "A Walk Through the CSS Combinators",
+    "description": "Master CSS combinators like descendant, child, sibling and understand pseudo-classes for precise selection superpowers. This guide with examples covers all you need for efficient, resilient styling.",
+    "authorid" : 1,
+    "date" : "Sat, Dec 30 2023 18:05:49 GMT",
+    "tags": ["css", "web dev"],
+    "image": "/images/css-combinators-banner-png.png" ,
+    "webp_image": "/images/css-combinators-banner.webp",
+    "image_thumb": "/images/css-combinators-banner-png_thumb.png",
+    "banner_alt": "",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/css-combinators",
+    "prev_post": "/posts/javascript-functions-methods",
+    "subseq_post": 0,
+    "category": "HTML/CSS basics",
+    "category_title": "CSS Combinators"
 
 }
 
