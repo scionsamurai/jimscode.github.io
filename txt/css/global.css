@@ -21,8 +21,8 @@ body {
   --font-color-darker: rgba(50,50,50, 0.95);
   --font-color-second: black;
   --opposite-font-color: rgba(190,190,190, 0.95);
-  --background-color-dark: rgba(230,230,230, 0.95);
-  --background-color-second: rgba(215,215,215, 0.95); }
+  --background-color-dark: rgba(250,250,250, 0.95);
+  --background-color-second: rgba(240,240,240, 0.95); }
 
 [id="night"]:checked ~ div .stars {
   z-index: 2;
