@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Javascript Functions and Methods</title>
+      <link>https://www.jimscode.blog/posts/javascript-functions-methods</link>
+      <pubDate>Sat, Dec 30 2023 15:57:26 GMT</pubDate>
+      <description>Learn how to use functions in JavaScript including declarations, arrow functions, callbacks and handy methods like forEach. Understand core concepts like scope, arguments and returns.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>Javascript Control Flow</title>
       <link>https://www.jimscode.blog/posts/javascript-control-flow</link>
       <pubDate>Thu, Dec 28 2023 02:03:12 GMT</pubDate>

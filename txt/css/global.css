@@ -354,7 +354,7 @@ summary::before {
 summary:hover::before {
   background-color: var(--font-color-second); }
 
-details[open] summary::after {
+details[open] > summary::after {
   content: "\2714";
   position: absolute;
   color: var(--background-color-dark);
