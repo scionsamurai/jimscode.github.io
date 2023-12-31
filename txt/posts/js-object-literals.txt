@@ -642,7 +642,7 @@ css: /txt/css/flipcard.css
             }
 
             User.prototype.sayHi = function() {
-            |    alert(&#42;Hi, I'm ${this.name}&#42;);
+            |    alert(&#96;Hi, I am &#36;{this.name}&#96;);
             }
 
             const me = new User("John");
