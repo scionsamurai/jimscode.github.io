@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Javascript Object Literals</title>
+      <link>https://www.jimscode.blog/posts/js-object-literals</link>
+      <pubDate>Sun, Dec 31 2023 15:25:57 GMT</pubDate>
+      <description>Object literals are fundamental for managing data and configuration in JS apps. Read this in-depth guide on declarations, methods, prototypes, immutability best practices, and practical object usage!</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>A Walk Through the CSS Combinators</title>
       <link>https://www.jimscode.blog/posts/css-combinators</link>
       <pubDate>Sat, Dec 30 2023 18:05:49 GMT</pubDate>

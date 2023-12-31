@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Object literals are fundamental for managing data and configuration in JS apps. Read this in-depth guide on declarations, methods, prototypes, immutability best practices, and practical object usage!">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>JS Object Literals - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+   </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');   </script>
+  </head>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqtnm2fak7">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+</label>
+      </div>
+<a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>     </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
+     </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
+     </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+<a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>    </div>
+    <div id="lqtnm2fauk">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Javascript Object Literals</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sun, Dec 31 2023 15:25:57 GMT</p>
+        <picture class="banner_picture" id="lqtnm2ffy0">
+         <source srcset="/images/js-object-literals-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/js-object-literals-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="Picture of people at work in a shop with text along the bottom asking " what="" is="" an="" object="" in="" js?'.'="" class="banner-image">
+          </picture>
+          <br>
+          <div id="lqtnm2ffkh">
+<span id="lqtnm2fpsn">           <h2 id="Objects-at-a-Glance" class="pointer">Objects at a Glance<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Objects in JavaScript allow us to model real-world things with code.</p>
+           <br>
+           <h3>Introduction to Objects</h3>
+           <br>
+           <p>Objects are collections of related data and functionality. Think of objects as containers that have properties and methods.</p>
+           <br>
+           <p>For example, we could create an object to represent a person with properties like <span class="special_quote">name</span> , <span class="special_quote">age</span> , and <span class="special_quote">address</span> and methods like <span class="special_quote">walk()</span> and <span class="special_quote">talk()</span> .</p>
+           <br>
+           <h3>Key-Value Pairs</h3>
+           <br>
+           <p>Objects contain key-value pairs. The keys (name, age, etc) are strings that act as identifiers for the values. Values can be any type in JavaScript - strings, numbers, booleans, arrays, functions, or other objects.</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g41g">const person = {
+     name: "John",
+     age: 30
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g0om:::\|/" style="">Here "name" and "age" are keys, while "John" and 30 are the values.</p>
+           <br>
+           <h3>Object Literal Notation</h3>
+           <p> <strong>What it is:</strong> </p>
+           <ul class="ul_class">
+            <li>It's a concise way to create objects in JavaScript, directly defining their properties and values within curly braces <span class="special_quote">{}</span> .</li>
+            <li>It offers a more readable and maintainable approach compared to using the new <span class="special_quote">Object()</span> constructor.</li>
+           </ul>
+           <br>
+           <p> <strong>Syntax:</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g4tc">const objectName = {
+     property1: value1,
+     property2: value2,
+     // ... more properties
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Key elements:</strong> </p>
+           <ul class="ul_class">
+            <li>Curly braces <span class="special_quote">{}</span> : Enclose the object's properties and values.</li>
+            <li>Property names: Strings that represent the names of the object's properties.</li>
+            <li>Colon <span class="special_quote">:</span> : Separates property names from their corresponding values.</li>
+            <li>Commas <span class="special_quote">,</span> : Separate multiple property-value pairs (except after the last pair).</li>
+            <li>Values: Can be any valid JavaScript data type, including strings, numbers, booleans, arrays, other objects, or functions.</li>
+           </ul>
+           <br>
+           <p> <strong>Example:</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g4ne">const person = {
+     name: "John Doe",
+     age: 30,
+     city: "New York",
+     hobbies: ["reading", "coding", "hiking"],
+     greet: function() {
+         console.log("Hello, my name is " + this.name);
+     }
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Key features:</strong> </p>
+           <ul class="ul_class">
+            <li> <strong>Dynamic property creation:</strong> Add or modify properties after object creation:</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g4cg">person.job = "Software Engineer";</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <ul class="ul_class" data-conditional-css="lqtnm2g1zh:::\|/" style="">
+            <li> <strong>Computed property names:</strong> Use expressions for property names (enclosed in square brackets):</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g4ss">const key = "address";
+ const person = {
+     [key]: "123 Main St"
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <ul class="ul_class" data-conditional-css="lqtnm2g125:::\|/" style="">
+            <li> <strong>Shorthand property names:</strong> If property name matches variable name, omit it:</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g4q2">const firstName = "John";
+ const person = {
+     firstName, // Equivalent to firstName: firstName
+     lastName: "Doe"
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <ul class="ul_class" data-conditional-css="lqtnm2g15f:::\|/" style="">
+            <li> <strong>Methods:</strong> Define functions as properties:</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g4m7">const person = {
+     firstName: "John",
+     lastName: "Doe",
+     fullName() {
+         return this.firstName + " " + this.lastName;
+     }
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Benefits:</strong> </p>
+           <ul class="ul_class">
+            <li> <strong>Conciseness and readability:</strong> Makes code easier to write and understand.</li>
+            <li> <strong>Maintainability:</strong> Properties are clearly defined and organized.</li>
+            <li> <strong>Flexibility:</strong> Dynamically add, modify, or remove properties.</li>
+            <li> <strong>Functionality:</strong> Encapsulate data and behavior within objects.</li>
+           </ul>
+           <br>
+           <h2 id="Creating-an-Object-Literal" class="pointer">Creating an Object Literal<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Let's look at how to create a basic object literal in JavaScript.</p>
+           <br>
+           <h3>Basic Syntax</h3>
+           <br>
+           <p>The basic syntax for creating an object literal is:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g5rp">const objectName = {
+     key1: value1,
+     key2: value2
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g14p:::\|/" style="">Replace <span class="special_quote">objectName</span> with the name for your object. Add key-value pairs inside the curly braces <span class="special_quote">{}</span> .</p>
+           <br>
+           <h3>Property Assignment</h3>
+           <br>
+           <p>We can assign values to keys in a few different ways:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g5qi">const person = {
+     name: "John",
+     age: 30
+ };
+ 
+ // Same as above
+ const person = {
+     "name": "John",
+     "age": 30
+ };
+ 
+ // Using variables
+ const nameKey = "name";
+ const ageKey = "age";
+ 
+ const person = {
+     [nameKey]: "John",
+     [ageKey]: 30
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>In the first example, we assign values using <span class="special_quote">key: value</span> syntax. The property name does not need quotes unless it has spaces or dashes.</p>
+           <br>
+           <p>The second does the same but with quotes around the keys. This is also valid but not required if it's a valid identifier.</p>
+           <br>
+           <p>The third example uses variables for the keys. This can be useful to dynamically create keys. The square bracket syntax is required here.</p>
+           <br>
+           <h2 id="Adding-Methods" class="pointer">Adding Methods<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Methods are functions that are properties of an object. Here is how to add methods to JavaScript objects.</p>
+           <br>
+           <h3>Functions as Object Properties</h3>
+           <br>
+           <p>We can assign function expressions as values to object properties to add methods:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g5cv">const person = {
+     name: "John",
+     sayHello: function() {
+         console.log("Hello!");
+     }
+ }
+ 
+ person.sayHello(); // Logs "Hello!"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>The <span class="special_quote">sayHello</span> method can be invoked using <span class="special_quote">person.sayHello()</span> .</p>
+           <br>
+           <h3>Invoking Object Methods</h3>
+           <br>
+           <p>To call an object method, use:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g5xm">objectName.methodName();</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>Where <span class="special_quote">objectName</span> is the name of your object, and <span class="special_quote">methodName</span> is the method you want to invoke.</p>
+           <br>
+           <p>Methods have access to other properties on the same object using <span class="special_quote">this</span> (more on that below)!</p>
+           <br>
+           <h3>Best Practices for Method Definition</h3>
+           <br>
+           <p>Some best practices for methods include:</p>
+           <ul class="ul_class">
+            <li>Avoid using arrow functions which lexically bind <span class="special_quote">this</span> . Use regular functions instead.</li>
+            <li>Use ES6 method shorthand syntax:</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g575">sayHi() {
+     // method code
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <h2 id="-this--Keyword" class="pointer">'this' Keyword<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>The special <span class="special_quote">this</span> keyword references the current object but can sometimes be confusing.</p>
+           <br>
+           <h3>Understanding 'this' in Objects</h3>
+           <br>
+           <p>In object methods, <span class="special_quote">this</span> refers to the object itself:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g6yq">const person = {
+     name: "John",
+     sayName() {
+         console.log(this); // person object
+     }
+ };
+ 
+ person.sayName();</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g1ab:::\|/" style="">Whereas in regular functions, <span class="special_quote">this</span> refers to the global object ( <span class="special_quote">window</span> in browsers).</p>
+           <br>
+           <h3>'this' in Regular Functions vs. Arrow Functions</h3>
+           <br>
+           <p>Arrow functions lexically bind <span class="special_quote">this</span> so they inherit <span class="special_quote">this</span> from the surrounding scope:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g61x">const person = {
+     name: "John",
+     sayName: () =&gt; {
+         console.log(this); // window
+     }
+ };
+ 
+ person.sayName();</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>So arrow functions should be avoided as object methods.</p>
+           <br>
+           <h3>Common 'this' Pitfalls and Solutions</h3>
+           <br>
+           <p>Here are some common <span class="special_quote">this</span> pitfalls and how to avoid them:</p>
+           <ul class="ul_class">
+            <li>Losing <span class="special_quote">this</span> context: store <span class="special_quote">this</span> in a variable</li>
+            <li>Using arrow functions: stick to regular functions for methods</li>
+            <li>Changing <span class="special_quote">this</span> (call/apply): leverage lexical <span class="special_quote">this</span> with arrow functions</li>
+           </ul>
+           <br>
+           <h2 id="Objects-in-Arrays" class="pointer">Objects in Arrays<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>We can store objects in arrays to organize related data.</p>
+           <br>
+           <h3>Storing Objects in Arrays</h3>
+           <br>
+           <p>An array stores an ordered collection of items. We can store objects inside arrays like so:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g6qo">const todos = [
+     {
+         id: 1,
+         text: "Take out trash",
+         completed: false
+     },
+     {
+         id: 2,
+         text: "Doctor's appointment",
+         completed: true
+     }
+ ];</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g2f0:::\|/" style="">This <span class="special_quote">todos</span> array contains two todo objects representing tasks.</p>
+           <br>
+           <h3>Iterating Over Object Arrays</h3>
+           <br>
+           <p>We can use loops to iterate over arrays of objects:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g692">for (let i = 0; i &lt; todos.length; i++) {
+     console.log(todos[i].text); // Log text property
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g27y:::\|/" style="">We can access object properties inside the loop on each iteration.</p>
+           <br>
+           <p>The <span class="special_quote">forEach</span> array method is also useful for looping over object arrays.</p>
+           <br>
+           <h3>Use Cases for Objects in Arrays</h3>
+           <br>
+           <p>Some examples of storing objects in arrays include:</p>
+           <ul class="ul_class">
+            <li>User objects stored in an array as a simple database</li>
+            <li>Todo/task objects for a todo list web app</li>
+            <li>Product objects in a shopping cart array</li>
+           </ul>
+           <br>
+           <p>This is a very common pattern in JavaScript apps.</p>
+           <br>
+           <h2 id="Math-Object" class="pointer">Math Object<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>The built-in Math object has useful methods and properties for mathematical operations.</p>
+           <br>
+           <h3>Overview of the Math Object</h3>
+           <ul class="ul_class">
+            <li>Static properties and methods (not constructable with <span class="special_quote">new</span> )</li>
+            <li>Useful for common math tasks in programming</li>
+            <li>Helps avoid issues with numbers in JS</li>
+           </ul>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g6fh">Math.PI; // 3.14159...
+ Math.floor(3.14); // 3
+ Math.ceil(3.14); // 4
+ Math.min(1,3,2); // 1
+ Math.random(); // Random number</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <h3>Common Math Operations</h3>
+           <br>
+           <p>Here are some common math operations with <span class="special_quote">Math</span> :</p>
+           <ul class="ul_class">
+            <li> <span class="special_quote">Math.round()</span> , <span class="special_quote">Math.floor()</span> , <span class="special_quote">Math.ceil()</span> - round to integer</li>
+            <li> <span class="special_quote">Math.min()/Math.max()</span> - find min/max value</li>
+            <li> <span class="special_quote">Math.random()</span> - generate random number</li>
+            <li>Many more!</li>
+           </ul>
+           <br>
+           <h3>Math Object Use Cases</h3>
+           <br>
+           <p>Some example use cases:</p>
+           <ul class="ul_class">
+            <li>Generate random ID numbers for objects</li>
+            <li>Calculate distances/physics in games</li>
+            <li>Formulas/operations across app</li>
+           </ul>
+           <br>
+           <p>The <span class="special_quote">Math</span> object helps avoid issues with representing numbers in JS and supports many common math functions out of the box.</p>
+           <br>
+           <h2 id="Primitive-vs--Reference-Types" class="pointer">Primitive vs. Reference Types<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>In JavaScript, data types can be either primitive or reference types. This affects how they are stored and interacted with.</p>
+           <br>
+           <h3>Understanding Primitive Types</h3>
+           <br>
+           <p>Primitive types include:</p>
+           <ul class="ul_class">
+            <li>Strings</li>
+            <li>Numbers</li>
+            <li>Booleans</li>
+            <li>null and undefined</li>
+           </ul>
+           <br>
+           <p>Primitives store only a single value directly in the variable itself.</p>
+           <br>
+           <p>For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g655">let name = "John";</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>The string "John" is stored directly in the <span class="special_quote">name</span> variable.</p>
+           <br>
+           <h3>Understanding Reference Types</h3>
+           <br>
+           <p>Reference types include:</p>
+           <ul class="ul_class">
+            <li>Arrays</li>
+            <li>Functions</li>
+            <li>Objects</li>
+           </ul>
+           <br>
+           <p>References don't store the value directly. They point to a location in memory where the object is stored.</p>
+           <br>
+           <p>For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g6x2">const person = {
+     name: "John"
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <span class="special_quote">person</span> doesn't contain the object directly. It points to a memory location storing the object data.</p>
+           <br>
+           <h3>Implications in Object Literals</h3>
+           <br>
+           <p>In practice, this means:</p>
+           <ul class="ul_class">
+            <li>Primitives are copied by value</li>
+            <li>Objects are copied by reference</li>
+           </ul>
+           <br>
+           <p>This becomes very relevant when passing functions arguments or assigning objects to new variables.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g62c">let name = "John";
+ let name2 = name;
+ 
+ name2 = "Jane";
+ 
+ console.log(name); // "John"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>Here the string is copied by value - <span class="special_quote">name2</span> gets a copy of the value in <span class="special_quote">name</span> .</p>
+           <br>
+           <p>Objects behave differently:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g6rc">let person = {
+     name: "John"
+ };
+ let person2 = person;
+ 
+ person2.name = "Jane";
+ 
+ console.log(person.name); // "Jane"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <span class="special_quote">person</span> and <span class="special_quote">person2</span> point to the same object location. Changing one also affects the other!</p>
+           <br>
+           <p>To truly copy objects, we need to manually create a copy with destructuring or <span class="special_quote">Object.assign()</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g702">// Destructuring copy
+ let {name: name2} = person;
+ 
+ name2 = "Jane";
+ 
+ console.log(person.name); // "John"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>So because objects are stored by reference, modifications can unexpectedly change variables. Destructuring allows true copies of object data.</p>
+           <br>
+           <h2 id="Object-Destructuring" class="pointer">Object Destructuring<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Destructuring allows us to extract data from objects and arrays into distinct variables.</p>
+           <br>
+           <h3>Extracting Values from Objects</h3>
+           <br>
+           <p>With object destructuring we can extract values like this:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g7c4">const person = {
+     firstName: "John",
+     lastName: "Doe",
+     age: 32
+ }
+ 
+ // Object destructuring
+ const {firstName, age} = person;
+ 
+ console.log(firstName); // "John"
+ console.log(age); // 32</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3is:::\|/" style="">This pulls properties out into separate variables.</p>
+           <br>
+           <h3>Simplifying Code with Object Destructuring</h3>
+           <br>
+           <p>Destructuring objects can simplify code by reducing redundant access:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g73c">// Without destructuring
+ function printDetails(user) {
+     console.log(user.firstName, user.lastName);
+ }
+ 
+ // With destructuring
+ function printDetails({firstName, lastName}) {
+     console.log(firstName, lastName);
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3xc:::\|/" style="">By destructuring in the function argument, we skip redundant <span class="special_quote">user.</span> references.</p>
+           <br>
+           <h3>Use Cases for Object Destructuring</h3>
+           <br>
+           <p>Object destructuring shines anytime we need to access multiple properties of an object. Some examples:</p>
+           <ul class="ul_class">
+            <li>Initializing variables</li>
+            <li>Function arguments</li>
+            <li>Pulling API response data</li>
+           </ul>
+           <br>
+           <h2 id="Object-Spread-Operator" class="pointer">Object Spread Operator<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>The spread syntax (...) allows us to expand objects into other objects very useful for combining data.</p>
+           <br>
+           <h3>Introduction to the Spread Operator</h3>
+           <br>
+           <p>The spread operator unpacks elements:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g7iv">const numbers = [1,2,3];
+ Math.max(...numbers);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3cd:::\|/" style="">We spread an iterable like an array into individual arguments.</p>
+           <br>
+           <h3>Copying Objects with Spread</h3>
+           <br>
+           <p>We can create shallow copies of objects with the spread syntax:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g77k">const person = {
+     name: "John",
+     age: 30
+ }
+ 
+ const copiedPerson = {...person};</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g33w:::\|/" style="">This quickly copies all key-value pairs into a new object.</p>
+           <br>
+           <h3>Merging Objects Using Spread</h3>
+           <br>
+           <p>The spread operator can also merge objects together:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g76d">const person = {
+     name: "John"
+ };
+ 
+ const job = {
+     role: "Teacher"
+ }
+ 
+ // Merge objects
+ const employee = {...person, ...job};
+ 
+ console.log(employee);
+ // {name: "John", role: "Teacher"}</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g388:::\|/" style="">This allows easily combining data from multiple sources.</p>
+           <br>
+           <br>
+           <h2 id="Object-Methods---Properties" class="pointer">Object Methods &amp; Properties<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>JavaScript objects come with useful built-in methods we can use.</p>
+           <br>
+           <p>Common methods include:</p>
+           <ul class="ul_class">
+            <li> <span class="special_quote">Object.keys()</span> – Returns array of keys</li>
+            <li> <span class="special_quote">Object.values()</span> – Returns array of values</li>
+            <li> <span class="special_quote">Object.entries()</span> – Returns keys &amp; values</li>
+           </ul>
+           <br>
+           <p>Consider this object:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g7vq">const person = {
+     name:"John",
+     age: 30
+ };
+ 
+ Object.keys(person); // ["name", "age"]
+ Object.values(person); // ["John", 30]
+ Object.entries(person); // [["name", "John"], ["age", 30]]</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3wx:::\|/" style="">These provide different views into the object data.</p>
+           <br>
+           <h3>Iterating Over Object Properties</h3>
+           <br>
+           <p>We can also use these methods to iterate (loop) over objects:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g7pi">// Loop over keys
+ for (let key of Object.keys(person)) {
+     console.log(key); // Prints name, age
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3gd:::\|/" style="">They enable easily looping without having to manually access properties.</p>
+           <br>
+           <h3>Use Cases for Object Methods</h3>
+           <p>Here are some example use cases for these methods:</p>
+           <ul class="ul_class">
+            <li>Convert objects into maps/arrays</li>
+            <li>Iterate over objects in loops</li>
+            <li>Access all values or keys easily</li>
+           </ul>
+           <br>
+           <h2 id="Immutability-in-Objects" class="pointer">Immutability in Objects<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Immutable objects cannot be changed after creation. This provides several benefits.</p>
+           <br>
+           <h3>Understanding Immutability</h3>
+           <br>
+           <p>An immutable object can't be modified after it's created. Consider this:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g7pg">const person = {
+     name: 'John'
+ };
+ 
+ person.name = 'Jane'; // Can be modified!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3oz:::\|/" style="">This <span class="special_quote">person</span> object is mutable - it can be changed after creation.</p>
+           <br>
+           <p>An immutable object could not have its properties changed like this.</p>
+           <br>
+           <h3>Techniques for Achieving Immutability</h3>
+           <br>
+           <p>There are a few ways to achieve immutability in JavaScript:</p>
+           <p> <strong>Const</strong> </p>
+           <br>
+           <p>Declaring an object as <span class="special_quote">const</span> only prevents reassignment of the variable. The properties can still change:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g7jm">const person = {
+     name: 'John'
+ };
+ 
+ person.name = 'Jane'; // Allowed!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Object.freeze()</strong> </p>
+           <br>
+           <p>The <span class="special_quote">Object.freeze()</span> method prevents new properties from being added and existing properties changed:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g8yd">const person = {
+     name: 'John'
+ };
+ 
+ Object.freeze(person);
+ 
+ person.name = 'Jane'; // Throws an error</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g33e:::\|/" style="">Now the object is immutable!</p>
+           <br>
+           <p> <strong>Spread operator</strong> </p>
+           <br>
+           <p>We can use the spread syntax to create a new copy whenever an object changes:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g897">let person = {...originalPerson};
+ 
+ person = {...person, name: 'Jane'}; // Create updated copy</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g3he:::\|/" style="">This ensures modifications create a new object instead.</p>
+           <br>
+           <br>
+           <h3>Benefits of Immutable Objects</h3>
+           <br>
+           <p>Benefits include:</p>
+           <ul class="ul_class">
+            <li>Avoid unexpected side effects from modifying objects</li>
+            <li>Help manage shared data</li>
+            <li>Enable useful patterns like redux</li>
+           </ul>
+           <p>Overall, immutability leads to safer and more predictable code.</p>
+           <br>
+           <h2 id="Object-Prototypes" class="pointer">Object Prototypes<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>When you create an object in JavaScript, that object is linked to another object called its "prototype". This prototype linkage allows objects to inherit features from other objects.</p>
+           <br>
+           <h3>The Prototype Chain</h3>
+           <br>
+           <p>All JavaScript objects have a private <span class="special_quote">[[Prototype]]</span> property that's either another object or <span class="special_quote">null</span> . When you try to access a property on an object:</p>
+           <p>1. JavaScript first looks for the property on the object itself</p>
+           <p>2. If it's not found, it then searches the object's prototype object,</p>
+           <p>3. And keeps going up the prototype chain until the property is found or it reaches <span class="special_quote">null</span> .</p>
+           <p>This is the prototype chain.</p>
+           <br>
+           <p>So the prototype acts as a fallback for properties that don't exist on the object itself.</p>
+           <br>
+           <h3>Inheriting from Object.prototype</h3>
+           <br>
+           <p>By default, all custom objects inherit properties and methods from the base <span class="special_quote">Object.prototype</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g8rn">const user = { name: "John" };
+ 
+ user.toString(); // Works even though we didn't define it</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g346:::\|/" style="">Here <span class="special_quote">user</span> inherits the <span class="special_quote">toString()</span> method from <span class="special_quote">Object.prototype</span> .</p>
+           <br>
+           <p>We can access an object's prototype using <span class="special_quote">Object.getPrototypeOf()</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g832">Object.getPrototypeOf(user); // Object.prototype</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <h3>Setting the Prototype</h3>
+           <br>
+           <p>Every function has a <span class="special_quote">prototype</span> property that allows setting the prototype for objects created with that function:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g870">function User(name) {
+     this.name = name;
+ }
+ 
+ User.prototype.sayHi = function() {
+     alert(*Hi, I'm *);
+ }
+ 
+ const me = new User("John");
+ me.sayHi(); // Works!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g4tn:::\|/" style="">Now <span class="special_quote">User</span> objects inherit from the custom <span class="special_quote">User.prototype</span> object.</p>
+           <br>
+           <p>Prototypes allow objects to share and extend functionality in a dynamic, modular way. It's a key aspect of OOP in JavaScript.</p>
+           <br>
+           <h2 id="Common-Mistakes-and-Best-Practices" class="pointer">Common Mistakes and Best Practices<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>When working with object literals, there are some best practices we can follow to write optimized, maintainable code.</p>
+           <br>
+           <h3>Avoiding Common Pitfalls in Object Literal Usage</h3>
+           <br>
+           <p>Here are some common mistakes to avoid:</p>
+           <p> <strong>Modifying object literals incorrectly</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g8rv">const person = {
+     name: "John"
+ };
+ 
+ person = {}; // Re-assigning loses reference
+ 
+ person.name = "Jane";  // Modifying non-existent property</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g4ly:::\|/" style="">Don't re-assign the object variable or try to change properties on an undefined object.</p>
+           <br>
+           <p> <strong>Using reserved words as keys</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g8vw">const person = {
+     class: "Computer Science" // Causes syntax error
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g4zy:::\|/" style="">Avoid using reserved words and symbols as key names.</p>
+           <br>
+           <p> <strong>Mixing up declaring and invoking</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqtnm2g8u7">let user = {
+     name: "John",
+     print: printDetails(); // Runs instantly!
+ }
+ 
+ function printDetails() {
+     // Prints undefined
+     // Because print() already ran above
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <p data-conditional-css="lqtnm2g4on:::\|/" style="">Don't invoke functions in objects, simply refer to them.</p>
+           <br>
+           <h3>Best Practices for Object-oriented JavaScript</h3>
+           <br>
+           <p>Some best practices include:</p>
+           <ul class="ul_class">
+            <li>Use descriptive key names</li>
+            <li>Create objects with same properties grouped</li>
+            <li>Store methods on prototypes instead of instances</li>
+           </ul>
+           <p>This leads to clean, readable code.</p>
+           <br>
+           <h3>Writing Maintainable and Readable Object Literals</h3>
+           <br>
+           <p>Some tips for writing good object literals:</p>
+           <ul class="ul_class">
+            <li>Be consistent and predictable in naming</li>
+            <li>Use comments for complex object literals</li>
+            <li>Format code neatly into semantic blocks</li>
+           </ul>
+           <p>Your future self and other developers will thank you!</p>
+           <br>
+           <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Object literals are the bread and butter of working with data and config in JavaScript. By following best practices of descriptive declaration, correct method assignment, reusing prototypes, immutable data and prudent manipulation, we build robust, maintainable and performant code. Becoming an expert in literal JavaScript objects pays huge dividends towards mastering the language paradigms.</p>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"><a href="/posts/css-combinators" class="btn-cta pad">Previous Post</a></span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"><a href="0" class="btn-cta pad">Next Post</a></span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
+         </div>
+         <div class="share-links">
+          <div id="lqtnm2fhzw">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/js-object-literals" target="_blank">Facebook</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/js-object-literals" target="_blank">Twitter</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/js-object-literals" target="_blank">LinkedIn</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/js-object-literals&amp;media=https://www.jimscode.blog/images/js-object-literals-banner-png.png&amp;description=javascript%20object%20literals" target="_blank">Pinterest</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/js-object-literals" target="_blank">Reddit</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="whatsapp://send?text=https://www.jimscode.blog/posts/js-object-literals" target="_blank">WhatsApp</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="mailto:?subject=javascript%20object%20literals&amp;body=https://www.jimscode.blog/posts/js-object-literals" target="_blank">Email</a></li>
+            <li style="list-style: none;" data-original-css="list-style: none;"><a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/js-object-literals" target="_blank">Instagram</a></li>
+           </ul>
+           <br>
+          </div>
+         </div>
+        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About:<a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a></p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lqtnm2fdos" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_javascript" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/javascript" class="btn-cta">javascript</a></li>
+           <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web%20dev" class="btn-cta">web dev</a></li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Objects-at-a-Glance">Objects at a Glance</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Creating-an-Object-Literal">Creating an Object Literal</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Adding-Methods">Adding Methods</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#-this--Keyword">'this' Keyword</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Objects-in-Arrays">Objects in Arrays</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Math-Object">Math Object</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Primitive-vs--Reference-Types">Primitive vs. Reference Types</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Object-Destructuring">Object Destructuring</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Object-Spread-Operator">Object Spread Operator</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Object-Methods---Properties">Object Methods &amp; Properties</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Immutability-in-Objects">Immutability in Objects</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Object-Prototypes">Object Prototypes</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Common-Mistakes-and-Best-Practices">Common Mistakes and Best Practices</a></li>
+             <hr>
+             <li style="display: block;" role="listitem"><a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a></li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product:<a href="#">Product Name</a></p>
+           <div id="lqtnm2fihe">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div id="lqtnm2fa8r">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lqtnm2gm2i">
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
+          <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use<a href="https://highlightjs.org">highlight.js</a>, © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#lqtnm2gm2i{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#lqtnm2ffy0{ display: block;}#lqtnm2fdos{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#lqtnm2gm2i{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
+<script>
+let giscusTheme = localStorage.getItem("theme");
+        let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "scionsamurai/jimscode.github.io",
+          "data-repo-id": "R_kgDOK8_rSw",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOK8_rS84Cb9LP",
+          "data-mapping": "pathname",
+          "data-strict": "1",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "crossorigin": "anonymous",
+          "async": "",
+        };
+        
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

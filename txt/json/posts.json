@@ -258,15 +258,36 @@
     "image": "/images/css-combinators-banner-png.png" ,
     "webp_image": "/images/css-combinators-banner.webp",
     "image_thumb": "/images/css-combinators-banner-png_thumb.png",
-    "banner_alt": "",
+    "banner_alt": "Image of bird styled in many colors.",
     "show_banner": true,
     "trending": false,
     "comments": true,
     "link": "/posts/css-combinators",
     "prev_post": "/posts/javascript-functions-methods",
-    "subseq_post": 0,
+    "subseq_post": "/posts/js-object-literals",
     "category": "HTML/CSS basics",
     "category_title": "CSS Combinators"
+
+},
+{
+    "id": 14,
+    "post_title" : "Javascript Object Literals",
+    "description": "Object literals are fundamental for managing data and configuration in JS apps. Read this in-depth guide on declarations, methods, prototypes, immutability best practices, and practical object usage!",
+    "authorid" : 1,
+    "date" : "Sun, Dec 31 2023 15:25:57 GMT",
+    "tags": ["javascript", "web dev"],
+    "image": "/images/js-object-literals-banner-png.png" ,
+    "webp_image": "/images/js-object-literals-banner.webp",
+    "image_thumb": "/images/js-object-literals-banner-png_thumb.png",
+    "banner_alt": "Picture of people at work in a shop with text along the bottom asking 'What is an Object in JS?'.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/js-object-literals",
+    "prev_post": "/posts/css-combinators",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "JS Object Literals"
 
 }
 
