@@ -60,7 +60,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lqtnle25j8">
+    <div id="lqu6laotns">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -86,7 +86,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>    </div>
-    <div id="lqtnle250t">
+    <div id="lqu6laoupb">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -96,14 +96,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Understanding the Checkbox Hack for Creating Flip Cards</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
-        <picture class="banner_picture" id="lqtnle2buj">
+        <picture class="banner_picture" id="lqu6laoxyn">
          <source srcset="/images/checkbox-hack-flip-cards-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/checkbox-hack-flip-cards-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Stack of flip cards." class="banner-image">
           </picture>
           <br>
-          <div id="lqtnle2cc5">
-<span id="lqtnle2jco">           <p>The checkbox hack is a clever technique in HTML and CSS that allows you to create interactive elements like flip cards by using a hidden checkbox input paired with an associated label. In this post, we’ll walk through exactly how it works and how you can use it to create your own flip-style cards.</p>
+          <div id="lqu6laoxue">
+<span id="lqu6lap3wu">           <p>The checkbox hack is a clever technique in HTML and CSS that allows you to create interactive elements like flip cards by using a hidden checkbox input paired with an associated label. In this post, we’ll walk through exactly how it works and how you can use it to create your own flip-style cards.</p>
            <br>
            <h2 id="Introduction-to-the-Checkbox-Hack" class="pointer">Introduction to the Checkbox Hack<span class="anchor-image">⚓</span></h2>
            <p>The checkbox hack takes advantage of the built-in functionality and styling options between a standard checkbox input and its corresponding label. By setting the checkbox input to hidden and toggling styling changes on the label when the checkbox is checked or unchecked, we can create effects like clickable tabs, accordion drop-downs, modal popups, and more.</p>
@@ -120,7 +120,7 @@ Search       </button>
            <h2 id="Structure-of-the-HTML" class="pointer">Structure of the HTML<span class="anchor-image">⚓</span></h2>
            <p>Here is the basic boilerplate HTML structure needed:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqtnle2q2u">&lt;input type="checkbox" id="flashcard-checkbox"&gt;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lqu6lap64l">&lt;input type="checkbox" id="flashcard-checkbox"&gt;
  &lt;label for="flashcard-checkbox"&gt;
      &lt;div class="front"&gt;
          Front of the card
@@ -135,7 +135,7 @@ Search       </button>
            <h2 id="CSS-Styling-for-the-Flip-Card-Container" class="pointer">CSS Styling for the Flip Card Container<span class="anchor-image">⚓</span></h2>
            <p>Some initial CSS establishes the container that will house the flip card and sets up the transition:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqtnle2qbo">.flashcard {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqu6lap6m9">.flashcard {
      position: relative;
      width: 300px;
      height: 200px;
@@ -150,7 +150,7 @@ Search       </button>
            <h2 id="Styling-the-Checkbox-Input" class="pointer">Styling the Checkbox Input<span class="anchor-image">⚓</span></h2>
            <p>The checkbox input itself is hidden from view using:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqtnle2q7t">input[type="checkbox"] {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqu6lap6pe">input[type="checkbox"] {
      display: none;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
            <br>
@@ -159,7 +159,7 @@ Search       </button>
            <h2 id="Implementing-the-Card-Flip-Animation" class="pointer">Implementing the Card Flip Animation<span class="anchor-image">⚓</span></h2>
            <p>The flip effect gets triggered based on the checked state of the checkbox using this selector:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqtnle2qcd">.flashcard input[type="checkbox"]:checked + label {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqu6lap6ke">.flashcard input[type="checkbox"]:checked + label {
      transform: rotateY(180deg);
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
            <br>
@@ -168,7 +168,7 @@ Search       </button>
            <h2 id="Styling-the-Front-and-Back-Faces" class="pointer">Styling the Front and Back Faces<span class="anchor-image">⚓</span></h2>
            <p>The separate faces of the card get positioned absolutely within the container:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqtnle2qyg">.flashcard .front,
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqu6lap6oy">.flashcard .front,
  .flashcard .back {
      width: 100%;
      height: 100%;
@@ -199,22 +199,8 @@ Search       </button>
            <h2 id="Customizing-the-Flip-Card-Content" class="pointer">Customizing the Flip Card Content<span class="anchor-image">⚓</span></h2>
            <p>A major advantage of this technique is how customizable and reusable it makes the card component. Some ideas for easy modifications:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqtnle2rf6">/* Custom colors &amp; fonts */
- .flashcard {
-     background: #BD5757;
-     color: white;
-     font-family: "Comic Sans MS", cursive, sans-serif;
- }
- 
- /* Custom text &amp; images */
- .front::before {
-     content: "🌵";
-     font-size: 96px;
- }
- 
- .back {
-     background: url(cactus.jpg);
-     background-size: cover;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lqu6lap7f3">input[type="checkbox"] {
+     display: none;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
            <br>
            <p>The possibilities are really endless for styling the card’s content and structure. Use your imagination or take inspiration from other code snippets and demos.</p>
@@ -243,7 +229,7 @@ Search       </button>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lqtnle2dr1">
+          <div id="lqu6laoy91">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -275,7 +261,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lqtnle2agr" style="display: contents; line-height: 2rem;">
+          <ul id="lqu6laowqq" style="display: contents; line-height: 2rem;">
            <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/html" class="btn-cta">html</a></li>
            <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/css" class="btn-cta">css</a></li>
            <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"><a href="/tags/web%20dev" class="btn-cta">web dev</a></li>
@@ -311,7 +297,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product:<a href="#">Product Name</a></p>
-           <div id="lqtnle2gih">
+           <div id="lqu6lap1jj">
             <p>sidebar</p>
            </div>
           </div>
@@ -319,7 +305,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="lqtnle26tx">
+      <div id="lqu6laou2w">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -332,7 +318,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lqtnle2wel">
+         <ul class="footer-section" id="lqu6lapbv3">
           <li style="list-style: none;" data-original-css="list-style: none;"><a href="/about-us">About Us</a></li>
           <li style="list-style: none;" data-original-css="list-style: none;"><a href="/privacy-policy">Privacy Policy</a></li>
           <li style="list-style: none;" data-original-css="list-style: none;"><a href="/terms-of-service">Terms of Service</a></li>
@@ -352,7 +338,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqtnle2wel{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lqu6lapbv3{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -360,11 +346,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lqtnle2buj{ display: block;}#lqtnle2agr{ display: block;}
+#lqu6laoxyn{ display: block;}#lqu6laowqq{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqtnle2wel{ display: flex; flex-direction: column;}
+#lqu6lapbv3{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

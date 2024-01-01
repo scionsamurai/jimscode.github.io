@@ -50,7 +50,13 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/posts/making-image-puzzle</loc>
-    <lastmod>2023-12-26</lastmod>
+    <lastmod>2023-12-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/posts/js-and-dom</loc>
+    <lastmod>2023-12-31</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>

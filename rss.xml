@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Unveiling the Power of JavaScript: A Guide to the Document Object Model (DOM)</title>
+      <link>https://www.jimscode.blog/posts/js-and-dom</link>
+      <pubDate>Mon, Jan 01 2024 00:22:34 GMT</pubDate>
+      <description>Mastering the Document Object Model (DOM) is key for creating interactive web experiences. Learn how the DOM forms a node tree of page elements allowing them to be accessed and manipulated with JavaScript to enable dynamic content updates.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>Javascript Object Literals</title>
       <link>https://www.jimscode.blog/posts/js-object-literals</link>
       <pubDate>Sun, Dec 31 2023 15:25:57 GMT</pubDate>

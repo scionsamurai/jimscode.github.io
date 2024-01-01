@@ -285,9 +285,30 @@
     "comments": true,
     "link": "/posts/js-object-literals",
     "prev_post": "/posts/css-combinators",
-    "subseq_post": 0,
+    "subseq_post": "/posts/js-and-dom",
     "category": "JS basics",
     "category_title": "JS Object Literals"
+
+},
+{
+    "id": 15,
+    "post_title" : "Unveiling the Power of JavaScript: A Guide to the Document Object Model (DOM)",
+    "description": "Mastering the Document Object Model (DOM) is key for creating interactive web experiences. Learn how the DOM forms a node tree of page elements allowing them to be accessed and manipulated with JavaScript to enable dynamic content updates.",
+    "authorid" : 1,
+    "date" : "Mon, Jan 01 2024 00:22:34 GMT",
+    "tags": ["javascript", "web dev"],
+    "image": "/images/js-and-dom-banner-png.png" ,
+    "webp_image": "/images/js-and-dom-banner.webp",
+    "image_thumb": "/images/js-and-dom-banner-png_thumb.png",
+    "banner_alt": "Picture of monitors in front of landscape with landscape designed onto the monitors.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/js-and-dom",
+    "prev_post": "/posts/js-object-literals",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "JS Document Object Model"
 
 }
 
