@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Form Validation to Dynamic UIs: The JavaScript forms Handbook</title>
+      <link>https://www.jimscode.blog/posts/js-and-forms</link>
+      <pubDate>Mon, Jan 01 2024 16:08:43 GMT</pubDate>
+      <description>Take control of web forms with JavaScript to provide a seamless user experience. We cover events, validation, regex, custom inputs, accessibility, security vulnerabilities like XSS/CSRF, best practices and more in this extensive handbook.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+<category>forms</category>
+    </item>
+<item>
       <title>Unveiling the Power of JavaScript: A Guide to the Document Object Model (DOM)</title>
       <link>https://www.jimscode.blog/posts/js-and-dom</link>
       <pubDate>Mon, Jan 01 2024 00:22:34 GMT</pubDate>

@@ -306,9 +306,30 @@
     "comments": true,
     "link": "/posts/js-and-dom",
     "prev_post": "/posts/js-object-literals",
-    "subseq_post": 0,
+    "subseq_post": "/posts/js-and-forms",
     "category": "JS basics",
     "category_title": "JS Document Object Model"
+
+},
+{
+    "id": 16,
+    "post_title" : "Form Validation to Dynamic UIs: The JavaScript forms Handbook",
+    "description": "Take control of web forms with JavaScript to provide a seamless user experience. We cover events, validation, regex, custom inputs, accessibility, security vulnerabilities like XSS/CSRF, best practices and more in this extensive handbook.",
+    "authorid" : 1,
+    "date" : "Mon, Jan 01 2024 16:08:43 GMT",
+    "tags": ["javascript", "web dev", "forms"],
+    "image": "/images/js-and-forms-banner-png.png" ,
+    "webp_image": "/images/js-and-forms-banner.webp",
+    "image_thumb": "/images/js-and-forms-banner-png_thumb.png",
+    "banner_alt": "Small square robots stacking childrens letter blocks.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/js-and-forms",
+    "prev_post": "/posts/js-and-dom",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "JS and Forms"
 
 }
 
