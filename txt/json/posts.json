@@ -342,15 +342,36 @@
     "image": "/images/js-array-methods-banner-png.png" ,
     "webp_image": "/images/js-array-methods-banner.webp",
     "image_thumb": "/images/js-array-methods-banner-png_thumb.png",
-    "banner_alt": "",
+    "banner_alt": "A stack of dominos with some flying or falling around the stack.",
     "show_banner": true,
     "trending": false,
     "comments": true,
     "link": "/posts/js-array-methods",
     "prev_post": "/posts/js-and-forms",
-    "subseq_post": 0,
+    "subseq_post": "/posts/dates-times-with-js",
     "category": "JS basics",
     "category_title": "JS Array Methods"
+
+},
+{
+    "id": 18,
+    "post_title" : "Getting Started with Dates and Times in JavaScript",
+    "description": "A comprehensive guide to essential concepts like Date objects, timezone handling, calculations, and integration techniques for managing dates and times in JS.",
+    "authorid" : 1,
+    "date" : "Tue, Jan 02 2024 17:44:23 GMT",
+    "tags": ["javascript", "web dev", "Time"],
+    "image": "/images/dates-times-with-js-banner-png.png" ,
+    "webp_image": "/images/dates-times-with-js-banner.webp",
+    "image_thumb": "/images/dates-times-with-js-banner-png_thumb.png",
+    "banner_alt": "Image of humanoid robot working on fixing a large analog clock.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/dates-times-with-js",
+    "prev_post": "/posts/js-array-methods",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "JS Dates & Times"
 
 }
 

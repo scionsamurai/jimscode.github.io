@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Getting Started with Dates and Times in JavaScript</title>
+      <link>https://www.jimscode.blog/posts/dates-times-with-js</link>
+      <pubDate>Tue, Jan 02 2024 17:44:23 GMT</pubDate>
+      <description>A comprehensive guide to essential concepts like Date objects, timezone handling, calculations, and integration techniques for managing dates and times in JS.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+<category>Time</category>
+    </item>
+<item>
       <title>Modern Array Processing with JavaScript Methods</title>
       <link>https://www.jimscode.blog/posts/js-array-methods</link>
       <pubDate>Tue, Jan 02 2024 01:11:19 GMT</pubDate>
@@ -150,17 +160,6 @@
       <category>html</category>
 <category>media</category>
 <category>image</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>Level Up Your HTML Skills: Semantics and Organization</title>
-      <link>https://www.jimscode.blog/posts/html-semantics-organization</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Navigate the world of HTML semantics and organization to unleash the full potential of web development. Learn the benefits of semantic HTML, best practices for organized documents, and tips to avoid common pitfalls in accessibility and code structure.</description>
-      
-      <category>html</category>
-<category>organization</category>
-<category>semantics</category>
 <category>web dev</category>
     </item>
       </channel>
