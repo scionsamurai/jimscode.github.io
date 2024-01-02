@@ -331,6 +331,27 @@
     "category": "JS basics",
     "category_title": "JS and Forms"
 
+},
+{
+    "id": 17,
+    "post_title" : "Modern Array Processing with JavaScript Methods",
+    "description": "JavaScript arrays provide simple yet powerful methods for data analysis and transformation. Master essential methods like filter, map, reduce, concat and more.",
+    "authorid" : 1,
+    "date" : "Tue, Jan 02 2024 01:11:19 GMT",
+    "tags": ["javascript", "web dev"],
+    "image": "/images/js-array-methods-banner-png.png" ,
+    "webp_image": "/images/js-array-methods-banner.webp",
+    "image_thumb": "/images/js-array-methods-banner-png_thumb.png",
+    "banner_alt": "",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/js-array-methods",
+    "prev_post": "/posts/js-and-forms",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "JS Array Methods"
+
 }
 
 

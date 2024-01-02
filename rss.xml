@@ -6,6 +6,15 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Modern Array Processing with JavaScript Methods</title>
+      <link>https://www.jimscode.blog/posts/js-array-methods</link>
+      <pubDate>Tue, Jan 02 2024 01:11:19 GMT</pubDate>
+      <description>JavaScript arrays provide simple yet powerful methods for data analysis and transformation. Master essential methods like filter, map, reduce, concat and more.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+    </item>
+<item>
       <title>Form Validation to Dynamic UIs: The JavaScript forms Handbook</title>
       <link>https://www.jimscode.blog/posts/js-and-forms</link>
       <pubDate>Mon, Jan 01 2024 16:08:43 GMT</pubDate>
@@ -152,17 +161,6 @@
       <category>html</category>
 <category>organization</category>
 <category>semantics</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>Mastering Text Basics on Websites - A Guide for New Developers</title>
-      <link>https://www.jimscode.blog/posts/text-basics</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Learn HTML text fundamentals - proper formatting and structure techniques for headings, lists, text styles, special characters, and more. Essential skills for web developers.</description>
-      
-      <category>html</category>
-<category>text</category>
-<category>formatting</category>
 <category>web dev</category>
     </item>
       </channel>

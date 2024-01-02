@@ -81,8 +81,8 @@ function formatHTML(htmlString) {
           special_quote_placeholders.forEach(sqp => {
             if (line.includes(sqp)) constains_special_quote = true;
           });
-          const add_space_before = ['strong', 'em'];
-          const add_space_after = ['/strong', '/em'];
+          const add_space_before = ['strong', 'em', 'a'];
+          const add_space_after = ['/strong', '/em', '/a'];
           if (add_space_before.includes(element) || constains_special_quote) {
             line = ' ' + line;
             if (constains_special_quote) open_special_quote_span = true;

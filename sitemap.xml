@@ -103,6 +103,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.jimscode.blog/posts/js-array-methods</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.jimscode.blog/posts/js-object-literals</loc>
     <lastmod>2023-12-31</lastmod>
     <changefreq>never</changefreq>
