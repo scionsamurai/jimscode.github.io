@@ -327,7 +327,7 @@ css: /txt/css/flipcard.css
             - Side effects with external APIs 
             - Updating DOM elements
 
-            **.some() and .every() Condition Checking**
+            **~~.some()~~ and ~~.every()~~ Condition Checking**
 
             The ~~.some()~~ and ~~.every()~~ methods check if some or all elements pass a test.
 

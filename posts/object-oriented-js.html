@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Master effective object-oriented development in JavaScript for more maintainable large-scale apps. From objects and classes to design patterns and best practices, learn OOP theory and practical application.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>Object Oriented JS - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+   </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');   </script>
+  </head>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lqygpvjw7g">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+</label>
+      </div>
+ <a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>      </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
+     </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
+     </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+ <a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>     </div>
+    <div id="lqygpvjw2d">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Object-Oriented Programming in JavaScript Explained</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Thu, Jan 04 2024 00:06:30 GMT</p>
+        <picture class="banner_picture" id="lqygpvk0c4">
+         <source srcset="/images/object-oriented-js-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/object-oriented-js-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="Old man plays chess with a humaoid robot." class="banner-image">
+          </picture>
+          <br>
+          <div id="lqygpvk0jw">
+<span id="lqygpvk95l">           <br>
+           <p>Object-oriented programming (OOP) is an important programming paradigm that models real-world concepts. It structures code to focus on objects that contain related data and functionality. If you're coming from a procedural programming background, OOP may take some getting used to. However, it offers many advantages for building and maintaining complex applications in JavaScript.</p>
+           <br>
+           <h2 id="What-is-Object-Oriented-Programming-" class="pointer">What is Object-Oriented Programming?<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>At a high-level, object-oriented programming organizes code into object definitions called <strong>classes</strong> . These classes act as <strong>blueprints</strong> to create individual instances called <strong>objects</strong> .</p>
+           <br>
+           <p>For example, you can have a <span class="special_quote">Car</span> class that defines the generic properties and functions associated with cars. You can then create many specific <span class="special_quote">car1</span> , <span class="special_quote">car2</span> , etc. object instances from that class blueprint.</p>
+           <br>
+           <p>OOP revolves around several main concepts:</p>
+           <br>
+           <h3>Encapsulation</h3>
+           <br>
+           <p>This refers to bundling related properties (data) and methods (functions) within classes. The internal details are then <em>hidden</em> or <em>encapsulated</em> from external code. Objects only expose a public API to interact with them in limited ways.</p>
+           <br>
+           <p>This offers abstraction and reduces complexity for users of that object.</p>
+           <br>
+           <h3>Inheritance</h3>
+           <br>
+           <p>Classes can inherit commonly used state and behavior from other classes.</p>
+           <br>
+           <p>For example, a <span class="special_quote">Truck</span> class can inherit the generic properties of <span class="special_quote">Car</span> , with some added specifics of its own. This allows hierarchical relationships for specialized concepts derived from general ones.</p>
+           <br>
+           <h3>Abstraction</h3>
+           <br>
+           <p>This involves exposing only essential details and behavior while hiding unnecessary complexity. For example, a <span class="special_quote">accelerate()</span> method abstracts away complex engine and traction mechanisms.</p>
+           <br>
+           <h3>Polymorphism</h3>
+           <br>
+           <p>Objects derived from the same parent class can be used interchangeably even if they behave differently based on type.</p>
+           <br>
+           <p>For example, <span class="special_quote">Truck</span> and <span class="special_quote">Car</span> offer their own <span class="special_quote">accelerate()</span> methods handling their different engines under the hood. But they can be called polymorphically through their shared parent class interface.</p>
+           <br>
+           <p>OOP in JavaScript allows logically organizing code and modeling real-world relationships. We'll explore the various object-oriented concepts in depth through the rest of this post.</p>
+           <br>
+           <h2 id="Understanding-Objects-in-JavaScript" class="pointer">Understanding Objects in JavaScript<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Before jumping into object-oriented programming, let's recap how to work with objects in JavaScript.</p>
+           <br>
+           <p>Objects in JavaScript are collections of keyed values similar to dictionaries or maps in other languages. The keys are equivalent to properties that reference values.</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkq6w">const person = {
+     name: "John",
+     age: 30
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This <span class="special_quote">person</span> object has a <span class="special_quote">name</span> property storing the string <span class="special_quote">"John"</span> and an <span class="special_quote">age</span> property storing the number <span class="special_quote">30</span> .</p>
+           <br>
+           <p>We interact with these properties using dot notation or square bracket syntax:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkq17">person.name; // "John"
+ person["age"]; // 30</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>The values in an object can include primitive data types as well as nested objects and functions known as <em>methods</em> .</p>
+           <br>
+           <p>Methods allow objects to have associated functionality:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkq5h">const person = {
+     name: "John",
+     greet() {
+         console.log("Hello!");
+     }
+ }
+ 
+ person.greet(); // Logs "Hello!"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This covers the basics of working with plain JavaScript objects. Next, we'll explore ways of generating object instances programmatically.</p>
+           <br>
+           <h2 id="Constructor-Functions" class="pointer">Constructor Functions<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p> <strong>Constructor functions</strong> serve as class blueprints to create objects through the <span class="special_quote">new</span> keyword .</p>
+           <br>
+           <p>For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkqwp">function Person(name, age) {
+     this.name = name;
+     this.age = age;
+ }
+ 
+ const john = new Person("John", 30);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This defines a <span class="special_quote">Person()</span> constructor that initializes <span class="special_quote">name</span> and <span class="special_quote">age</span> properties on a new object when called with <span class="special_quote">new</span> .</p>
+           <br>
+           <p>We call the <span class="special_quote">Person()</span> constructor with <span class="special_quote">new</span> to instantiate a specific <span class="special_quote">john</span> person object with those properties.</p>
+           <br>
+           <p>Constructor functions implement a standard OOP pattern to define state through properties and behavior through methods. This allows constructing reusable components modeled after real concepts.</p>
+           <br>
+           <h2 id="Prototypes-and-Inheritance" class="pointer">Prototypes and Inheritance<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>In JavaScript, inheritance works through <strong>prototypal inheritance</strong> instead of classes. Essentially, objects have a linked <span class="special_quote">prototype</span> property pointing to another object. When a property isn't found on an object, the JavaScript engine traverses up this <span class="special_quote">prototype</span> chain to inherit from parent objects.</p>
+           <br>
+           <p>Let's link prototypes to enable inheritance between <span class="special_quote">Person</span> and <span class="special_quote">Student</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkq85">function Person(name) {
+     this.name = name;
+ }
+ 
+ // Add greet method to Person prototype
+ Person.prototype.greet = function() {
+     console.log(`Hello, my name is ${this.name}!`);
+ }
+ 
+ function Student(name, level) {
+     // Call parent constructor
+     Person.call(this, name);
+ 
+     this.level = level;
+ }
+ 
+ // Link prototypes
+ Student.prototype = Object.create(Person.prototype);
+ 
+ // Add introduce method
+ Student.prototype.introduce = function() {
+     console.log(`I'm a ${this.level} student.`);
+ }
+ 
+ const omar = new Student("Omar", "PhD");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This chains the prototypes so <span class="special_quote">Student</span> can access methods from <span class="special_quote">Person</span> via inheritance.</p>
+           <br>
+           <p>For example, we can call:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkqp2">omar.greet(); // Inherited method
+ omar.introduce(); // Own method</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This prototype linkage allows hierarchy between blueprints, code reuse through inheritance, and polymorphism.</p>
+           <br>
+           <h2 id="The-call---Method" class="pointer">The call() Method<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Earlier, we used <span class="special_quote">Person.call()</span> inside our <span class="special_quote">Student</span> constructor. So what does <span class="special_quote">.call()</span> actually do?</p>
+           <br>
+           <p>The <span class="special_quote">.call()</span> method can invoke a function and set the meaning of <span class="special_quote">this</span> in the function execution context.</p>
+           <br>
+           <p>Essentially, all JavaScript functions are actually methods that carry the <span class="special_quote">.call()</span> and other built-in methods. For constructor functions, we leverage <span class="special_quote">.call()</span> to execute the parent constructor but set the meaning of <span class="special_quote">this</span> to the new child object.</p>
+           <br>
+           <p>Without <span class="special_quote">.call()</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkqdx">function Person(name) {
+     // 'this' is the global object
+     this.name = name;
+ }
+ 
+ function Student(name) {
+     Person(name); // Just executes function without any 'this'
+ }
+ 
+ const omar = new Student("Omar");
+ console.log(omar.name); // Undefined</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>The <span class="special_quote">Person</span> constructor sets its <span class="special_quote">name</span> on the global object instead of <span class="special_quote">Student</span> since it loses its execution context.</p>
+           <br>
+           <p>With <span class="special_quote">.call()</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkqqv">function Student(name) {
+     // Set 'this' context to the new student
+     Person.call(this, name);
+ }
+ 
+ const omar = new Student("Omar");
+ console.log(omar.name); // "Omar"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>Now <span class="special_quote">Person()</span> sets <span class="special_quote">name</span> on the intended <span class="special_quote">Student</span> instance. Call allows "borrowing" functions while setting a specific context preserved by the <span class="special_quote">this</span> keyword. All functions have access to call() and apply() for this purpose.</p>
+           <br>
+           <h2 id="ES6-Classes" class="pointer">ES6 Classes<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>JavaScript ES6 introduced cleaner syntax for prototypes and inheritance through <strong>classes</strong> .</p>
+           <br>
+           <p>Classes serve as syntactic sugar to help developers from class-based backgrounds transition to JS.</p>
+           <br>
+           <p>Here is how we can convert our <span class="special_quote">Person</span> and <span class="special_quote">Student</span> code to use new ES6 classes:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkq24">class Person {
+     constructor(name) {
+         this.name = name;
+     }
+     greet() {
+         console.log(`Hello, my name is ${this.name}!`);
+     }
+ }
+ 
+ class Student extends Person {
+     constructor(name, level) {
+         // Call parent constructor
+         super(name);
+         this.level = level;
+     }
+     introduce() {
+         console.log(`I'm a ${this.level} student.`);
+     }
+ }
+ 
+ const omar = new Student("Omar", "PhD");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This class-based syntax offers a cleaner way to:</p>
+           <br>
+           <ul class="ul_class">
+            <li>Declare classes with an empty <span class="special_quote">class</span> keyword</li>
+            <li>Define constructors to initialize state</li>
+            <li>Use <span class="special_quote">extends</span> for inheritance between classes for free prototype chaining</li>
+            <li>Call <span class="special_quote">super()</span> instead of <span class="special_quote">Parent.call()</span> for less confusion</li>
+           </ul>
+           <br>
+           <p>However, it still operates on prototypes behind the scenes. So understanding prototypal behavior is important even when using modern syntax like classes.</p>
+           <br>
+           <h2 id="Constructor-Functions-vs-Classes--When-to-Use-Each" class="pointer">Constructor Functions vs Classes: When to Use Each<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>With both constructor functions and ES6 classes available for generating objects, when should you use each approach? Here are some general guidelines:</p>
+           <br>
+           <p> <strong>Use constructor functions when:</strong> </p>
+           <ul class="ul_class">
+            <li>You need to support older browsers lacking ES6 class compatibility</li>
+            <li>You need dynamic inheritance hierarchies at runtime</li>
+            <li>You want to create singletons by calling a constructor without <span class="special_quote">new</span> </li>
+           </ul>
+           <br>
+           <p> <strong>Use ES6 classes when:</strong> </p>
+           <ul class="ul_class">
+            <li>You want cleaner, more concise syntax</li>
+            <li>You know inheritance hierarchies ahead of time</li>
+            <li>Your codebase already uses classes so it's consistent</li>
+            <li>You only care about supporting modern browsers</li>
+           </ul>
+           <br>
+           <p>In reality, <strong>classes compile down to constructor functions and prototypes</strong> . So classes don't introduce new capabilities, just friendlier syntax.</p>
+           <br>
+           <p>Constructors provide lower-level control while classes act more like syntactic sugar. Consider performance vs developer experience trade-offs when choosing between plain functions and ES6 classes for modeling JavaScript objects.</p>
+           <br>
+           <h2 id="Encapsulation" class="pointer">Encapsulation<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Encapsulation in OOP refers to bundling data and methods into a single unit (a class), while preventing external access to certain properties and methods. Encapsulation provides two major advantages:</p>
+           <br>
+           <h3>Hiding Complexity</h3>
+           <br>
+           <p>It allows hiding the internal implementation details of class. Other code does not need to know unnecessary complexity - it only interacts through a simple public interface. Encapsulation enables abstraction through limited access.</p>
+           <br>
+           <p>For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkrki">class BankAccount {
+     // Private property not accessible externally
+     #pinCode;
+     constructor(pin) {
+         this.#pinCode = pin;
+     }
+     // Public login method provides access check
+     login(pinAttempt) {
+         return this.#pinCode === pinAttempt;
+     }
+ }
+ 
+ const bankAccount = new BankAccount(1234);
+ 
+ // Pin code is not accessible directly
+ console.log(bankAccount.#pinCode); // Syntax error
+ 
+ // Login method grants indirect access
+ bankAccount.login(1234); // true</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This keeps the <span class="special_quote">#pinCode</span> encapsulated within <span class="special_quote">BankAccount</span> instead of being directly accessible like typical public properties.</p>
+           <br>
+           <h3>Data Access Control</h3>
+           <br>
+           <p>It allows controlling where and how properties are accessed or modified. By limiting visibility and access points, encapsulation makes it easier to enforce invariants.</p>
+           <br>
+           <p>For example, a <span class="special_quote">Person</span> class can check for valid ages being set rather than allowing direct modification of that property from anywhere:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkro8">class Person {
+     constructor(name, age) {
+         this.name = name;
+         this.setAge(age);
+     }
+     setAge(newAge) {
+         if (newAge &gt; 0 &amp;&amp; newAge &lt; 150) {
+             this.age = newAge;
+         } else {
+             console.log("Not a valid age!");
+         }
+     }
+ }
+ 
+ const person = new Person("James", 33);
+ person.age = -10; // Not directly allowed!
+ 
+ person.setAge(-10); // Logs "Not a valid age!"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This restricts invalid <span class="special_quote">age</span> values from being set by providing a single controlled point of access.</p>
+           <br>
+           <p>Encapsulation through methods like this facilitates stricter data constraints.</p>
+           <br>
+           <h2 id="Polymorphism" class="pointer">Polymorphism<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Polymorphism in OOP refers to a child class extending a parent class while also overriding or extending its behavior. With polymorphism, we can interact with related objects in the same manner regardless of their actual underlying type.</p>
+           <br>
+           <p>Let's take our vehicle example from earlier:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkrsg">class Vehicle {
+     accelerate() {
+         console.log("Accelerating");
+     }
+ 
+ }
+ 
+ class Car extends Vehicle {
+     accelerate() {
+         super.accelerate();
+         console.log("Rolling on four wheels");
+     }
+ }
+ 
+ class Bike extends Vehicle {
+     accelerate() {
+         super.accelerate();
+         console.log("Rolling on two wheels");
+     }
+ }
+ 
+ // Polymorphic calls
+ const car = new Car();
+ const bike = new Bike();
+ 
+ car.accelerate();
+ bike.accelerate();</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>Even though <span class="special_quote">Car</span> and <span class="special_quote">Bike</span> have their own specific implementations, we can polymorphically call <span class="special_quote">accelerate()</span> on both in the same way through their shared parent class interface.</p>
+           <br>
+           <p>This allows interacting with related objects generically without needing to know concrete sub-types, as long as they support the base interface.</p>
+           <br>
+           <p>JavaScript enables ad-hoc polymorphism dynamically through duck typing. Classes/prototypes facilitate stricter polymorphism with type inheritance hierarchies and overriding.</p>
+           <br>
+           <p>This polymorphic flexibility helps reduce code duplication across types following the DRY principle. Strict typing is not required as in languages like Java or C#.</p>
+           <br>
+           <h2 id="Composition-vs-Inheritance" class="pointer">Composition vs Inheritance<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>So far we've explored modeling relationships between entities using inheritance hierarchies with parent and child classes. However, another approach for code reuse in OOP is <strong>composition</strong> .</p>
+           <br>
+           <p>With composition, objects can reference other objects or functions through their properties to delegate some of their behavior.</p>
+           <br>
+           <p>Let's contrast inheritance and composition:</p>
+           <br>
+           <h3>Inheritance</h3>
+           <br>
+           <p>We use base classes to define common logic:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkrib">class Animal {
+     makeNoise() {
+         console.log("Some noise!");
+     }
+ }
+ 
+ class Dog extends Animal {
+     // Inherits makeNoise method
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Pros</strong> :</p>
+           <ul class="ul_class">
+            <li>Promotes hierarchy for conceptual relationships</li>
+            <li>Reuses logic that applies to specializations</li>
+           </ul>
+           <br>
+           <p> <strong>Cons</strong> :</p>
+           <ul class="ul_class">
+            <li>Brittle hierarchies with too many layers</li>
+            <li>Can inherit unnecessary features</li>
+            <li>Tight coupling</li>
+           </ul>
+           <br>
+           <h3>Composition</h3>
+           <br>
+           <p>We define reusable components as stand-alone objects:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkrvi">const noiseMaker = {
+     makeNoise() {
+        console.log("Noise!");
+     }
+ };
+ 
+ class Dog {
+     constructor() {
+         this.noiseMaker = noiseMaker;
+     }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Pros</strong> :</p>
+           <ul class="ul_class">
+            <li>Flexible part-whole relationships</li>
+            <li>Loose coupling</li>
+            <li>Swappable dependencies</li>
+           </ul>
+           <br>
+           <p> <strong>Cons</strong> :</p>
+           <ul class="ul_class">
+            <li>No standard conceptual hierarchy</li>
+            <li>Dependencies must be passed around manually</li>
+           </ul>
+           <br>
+           <p>In practice composition tends to provide more maintainable code than inheritance alone, serving as a great companion paradigm to OO programming. Libraries like React favor composition over classes for building reusable UI components.</p>
+           <br>
+           <h2 id="Object-Relationships-and-Data-Structures" class="pointer">Object Relationships and Data Structures<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>So far we've seen modeling inheritance relationships between objects with prototypal chains. We can also leverage OOP principles to implement common data structures to organize information.</p>
+           <br>
+           <h3>Modeling Object Associations</h3>
+           <br>
+           <p>Objects can be associated with other objects to compose larger structures:</p>
+           <br>
+           <p> <strong>Aggregation</strong> </p>
+           <br>
+           <p>This represents a <strong>has-a</strong> relationship where an object contains a reference to another object:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvks7x">class Author {
+     constructor(name) {
+         this.name = name;
+     }
+ }
+ 
+ class Book {
+     constructor(title, author) {
+         this.title = title;
+         this.author = author;
+     }
+ }
+ 
+ const author = new Author("John");
+ const book = new Book("Some Book", author);
+ 
+ book.author.name; // "John"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>Here <span class="special_quote">Book</span>  <em>aggregates</em> an <span class="special_quote">Author</span> object to model the real-world relationship between books and authors.</p>
+           <br>
+           <p> <strong>Composition</strong> </p>
+           <br>
+           <p>This is a stronger type of aggregation with tight ownership helping reuse. If a composite object gets destroyed, so do its belonging objects.</p>
+           <br>
+           <h3>Implementing Data Structures</h3>
+           <br>
+           <p>We can leverage OOP concepts like inheritance and aggregation to implement data structures like:</p>
+           <br>
+           <p> <strong>Linked Lists</strong> </p>
+           <br>
+           <p>A sequence of <span class="special_quote">Node</span> objects linked through references:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvksbh">class Node {
+     constructor(value, next) {
+         this.value = value;
+         this.next = next;
+     }
+ }
+ 
+ let head = new Node(1, null);
+ head.next = new Node(2, null);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Trees</strong> </p>
+           <br>
+           <p>Node hierarchy where each parent node references child nodes as branches:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkswu">A
+          / | \
+         B  C  D
+        / \
+       E   F</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>We can build up these structures by composing objects together. OOP promotes thinking about relationships between components.</p>
+           <br>
+           <h2 id="Modules-and-Namespaces" class="pointer">Modules and Namespaces<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>As JavaScript applications grow in scope, effectively organizing code becomes crucial to manage complexity. OOP principles provide logical segmentation of code into classes and objects. JavaScript also supports division of code at a file system level through modules and namespaces.</p>
+           <br>
+           <h3>Motivation</h3>
+           <br>
+           <p>Without modules or namespaces:</p>
+           <ul class="ul_class">
+            <li>Many application scripts get bundled into a large codebase</li>
+            <li>Pollutes global namespace with many variables and functions</li>
+            <li>Hard to track dependencies and interactions between entities</li>
+            <li>Testing, maintaining, refactoring complex</li>
+           </ul>
+           <br>
+           <h3>Namespaces</h3>
+           <br>
+           <p>Namespaces logically group related functionality under a single global variable to avoid collisions:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvksic">const MyNamespace = {
+     Util: {
+         calculateTotal(x) {
+             //...
+         }
+     },
+     UI: {
+         // UI methods
+     },
+     // Etc...
+ };</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>Namespaces use objects to provide separation without file system divisions.</p>
+           <br>
+           <h3>Native ES Modules</h3>
+           <br>
+           <p>JavaScript files can <span class="special_quote">export</span> reusable entities and <span class="special_quote">import</span> dependencies explicitly between files:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkscb">// Module 'Util.js'
+ export function calculateTotal(x) {
+     // ...
+ }
+ 
+ // Module 'App.js'
+ import { calculateTotal } from './Util.js';</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This enforces clean imports/exports instead of global namespaces.</p>
+           <br>
+           <p>Modules work nicely with OOP by exporting classes and namespaces themselves can align with high-level objects. Clean namespaces and modules result in loosely coupled code critical for scaling JS apps.</p>
+           <br>
+           <h1>Error Handling and Debugging</h1>
+           <br>
+           <p>Robust error handling and debugging strategies are important for maintaining complex OOP systems.</p>
+           <br>
+           <h2 id="Error-Handling" class="pointer">Error Handling<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Several best practices help with errors in OOP code:</p>
+           <ul class="ul_class">
+            <li> <strong>Exception handling</strong> with <span class="special_quote">try/catch</span> blocks catch execution errors gracefully</li>
+            <li> <strong>Well-defined error types</strong> that get thrown/caught help isolate issues</li>
+            <li>Using <strong>custom error objects</strong> provides context for exceptions</li>
+            <li> <strong>Handling errors centrally</strong> in parent classes and catch globally</li>
+           </ul>
+           <br>
+           <p>For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkt8s">class ValidationError extends Error {
+     // Custom error type
+ }
+ 
+ class Person {
+     constructor() {
+         try {
+             // Logic
+         } catch (err) {
+             throw new ValidationError(err);
+         }
+     }
+ }
+ 
+ try {
+     const person = new Person();
+ } catch (err) {
+     if (err instanceof ValidationError) {
+        // Handle validation specifically
+     } else {
+        // Other exceptions
+     }
+ 
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This separates error handling concerns clearly across hierarchies.</p>
+           <br>
+           <h2 id="Debugging-OOP-Systems" class="pointer">Debugging OOP Systems<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Debugging techniques useful for OOP include:</p>
+           <ul class="ul_class">
+            <li>Logging object method calls and property state</li>
+            <li>Tracing application flow across objects/scopes with debuggers</li>
+            <li>Checking prototypes and inheritance chains are properly configured</li>
+            <li>Testing objects in isolation with unit tests (see next section)</li>
+           </ul>
+           <br>
+           <p>The interconnected nature of classes means debugging requires tracking relationships between objects. Following good error handling practices goes hand in hand with easier debugging.</p>
+           <br>
+           <h1>Testing and Maintainability</h1>
+           <br>
+           <p>Testing helps catch errors and reduces debugging time through test suites targeting components.</p>
+           <br>
+           <h2 id="Unit-Testing-Individual-Classes" class="pointer">Unit Testing Individual Classes<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Each class can have dedicated unit tests validating object behavior in isolation:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkvll">const Person = require("./Person");
+ 
+ describe("Person", () =&gt; {
+     test("initialization", () =&gt; {
+        const person = new Person("Sarah", 23);
+        expect(person.name).toEqual("Sarah");
+        expect(person.age).toEqual(23);
+     });
+ });</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This ensures classes work independently before integrating them into an app.</p>
+           <br>
+           <h2 id="Facilitating-Loose-Coupling" class="pointer">Facilitating Loose Coupling<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Loosely coupled OOP code is easier to reconfigure and maintain over time. Strategies like:</p>
+           <ul class="ul_class">
+            <li>Using interface-based programming over concrete types</li>
+            <li>Developing classes with single responsibilities</li>
+            <li>Favoring small modules that do one thing well</li>
+           </ul>
+           <br>
+           <p>These best practices align with principles like the <strong>Open/Closed Principle</strong> where classes are open for extension but closed for modification.</p>
+           <br>
+           <p>Well structured and tested OOP code goes hand in hand with more maintainable code.</p>
+           <br>
+           <h1>Advanced OOP Concepts</h1>
+           <br>
+           <p>We've covered core object-oriented principles in JavaScript. A few more advanced topics worth mentioning:</p>
+           <br>
+           <h3>Abstract Classes &amp; Interfaces</h3>
+           <br>
+           <p> <strong>Abstract classes</strong> provide incomplete implementations leaving some methods unimplemented to be filled in by child classes:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkvzl">abstract class Animal {
+     constructor(name) {
+         this.name = name;
+     }
+     eat() {
+         // Eat implementation
+     }
+     // Must be implemented by subclasses
+     abstract makeSound();
+ }
+ 
+ class Dog extends Animal {
+     constructor(name) {
+         super(name);
+     }
+     makeSound() {
+         console.log("Bark!");
+     }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p> <strong>Interfaces</strong> define structure but not implementation. Classes implement interfaces similar to contracts:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkvv0">interface Walker {
+     walk();
+ }
+ 
+ class Person implements Walker {
+     // Must define walk() method
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <h3>Design Patterns</h3>
+           <br>
+           <p> <strong>Design patterns</strong> provide proven OOP solutions to common problems like:</p>
+           <ul class="ul_class">
+            <li>Singleton - Class only allowing a single object instance</li>
+            <li>Factory - Creating objects without specifying exact type</li>
+            <li>Observer - Event-based communication between objects</li>
+           </ul>
+           <br>
+           <p>Patterns help build maintainable code by leveraging programming experience.</p>
+           <br>
+           <h3>Functional Mixins</h3>
+           <br>
+           <p>JavaScript uniquely allows extending OOP code through <strong>mixins</strong> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygpvkw4k">const flyMixin = {
+ fly() {
+ console.log("Flying");
+ }
+ }
+ 
+ class Bird {
+ // ...
+ }
+ 
+ Object.assign(Bird.prototype, flyMixin);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+           <br>
+           <p>This "mixes in" <span class="special_quote">fly</span> method from a plain object into Bird prototype. JS flexibility allows functional and OOP blend.</p>
+           <br>
+           <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>We've explored main object-oriented concepts like encapsulation, inheritance, and polymorphism in JavaScript. OOP provides principles for managing code complexity through logical, real-world modeling of application structure and behavior.</p>
+           <br>
+           <p>JavaScript enables an adaptable approach to OOP that aligns with its dynamic nature. Developers can choose the right level of strictness through prototypes, classes, functional mixins and more.</p>
+           <br>
+           <p>As applications grow, OOP skills prove vital for clean architecture, maintenance, and working in teams. Mastering core object-oriented ideas unlocks JavaScript's capabilities for large-scale development.</p>
+           <br>
+           <p>The language continues to rapidly adopt new syntax like classes to ease the transition from classical OOP. Understanding the core prototypes and inheritance mechanisms, however, remains essential.</p>
+           <br>
+           <p>With this solid grasp of theoretical and practical OOP knowledge, JavaScript developers can build robust, scalable applications.</p>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/dates-times-with-js" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
+         </div>
+         <div class="share-links">
+          <div id="lqygpvk2ag">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">Facebook</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">Twitter</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">LinkedIn</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/object-oriented-js&amp;media=https://www.jimscode.blog/images/object-oriented-js-banner-png.png&amp;description=objectoriented%20programming%20in%20javascript%20explained" target="_blank">Pinterest</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">Reddit</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="whatsapp://send?text=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">WhatsApp</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="mailto:?subject=objectoriented%20programming%20in%20javascript%20explained&amp;body=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">Email</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/object-oriented-js" target="_blank">Instagram</a> </li>
+           </ul>
+           <br>
+          </div>
+         </div>
+        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About: <a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a> </p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lqygpvjz1i" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_javascript" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/javascript" class="btn-cta">javascript</a> </li>
+           <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/web%20dev" class="btn-cta">web dev</a> </li>
+           <li id="tagVar_oop" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/oop" class="btn-cta">oop</a> </li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#What-is-Object-Oriented-Programming-">What is Object-Oriented Programming?</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Understanding-Objects-in-JavaScript">Understanding Objects in JavaScript</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Constructor-Functions">Constructor Functions</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Prototypes-and-Inheritance">Prototypes and Inheritance</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#The-call---Method">The call() Method</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#ES6-Classes">ES6 Classes</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Constructor-Functions-vs-Classes--When-to-Use-Each">Constructor Functions vs Classes: When to Use Each</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Encapsulation">Encapsulation</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Polymorphism">Polymorphism</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Composition-vs-Inheritance">Composition vs Inheritance</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Object-Relationships-and-Data-Structures">Object Relationships and Data Structures</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Modules-and-Namespaces">Modules and Namespaces</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Error-Handling">Error Handling</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Debugging-OOP-Systems">Debugging OOP Systems</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Unit-Testing-Individual-Classes">Unit Testing Individual Classes</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Facilitating-Loose-Coupling">Facilitating Loose Coupling</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a> </li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product: <a href="#">Product Name</a> </p>
+           <div id="lqygpvk3p8">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div id="lqygpvjwtm">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lqygpvl6g8">
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use <a href="https://highlightjs.org">highlight.js</a> , © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#lqygpvl6g8{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#lqygpvk0c4{ display: block;}#lqygpvjz1i{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#lqygpvl6g8{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
+<script>
+let giscusTheme = localStorage.getItem("theme");
+        let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "scionsamurai/jimscode.github.io",
+          "data-repo-id": "R_kgDOK8_rSw",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOK8_rS84Cb9LP",
+          "data-mapping": "pathname",
+          "data-strict": "1",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "crossorigin": "anonymous",
+          "async": "",
+        };
+        
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

@@ -100,9 +100,9 @@ css: /txt/css/flipcard.css
 
             Other built-in formatting methods include:
 
-            - **.toString()** - returns machine readable date/time string
-            - **.toUTCString()** - converts to UTC string format
-            - **.toISOString()** - formats according to ISO-8601 standard
+            - ~~.toString()~~ - returns machine readable date/time string
+            - ~~.toUTCString()~~ - converts to UTC string format
+            - ~~.toISOString()~~ - formats according to ISO-8601 standard
 
             For example:
             '''js

@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lqwnp38vda">
+    <div id="lqygp298bm">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lqwnp38vn5">
+    <div id="lqygp298ge">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,14 +93,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Javascript Control Flow</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Thu, Dec 28 2023 02:03:12 GMT</p>
-        <picture class="banner_picture" id="lqwnp3905x">
+        <picture class="banner_picture" id="lqygp29c66">
          <source srcset="/images/js-control-flow-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/js-control-flow-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Picture of students working around geared machines." class="banner-image">
           </picture>
           <br>
-          <div id="lqwnp39069">
-<span id="lqwnp39985">           <h2 id="Introduction-and-Context-" class="pointer">Introduction and Context:<span class="anchor-image">⚓</span></h2>
+          <div id="lqygp29dzi">
+<span id="lqygp29mo0">           <h2 id="Introduction-and-Context-" class="pointer">Introduction and Context:<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Welcome to part two of our JavaScript blog series! In the last post, we covered the fundamentals of the language - variables, data types, operators etc. Now it's time to dive into control flow, one of the most important concepts in JavaScript.</p>
            <br>
@@ -123,7 +123,7 @@ Search       </button>
            <br>
            <p>When users add items to their cart, we need to <strong>repeat</strong> a few steps for each item. This can be done with a <strong>loop</strong> .</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39myb">// Loop through cart items
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a3xl">// Loop through cart items
  for(let i = 0; i &lt; cart.length; i++) {
      // Display item
      displayCartItem(cart[i])
@@ -133,11 +133,8 @@ Search       </button>
            <br>
            <p>When users click checkout, we need to <strong>make decisions</strong> on payment method, discounts etc. This requires <strong>conditional statements</strong> .</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39mdq">// Check preferred payment method
- if(user.paymentMethod === "credit") {
-     // Apply credit card processing
- } else {
-     // Other payment flow
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a30j">for (initializer; condition; update) {
+     // code to run each loop
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>As we can see, control flow statements like loops and conditionals are essential for user interactions. Throughout this post, we'll use examples like these to understand the concepts.</p>
@@ -165,17 +162,17 @@ Search       </button>
            <h2 id="For-Loops" class="pointer">For Loops<span class="anchor-image">⚓</span></h2>
            <br>
            <p>The for loop allows repetitive execution of a code block, based on a loop counter. The syntax is:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39nmn">for (initializer; condition; update) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a3u8">for (initializer; condition; update) {
      // code to run each loop
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <ul class="ul_class" data-conditional-css="lqwnp39hrz:::\|/" style="">
+           <ul class="ul_class" data-conditional-css="lqygp29wdu:::\|/" style="">
             <li>The initializer sets the starting value for the loop counter variable.</li>
             <li>The condition evaluates whether to run the next iteration.</li>
             <li>The update increments/changes the loop counter at end of each loop.</li>
            </ul>
            <br>
            <p>Here is for loop to print numbers from 1 to 5:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39n6g">for (let i = 1; i &lt;= 5; i++) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a3e9">for (let i = 1; i &lt;= 5; i++) {
      console.log(i);
  }
  
@@ -202,7 +199,7 @@ Search       </button>
            </ul>
            <br>
            <p>Let's look at a real-world example of iterating over an array with a for loop next.</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39naa">const fruits = ['apple', 'orange', 'banana'];
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a3sr">const fruits = ['apple', 'orange', 'banana'];
  
  for (let i = 0; i &lt; fruits.length; i++) {
      console.log(fruits[i]);
@@ -237,13 +234,13 @@ Search       </button>
            <p>The while loop executes a block of code repeatedly as long as a condition remains true.</p>
            <br>
            <p>Its syntax is:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39n78">while (condition) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a409">while (condition) {
      // code to run each loop
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <p data-conditional-css="lqwnp39i06:::\|/" style="">The loop first checks the condition. If true, it runs the code inside and rechecks condition. This repeats until condition becomes false.</p>
+           <p data-conditional-css="lqygp29xie:::\|/" style="">The loop first checks the condition. If true, it runs the code inside and rechecks condition. This repeats until condition becomes false.</p>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39nvj">let count = 0;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a4ef">let count = 0;
  
  while (count &lt; 5) {
      console.log(count);
@@ -256,7 +253,7 @@ Search       </button>
  // 2
  // 3
  // 4</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <p data-conditional-css="lqwnp39im3:::\|/" style="">This will print the numbers 0 through 4. The condition checks that count is still less than 5. The update statement increments count each loop.</p>
+           <p data-conditional-css="lqygp29xpp:::\|/" style="">This will print the numbers 0 through 4. The condition checks that count is still less than 5. The update statement increments count each loop.</p>
            <br>
            <p>Some differences from for loops:</p>
            <ul class="ul_class">
@@ -268,7 +265,7 @@ Search       </button>
            <p>While loops are useful when number of iterations are unknown or based on a dynamic stop condition.</p>
            <br>
            <p>For example, keep processing user input until a sentinel value is entered:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39ods">let input;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a4zo">let input;
  
  while (input !== "quit") {
      input = getInput(); // Function to get user input
@@ -278,12 +275,12 @@ Search       </button>
            <h2 id="Do-While-Loops" class="pointer">Do While Loops<span class="anchor-image">⚓</span></h2>
            <br>
            <p>The do while loop runs code block once before checking condition. Its syntax:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39oe5">do {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a5by">do {
      // code to run
  } while (condition);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39opf">let i = 5;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a5n4">let i = 5;
  do {
      console.log(i);
      i--;
@@ -295,7 +292,7 @@ Search       </button>
  // 3
  // 2
  // 1</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <p data-conditional-css="lqwnp39j77:::\|/" style="">Even though condition is false on first check, the code runs once before evaluating.</p>
+           <p data-conditional-css="lqygp29yru:::\|/" style="">Even though condition is false on first check, the code runs once before evaluating.</p>
            <br>
            <p>The do while loop is useful when code must run at least once such as menu prompts. The condition is then checked for additional loops.</p>
            <br>
@@ -370,18 +367,18 @@ Example              </th>
            <h2 id="If-Statements" class="pointer">If Statements<span class="anchor-image">⚓</span></h2>
            <br>
            <p>If statements allow conditional logic in code using the <span class="special_quote">if</span> keyword. Their syntax is:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39ozq">if (condition) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a5a0">if (condition) {
      // code to run if condition is true
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <p data-conditional-css="lqwnp39j2e:::\|/" style="">The condition inside parentheses must evaluate to true or false. If true, the code inside curly braces executes.</p>
+           <p data-conditional-css="lqygp29ywx:::\|/" style="">The condition inside parentheses must evaluate to true or false. If true, the code inside curly braces executes.</p>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39ob2">let temp = 25;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a5r2">let temp = 25;
  
  if (temp &gt; 30) {
      console.log("It's hot outside!");
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <p data-conditional-css="lqwnp39j4f:::\|/" style="">Since 25 is not greater than 30, the code inside the if statement does not run.</p>
+           <p data-conditional-css="lqygp29yq3:::\|/" style="">Since 25 is not greater than 30, the code inside the if statement does not run.</p>
            <br>
            <p>Some notes on if statements:</p>
            <ul class="ul_class">
@@ -398,14 +395,14 @@ Example              </th>
            <p>The <span class="special_quote">else</span> statement runs a code block if the initial <span class="special_quote">if</span> condition is false.</p>
            <br>
            <p>Its syntax appends to the if:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39ozn">if (condition1) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a5qa">if (condition1) {
      // run if condition1 is true
  } else {
      // run if condition1 is false
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>We can also chain <span class="special_quote">else if</span> blocks to handle multiple conditions:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39odt">if (condition1) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a6j4">if (condition1) {
      // run if condition1 is true
  } else if (condition2) {
      // run if condition1 false AND condition2 true
@@ -434,10 +431,10 @@ Example              </th>
            <h3>The AND <span class="special_quote">&amp;&amp;</span> Operator</h3>
            <br>
            <p>The AND operator <span class="special_quote">&amp;&amp;</span> returns true if both operands are true:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39pyh">if (x &gt; 5 &amp;&amp; y &lt; 10) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a68e">if (x &gt; 5 &amp;&amp; y &lt; 10) {
      // run if both conditions are true
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <ul class="ul_class" data-conditional-css="lqwnp39jwh:::\|/" style="">
+           <ul class="ul_class" data-conditional-css="lqygp29z9s:::\|/" style="">
             <li>Returns true if <strong>both</strong>  <span class="special_quote">x &gt; 5</span>  <strong>and</strong>  <span class="special_quote">y &lt; 10</span> </li>
             <li>Short circuits at first false condition</li>
            </ul>
@@ -447,10 +444,10 @@ Example              </th>
            <h3>The OR <span class="special_quote">||</span> Operator</h3>
            <br>
            <p>The OR operator <span class="special_quote">||</span> returns true if either one of the operands is true:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39pmp">if (x &gt; 5 || y &lt; 10) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a622">if (x &gt; 5 || y &lt; 10) {
      // run if x &gt; 5 is true OR y &lt; 10 is true
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <ul class="ul_class" data-conditional-css="lqwnp39kd7:::\|/" style="">
+           <ul class="ul_class" data-conditional-css="lqygp29z0o:::\|/" style="">
             <li>Returns true if <strong>either</strong>  <span class="special_quote">x &gt; 5</span>  <strong>or</strong>  <span class="special_quote">y &lt; 10</span> </li>
             <li>Short circuits at first true condition</li>
            </ul>
@@ -460,7 +457,7 @@ Example              </th>
            <h2 id="Logical-NOT---Operator" class="pointer">Logical NOT <span class="special_quote">!</span> Operator<span class="anchor-image">⚓</span></h2>
            <br>
            <p>The NOT operator (!) flips or negates a boolean value from true to false and vice versa:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39pe5">let isRaining = true;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a6pp">let isRaining = true;
  let isSunny = !isRaining; // Sets isSunny = false</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>Some uses cases of the NOT operator:</p>
@@ -479,7 +476,7 @@ Example              </th>
            <h3>Break</h3>
            <br>
            <p>The break statement exits and terminates the current loop:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39pps">for (let i = 1; i &lt;= 5; i++) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a6qt">for (let i = 1; i &lt;= 5; i++) {
      if (i === 3) {
          break;
      }
@@ -495,7 +492,7 @@ Example              </th>
            <h3>Continue</h3>
            <br>
            <p>The continue statement skips the current iteration and continues loop execution:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39ph7">for (let i = 1; i &lt;= 5; i++) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a6cu">for (let i = 1; i &lt;= 5; i++) {
      if (i === 3) {
          continue;
      }
@@ -515,7 +512,7 @@ Example              </th>
            <h2 id="Switch-Statements" class="pointer">Switch Statements<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Switch statements execute code based on matching cases:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39pt3">switch(expression) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a6lu">switch(expression) {
  case value1:
      // run if expression === value1
      break;
@@ -527,7 +524,7 @@ Example              </th>
  default:
      // run if no cases match
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <ul class="ul_class" data-conditional-css="lqwnp39ky0:::\|/" style="">
+           <ul class="ul_class" data-conditional-css="lqygp2a2q3:::\|/" style="">
             <li>The expression is evaluated once only</li>
             <li>Cases are evaluated for matches using strict equality</li>
             <li>Break exits the switch after match found</li>
@@ -535,7 +532,7 @@ Example              </th>
            </ul>
            <br>
            <p>Some examples of switch statements:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39pk7">// Run code based on browser
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a7au">// Run code based on browser
  switch (browser) {
      case 'edge':
          showMessage("You've got edge!");
@@ -564,12 +561,12 @@ Example              </th>
      default:
          tip = 18;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
-           <p data-conditional-css="lqwnp39k36:::\|/" style="">Switch offers an alternative conditional check to chains of if/else statements in some cases.</p>
+           <p data-conditional-css="lqygp2a22a:::\|/" style="">Switch offers an alternative conditional check to chains of if/else statements in some cases.</p>
            <br>
            <h2 id="Block-Scope" class="pointer">Block Scope<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Block scope refers to variables declared inside a code block (denoted by <span class="special_quote">{}</span> curly braces). For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqwnp39qgv">// Global scope
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygp2a7g9">// Global scope
  
  if (condition) {
      // Block scope
@@ -643,7 +640,7 @@ Example              </th>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lqwnp3917e">
+          <div id="lqygp29e2d">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -675,7 +672,7 @@ Example              </th>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lqwnp38z4q" style="display: contents; line-height: 2rem;">
+          <ul id="lqygp29b29" style="display: contents; line-height: 2rem;">
            <li id="tagVar_javascript" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/javascript" class="btn-cta">javascript</a> </li>
            <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/web%20dev" class="btn-cta">web dev</a> </li>
           </ul>
@@ -720,7 +717,7 @@ Example              </th>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lqwnp394v6">
+           <div id="lqygp29hmg">
             <p>sidebar</p>
            </div>
           </div>
@@ -728,7 +725,7 @@ Example              </th>
         </aside>
        </div>
       </div>
-      <div id="lqwnp38vkk">
+      <div id="lqygp298fo">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -741,7 +738,7 @@ Example              </th>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lqwnp3a0xf">
+         <ul class="footer-section" id="lqygp2akgg">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -761,7 +758,7 @@ Example              </th>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqwnp3a0xf{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lqygp2akgg{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -769,11 +766,11 @@ Example              </th>
 }
 
 @media only screen and (min-width : 1px) {
-#lqwnp3905x{ display: block;}#lqwnp38z4q{ display: block;}
+#lqygp29c66{ display: block;}#lqygp29b29{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqwnp3a0xf{ display: flex; flex-direction: column;}
+#lqygp2akgg{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

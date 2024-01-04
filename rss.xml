@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Object-Oriented Programming in JavaScript Explained</title>
+      <link>https://www.jimscode.blog/posts/object-oriented-js</link>
+      <pubDate>Thu, Jan 04 2024 00:06:30 GMT</pubDate>
+      <description>Master effective object-oriented development in JavaScript for more maintainable large-scale apps. From objects and classes to design patterns and best practices, learn OOP theory and practical application.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+<category>oop</category>
+    </item>
+<item>
       <title>Getting Started with Dates and Times in JavaScript</title>
       <link>https://www.jimscode.blog/posts/dates-times-with-js</link>
       <pubDate>Tue, Jan 02 2024 17:44:23 GMT</pubDate>
@@ -149,17 +159,6 @@
       
       <category>html</category>
 <category>css</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>Enhancing Your Webpages with Images, Audio, Video and Vector Graphics </title>
-      <link>https://www.jimscode.blog/posts/adding-media-to-page</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Unleash the power of media on your website! Explore the nuances of incorporating images, audio, video, and vector graphics. From file optimization to responsive design, this guide provides the insights you need for a visually stunning and performant web presence.</description>
-      
-      <category>html</category>
-<category>media</category>
-<category>image</category>
 <category>web dev</category>
     </item>
       </channel>

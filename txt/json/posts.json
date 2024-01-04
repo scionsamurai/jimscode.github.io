@@ -369,9 +369,29 @@
     "comments": true,
     "link": "/posts/dates-times-with-js",
     "prev_post": "/posts/js-array-methods",
-    "subseq_post": 0,
+    "subseq_post": "/posts/object-oriented-js",
     "category": "JS basics",
     "category_title": "JS Dates & Times"
+},
+{
+    "id": 19,
+    "post_title" : "Object-Oriented Programming in JavaScript Explained",
+    "description": "Master effective object-oriented development in JavaScript for more maintainable large-scale apps. From objects and classes to design patterns and best practices, learn OOP theory and practical application.",
+    "authorid" : 1,
+    "date" : "Thu, Jan 04 2024 00:06:30 GMT",
+    "tags": ["javascript", "web dev", "oop"],
+    "image": "/images/object-oriented-js-banner-png.png" ,
+    "webp_image": "/images/object-oriented-js-banner.webp",
+    "image_thumb": "/images/object-oriented-js-banner-png_thumb.png",
+    "banner_alt": "Old man plays chess with a humaoid robot.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/object-oriented-js",
+    "prev_post": "/posts/dates-times-with-js",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "Object Oriented JS"
 
 }
 

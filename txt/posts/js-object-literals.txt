@@ -163,7 +163,7 @@ css: /txt/css/flipcard.css
 
             ## Adding Methods
 
-            Methods are functions that are properties of an object. Here is how to add methods to JavaScript objects.
+            Methods are functions that are properties of an object. When a function is declared using a declaration keyword like 'function', it becomes a method of the global object. In the case of browsers, the global object is 'window'. This means that functions declared in the global scope without being explicitly attached to another object are, by default, methods of the 'window' object in a browser environment. Here is how to add methods to JavaScript objects.
 
             ### Functions as Object Properties
 
