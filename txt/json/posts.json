@@ -389,9 +389,30 @@
     "comments": true,
     "link": "/posts/object-oriented-js",
     "prev_post": "/posts/dates-times-with-js",
-    "subseq_post": 0,
+    "subseq_post": "/posts/async-js",
     "category": "JS basics",
     "category_title": "Object Oriented JS"
+
+},
+{
+    "id": 20,
+    "post_title" : "Stop Blocking Your Code! Mastering Asynchronous JavaScript",
+    "description": "From callback hell to promise perfection - trace the evolution of asynchronous JavaScript capabilities leading up to the async/await revolution and modern syntax for clean async logic.",
+    "authorid" : 1,
+    "date" : "Sat, Jan 06 2024 15:09:24 GMT",
+    "tags": ["javascript", "web dev", "async"],
+    "image": "/images/async-js-banner-png.png" ,
+    "webp_image": "/images/async-js-banner.webp",
+    "image_thumb": "/images/async-js-banner-png_thumb.png",
+    "banner_alt": "Old man plays chess with a humaoid robot.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/async-js",
+    "prev_post": "/posts/object-oriented-js",
+    "subseq_post": 0,
+    "category": "JS basics",
+    "category_title": "Asynchronous JS"
 
 }
 

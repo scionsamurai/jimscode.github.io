@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Stop Blocking Your Code! Mastering Asynchronous JavaScript</title>
+      <link>https://www.jimscode.blog/posts/async-js</link>
+      <pubDate>Sat, Jan 06 2024 15:09:24 GMT</pubDate>
+      <description>From callback hell to promise perfection - trace the evolution of asynchronous JavaScript capabilities leading up to the async/await revolution and modern syntax for clean async logic.</description>
+      
+      <category>javascript</category>
+<category>web dev</category>
+<category>async</category>
+    </item>
+<item>
       <title>Object-Oriented Programming in JavaScript Explained</title>
       <link>https://www.jimscode.blog/posts/object-oriented-js</link>
       <pubDate>Thu, Jan 04 2024 00:06:30 GMT</pubDate>
@@ -146,16 +156,6 @@
       <link>https://www.jimscode.blog/posts/checkbox-hack-for-flash-card</link>
       <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
       <description>Explore the power of the checkbox hack in HTML and CSS to create engaging flip cards. Learn how to leverage this technique for interactive components like toggle cards, product displays, and information boxes. Enhance your web design skills with native HTML and CSS magic.</description>
-      
-      <category>html</category>
-<category>css</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>HTML and CSS Essentials: A Comprehensive Guide for Beginners</title>
-      <link>https://www.jimscode.blog/posts/html-and-css-essentials</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Dive into the world of web design with a solid foundation in HTML and CSS. This beginner-friendly guide covers key concepts, specificity in CSS, combining HTML and CSS, and best practices to empower you on your coding journey.</description>
       
       <category>html</category>
 <category>css</category>

@@ -20,10 +20,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog</loc>
-    <lastmod>2024-01-03</lastmod>
+    <lastmod>2024-01-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/archive/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-03</lastmod></url>
+  </url><url><loc xmlns="">https://www.jimscode.blog/archive/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/posts/take-css-to-next-level</loc>
     <lastmod>2023-12-23</lastmod>
@@ -51,6 +51,12 @@
   <url>
     <loc>https://www.jimscode.blog/posts/making-image-puzzle</loc>
     <lastmod>2023-12-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/posts/async-js</loc>
+    <lastmod>2024-01-06</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -146,10 +152,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/authors/jimmy-ruikka</loc>
-    <lastmod>2024-01-03</lastmod>
+    <lastmod>2024-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/authors/jimmy-ruikka/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-03</lastmod></url>
+  </url><url><loc xmlns="">https://www.jimscode.blog/authors/jimmy-ruikka/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/html</loc>
     <lastmod>2023-12-23</lastmod>
@@ -170,10 +176,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/tags/web dev</loc>
-    <lastmod>2024-01-03</lastmod>
+    <lastmod>2024-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/tags/web dev/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-03</lastmod></url>
+  </url><url><loc xmlns="">https://www.jimscode.blog/tags/web dev/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/organization</loc>
     <lastmod>2023-12-23</lastmod>
@@ -230,10 +236,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/tags/javascript</loc>
-    <lastmod>2024-01-03</lastmod>
+    <lastmod>2024-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
+  </url><url><loc xmlns="">https://www.jimscode.blog/tags/javascript/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/flexbox</loc>
     <lastmod>2023-12-24</lastmod>
@@ -255,6 +261,12 @@
   <url>
     <loc>https://www.jimscode.blog/tags/oop</loc>
     <lastmod>2024-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/async</loc>
+    <lastmod>2024-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

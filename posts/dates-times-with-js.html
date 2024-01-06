@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lqygq0frcy">
+    <div id="lr27eaf8da">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lqygq0frv6">
+    <div id="lr27eaf965">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,14 +93,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Getting Started with Dates and Times in JavaScript</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Tue, Jan 02 2024 17:44:23 GMT</p>
-        <picture class="banner_picture" id="lqygq0fw3o">
+        <picture class="banner_picture" id="lr27eafg33">
          <source srcset="/images/dates-times-with-js-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/dates-times-with-js-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Image of humanoid robot working on fixing a large analog clock." class="banner-image">
           </picture>
           <br>
-          <div id="lqygq0fw90">
-<span id="lqygq0g3ry">           <br>
+          <div id="lr27eafhg1">
+<span id="lr27eafptf">           <br>
            <p>Working with dates and times is an integral part of most web applications. Whether you need to display timestamps, schedule events, or calculate durations, JavaScript provides a built-in <strong>Date</strong> object to handle these date-related tasks programmatically.</p>
            <br>
            <p>In this section, we'll cover the basics of using Date objects in JavaScript, including:</p>
@@ -116,24 +116,28 @@ Search       </button>
            <h3>Creating New Dates</h3>
            <br>
            <p>To create a new Date instance in JavaScript, you can use the <strong>Date()</strong> constructor:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0ger6">const now = new Date();</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1k2">const now = new Date();
+ 
+ const year = now.getFullYear(); // 2023
+ const month = now.getMonth(); // 0 (January)
+ const day = now.getDate(); // 25</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>This will create a Date object representing the current date and time.</p>
            <br>
            <p>You can also pass integer parameters to specify the date components:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0geac">const birthday = new Date(2023, 0, 19); // January 19th, 2023</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1qb">const birthday = new Date(2023, 0, 19); // January 19th, 2023</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>Be aware that the month is 0-indexed, so 0 is January and 11 is December.</p>
            <br>
            <p> <strong>Pitfall Alert:</strong> Calling <span class="special_quote">Date()</span> without the <span class="special_quote">new</span> keyword will return a string rather than a Date object:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gevz">const badDate = Date(); // String instead of Date instance!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1ki">const badDate = Date(); // String instead of Date instance!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>So make sure to always use <span class="special_quote">new Date()</span> .</p>
            <br>
            <h3>Accessing Date Components</h3>
            <br>
            <p>Once you have a Date instance, you can use getter methods like <span class="special_quote">.getFullYear()</span> , <span class="special_quote">.getMonth()</span> and <span class="special_quote">.getDate()</span> to access specific date parts:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gejc">const now = new Date();
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1e2">const now = new Date();
  
  const year = now.getFullYear(); // 2023
  const month = now.getMonth(); // 0 (January)
@@ -142,7 +146,7 @@ Search       </button>
            <p>There are also methods like <span class="special_quote">.getHours()</span> , <span class="special_quote">.getMinutes()</span> and <span class="special_quote">.getSeconds()</span> to access time components.</p>
            <br>
            <p>You can access the total timestamp with <span class="special_quote">.getTime()</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gewy">now.getTime(); // 1674687399013 (milliseconds since Jan 1 1970)</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1gv">now.getTime(); // 1674687399013 (milliseconds since Jan 1 1970)</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <h2 id="Formatting-and-Displaying-Dates" class="pointer">Formatting and Displaying Dates<span class="anchor-image">⚓</span></h2>
            <br>
@@ -153,7 +157,7 @@ Search       </button>
            <h3>Built-in Formatting Methods</h3>
            <br>
            <p>The easiest way to format dates is using <span class="special_quote">.toLocaleDateString()</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gebg">const date = new Date(2023, 0, 19);
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag122">const date = new Date(2023, 0, 19);
  
  date.toLocaleDateString();
  // "1/19/2023" (in US English locale)</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
@@ -161,7 +165,7 @@ Search       </button>
            <p>This converts the Date to a string based on the user's locale and machine settings.</p>
            <br>
            <p>Similarly, you can use <span class="special_quote">.toLocaleTimeString()</span> to format the time portion of a date:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gebr">date.toLocaleTimeString(); // "5:49:21 PM"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1tz">date.toLocaleTimeString(); // "5:49:21 PM"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>Other built-in formatting methods include:</p>
            <br>
@@ -172,7 +176,7 @@ Search       </button>
            </ul>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gej6">date.toUTCString(); // "Thu, 19 Jan 2023 21:56:35 GMT"
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag1hg">date.toUTCString(); // "Thu, 19 Jan 2023 21:56:35 GMT"
  
  date.toISOString(); // "2023-01-20T02:56:35.182Z"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
@@ -180,7 +184,7 @@ Search       </button>
            <br>
            <p>If you need more customization than the built-in methods offer, you can create your own formatting functions:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0geiv">function formatDate(date) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag2z1">function formatDate(date) {
      const day = date.getDate();
      const month = date.getMonth() + 1;
      const year = date.getFullYear();
@@ -198,7 +202,7 @@ Search       </button>
            <p>We can manipulate Date instances using the setter methods like <span class="special_quote">.setDate()</span> , <span class="special_quote">.setMonth()</span> and <span class="special_quote">.setFullYear()</span> .</p>
            <br>
            <p>For example, to increment a date by 1 day:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gfhw">const date = new Date(2023, 0, 19);
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag2ng">const date = new Date(2023, 0, 19);
  
  date.setDate(date.getDate() + 1);
  
@@ -212,7 +216,7 @@ Search       </button>
            </ul>
            <br>
            <p>We can use these to easily calculate future or past dates:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gf0j">const oneWeekAgo = new Date();
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag2fl">const oneWeekAgo = new Date();
  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>Subtracting dates also allows us to find durations between dates.</p>
@@ -220,7 +224,7 @@ Search       </button>
            <h3>Calculating Date Differences</h3>
            <br>
            <p>A simple way to calculate the difference between two dates is by subtracting their timestamps:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gfpy">const date1 = new Date(); // now
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag2wl">const date1 = new Date(); // now
  const date2 = new Date(2023, 5, 17); // Jun 17, 2023
  const diffTime = date2 - date1; // milliseconds between dates
  const diffDays = diffTime / (1000 * 3600 * 24);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
@@ -228,7 +232,7 @@ Search       </button>
            <p>This allows us to find differences in days, weeks, months etc.</p>
            <br>
            <p>We could even create reusable functions for common duration calculations:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gf2f">function daysBetween(date1, date2) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag2ms">function daysBetween(date1, date2) {
      const timeDiff = Math.abs(date2 - date1);
      return Math.ceil(timeDiff / (1000 * 3600 * 24));
  }
@@ -253,17 +257,17 @@ Search       </button>
            </ul>
            <br>
            <p>For example, formatting with Moment looks cleaner:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gf5k">const now = moment();
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag3p6">const now = moment();
  now.format("MMM Do YY"); // "Jan 25th 23"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>And duration calculations are simpler:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0ggfp">const duration = moment.duration(2, 'days'); // 2 day duration
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag3cr">const duration = moment.duration(2, 'days'); // 2 day duration
  const newDate = moment().add(duration); // Add 2 days</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <h3>Overview of Luxon</h3>
            <br>
            <p> <a href="https://moment.github.io/luxon/">Luxon</a> is a newer alternative to Moment focused on immutability and partitioning date handling concerns:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0gg76">import { DateTime } from 'luxon';
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag45f">import { DateTime } from 'luxon';
  
  const dt = DateTime.local(); // Current date/time
  
@@ -331,7 +335,7 @@ Search       </button>
            <h3>Understanding UTC</h3>
            <br>
            <p>The key to managing timezones is understanding <strong>UTC (Coordinated Universal Time)</strong> . UTC provides a standard reference point for different timezones:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-console" id="lqygq0ghrp">New York: UTC-5
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-console" id="lr27eag45r">New York: UTC-5
  Berlin: UTC+1
  Tokyo: UTC+9</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">console</span></span></pre>
            <br>
@@ -346,7 +350,7 @@ Search       </button>
            <h3>Managing Timezone Differences</h3>
            <br>
            <p>The main challenge with timezones is displaying the same absolute date/time across multiple timezones:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-console" id="lqygq0ghds">Event starts at Jan 25th 2023, 9:00 UTC
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-console" id="lr27eag4f3">Event starts at Jan 25th 2023, 9:00 UTC
  
  In UTC: 9:00
  In Tokyo (UTC+9): 18:00 // 9 hours later
@@ -364,12 +368,12 @@ Search       </button>
            <br>
            <p>Similarly, comparing Date objects across different time zones can cause issues:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0ghf9">const eventStart = new Date('Jan 25 2023 09:00 UTC');
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag5bu">const eventStart = new Date('Jan 25 2023 09:00 UTC');
  const tokyoTime = convertToTimeZone(eventStart, 'Asia/Tokyo');
  tokyoTime &gt; eventStart; // False! Comparison fails</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>The key is to <strong>normalize dates to same timezone</strong> before comparing:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lqygq0ghf8">function compareDates(date1, date2) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27eag55t">function compareDates(date1, date2) {
      // Convert both dates to UTC
      const utcDate1 = date1.toUTCString();
      const utcDate2 = date2.toUTCString();
@@ -396,7 +400,7 @@ Search       </button>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lqygq0fx25">
+          <div id="lr27eafil8">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -428,7 +432,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lqygq0fuyk" style="display: contents; line-height: 2rem;">
+          <ul id="lr27eaffsg" style="display: contents; line-height: 2rem;">
            <li id="tagVar_javascript" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/javascript" class="btn-cta">javascript</a> </li>
            <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/web%20dev" class="btn-cta">web dev</a> </li>
            <li id="tagVar_Time" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/time" class="btn-cta">Time</a> </li>
@@ -460,7 +464,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lqygq0fzib">
+           <div id="lr27eaflfm">
             <p>sidebar</p>
            </div>
           </div>
@@ -468,7 +472,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="lqygq0frz2">
+      <div id="lr27eaf9hd">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -481,7 +485,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lqygq0gm9k">
+         <ul class="footer-section" id="lr27eagch7">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -501,7 +505,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lqygq0gm9k{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lr27eagch7{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -509,11 +513,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lqygq0fw3o{ display: block;}#lqygq0fuyk{ display: block;}
+#lr27eafg33{ display: block;}#lr27eaffsg{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lqygq0gm9k{ display: flex; flex-direction: column;}
+#lr27eagch7{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

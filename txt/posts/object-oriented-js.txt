@@ -480,7 +480,8 @@ css: /txt/css/flipcard.css
 
             Node hierarchy where each parent node references child nodes as branches:
             '''js
-            |            A 
+            
+            |           A 
             |         / | \\
             |        B  C  D
             |       / \\
