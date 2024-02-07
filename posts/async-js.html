@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lr27cxda7f">
+    <div id="lsb9z1i0m7">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lr27cxdbxm">
+    <div id="lsb9z1i0c7">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,14 +93,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Stop Blocking Your Code! Mastering Asynchronous JavaScript</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Jan 06 2024 15:09:24 GMT</p>
-        <picture class="banner_picture" id="lr27cxdfve">
+        <picture class="banner_picture" id="lsb9z1i56s">
          <source srcset="/images/async-js-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/async-js-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Old man plays chess with a humaoid robot." class="banner-image">
           </picture>
           <br>
-          <div id="lr27cxdg9v">
-<span id="lr27cxdpkz">           <h2 id="Understanding-Asynchronous-Code" class="pointer">Understanding Asynchronous Code<span class="anchor-image">⚓</span></h2>
+          <div id="lsb9z1i54j">
+<span id="lsb9z1ie3n">           <h2 id="Understanding-Asynchronous-Code" class="pointer">Understanding Asynchronous Code<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Asynchronous programming has become an essential concept for any modern JavaScript developer. But what exactly does it mean and why does it matter?</p>
            <br>
@@ -109,7 +109,7 @@ Search       </button>
            <p>In the simplest terms, <strong>asynchronous code</strong> allows long-running actions to complete without blocking subsequent operations.</p>
            <br>
            <p>Let's compare it to synchronous code:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe8ml">console.log('Start');
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iwns">console.log('Start');
  
  // Long operation like fetching data from API
  const data = fetchData();
@@ -119,7 +119,7 @@ Search       </button>
            <p>In this synchronous example, <span class="special_quote">fetchData()</span> needs to fully complete before <span class="special_quote">End</span> logs. If <span class="special_quote">fetchData()</span> takes 5 seconds, our program is stuck waiting during that time.</p>
            <br>
            <p>Now let's make it asynchronous:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe8ih">console.log('Start');
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iwh9">console.log('Start');
  
  fetchDataAsynchronously(response =&gt; {
      // This callback handles the response
@@ -165,7 +165,7 @@ Search       </button>
            <h3>What are callback functions?</h3>
            <br>
            <p>A <strong>callback function</strong> is a function passed into another function as an argument, to be executed after some operation:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe8yc">function doSomething(callback) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1ix19">function doSomething(callback) {
      // do things
      callback(); // Callback invoked
  }
@@ -191,7 +191,7 @@ Search       </button>
            <h3>Avoiding "callback hell"</h3>
            <br>
            <p>The callback approach can get messy with nesting:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe9lp">doA(() =&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1ixdq">doA(() =&gt; {
      doB(() =&gt; {
          doC(() =&gt; {
              // and so on...
@@ -223,7 +223,7 @@ Search       </button>
            <br>
            <p>Behind the scenes, callbacks are still orchestrating state changes:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe98c">let promise = new Promise((resolve, reject) =&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iyut">let promise = new Promise((resolve, reject) =&gt; {
  // Initiate async operation
  
  if (success) {
@@ -240,7 +240,7 @@ Search       </button>
            <h3>Advanced promise chaining</h3>
            <br>
            <p>We can chain multiple async operations with <span class="special_quote">then()</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe999">functionA()
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iy1y">functionA()
    .then((resA) =&gt; functionB(resA))
    .then((resB) =&gt; functionC(resB))
    .catch((err) =&gt; handleError(err));</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
@@ -263,7 +263,7 @@ Search       </button>
            <h3>Promise Composition</h3>
            <br>
            <p>When dealing with complex asynchronous flows, it's best to <strong>compose</strong> many smaller reusable promises:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxe924">function getUser() {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iyq2">function getUser() {
      return fetchUserData() // Single purpose
          .then(saveUserToDB) // Modular
          .then(sendWelcomeEmail);
@@ -280,7 +280,7 @@ Search       </button>
            <p>This keeps each promise simple while enabling complex sequences. It also facilitates reusability of common tasks.</p>
            <br>
            <p>We can also use <span class="special_quote">Promise.allSettled</span> to handle an array of promises easily:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxeajw">Promise.allSettled([
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1izgr">Promise.allSettled([
      fetchUser(),
      fetchPosts(),
      fetchComments()
@@ -319,7 +319,7 @@ Search       </button>
            <h3>Handling errors with async/await</h3>
            <br>
            <p>We can use standard <span class="special_quote">try/catch</span> blocks:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxeami">async function getUser() {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iztp">async function getUser() {
      try {
          const user = await fetchUser();
          return user;
@@ -329,7 +329,7 @@ Search       </button>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>Or directly at the call site:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxea55">const user = await getUser().catch(handleError);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1izss">const user = await getUser().catch(handleError);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>This models typical synchronous error handling but without blocking.</p>
            <br>
@@ -342,7 +342,7 @@ Search       </button>
             <li>Async iterators enable using <span class="special_quote">for await..of</span> loops</li>
            </ul>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxea8d">async function* fetchPages() {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1izoc">async function* fetchPages() {
      yield fetchPage1();
      yield fetchPage2();
      // ...
@@ -377,12 +377,12 @@ Search       </button>
            </ul>
            <br>
            <p>Fetch usage:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxebm5">fetch(url)
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iz87">fetch(url)
      .then(handleResponse)
      .catch(handleError);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <p>AJAX usage:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxeb3h">const xhr = new XMLHttpRequest();
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1izc1">const xhr = new XMLHttpRequest();
  xhr.onload = handleResponse;
  xhr.onerror = handleError;
  xhr.open('GET', url);
@@ -393,7 +393,7 @@ Search       </button>
            <h3>Direct Syntax Comparison</h3>
            <br>
            <p>Let's contrast their direct syntax:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lr27cxebd6">// Fetch
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsb9z1iz9p">// Fetch
  try {
      let response = await fetch(url);
      let data = response.json();
@@ -482,14 +482,14 @@ Search       </button>
            <br>
 </span>          </div>
           <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/object-oriented-js" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/object-oriented-js" class="btn-cta pad">Previous Post</a> </span><span style="display: block;" class="next_button" data-original-css="display: block;"> <a href="/posts/rust-essentials" class="btn-cta pad">Next Post</a> </span>          </div>
           <p></p>
           <div class="giscus">
           </div>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lr27cxdh8p">
+          <div id="lsb9z1i8th">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -521,7 +521,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lr27cxdefs" style="display: contents; line-height: 2rem;">
+          <ul id="lsb9z1i34r" style="display: contents; line-height: 2rem;">
            <li id="tagVar_javascript" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/javascript" class="btn-cta">javascript</a> </li>
            <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/web%20dev" class="btn-cta">web dev</a> </li>
            <li id="tagVar_async" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/async" class="btn-cta">async</a> </li>
@@ -555,7 +555,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lr27cxdjq1">
+           <div id="lsb9z1iasz">
             <p>sidebar</p>
            </div>
           </div>
@@ -563,7 +563,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="lr27cxdbm4">
+      <div id="lsb9z1i1y6">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -576,7 +576,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lr27cxehhl">
+         <ul class="footer-section" id="lsb9z1j4fi">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -596,7 +596,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lr27cxehhl{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lsb9z1j4fi{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -604,11 +604,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lr27cxdfve{ display: block;}#lr27cxdefs{ display: block;}
+#lsb9z1i56s{ display: block;}#lsb9z1i34r{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lr27cxehhl{ display: flex; flex-direction: column;}
+#lsb9z1j4fi{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

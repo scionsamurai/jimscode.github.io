@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Unlocking Power and Performance: Mastering the Essentials of Rust for System Programming</title>
+      <link>https://www.jimscode.blog/posts/rust-essentials</link>
+      <pubDate>Wed, Feb 07 2024 01:52:44 GMT</pubDate>
+      <description>Start your Rust journey now! This beginner-friendly guide equips you with the essential knowledge to write system software in Rust. Learn by building practical projects and unlock the potential of this versatile language.</description>
+      
+      <category>rust</category>
+<category>system dev</category>
+<category>essentials</category>
+    </item>
+<item>
       <title>Stop Blocking Your Code! Mastering Asynchronous JavaScript</title>
       <link>https://www.jimscode.blog/posts/async-js</link>
       <pubDate>Sat, Jan 06 2024 15:09:24 GMT</pubDate>
@@ -149,16 +159,6 @@
       
       <category>html</category>
 <category>testing</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>Understanding the Checkbox Hack for Creating Flip Cards</title>
-      <link>https://www.jimscode.blog/posts/checkbox-hack-for-flash-card</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Explore the power of the checkbox hack in HTML and CSS to create engaging flip cards. Learn how to leverage this technique for interactive components like toggle cards, product displays, and information boxes. Enhance your web design skills with native HTML and CSS magic.</description>
-      
-      <category>html</category>
-<category>css</category>
 <category>web dev</category>
     </item>
       </channel>

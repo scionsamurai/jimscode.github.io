@@ -410,9 +410,30 @@
     "comments": true,
     "link": "/posts/async-js",
     "prev_post": "/posts/object-oriented-js",
-    "subseq_post": 0,
+    "subseq_post": "/posts/rust-essentials",
     "category": "JS basics",
     "category_title": "Asynchronous JS"
+
+},
+{
+    "id": 21,
+    "post_title" : "Unlocking Power and Performance: Mastering the Essentials of Rust for System Programming",
+    "description": "Start your Rust journey now! This beginner-friendly guide equips you with the essential knowledge to write system software in Rust. Learn by building practical projects and unlock the potential of this versatile language.",
+    "authorid" : 1,
+    "date" : "Wed, Feb 07 2024 01:52:44 GMT",
+    "tags": ["rust", "system dev", "essentials"],
+    "image": "/images/rust-essentials-banner-png.png" ,
+    "webp_image": "/images/rust-essentials-banner.webp",
+    "image_thumb": "/images/rust-essentials-banner-png_thumb.png",
+    "banner_alt": "Image of R inside a cog, to signify this is a rust programming tutorial.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/rust-essentials",
+    "prev_post": "/posts/async-js",
+    "subseq_post": 0,
+    "category": "Rust basics",
+    "category_title": "Rust Essentials"
 
 }
 

@@ -128,7 +128,7 @@ function generateDownload(files) {
   
     // Iterate over the files and add them to the ZIP archive
     for (const pathandname in files) {
-      zip.file(pathandname.replace('.txt', '.html'), files[pathandname]);
+      zip.file(pathandname.replace('.txt', '.html').replace(/%20/g, ' '), files[pathandname]);
     }
   
     // Generate the ZIP archive
@@ -403,6 +403,7 @@ async function processEntry(entry, input_items) {
 }
 
 function generateSitemap(entries) {
+
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
@@ -515,14 +516,15 @@ function insertElementIntoTarget(htmlString, targetElementID, replacingElements)
 function addSitemapEntry(sitemapContents, parentLocation, location, priority, changefreq) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(sitemapContents, 'text/xml');
-  parentLocation = parentLocation.trim();
+  parentLocation = parentLocation.trim().replace(/ /g, '%20');
 
   const existingEntries = xmlDoc.querySelectorAll('url');
   for (const entry of existingEntries) {
-    const locValue = entry.querySelector('loc')?.textContent;
+    const locValue = entry.querySelector('loc') ? entry.querySelector('loc').textContent : '';
     if (locValue.endsWith(parentLocation)) {
-      const lastmodValue = entry.querySelector('lastmod')?.textContent;
-      const newEntry = xmlDoc.createElementNS('http://www.sitemaps.org/schemas/sitemap/0.9', 'url');
+      const lastmodValue = entry.querySelector('lastmod') ? entry.querySelector('lastmod').textContent : '';
+
+      const newEntry = xmlDoc.createElement('url');
       const loc = xmlDoc.createElement('loc');
       loc.textContent = location;
 
@@ -542,7 +544,7 @@ function addSitemapEntry(sitemapContents, parentLocation, location, priority, ch
 
       entry.parentNode.insertBefore(newEntry, entry.nextSibling);
 
-      return new XMLSerializer().serializeToString(xmlDoc);
+      return new XMLSerializer().serializeToString(xmlDoc).replace(/\s?xmlns="[^"]*"/g, '');
     }
   }
   console.log(existingEntries);

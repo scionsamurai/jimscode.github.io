@@ -313,7 +313,18 @@ const readFile = (entry, modified) => { // read the contents of the file and sav
   });
 };
 
+function createSlug(blogTitle) {
+  // Convert to lowercase and replace spaces with %20
+  const encodedSlug = blogTitle.toLowerCase().replace(/\s+/g, '%20');
+
+  // Remove other special characters
+  const cleanSlug = encodedSlug.replace(/[^\w%20]+/g, '');
+
+  return cleanSlug;
+}
+
 const update_sm_var = (sm_entries, value, type="postORpage", modded=false) => {
+
   let new_entries;
   if (type == "postORpage") {
     const loc = value.includes('txt/index.txt') ? website_url : value.replace('/txt', website_url).replace('.txt', '');
@@ -336,7 +347,7 @@ const update_sm_var = (sm_entries, value, type="postORpage", modded=false) => {
     for (const post_object of posts_list) {
       if (post_object.tags.includes(value) && (!most_recent_date || most_recent_date < parseDate(post_object.date))) most_recent_date = parseDate(post_object.date);
     }
-    const loc = website_url + '/tags/' + value;
+    const loc = website_url + '/tags/' + createSlug(value);
     new_entries = [...sm_entries.filter(entry => entry.location !== loc), {location: loc, lastmod: formatTimestampToDate(most_recent_date), changefreq: "weekly", priority: "0.9"}];
   } else if (type == "author") {
     const most_recent_date = posts_list.reduce((mostRecentDate, post_object) => {
@@ -599,6 +610,7 @@ window.addEventListener('message', event => {
   const message = event;
   if (message['data'] && typeof message['data'] != "string") {
     let body_scripts = "";
+    let message_data_0 = createSlug(message['data'][0])
 
     if (append_body_obj[message['data'][0]]) {
       if (append_body_obj[message['data'][0]].scripts.length) {
@@ -694,7 +706,7 @@ window.addEventListener('message', event => {
         generated_files[page_loc] = formatHTML("<!doctype html>" + insertElementIntoTarget(before_wrapper + modifiedHTML + after_wrapper, 'pagination_links', pag_links));
         if (current_page != 1 && gen_all) {
           const parent_loc = message['data'][0].includes('/index.txt') ? website_url : getParentPath(page_loc.replace('txt/','').replace('.txt', ''));
-          generated_files["/txt/sitemap.xml"] = addSitemapEntry(generated_files["/txt/sitemap.xml"], parent_loc, website_url + page_loc.replace('txt/','').replace('.txt', ''), 0.9, "weekly");
+          generated_files["/txt/sitemap.xml"] = addSitemapEntry(generated_files["/txt/sitemap.xml"], parent_loc, website_url + page_loc.replace('txt/','').replace('.txt', '').replace(/ /g, '%20'), 0.9, "weekly");
         }
         current_page += 1;
         if (!gen_all) console.log(page_loc, generated_files[page_loc]);
@@ -711,7 +723,7 @@ window.addEventListener('message', event => {
           if (!authors_to_generate.length) {
             gen_all = false;
             for (const g_file in generated_files) {
-              console.log(g_file, generated_files[g_file]);
+              console.log('------sdf', g_file, generated_files[g_file]);
             }
             generateDownload(generated_files);
           } else {

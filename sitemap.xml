@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset>
   <url>
     <loc>https://www.jimscode.blog/about-us</loc>
     <lastmod>2023-12-23</lastmod>
@@ -20,10 +20,16 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-02-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/archive/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
+  </url><url><loc>https://www.jimscode.blog/archive/page3</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-06</lastmod></url><url><loc>https://www.jimscode.blog/archive/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-06</lastmod></url>
+  <url>
+    <loc>https://www.jimscode.blog/404</loc>
+    <lastmod>2024-02-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.jimscode.blog/posts/take-css-to-next-level</loc>
     <lastmod>2023-12-23</lastmod>
@@ -81,6 +87,12 @@
   <url>
     <loc>https://www.jimscode.blog/posts/checkbox-hack-for-flash-card</loc>
     <lastmod>2023-12-23</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/posts/rust-essentials</loc>
+    <lastmod>2024-02-06</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -152,10 +164,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/authors/jimmy-ruikka</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/authors/jimmy-ruikka/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
+  </url><url><loc>https://www.jimscode.blog/authors/jimmy-ruikka/page3</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-06</lastmod></url><url><loc>https://www.jimscode.blog/authors/jimmy-ruikka/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/html</loc>
     <lastmod>2023-12-23</lastmod>
@@ -175,11 +187,11 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jimscode.blog/tags/web dev</loc>
+    <loc>https://www.jimscode.blog/tags/web%20dev</loc>
     <lastmod>2024-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/tags/web dev/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
+  </url><url><loc>https://www.jimscode.blog/tags/web%20dev/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-01-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/organization</loc>
     <lastmod>2023-12-23</lastmod>
@@ -239,7 +251,7 @@
     <lastmod>2024-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url><url><loc xmlns="">https://www.jimscode.blog/tags/javascript/page2</loc><priority xmlns="">0.9</priority><changefreq xmlns="">weekly</changefreq><lastmod xmlns="">2024-01-06</lastmod></url>
+  </url><url><loc>https://www.jimscode.blog/tags/javascript/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-01-06</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/flexbox</loc>
     <lastmod>2023-12-24</lastmod>
@@ -253,7 +265,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jimscode.blog/tags/Time</loc>
+    <loc>https://www.jimscode.blog/tags/time</loc>
     <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -267,6 +279,24 @@
   <url>
     <loc>https://www.jimscode.blog/tags/async</loc>
     <lastmod>2024-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/rust</loc>
+    <lastmod>2024-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/system%20dev</loc>
+    <lastmod>2024-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/essentials</loc>
+    <lastmod>2024-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

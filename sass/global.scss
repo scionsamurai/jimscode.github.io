@@ -11,7 +11,7 @@ body {
 [id="night"]:checked ~ div {
     --primary: #5CFFF4;
     --primary-clicked: #51E9DF;
-    --font-color: rgba(230,230,230, 0.95);
+    --font-color: white;
     --font-color-darker: rgba(195,195,195, 0.95);
     --opposite-font-color: rgba(75,75,75, 0.7);
     --font-color-second: white;
@@ -22,7 +22,7 @@ body {
 [id="day"]:checked ~ div {
     --primary: #0E9594;
     --primary-clicked: #25BAB1;
-    --font-color: rgba(30,30,30,0.95);
+    --font-color: black;
     --font-color-darker: rgba(50,50,50, 0.95);
     --font-color-second: black;
     --opposite-font-color: rgba(190,190,190, 0.95);
