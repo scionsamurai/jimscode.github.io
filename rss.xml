@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Coding Safely and Swiftly: A Comprehensive Guide to Rust Principles</title>
+      <link>https://www.jimscode.blog/posts/rust-principles</link>
+      <pubDate>Sat, Feb 10 2024 16:22:57 GMT</pubDate>
+      <description>Unlock the secrets of Rust's core principles in this in-depth guide. Delve into memory safety, ownership, and advanced concurrency patterns, while mastering best practices and optimizing performance for system-level coding.</description>
+      
+      <category>rust</category>
+<category>system dev</category>
+<category>principles</category>
+    </item>
+<item>
       <title>Unlocking Power and Performance: Mastering the Essentials of Rust for System Programming</title>
       <link>https://www.jimscode.blog/posts/rust-essentials</link>
       <pubDate>Wed, Feb 07 2024 01:52:44 GMT</pubDate>
@@ -149,16 +159,6 @@
       
       <category>intermediate</category>
 <category>css</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>Creating and Testing HTML Files: A Comprehensive Guide for Beginners</title>
-      <link>https://www.jimscode.blog/posts/creating-testing-html-files</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Embark on your HTML journey with this beginner's guide! Learn the essentials of creating and testing HTML files, explore common elements, and dive into debugging using browser developer tools. Get ready to build your own webpages from scratch.</description>
-      
-      <category>html</category>
-<category>testing</category>
 <category>web dev</category>
     </item>
       </channel>

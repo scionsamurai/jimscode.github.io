@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unlock the secrets of Rust's core principles in this in-depth guide. Delve into memory safety, ownership, and advanced concurrency patterns, while mastering best practices and optimizing performance for system-level coding.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>Rust Principles - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+   </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');   </script>
+  </head>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="lsgakkgzdo">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+</label>
+      </div>
+ <a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>      </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
+     </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
+     </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+ <a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>     </div>
+    <div id="lsgakkgzdu">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Coding Safely and Swiftly: A Comprehensive Guide to Rust Principles</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Feb 10 2024 16:22:57 GMT</p>
+        <picture class="banner_picture" id="lsgakkh3su">
+         <source srcset="/images/rust-principles-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/rust-principles-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="One story tall letter R filled with gears and cogs, surrounded by engineers working." class="banner-image">
+          </picture>
+          <br>
+          <div id="lsgakkh42r">
+<span id="lsgakkhbgc">           <br>
+           <p>Rust is quickly becoming a preferred language for system development. Its principles enable writing low-level code while eliminating entire categories of bugs. This post covers key Rust principles programmers should understand.</p>
+           <br>
+           <h2 id="Understanding-the-Stack-and-Heap" class="pointer">Understanding the Stack and Heap<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>In Rust, the stack and heap are the two pivotal foundations upon which your program's memory is built. Mastering them is key to building high-performance systems.</p>
+           <br>
+           <p>When a Rust program starts, the OS sets aside a blank canvas of raw memory. As the Rust compiler explores your code, it decides how to carefully craft this memory into the custom data structures your program needs to come alive - painting some into the tidy, rigid rows of the stack, and sculpting the rest into the more freeform landscape of the heap.</p>
+           <br>
+           <h3>The Stack: Fast and Structured</h3>
+           <br>
+           <p>The stack is designed for speed and simplicity. It holds temporary scoped values in an orderly fashion:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhptp">fn factorial(n: u32) -&gt; u32 {
+ 
+     if n == 0 {
+         return 1;
+     }
+ 
+     let mut f = 1; // f allocated on the stack
+     for i in 1..n+1 {
+         f *= i;  // f updated on stack
+     }
+ 
+     f // f automatically popped off stack
+        // when factorial returns
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Each thread gets its own dedicated stack space. Whenever Rust calls a function, it paints a fresh stack frame to hold that function's local data. The values sit neatly stacked in last-in, first-out order, awaiting use.</p>
+           <br>
+           <p>Accessing stack data is lightning fast - just popping entries straight off the top. And since stack allocations happen in a rigidly structured order, cleaning up also becomes effortless and automated.</p>
+           <br>
+           <p>But with simplicity comes limitations. The stack is quite spartan in its restrictions:</p>
+           <ul class="ul_class">
+            <li>Stack space per thread is small (commonly just a few MB)</li>
+            <li>Values must have fixed sizes known at compile time</li>
+           </ul>
+           <br>
+           <p>For the stack's constraints, the heap fills the gaps...</p>
+           <br>
+           <h3>The Heap: Flexible with Some Chaos</h3>
+           <br>
+           <p>If the stack mimics tidy rows of vegetable gardens, then the heap is more like a wild greenhouse - dynamic, flexible, but also requiring careful cultivation to prevent unchecked overgrowth.</p>
+           <br>
+           <p>The heap supports features impossible for the stack:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhq1q">let s = String::from("Hello world!"); // stored on heap, can resize
+ 
+ let mut v = Vec::new();
+ v.push(1); v.push(2); // vector grows dynamically</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The heap allows data structures like strings and vectors to start small but organically expand over time, unlike the stack's fixed capacities.</p>
+           <br>
+           <p>But with flexibility comes responsibility. While the stack tidies itself as functions return, the heap has no such innate organization. Values persist independently until actively freed:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhq0b">drop(s); // explicitly free no-longer-needed heap data</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Without <span class="special_quote">drop</span> here, the string data would permanently occupy space until the entire program exits.</p>
+           <br>
+           <p>Rust's ownership model cultivates program responsibility to <span class="special_quote">drop</span> unneeded heap allocations properly. Languages lacking Rust's cultivation tools often encourage wild, unchecked heap overgrowth - vulnerable to all manner of chaotic memory safety issues over time.</p>
+           <br>
+           <p>By combining the stack's brisk efficiency for temporary values with the heap's flexible capacity for dynamic data, Rust empowers you to get the best out both worlds safely.</p>
+           <br>
+           <h2 id="Moves-Versus-Copies-in-Rust" class="pointer">Moves Versus Copies in Rust<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>When passing variables between functions in Rust, you'll hear about "moves" and "copies". What do these concepts mean?</p>
+           <br>
+           <h3>Moves</h3>
+           <br>
+           <p>A move transfers ownership of a value to another binding:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhqne">let v = vec![1, 2, 3]; // v owns vector
+ 
+ let v2 = v; // v2 takes ownership, v becomes invalid</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>After a move, the original binding can no longer be used since ownership transferred. Only types implementing <span class="special_quote">Copy</span> trait avoid this.</p>
+           <br>
+           <p>Moves are efficient - just pointer/integer copies in memory. But we lose access to the original owner.</p>
+           <br>
+           <p>Many Rust types move by default:</p>
+           <ul class="ul_class">
+            <li>Vectors</li>
+            <li>Strings</li>
+            <li>Boxes</li>
+            <li>File handles</li>
+           </ul>
+           <br>
+           <p>These types have a single owner, so moves transfer that ownership.</p>
+           <br>
+           <h3>Copies</h3>
+           <br>
+           <p>Type that implement the <span class="special_quote">Copy</span> trait instead copy themselves when passed to functions:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhqsd">let x = 5;
+ let y = x; // x gets copied rather than moved</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <ul class="ul_class">
+            <li>The original binding remains valid</li>
+            <li>But we pay the cost of copying bits stored on stack</li>
+           </ul>
+           <br>
+           <p>Built-in types like integers, floats, booleans, etc implement Copy by default since they are cheap to duplicate.</p>
+           <br>
+           <p>But custom types opt out of Copy by default since they usually manage heap data (expensive to copy). We can derive Copy manually in some cases.</p>
+           <br>
+           <h3>Clones</h3>
+           <br>
+           <p>For non-Copy types, we can explicitly request a copy using <span class="special_quote">clone()</span> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhqig">let v = vec![1, 2, 3];
+ 
+ let w = v.clone(); // explicity copy vector</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Clones make a deep copy duplicating the entire value, a potentially costly operation.</p>
+           <br>
+           <h2 id="-Sharing-Data-with-References-in-Rust" class="pointer">Sharing Data with References in Rust<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>References allow multiple parts of code to access the same data without transferring ownership. They come in two flavors:</p>
+           <br>
+           <h3>Shared References</h3>
+           <br>
+           <p>Shared references provide read-only access to data via the <span class="special_quote">&amp;T</span> syntax:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhrcx">let v = vec![1, 2, 3];
+ 
+ let a = &amp;v; // shared borrow
+ let b = &amp;v; // multiple shared borrows allowed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Rules:</p>
+           <ul class="ul_class">
+            <li>Multiple shared references are allowed</li>
+            <li>Cannot mutate data via shared reference</li>
+            <li>Underlying data must live at least as long as the references</li>
+           </ul>
+           <br>
+           <p>Shared references prevent accidental modification, allowing safe access.</p>
+           <br>
+           <h3>Mutable References</h3>
+           <br>
+           <p>Mutable references enable read/write access via <span class="special_quote">&amp;mut T</span> syntax:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhrfr">let mut v = vec![];
+ 
+ let a = &amp;mut v; // mutable borrow
+ v.push(1);      // mutation allowed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Rules:</p>
+           <ul class="ul_class">
+            <li>Only one active mutable ref at a time</li>
+            <li>No shared references during mutable ref</li>
+           </ul>
+           <br>
+           <p>Rust only allows one path to mutation at a time via mutable references. This prevents data races at compile time.</p>
+           <br>
+           <h3>Ownership and Borrowing - References</h3>
+           <br>
+           <p>Without references, we could only pass data between functions via moves:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhrza">fn fill_vec(v: Vec&lt;i32&gt;) {
+    // we must return v to retain access
+    // as passing it moved ownership
+    v.push(1);
+    v
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>References allow shared access without transfers, minimizing expensive copy/clone costs while preventing accidental modification or ownership transfer when unnecessary.</p>
+           <br>
+           <h2 id="Ownership-and-Borrowing" class="pointer">Ownership and Borrowing<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Ownership is one of the features that makes Rust unique. The ownership system allows Rust to guarantee memory safety without needing a garbage collector.</p>
+           <br>
+           <h3>Review of Ownership</h3>
+           <br>
+           <p>In Rust, each value has an <em>owner</em> . The owner is responsible for cleaning up the value once it goes out of scope or is no longer needed. When the owner goes out of scope, the owned value will be dropped automatically.</p>
+           <br>
+           <p>For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhshe">{
+     let v = Vec::new(); // v is created, v owns the vector data
+                         // allocated on the heap
+ 
+     // do stuff with v
+ 
+ } // v goes out of scope, vector data is automatically freed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p> <em>Ownership can also be transferred</em> . For example, when passing a value to a function, ownership transfers to the function:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhsda">fn process(v: Vec&lt;i32&gt;) {
+      // v is now owned by the function
+ }
+ 
+ let v = vec![1, 2, 3];
+ 
+ process(v); // ownership moves to process</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>In addition to ownership transfer, Rust allows <em>immutable borrows</em> via references. References allow access to data without taking ownership. For example:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhsuk">fn print(v: &amp;Vec&lt;i32&gt;) {
+     // borrow v for read-only access
+     println!("{:?}", v);
+ }
+ 
+ let v = vec![1, 2, 3];
+ print(&amp;v); // v is immutably borrowed
+            // original owner (v binding) still valid</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>This single ownership model, along with borrowing, allows Rust to ensure memory safety efficiently.</p>
+           <br>
+           <h3>Borrow Checker</h3>
+           <br>
+           <p>The borrow checker enforces Rust's ownership and borrowing rules at compile time. It ensures references:</p>
+           <ul class="ul_class">
+            <li>Remain valid for their expected lifetimes</li>
+            <li>Do not outlive the data they refer to</li>
+            <li>Do not conflict with mutable accesses or mutation</li>
+           </ul>
+           <br>
+           <p>This prevents dangling pointers, use-after-free errors, and data races.</p>
+           <br>
+           <p>The borrow checker is why Rust can guarantee memory safety without a garbage collector. The key rules it enforces are:</p>
+           <br>
+           <p> <strong>At any given time, you can have either:</strong> </p>
+           <ul class="ul_class">
+            <li>One or more references (&amp;T) to a resource</li>
+            <li>One and only one mutable reference (&amp;mut T)</li>
+           </ul>
+           <br>
+           <p> <strong>References must always be valid:</strong> </p>
+           <ul class="ul_class">
+            <li>Can't return references to local data from a function</li>
+            <li>Can't store references in structs without proper lifetimes</li>
+           </ul>
+           <br>
+           <p> <strong>No aliasing violations:</strong> </p>
+           <ul class="ul_class">
+            <li>No mutable references alongside any shared references</li>
+            <li>No mutable <em>and</em> shared references in the same scope</li>
+           </ul>
+           <br>
+           <p>Let's look at some examples to illustrate the borrow checker in action:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhsbf">let mut v = vec![1, 2, 3];
+ 
+ let a = &amp;v; // immutable borrow
+ let b = &amp;v; // ok, multiple shared borrows
+ 
+ *a = vec![]; // err: cannot assign through shared reference
+ 
+ v.push(4); // err: cannot mutate v while shared reference exists</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The compiler prevents mutation through shared references.</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhsso">let mut v = vec![1, 2, 3];
+ 
+ let a = &amp;mut v; // mutable borrow
+ v.push(4); // ok: we mutable borrowed v
+ println!("{:?}", v); // error: borrow 'a' does not live long enough
+ 
+ let b = &amp;v; // err: cannot borrow v again after mutable borrow</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The mutable borrow of <span class="special_quote">v</span> prevents sharing <span class="special_quote">v</span> until the mutable reference goes out of scope.</p>
+           <br>
+           <p>Understanding these rules thoroughly takes practice, but prevents entire categories of unsafe code. Rust allows system programming without compromising reliability.</p>
+           <br>
+           <h3>Debugging Ownership and Borrowing Errors</h3>
+           <br>
+           <p>Common errors involve:</p>
+           <ul class="ul_class">
+            <li>Invalidating existing references/borrows</li>
+            <li>Trying to mutate through a shared reference</li>
+           </ul>
+           <br>
+           <p>Useful debugging techniques include:</p>
+           <ul class="ul_class">
+            <li>Carefully inspecting borrow checker error messages</li>
+            <li>Visualizing sequence of operations leading to errors</li>
+            <li>Using compiler suggestions about where borrows start/end</li>
+            <li>Reordering code to avoid simultaneous borrows</li>
+            <li>Adding/removing references to fix invalidations</li>
+           </ul>
+           <br>
+           <p>Internalizing borrow checker rules takes practice but prevents entire classes of bugs. Mastering Rust ownership with some perseverance pays dividends through safer system code.</p>
+           <br>
+           <h2 id="Memory-Safety" class="pointer">Memory Safety<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Memory safety is a critical concern when writing low-level system code. Use after free, double frees, dangling pointers, and leaks can introduce dangerous vulnerabilities.</p>
+           <br>
+           <p>Rust guarantees complete memory safety through its ownership and borrowing system, without needing garbage collection.</p>
+           <br>
+           <h3>Ownership System</h3>
+           <br>
+           <p>Rust's ownership model prevents the most common sources of memory unsafety:</p>
+           <ul class="ul_class">
+            <li> <strong>Use after free</strong> - Compile-time borrowing rules prevent accessing data after it goes out of scope or gets dropped.</li>
+            <li> <strong>Double free</strong> - Owned values are dropped exactly once when their owner goes out of scope.</li>
+            <li> <strong>Dangling pointers</strong> - References must always point to valid data, enforced by lifetimes.</li>
+           </ul>
+           <br>
+           <p>Let's examine how Rust prevents each issue:</p>
+           <br>
+           <p> <strong>Use after free</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkht09">{
+   let v = vec![1, 2, 3];
+ 
+   println!("{:?}", v); // use v
+ 
+ } // v gets dropped here
+ 
+ println!("{:?}", v); // error: use after free</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The compiler stops us from using v after it gets dropped.</p>
+           <br>
+           <p> <strong>Double free</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhte2">let v = Vec::new(); // v owns the vector allocation
+ 
+ drop(v); // explicitly drop v
+ 
+ // vector was already dropped,
+ // double free is impossible</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Owned values like vectors can only be dropped once.</p>
+           <br>
+           <p> <strong>Double free</strong> </p>
+           <br>
+           <p>In languages like C/C++, manually managing memory allocation and deallocation makes it possible to free the same memory multiple times:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-c" id="lsgakkht9p">int* p = malloc(sizeof(int)); // allocate memory
+ free(p); // deallocate memory
+ 
+ // but program logic has issues,
+ // and p gets freed again:
+ free(p); // double free!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">c</span></span></pre>
+           <br>
+           <p>This is undefined behavior and can lead to crashes or corruption.</p>
+           <br>
+           <p>Rust's ownership system makes double frees impossible by enforcing that owned values like Box or Vec get dropped exactly once when their owner goes out of scope:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkht6x">{
+      let v = vec![1, 2, 3]; // allocate vector on heap
+ 
+      println!("{:?}", v); // use allocation
+ 
+      // vector gets dropped fully once here
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>If we try to explicitly drop v again, it would fail:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkht7w">let v = Vec::new(); // v owns the vector allocation
+ 
+ drop(v); // explicitly drop v
+ 
+ // error: use of moved value
+ drop(v);
+ // ^ v was already dropped before</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The Rust compiler tracks movings and usages of owned values like v. It prevents all accidental double frees in safe Rust.</p>
+           <br>
+           <p>This helps eliminate an entire class of memory unsafety issues.</p>
+           <br>
+           <p> <strong>Dangling pointers</strong> </p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhtj9">fn dangling() -&gt; &amp;Vec&lt;i32&gt; {
+     let v = vec![1, 2, 3];
+ 
+     &amp;v // error: returns reference to local data
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Returning references to stack data is disallowed, preventing dangling pointer issues.</p>
+           <br>
+           <p>The ownership system makes these classes of errors impossible at compile time.</p>
+           <br>
+           <h2 id="Zero-Cost-Abstractions" class="pointer">Zero-Cost Abstractions<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>One of Rust's key principles is providing low-level control without sacrificing high-level ergonomics. Rust does this through zero-cost abstractions.</p>
+           <br>
+           <h3>What are Zero-Cost Abstractions?</h3>
+           <br>
+           <p>Abstractions in Rust don't have a run-time cost - they compile away to lower level code. The abstractions make code easier to write and maintain without impacting performance.</p>
+           <br>
+           <p>For example, <span class="special_quote">Vec&lt;T&gt;</span> provides a resizable array abstraction on top of Rust's raw pointers. But it compiles to simple heap allocations and pointer manipulation - no overhead over hand written code.</p>
+           <br>
+           <p>The same applies to constructs like iterators. This iterator pipeline:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhtbs">let squared = v.iter().map(|n| n * n).filter(|&amp;n| n &gt; 4);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Compiles into optimal low-level code with no per-iteration costs.</p>
+           <br>
+           <p>So Rust allows safe, ergonomic code while retaining the performance of unsafe systems languages.</p>
+           <br>
+           <h3>How Rust Achieves Zero-Cost Abstractions</h3>
+           <br>
+           <p>Rust is able to optimize away abstractions through:</p>
+           <ul class="ul_class">
+            <li>Value semantics - Copy types have no allocation overhead</li>
+            <li>Trait generic code - Monomorphization optimizes per use case</li>
+            <li>Static dispatch - No dynamic dispatch costs</li>
+            <li>Inlining - Functions often inline to minimal instructions</li>
+           </ul>
+           <br>
+           <p>Combined they enable code that's as fast as unsafe C/C++ while preventing entire classes of bugs.</p>
+           <br>
+           <h3>Real World Examples</h3>
+           <br>
+           <p>As an example, Servo's Rust-based web browser engine achieves performance on par with C++ engines through leveraging these zero-cost abstractions.</p>
+           <br>
+           <p>This combination of safe, ergonomic but low-level access allows Rust to serve as an ideal systems programming language.</p>
+           <br>
+           <h2 id="Concurrency-Principles" class="pointer">Concurrency Principles<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Concurrency is increasingly important for taking advantage of multi-core hardware. Rust provides strong support for concurrency along with memory safety guarantees.</p>
+           <br>
+           <h3>Concurrency vs Parallelism</h3>
+           <br>
+           <p>Concurrency enables independent tasks to execute conceptually in parallel while actually interleaving on top of shared hardware resources. Parallelism is utilizing multiple cores simultaneously to literally run code in parallel.</p>
+           <br>
+           <p>Rust supports both concurrency and parallelism - lightweight threads make concurrency ergonomic while rayon provides parallel iterators.</p>
+           <br>
+           <h3>Ownership and Concurrency</h3>
+           <br>
+           <p>Sharing mutable state between threads leads to data races which cause undefined behavior. Rust ownership principles guarantee thread safety while minimizing overhead:</p>
+           <ul class="ul_class">
+            <li>Immutable data can safely be accessed within threads</li>
+            <li>Mutable data cannot be aliased across threads</li>
+           </ul>
+           <br>
+           <p>This compile time enforcement prevents entire classes of issues.</p>
+           <br>
+           <h3>Concurrency Patterns</h3>
+           <br>
+           <p>Common concurrency patterns like thread pools, message passing, and async I/O are ergonomic and efficient in Rust while avoiding dangers like deadlocks at compile time.</p>
+           <br>
+           <p>Ownership integration makes patterns like async/await trivial compared to other systems languages. Concurrency in Rust delivers power without compromised reliability.</p>
+           <br>
+           <p>The ecosystem continues to rapidly adopt asynchronous Rust for faster and safer systems.</p>
+           <br>
+           <h2 id="Safety-Without-Garbage-Collection" class="pointer">Safety Without Garbage Collection<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Memory safety without relying on garbage collection is one of Rust's standout features. Rust shows collecting garbage is not required for safe systems programming.</p>
+           <br>
+           <h3>Memory Management in Rust</h3>
+           <br>
+           <p>Most managed languages like Java or Go use automatic garbage collection to reclaim unused memory. However, naive garbage collection has downsides for systems code:</p>
+           <ul class="ul_class">
+            <li>Runtime overhead</li>
+            <li>Pause times interrupting execution</li>
+            <li>Requiring excess memory to reduce pauses</li>
+           </ul>
+           <br>
+           <p>In contrast, Rust uses deterministic RAII based cleanup:</p>
+           <ul class="ul_class">
+            <li>Values automatically dropped when owners go out of scope</li>
+            <li>Reference counting in some cases ensures prompt cleanup</li>
+           </ul>
+           <br>
+           <p>This provides same safety guarantees as collecting garbage but with minimal overhead.</p>
+           <br>
+           <h3>Preventing Memory Leaks</h3>
+           <br>
+           <p>Garbage collection languages preclude entire classes of errors like use after free. But issues like leaks are still possible through accumulating unnecessary allocations over time.</p>
+           <br>
+           <p>Rust sidesteps classes of issues like leaks through scope based cleanup. But leaks are still possible by losing the last owned handle to allocated memory. Thankfully tooling like leak checking in tests can catch such issues. By verifying leaks aren't introduced, Rust enables leak freedom.</p>
+           <br>
+           <p>The ownership model enables complete memory safety <strong>without runtime downsides</strong> . Rust showcases an explicit safe systems language is achievable.</p>
+           <br>
+           <h2 id="Practical-Examples" class="pointer">Practical Examples<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Rust's principles like ownership and borrowing directly translate to writing better systems code. Let's look at some hands-on examples.</p>
+           <br>
+           <h3>File I/O</h3>
+           <br>
+           <p>Interacting with files is a common task. Rust makes this safe and easy:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhukf">use std::fs;
+ 
+ fn read_file(path: &amp;str) -&gt; std::io::Result&lt;String&gt; {
+     let mut f = fs::File::open(path)?;
+ 
+     let mut buffer = String::new();
+     f.read_to_string(&amp;mut buffer)?;
+ 
+     Ok(buffer)
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <ul class="ul_class">
+            <li> <span class="special_quote">fs::File</span> closes itself automatically when it drops, preventing resource leaks</li>
+            <li>Immutable borrows via <span class="special_quote">&amp;str</span> prevent accidentally mutating path data</li>
+            <li>Idiomatic error handling with <span class="special_quote">Result</span> makes control flow clear</li>
+           </ul>
+           <br>
+           <p>Ownership enables an expressive and leak-free API for file handling.</p>
+           <br>
+           <h3>Async Networking</h3>
+           <br>
+           <p>Async I/O concurrency is efficient and easy with ownership:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsgakkhu22">async fn fetch_url(url: &amp;str) -&gt; Result&lt;String&gt; {
+     let response = reqwest::get(url).await?;
+     let text = response.text().await?;
+ 
+     Ok(text)
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <ul class="ul_class">
+            <li>Asynchronous code reads similarly to synchronous style</li>
+            <li>Ownership automatically closes network connections</li>
+            <li>Error handling ensures failures handled properly</li>
+           </ul>
+           <br>
+           <p>Rust allows clear and safe async code without overhead.</p>
+           <br>
+           <p>So Rust's principles translate directly into superior systems code - safety and speed without compromise.</p>
+           <br>
+           <h2 id="Best-Practices-in-Rust" class="pointer">Best Practices in Rust<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Writing idiomatic Rust not only improves safety but enhances developer productivity. Here are some best practices to follow.</p>
+           <br>
+           <h3>Coding Guidelines</h3>
+           <br>
+           <ul class="ul_class">
+            <li>Leverage ownership to minimize explicit memory management</li>
+            <li>Use enums to encode complex state spaces cleanly</li>
+            <li>Break down code into small, composable functions</li>
+            <li>Use references to pass data between functions safely</li>
+            <li>Handle errors systematically via Result or panic when appropriate</li>
+           </ul>
+           <br>
+           <p>Following Rust's idioms leads to code that's both robust and readable.</p>
+           <br>
+           <h3>Testing</h3>
+           <br>
+           <p>Rust's tooling enables excellent testing ergonomics:</p>
+           <ul class="ul_class">
+            <li>Unit test individual modules in isolation</li>
+            <li>Property test functionality via quickcheck</li>
+            <li>Fuzz test with arbitrary input data</li>
+           </ul>
+           <br>
+           <p>Taking advantage of Rust's ecosystem allows thorough testing without substantial overhead.</p>
+           <br>
+           <p>Adopting Rust best practices leads to maintainable codebases developers enjoy working in.</p>
+           <br>
+           <h2 id="Conclusion" class="pointer">Conclusion<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Rust provides a unique set of principles enabling safe systems programming without runtime downsides. Ownership and borrowing in Rust empower developers to write robust systems code with minimal overhead.</p>
+           <br>
+           <p>With support for low-level control, zero-cost abstractions, ergonomic concurrency, and guaranteed memory safety, Rust establishes itself as an emerging leader for next generation systems programming. Companies from startups to large tech giants are increasingly adopting Rust to improve the reliability of foundational infrastructure.</p>
+           <br>
+           <p>By providing both high programmer productivity and low-level efficiency without compromising reliability, Rust represents an exciting step forward for our industry. Any aspiring systems developer should strongly consider adding Rust skills to their repertoire.</p>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-essentials" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
+         </div>
+         <div class="share-links">
+          <div id="lsgakkh5p5">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/rust-principles" target="_blank">Facebook</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/rust-principles" target="_blank">Twitter</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/rust-principles" target="_blank">LinkedIn</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/rust-principles&amp;media=https://www.jimscode.blog/images/rust-principles-banner-png.png&amp;description=coding%20safely%20and%20swiftly%20a%20comprehensive%20guide%20to%20rust%20principles" target="_blank">Pinterest</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/rust-principles" target="_blank">Reddit</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="whatsapp://send?text=https://www.jimscode.blog/posts/rust-principles" target="_blank">WhatsApp</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="mailto:?subject=coding%20safely%20and%20swiftly%20a%20comprehensive%20guide%20to%20rust%20principles&amp;body=https://www.jimscode.blog/posts/rust-principles" target="_blank">Email</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/rust-principles" target="_blank">Instagram</a> </li>
+           </ul>
+           <br>
+          </div>
+         </div>
+        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About: <a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a> </p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="lsgakkh2no" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
+           <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
+           <li id="tagVar_principles" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/principles" class="btn-cta">principles</a> </li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Understanding-the-Stack-and-Heap">Understanding the Stack and Heap</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Moves-Versus-Copies-in-Rust">Moves Versus Copies in Rust</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#-Sharing-Data-with-References-in-Rust">Sharing Data with References in Rust</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Ownership-and-Borrowing">Ownership and Borrowing</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Memory-Safety">Memory Safety</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Zero-Cost-Abstractions">Zero-Cost Abstractions</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Concurrency-Principles">Concurrency Principles</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Safety-Without-Garbage-Collection">Safety Without Garbage Collection</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Practical-Examples">Practical Examples</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Best-Practices-in-Rust">Best Practices in Rust</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Conclusion">Conclusion</a> </li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product: <a href="#">Product Name</a> </p>
+           <div id="lsgakkh77v">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div id="lsgakkgzqd">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="lsgakki0lc">
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use <a href="https://highlightjs.org">highlight.js</a> , © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#lsgakki0lc{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#lsgakkh3su{ display: block;}#lsgakkh2no{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#lsgakki0lc{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
+<script>
+let giscusTheme = localStorage.getItem("theme");
+        let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "scionsamurai/jimscode.github.io",
+          "data-repo-id": "R_kgDOK8_rSw",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOK8_rS84Cb9LP",
+          "data-mapping": "pathname",
+          "data-strict": "1",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "crossorigin": "anonymous",
+          "async": "",
+        };
+        
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

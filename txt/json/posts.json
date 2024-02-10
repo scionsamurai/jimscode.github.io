@@ -431,9 +431,30 @@
     "comments": true,
     "link": "/posts/rust-essentials",
     "prev_post": "/posts/async-js",
-    "subseq_post": 0,
+    "subseq_post": "/posts/rust-principles",
     "category": "Rust basics",
     "category_title": "Rust Essentials"
+
+},
+{
+    "id": 22,
+    "post_title" : "Coding Safely and Swiftly: A Comprehensive Guide to Rust Principles",
+    "description": "Unlock the secrets of Rust's core principles in this in-depth guide. Delve into memory safety, ownership, and advanced concurrency patterns, while mastering best practices and optimizing performance for system-level coding.",
+    "authorid" : 1,
+    "date" : "Sat, Feb 10 2024 16:22:57 GMT",
+    "tags": ["rust", "system dev", "principles"],
+    "image": "/images/rust-principles-banner-png.png" ,
+    "webp_image": "/images/rust-principles-banner.webp",
+    "image_thumb": "/images/rust-principles-banner-png_thumb.png",
+    "banner_alt": "One story tall letter R filled with gears and cogs, surrounded by engineers working.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/rust-principles",
+    "prev_post": "/posts/rust-essentials",
+    "subseq_post": 0,
+    "category": "Rust basics",
+    "category_title": "Rust Principles"
 
 }
 
