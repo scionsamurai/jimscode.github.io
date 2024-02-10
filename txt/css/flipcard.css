@@ -42,6 +42,10 @@
   transform: rotateY(-180deg);
   width: 100%;
   height: 100%; }
+  .back > * {
+    padding: 0 1rem; }
+  .back :nth-child(2) {
+    padding: 0 2rem; }
 
 input[type=checkbox]:checked ~ .container .card {
   transform: rotateY(180deg); }
