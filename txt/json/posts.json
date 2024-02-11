@@ -473,9 +473,30 @@
     "comments": true,
     "link": "/posts/rust-structs-lifetimes",
     "prev_post": "/posts/rust-principles",
-    "subseq_post": 0,
+    "subseq_post": "/posts/rust-enums",
     "category": "Rust basics",
     "category_title": "Structs and Lifetimes"
+
+},
+{
+    "id": 24,
+    "post_title" : "Mastering Enums and Pattern Matching in Rust: A System Developer's Guide",
+    "description": "Unravel the complexities of Rust Enums and Pattern Matching in this in-depth exploration. Enhance your programming arsenal and gain confidence in handling diverse data structures for system-level tasks.",
+    "authorid" : 1,
+    "date" : "Sun, Feb 11 2024 22:07:02 GMT",
+    "tags": ["rust", "system dev", "enums"],
+    "image": "/images/rust-enums-banner-png.png" ,
+    "webp_image": "/images/rust-enums-banner.webp",
+    "image_thumb": "/images/rust-enums-banner-png_thumb.png",
+    "banner_alt": "Sectioned image with different seasons in each section.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/rust-enums",
+    "prev_post": "/posts/rust-structs-lifetimes",
+    "subseq_post": 0,
+    "category": "Rust basics",
+    "category_title": "Enums and Pattern Matching"
 
 }
 

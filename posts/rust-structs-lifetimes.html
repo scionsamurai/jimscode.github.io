@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lshliw85xl">
+    <div id="lsi29hle7j">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lshliw85q4">
+    <div id="lsi29hleyy">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,14 +93,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Structuring Success: A Comprehensive Guide to Rust's Structs and Lifetimes</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sun, Feb 11 2024 14:18:59 GMT</p>
-        <picture class="banner_picture" id="lshliw8a2u">
+        <picture class="banner_picture" id="lsi29hljdp">
          <source srcset="/images/rust-structs-lifetimes-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/rust-structs-lifetimes-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Image of a stone built rock structure with buildings built out of the sides and on top of the structure." class="banner-image">
           </picture>
           <br>
-          <div id="lshliw8bkz">
-<span id="lshliw8jhl">           <br>
+          <div id="lsi29hlj7g">
+<span id="lsi29hlsld">           <br>
            <h2 id="Introduction-to-Structs" class="pointer">Introduction to Structs<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Structs are one of the most common and useful features in Rust. As we dive deeper into systems programming with Rust, understanding structs is essential. In this section, we will cover:</p>
@@ -108,7 +108,7 @@ Search       </button>
            <h3>What are Structs?</h3>
            <br>
            <p>Structs are custom data types that enable you to name and organize related data under one roof. Here is a basic example of defining a struct:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw8yka">struct BlogPost {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm3c3">struct BlogPost {
      title: String,
      author: String,
      content: String,
@@ -145,7 +145,7 @@ Search       </button>
            <p>Defining a struct only creates a new type. To use it, we must create an <em>instance</em> .</p>
            <br>
            <p>Here is an example of creating a <span class="special_quote">BlogPost</span> instance and accessing its fields:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw8zih">let post = BlogPost {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm3r2">let post = BlogPost {
      title: String::from("My First Post"),
      author: String::from("Dave"),
      content: String::from("Hello world!"),
@@ -161,7 +161,7 @@ Search       </button>
            <h3>Attaching Methods to Structs</h3>
            <br>
            <p>In addition to data fields, we can define methods on structs to implement behavior. Here's an example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw8z3j">struct BlogPost {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm4fw">struct BlogPost {
     // existing fields
  }
  
@@ -190,7 +190,7 @@ Search       </button>
            </ul>
            <br>
            <p>Now we can create <span class="special_quote">BlogPost</span> instances via the constructor and call methods like <span class="special_quote">publish</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw8z5j">let mut post = BlogPost::new("Post Title", "Author Name");
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm4uv">let mut post = BlogPost::new("Post Title", "Author Name");
   //^ needed to make struct mutable to avoid error on publish method
  
  post.publish();
@@ -199,7 +199,7 @@ Search       </button>
            <h3>Associated Functions</h3>
            <br>
            <p>We can also add functions inside <span class="special_quote">impl</span> blocks that <em>don't</em> take a <span class="special_quote">self</span> argument. These are called <strong>associated functions</strong> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw8z6u">impl BlogPost {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm43q">impl BlogPost {
     fn new() {
         // ...
     }
@@ -272,7 +272,7 @@ Temporary data storage, function arguments              </th>
            <p>The main takeaway is that tuple structs create reusable custom types, while regular tuples simply group together values.</p>
            <br>
            <p>For example, a function returning <span class="special_quote">(bool, i32)</span> cannot name or type alias the return type. But by using a tuple struct like:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw90et">struct FuncResult(bool, i32);
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm4f8">struct FuncResult(bool, i32);
  
  fn my_func() -&gt; FuncResult {
      // ...
@@ -284,7 +284,7 @@ Temporary data storage, function arguments              </th>
            <br>
            <p>A tuple struct looks like this:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw900u">struct Color(i32, i32, i32);
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm4ae">struct Color(i32, i32, i32);
  
  let red = Color(255, 0, 0);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -299,10 +299,10 @@ Temporary data storage, function arguments              </th>
            <ul class="ul_class">
             <li> <strong>Points</strong> - A point in an n-dimensional space can be represented using a tuple struct:</li>
            </ul>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw902k">struct Point(f32, f32, f32);
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm4d1">struct Point(f32, f32, f32);
  
  let origin = Point(0.0, 0.0, 0.0);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
-           <ul class="ul_class" data-conditional-css="lshliw8wsv:::\|/" style="">
+           <ul class="ul_class" data-conditional-css="lsi29hm2oh:::\|/" style="">
             <li> <strong>Colors</strong> - As we saw earlier, RGB or other color models can be created using tuple structs.</li>
             <li> <strong>Return multiple values</strong> - Functions in Rust can only return one value. But by returning a tuple struct, we can logically return multiple values.</li>
            </ul>
@@ -314,7 +314,7 @@ Temporary data storage, function arguments              </th>
            <p>Enums or enumerations in Rust allow you to define a type that can take on one of several possible values. Each value that an enum can take on is called a variant.</p>
            <br>
            <p>For example, we can define a simple enum to represent web application permissions:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw90jb">enum Permission {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5vr">enum Permission {
      Read,
      Write,
      Admin
@@ -323,10 +323,10 @@ Temporary data storage, function arguments              </th>
            <p>This Permission enum has three variants - Read, Write and Admin.</p>
            <br>
            <p>Now we can create variables of type <span class="special_quote">Permission</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw91kz">let permission = Permission::Read;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5rr">let permission = Permission::Read;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>And we can use match statements to take different actions depending on the variant:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw91x7">fn check_permission(permission: Permission) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5b4">fn check_permission(permission: Permission) {
      match permission {
          Permission::Read =&gt; println!("Can read!"),
          Permission::Write =&gt; println!("Can write!"),
@@ -351,28 +351,28 @@ Temporary data storage, function arguments              </th>
            <h3>Mixing Enums and Structs</h3>
            <br>
            <p>Consider we have a struct representing a user:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw916f">struct User {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5da">struct User {
      id: i32,
      name: String,
      email: String
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>And we want to model different types of users like admins, managers etc. We can achieve this using an enum connected to appropriate structs:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw91cy">enum UserType {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm50v">enum UserType {
      Admin(User),
      Manager(User),
      Guest(User)
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Now we can instantiate <span class="special_quote">UserType</span> variants that contain specialized <span class="special_quote">User</span> data:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw91e4">let admin = UserType::Admin(User {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm52i">let admin = UserType::Admin(User {
      id: 1,
      name: String::from("John"),
      email: String::from("john@company.com")
  });</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>So <span class="special_quote">UserType</span> wraps a <span class="special_quote">User</span> adding more context. We can access inner user data using struct destructuring:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw91af">match user_type {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm53y">match user_type {
     UserType::Admin(user) =&gt; {
        println!("Admin user: {}", user.name)
     },
@@ -399,7 +399,7 @@ Temporary data storage, function arguments              </th>
            <h3>What is a Lifetime?</h3>
            <br>
            <p>A lifetime denotes the scope for which a reference is valid. For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw92nb">{
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5ha">{
      let x = 10;
      let ref = &amp;x; // ~~ref~~ has the lifetime of ~~x~~
  }
@@ -411,7 +411,7 @@ Temporary data storage, function arguments              </th>
            <br>
            <p>To see how lifetimes prevent dangling references, let's walk through this example:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw92ey">let r;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5du">let r;
  
  {
  let x = 5;
@@ -422,7 +422,7 @@ Temporary data storage, function arguments              </th>
  println!("{}", r);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>This code tries to create a reference <span class="special_quote">r</span> to <span class="special_quote">x</span> and use it after <span class="special_quote">x</span> has been deallocated. When we try to compile it:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="lshliw921i">error[E0597]: "x" does not live long enough
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="lsi29hm51u">error[E0597]: "x" does not live long enough
    --&gt; src/main.rs:7:5
     |
  6  |         r = &amp;x;
@@ -441,7 +441,7 @@ Temporary data storage, function arguments              </th>
            <p>The main purpose of lifetimes is preventing <strong>dangling references</strong> . This happens when you have a reference to some data, but that data has been deallocated. The reference effectively points to nothing and using it would be unsafe.</p>
            <br>
            <p>For example, consider a struct holding references:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw92lu">struct Foo {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm5bv">struct Foo {
      data: &amp;i32
  }
  
@@ -458,7 +458,7 @@ Temporary data storage, function arguments              </th>
            <h3>Lifetime Annotations</h3>
            <br>
            <p>Rust is able to infer lifetimes in many cases. But for certain structures containing references, we need to provide lifetime annotations to compile:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw9382">struct Foo { // Won't compile!
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm6ze">struct Foo { // Won't compile!
      data: &amp;i32
  }
  
@@ -467,14 +467,14 @@ Temporary data storage, function arguments              </th>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>This errors:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="lshliw93cp">error[E0106]: missing lifetime specifier
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="lsi29hm64h">error[E0106]: missing lifetime specifier
   --&gt; src/main.rs:2:15
    |
  2 |     data: &amp;i32
    |               ^ expected lifetime parameter</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
            <br>
            <p>The compiler can't tell how long <span class="special_quote">Foo</span> should live just from this code. We need to add an annotation that <span class="special_quote">Foo</span> instances live only as long as what they reference:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw93s6">struct Foo&lt;'a&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm6dk">struct Foo&lt;'a&gt; {
      data: &amp;'a i32
  }
  
@@ -487,7 +487,7 @@ Temporary data storage, function arguments              </th>
            <h3>Lifetimes in Structs</h3>
            <br>
            <p>Structs holding references also need lifetime annotations to ensure memory safety. For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshliw93ra">struct CustomString&lt;'a&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lsi29hm69w">struct CustomString&lt;'a&gt; {
      text: &amp;'a str,
  }
  
@@ -544,14 +544,14 @@ Temporary data storage, function arguments              </th>
            <br>
 </span>          </div>
           <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-principles" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-principles" class="btn-cta pad">Previous Post</a> </span><span style="display: block;" class="next_button" data-original-css="display: block;"> <a href="/posts/rust-enums" class="btn-cta pad">Next Post</a> </span>          </div>
           <p></p>
           <div class="giscus">
           </div>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lshliw8c05">
+          <div id="lsi29hlll0">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -583,7 +583,7 @@ Temporary data storage, function arguments              </th>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lshliw89wi" style="display: contents; line-height: 2rem;">
+          <ul id="lsi29hli9f" style="display: contents; line-height: 2rem;">
            <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
            <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
            <li id="tagVar_structs" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/structs" class="btn-cta">structs</a> </li>
@@ -615,7 +615,7 @@ Temporary data storage, function arguments              </th>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lshliw8f5v">
+           <div id="lsi29hloo2">
             <p>sidebar</p>
            </div>
           </div>
@@ -623,7 +623,7 @@ Temporary data storage, function arguments              </th>
         </aside>
        </div>
       </div>
-      <div id="lshliw86zg">
+      <div id="lsi29hlep7">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -636,7 +636,7 @@ Temporary data storage, function arguments              </th>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lshliw9eqo">
+         <ul class="footer-section" id="lsi29hmfrr">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -656,7 +656,7 @@ Temporary data storage, function arguments              </th>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lshliw9eqo{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lsi29hmfrr{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -664,11 +664,11 @@ Temporary data storage, function arguments              </th>
 }
 
 @media only screen and (min-width : 1px) {
-#lshliw8a2u{ display: block;}#lshliw89wi{ display: block;}
+#lsi29hljdp{ display: block;}#lsi29hli9f{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lshliw9eqo{ display: flex; flex-direction: column;}
+#lsi29hmfrr{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

@@ -168,7 +168,15 @@ css: /txt/css/flipcard.css
             We can reuse a variable name using shadowing:
             '''rust
             let x = 5;
+            println!("{}", x); // prints 5
+            {
+            |    println!("{}", x); // prints 5
+            |    let x = 10;        // x is shadowed here from the outer one
+            |    println!("{}", x); // prints 10
+            }
+            println!("{}", x); // prints 5
             let x = x + 1; // shadows previous binding
+            println!("{}", x); // prints 6
             '''
 
             This allows reusing a variable name rather than forcing unique names everywhere.
@@ -213,13 +221,7 @@ css: /txt/css/flipcard.css
             println!("outer y is: {}", y); // prints 6, y was mutated
             '''
 
-            || Action             || Shadowing             || Updating Mutable       |
-            || Original Binding    | ~~let x = 5;~~           | ~~let mut y = 5;~~       |  
-            || Inside Block        | ~~let x = x + 1;~~       | ~~y = y + 1;~~           |
-            || Inside Print        | Prints 6               | Prints 6               |  
-            || Outside Print       | Prints 5               | Prints 6 (updated)     ||
-
-            As shown in the table, shadowing creates a new variable, while mutating updates the original binding.
+            Shadowing creates a new variable, while mutating updates the original binding.
 
             ### Type Annotations
 

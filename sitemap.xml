@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/posts/rust-essentials</loc>
-    <lastmod>2024-02-06</lastmod>
+    <lastmod>2024-02-11</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -141,6 +141,12 @@
   <url>
     <loc>https://www.jimscode.blog/posts/dates-times-with-js</loc>
     <lastmod>2024-01-03</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/posts/rust-enums</loc>
+    <lastmod>2024-02-11</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -320,6 +326,12 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/tags/structs</loc>
+    <lastmod>2024-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/enums</loc>
     <lastmod>2024-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

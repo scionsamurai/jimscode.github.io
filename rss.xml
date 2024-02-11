@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Mastering Enums and Pattern Matching in Rust: A System Developer's Guide</title>
+      <link>https://www.jimscode.blog/posts/rust-enums</link>
+      <pubDate>Sun, Feb 11 2024 22:07:02 GMT</pubDate>
+      <description>Unravel the complexities of Rust Enums and Pattern Matching in this in-depth exploration. Enhance your programming arsenal and gain confidence in handling diverse data structures for system-level tasks.</description>
+      
+      <category>rust</category>
+<category>system dev</category>
+<category>enums</category>
+    </item>
+<item>
       <title>Structuring Success: A Comprehensive Guide to Rust's Structs and Lifetimes</title>
       <link>https://www.jimscode.blog/posts/rust-structs-lifetimes</link>
       <pubDate>Sun, Feb 11 2024 14:18:59 GMT</pubDate>
@@ -147,19 +157,6 @@
       <category>css</category>
 <category>web dev</category>
 <category>flexbox</category>
-    </item>
-<item>
-      <title>Building a Simple Snippet Editor and Previewer for Static Blogs</title>
-      <link>https://www.jimscode.blog/posts/snippet-editor-previewer</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Take control of your static blog development with a homemade snippet editor and previewer. This post guides you through a basic implementation, allowing you to edit and preview HTML, CSS, and JS seamlessly. Explore customization possibilities and share your enhancements with the developer community.</description>
-      
-      <category>html</category>
-<category>css</category>
-<category>web dev</category>
-<category>editor</category>
-<category>previewer</category>
-<category>javascript</category>
     </item>
       </channel>
     </rss>
