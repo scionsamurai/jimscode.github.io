@@ -6,6 +6,16 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Structuring Success: A Comprehensive Guide to Rust's Structs and Lifetimes</title>
+      <link>https://www.jimscode.blog/posts/rust-structs-lifetimes</link>
+      <pubDate>Sun, Feb 11 2024 14:18:59 GMT</pubDate>
+      <description>Discover the building blocks of Rust as we explore Structs and Lifetimes in-depth. From mastering struct design to unraveling lifetimes, this post equips system developers with essential knowledge for effective Rust programming.</description>
+      
+      <category>rust</category>
+<category>system dev</category>
+<category>structs</category>
+    </item>
+<item>
       <title>Coding Safely and Swiftly: A Comprehensive Guide to Rust Principles</title>
       <link>https://www.jimscode.blog/posts/rust-principles</link>
       <pubDate>Sat, Feb 10 2024 16:22:57 GMT</pubDate>
@@ -150,16 +160,6 @@
 <category>editor</category>
 <category>previewer</category>
 <category>javascript</category>
-    </item>
-<item>
-      <title>Take Your CSS Skills to the Next Level</title>
-      <link>https://www.jimscode.blog/posts/take-css-to-next-level</link>
-      <pubDate>Sat, Dec 23 2023 12:37:41 GMT</pubDate>
-      <description>Elevate your CSS proficiency with this comprehensive guide! Master advanced selectors, explore pseudo-classes, pseudo-elements, and attribute selectors. Dive into responsive design, animations, transitions, and preprocessors like SASS. Enhance your web development skills and stay ahead in the dynamic world of CSS.</description>
-      
-      <category>intermediate</category>
-<category>css</category>
-<category>web dev</category>
     </item>
       </channel>
     </rss>

@@ -452,9 +452,30 @@
     "comments": true,
     "link": "/posts/rust-principles",
     "prev_post": "/posts/rust-essentials",
-    "subseq_post": 0,
+    "subseq_post": "/posts/rust-structs-lifetimes",
     "category": "Rust basics",
     "category_title": "Rust Principles"
+
+},
+{
+    "id": 23,
+    "post_title" : "Structuring Success: A Comprehensive Guide to Rust's Structs and Lifetimes",
+    "description": "Discover the building blocks of Rust as we explore Structs and Lifetimes in-depth. From mastering struct design to unraveling lifetimes, this post equips system developers with essential knowledge for effective Rust programming.",
+    "authorid" : 1,
+    "date" : "Sun, Feb 11 2024 14:18:59 GMT",
+    "tags": ["rust", "system dev", "structs"],
+    "image": "/images/rust-structs-lifetimes-banner-png.png" ,
+    "webp_image": "/images/rust-structs-lifetimes-banner.webp",
+    "image_thumb": "/images/rust-structs-lifetimes-banner-png_thumb.png",
+    "banner_alt": "Image of a stone built rock structure with buildings built out of the sides and on top of the structure.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/rust-structs-lifetimes",
+    "prev_post": "/posts/rust-principles",
+    "subseq_post": 0,
+    "category": "Rust basics",
+    "category_title": "Structs and Lifetimes"
 
 }
 

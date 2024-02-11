@@ -722,9 +722,9 @@ window.addEventListener('message', event => {
         if (!tags_to_generate.length) {
           if (!authors_to_generate.length) {
             gen_all = false;
-            for (const g_file in generated_files) {
-              console.log('------sdf', g_file, generated_files[g_file]);
-            }
+            // for (const g_file in generated_files) {
+            //   console.log('------sdf', g_file, generated_files[g_file]);
+            // }
             generateDownload(generated_files);
           } else {
             const first_author = authors_to_generate[0];
