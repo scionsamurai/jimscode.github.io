@@ -164,10 +164,10 @@ css: /txt/css/flipcard.css
 
             Mutable references enable read/write access via ~~&mut T~~ syntax:
             '''rust
-            let mut v = vec![];
+            |let mut v = vec![];
 
-            let a = &mut v; // mutable borrow  
-            v.push(1);      // mutation allowed
+            |let a = &mut v; // mutable borrow  
+            |v.push(1);      // mutation allowed
             '''
 
             Rules:  

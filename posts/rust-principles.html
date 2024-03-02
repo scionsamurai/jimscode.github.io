@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lshlirchj8">
+    <div id="lt9hgmaw9t">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lshlirchyo">
+    <div id="lt9hgmawj6">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -92,15 +92,15 @@ Search       </button>
       <div class="post-container">
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Coding Safely and Swiftly: A Comprehensive Guide to Rust Principles</h1>
-        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Feb 10 2024 16:22:57 GMT</p>
-        <picture class="banner_picture" id="lshlircpzm">
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, 10 Feb 2024 16:22:57 GMT</p>
+        <picture class="banner_picture" id="lt9hgmb1ps">
          <source srcset="/images/rust-principles-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/rust-principles-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="One story tall letter R filled with gears and cogs, surrounded by engineers working." class="banner-image">
           </picture>
           <br>
-          <div id="lshlircptl">
-<span id="lshlircye7">           <br>
+          <div id="lt9hgmb21s">
+<span id="lt9hgmbduu">           <br>
            <p>Rust is quickly becoming a preferred language for system development. Its principles enable writing low-level code while eliminating entire categories of bugs. This post covers key Rust principles programmers should understand.</p>
            <br>
            <h2 id="Understanding-the-Stack-and-Heap" class="pointer">Understanding the Stack and Heap<span class="anchor-image">⚓</span></h2>
@@ -112,7 +112,7 @@ Search       </button>
            <h3>The Stack: Fast and Structured</h3>
            <br>
            <p>The stack is designed for speed and simplicity. It holds temporary scoped values in an orderly fashion:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdehz">fn factorial(n: u32) -&gt; u32 {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbvpj">fn factorial(n: u32) -&gt; u32 {
  
      if n == 0 {
          return 1;
@@ -144,7 +144,7 @@ Search       </button>
            <p>If the stack mimics tidy rows of vegetable gardens, then the heap is more like a wild greenhouse - dynamic, flexible, but also requiring careful cultivation to prevent unchecked overgrowth.</p>
            <br>
            <p>The heap supports features impossible for the stack:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdf91">let s = String::from("Hello world!"); // stored on heap, can resize
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbv6g">let s = String::from("Hello world!"); // stored on heap, can resize
  
  let mut v = Vec::new();
  v.push(1); v.push(2); // vector grows dynamically</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
@@ -152,7 +152,7 @@ Search       </button>
            <p>The heap allows data structures like strings and vectors to start small but organically expand over time, unlike the stack's fixed capacities.</p>
            <br>
            <p>But with flexibility comes responsibility. While the stack tidies itself as functions return, the heap has no such innate organization. Values persist independently until actively freed:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdfln">drop(s); // explicitly free no-longer-needed heap data</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbv9x">drop(s); // explicitly free no-longer-needed heap data</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Without <span class="special_quote">drop</span> here, the string data would permanently occupy space until the entire program exits.</p>
            <br>
@@ -168,7 +168,7 @@ Search       </button>
            <br>
            <p>A move transfers ownership of a value to another binding:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdfcx">let v = vec![1, 2, 3]; // v owns vector
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbv7e">let v = vec![1, 2, 3]; // v owns vector
  
  let v2 = v; // v2 takes ownership, v becomes invalid</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -189,7 +189,7 @@ Search       </button>
            <h3>Copies</h3>
            <br>
            <p>Type that implement the <span class="special_quote">Copy</span> trait instead copy themselves when passed to functions:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdfrn">let x = 5;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbwyl">let x = 5;
  let y = x; // x gets copied rather than moved</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <ul class="ul_class">
@@ -204,7 +204,7 @@ Search       </button>
            <h3>Clones</h3>
            <br>
            <p>For non-Copy types, we can explicitly request a copy using <span class="special_quote">clone()</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdgp3">let v = vec![1, 2, 3];
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbwof">let v = vec![1, 2, 3];
  
  let w = v.clone(); // explicity copy vector</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -217,10 +217,10 @@ Search       </button>
            <h3>Shared References</h3>
            <br>
            <p>Shared references provide read-only access to data via the <span class="special_quote">&amp;T</span> syntax:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdgyr">let mut v = vec![];
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbwgv">let v = vec![1, 2, 3];
  
- let a = &amp;mut v; // mutable borrow
- v.push(1);      // mutation allowed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+ let a = &amp;v; // shared borrow
+ let b = &amp;v; // multiple shared borrows allowed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Rules:</p>
            <ul class="ul_class">
@@ -234,7 +234,10 @@ Search       </button>
            <h3>Mutable References</h3>
            <br>
            <p>Mutable references enable read/write access via <span class="special_quote">&amp;mut T</span> syntax:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdgyr"></code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbxvu">let mut v = vec![];
+ 
+ let a = &amp;mut v; // mutable borrow
+ v.push(1);      // mutation allowed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Rules:</p>
            <ul class="ul_class">
@@ -247,7 +250,7 @@ Search       </button>
            <h3>Ownership and Borrowing - References</h3>
            <br>
            <p>Without references, we could only pass data between functions via moves:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdg8l">fn fill_vec(v: Vec&lt;i32&gt;) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbyb1">fn fill_vec(v: Vec&lt;i32&gt;) {
     // we must return v to retain access
     // as passing it moved ownership
     v.push(1);
@@ -265,7 +268,7 @@ Search       </button>
            <p>In Rust, each value has an <em>owner</em> . The owner is responsible for cleaning up the value once it goes out of scope or is no longer needed. When the owner goes out of scope, the owned value will be dropped automatically.</p>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdh4s">{
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbyuk">{
      let v = Vec::new(); // v is created, v owns the vector data
                          // allocated on the heap
  
@@ -274,7 +277,7 @@ Search       </button>
  } // v goes out of scope, vector data is automatically freed</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p> <em>Ownership can also be transferred</em> . For example, when passing a value to a function, ownership transfers to the function:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdhjg">fn process(v: Vec&lt;i32&gt;) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbyr1">fn process(v: Vec&lt;i32&gt;) {
       // v is now owned by the function
  }
  
@@ -283,7 +286,7 @@ Search       </button>
  process(v); // ownership moves to process</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>In addition to ownership transfer, Rust allows <em>immutable borrows</em> via references. References allow access to data without taking ownership. For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdhc4">fn print(v: &amp;Vec&lt;i32&gt;) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmby9h">fn print(v: &amp;Vec&lt;i32&gt;) {
      // borrow v for read-only access
      println!("{:?}", v);
  }
@@ -326,7 +329,7 @@ Search       </button>
            </ul>
            <br>
            <p>Let's look at some examples to illustrate the borrow checker in action:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdhqd">let mut v = vec![1, 2, 3];
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbzg6">let mut v = vec![1, 2, 3];
  
  let a = &amp;v; // immutable borrow
  let b = &amp;v; // ok, multiple shared borrows
@@ -337,7 +340,7 @@ Search       </button>
            <br>
            <p>The compiler prevents mutation through shared references.</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdhb4">let mut v = vec![1, 2, 3];
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbz26">let mut v = vec![1, 2, 3];
  
  let a = &amp;mut v; // mutable borrow
  v.push(4); // ok: we mutable borrowed v
@@ -386,7 +389,7 @@ Search       </button>
            <p>Let's examine how Rust prevents each issue:</p>
            <br>
            <p> <strong>Use after free</strong> </p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdi0m">{
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbzkd">{
    let v = vec![1, 2, 3];
  
    println!("{:?}", v); // use v
@@ -398,7 +401,7 @@ Search       </button>
            <p>The compiler stops us from using v after it gets dropped.</p>
            <br>
            <p> <strong>Double free</strong> </p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdi0t">let v = Vec::new(); // v owns the vector allocation
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmbzyg">let v = Vec::new(); // v owns the vector allocation
  
  drop(v); // explicitly drop v
  
@@ -411,7 +414,7 @@ Search       </button>
            <br>
            <p>In languages like C/C++, manually managing memory allocation and deallocation makes it possible to free the same memory multiple times:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-c" id="lshlirdix6">int* p = malloc(sizeof(int)); // allocate memory
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-c" id="lt9hgmbzqa">int* p = malloc(sizeof(int)); // allocate memory
  free(p); // deallocate memory
  
  // but program logic has issues,
@@ -421,7 +424,7 @@ Search       </button>
            <p>This is undefined behavior and can lead to crashes or corruption.</p>
            <br>
            <p>Rust's ownership system makes double frees impossible by enforcing that owned values like Box or Vec get dropped exactly once when their owner goes out of scope:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdi5h">{
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmc0m1">{
       let v = vec![1, 2, 3]; // allocate vector on heap
  
       println!("{:?}", v); // use allocation
@@ -430,7 +433,7 @@ Search       </button>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>If we try to explicitly drop v again, it would fail:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdigv">let v = Vec::new(); // v owns the vector allocation
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmc0zv">let v = Vec::new(); // v owns the vector allocation
  
  drop(v); // explicitly drop v
  
@@ -443,7 +446,7 @@ Search       </button>
            <p>This helps eliminate an entire class of memory unsafety issues.</p>
            <br>
            <p> <strong>Dangling pointers</strong> </p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdisc">fn dangling() -&gt; &amp;Vec&lt;i32&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmc0of">fn dangling() -&gt; &amp;Vec&lt;i32&gt; {
      let v = vec![1, 2, 3];
  
      &amp;v // error: returns reference to local data
@@ -464,7 +467,7 @@ Search       </button>
            <p>For example, <span class="special_quote">Vec&lt;T&gt;</span> provides a resizable array abstraction on top of Rust's raw pointers. But it compiles to simple heap allocations and pointer manipulation - no overhead over hand written code.</p>
            <br>
            <p>The same applies to constructs like iterators. This iterator pipeline:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdi0k">let squared = v.iter().map(|n| n * n).filter(|&amp;n| n &gt; 4);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmc0x3">let squared = v.iter().map(|n| n * n).filter(|&amp;n| n &gt; 4);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Compiles into optimal low-level code with no per-iteration costs.</p>
            <br>
@@ -552,7 +555,7 @@ Search       </button>
            <h3>File I/O</h3>
            <br>
            <p>Interacting with files is a common task. Rust makes this safe and easy:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdjkh">use std::fs;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmc1co">use std::fs;
  
  fn read_file(path: &amp;str) -&gt; std::io::Result&lt;String&gt; {
      let mut f = fs::File::open(path)?;
@@ -575,7 +578,7 @@ Search       </button>
            <br>
            <p>Async I/O concurrency is efficient and easy with ownership:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lshlirdj73">async fn fetch_url(url: &amp;str) -&gt; Result&lt;String&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hgmc1pi">async fn fetch_url(url: &amp;str) -&gt; Result&lt;String&gt; {
      let response = reqwest::get(url).await?;
      let text = response.text().await?;
  
@@ -638,7 +641,7 @@ Search       </button>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lshlircq3y">
+          <div id="lt9hgmb33a">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -670,7 +673,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lshlirclud" style="display: contents; line-height: 2rem;">
+          <ul id="lt9hgmb041" style="display: contents; line-height: 2rem;">
            <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
            <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
            <li id="tagVar_principles" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/principles" class="btn-cta">principles</a> </li>
@@ -710,7 +713,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lshlirct6k">
+           <div id="lt9hgmb6lu">
             <p>sidebar</p>
            </div>
           </div>
@@ -718,7 +721,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="lshlirchps">
+      <div id="lt9hgmaw2h">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -731,7 +734,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lshlirdoeu">
+         <ul class="footer-section" id="lt9hgmcakz">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -751,7 +754,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lshlirdoeu{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#lt9hgmcakz{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -759,11 +762,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lshlircpzm{ display: block;}#lshlirclud{ display: block;}
+#lt9hgmb1ps{ display: block;}#lt9hgmb041{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lshlirdoeu{ display: flex; flex-direction: column;}
+#lt9hgmcakz{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

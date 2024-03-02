@@ -155,10 +155,12 @@ function generateDownload(files) {
 
 function generateRSSFeed(items) {
     const xml = `<?xml version="1.0" encoding="UTF-8" ?>
-    <rss version="2.0">
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>
         <title>Jims Code Blog</title>
         <link>https://www.jimscode.blog</link>
+        <guid>https://www.jimscode.blog</guid>
+        <atom:link href="https://www.jimscode.blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         ${items.map(generateRSSItem).join("\n")}
@@ -172,6 +174,7 @@ function generateRSSItem(item) {
     const xml = `<item>
       <title>${item.post_title}</title>
       <link>https://www.jimscode.blog${item.link}</link>
+      <guid>https://www.jimscode.blog${item.link}</guid>
       <pubDate>${item.date}</pubDate>
       <description>${item.description.replaceAll('&', 'and')}</description>
       ${item.author ? `<author>${item.author}</author>` : ""}
@@ -181,7 +184,7 @@ function generateRSSItem(item) {
   
     return xml;
 }
-  
+
 function replaceTextAfterLastBackslash(input, replacement) {
     const regex = /[^/]*$/;
     const newText = input.replace(regex, replacement);
@@ -351,7 +354,10 @@ function formatTimestampToLocaleString(timestamp) {
 function getCurrentDateInLocaleString() {
   const currentDate = new Date();
   const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'GMT', hour12: false };
-  return currentDate.toLocaleString('en-US', options).replace(/,/g, '').replace(' ', ', ');
+  const [weekday, month, date, year, time] = currentDate.toLocaleString('en-US', options).replace(/,/g, '').split(' ');
+  const rearrangedDate = `${weekday}, ${date} ${month} ${year} ${time}`;
+
+  return rearrangedDate;
 }
 
 function getTodayDate() {
@@ -544,7 +550,12 @@ function addSitemapEntry(sitemapContents, parentLocation, location, priority, ch
 
       entry.parentNode.insertBefore(newEntry, entry.nextSibling);
 
-      return new XMLSerializer().serializeToString(xmlDoc).replace(/\s?xmlns="[^"]*"/g, '');
+      
+      // const new_xml = new XMLSerializer().serializeToString(xmlDoc).replace(/\s?xmlns="[^"]*"/g, '');
+      const new_xml = new XMLSerializer().serializeToString(xmlDoc).replace(/\s?xmlns=""/g, '');
+      console.log(new_xml);
+      
+      return new_xml
     }
   }
   console.log(existingEntries);

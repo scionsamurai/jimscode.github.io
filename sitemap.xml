@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jimscode.blog/about-us</loc>
     <lastmod>2023-12-23</lastmod>
@@ -20,10 +20,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog</loc>
-    <lastmod>2024-02-11</lastmod>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url><url><loc>https://www.jimscode.blog/archive/page3</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-11</lastmod></url><url><loc>https://www.jimscode.blog/archive/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-11</lastmod></url>
+  </url><url><loc>https://www.jimscode.blog/archive/page3</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-03-01</lastmod></url><url><loc>https://www.jimscode.blog/archive/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-03-01</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/404</loc>
     <lastmod>2024-02-06</lastmod>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/posts/making-image-puzzle</loc>
-    <lastmod>2023-12-31</lastmod>
+    <lastmod>2024-02-18</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/posts/rust-principles</loc>
-    <lastmod>2024-02-10</lastmod>
+    <lastmod>2024-02-22</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -163,6 +163,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.jimscode.blog/posts/rust-traits-generics</loc>
+    <lastmod>2024-03-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.jimscode.blog/posts/js-and-forms</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>never</changefreq>
@@ -182,10 +188,10 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/authors/jimmy-ruikka</loc>
-    <lastmod>2024-02-11</lastmod>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url><url><loc>https://www.jimscode.blog/authors/jimmy-ruikka/page3</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-11</lastmod></url><url><loc>https://www.jimscode.blog/authors/jimmy-ruikka/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-02-11</lastmod></url>
+  </url><url><loc>https://www.jimscode.blog/authors/jimmy-ruikka/page3</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-03-01</lastmod></url><url><loc>https://www.jimscode.blog/authors/jimmy-ruikka/page2</loc><priority>0.9</priority><changefreq>weekly</changefreq><lastmod>2024-03-01</lastmod></url>
   <url>
     <loc>https://www.jimscode.blog/tags/html</loc>
     <lastmod>2023-12-23</lastmod>
@@ -302,13 +308,13 @@
   </url>
   <url>
     <loc>https://www.jimscode.blog/tags/rust</loc>
-    <lastmod>2024-02-11</lastmod>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.jimscode.blog/tags/system%20dev</loc>
-    <lastmod>2024-02-11</lastmod>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -333,6 +339,12 @@
   <url>
     <loc>https://www.jimscode.blog/tags/enums</loc>
     <lastmod>2024-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.jimscode.blog/tags/traits</loc>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
