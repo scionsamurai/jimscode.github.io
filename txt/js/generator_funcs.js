@@ -159,7 +159,6 @@ function generateRSSFeed(items) {
       <channel>
         <title>Jims Code Blog</title>
         <link>https://www.jimscode.blog</link>
-        <guid>https://www.jimscode.blog</guid>
         <atom:link href="https://www.jimscode.blog/rss.xml" rel="self" type="application/rss+xml" />
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>

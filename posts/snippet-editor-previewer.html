@@ -60,7 +60,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lsba17ak6g">
+    <div id="ltah5h9a6l">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -86,7 +86,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lsba17ak0j">
+    <div id="ltah5h9apq">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -95,15 +95,15 @@ Search       </button>
       <div class="post-container">
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Building a Simple Snippet Editor and Previewer for Static Blogs</h1>
-        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, Dec 23 2023 12:37:41 GMT</p>
-        <picture class="banner_picture" id="lsba17aqjt">
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, 23 Dec 2023 12:37:41 GMT</p>
+        <picture class="banner_picture" id="ltah5h9ebr">
          <source srcset="/images/snippet-editor-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/snippet-editor-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Picture of a computer monitor in front of a mountainscape with nested windows showing within it." class="banner-image">
           </picture>
           <br>
-          <div id="lsba17aqvo">
-<span id="lsba17axn0">           <p>Having an effective snippet editor and previewer for developers working on static blogs can streamline the coding process. Rather than constantly uploading changes to a live server, you can quickly preview your HTML, CSS, and JS in a straightforward interface.</p>
+          <div id="ltah5h9fqh">
+<span id="ltah5h9kp4">           <p>Having an effective snippet editor and previewer for developers working on static blogs can streamline the coding process. Rather than constantly uploading changes to a live server, you can quickly preview your HTML, CSS, and JS in a straightforward interface.</p>
            <br>
            <p>This post will explore a basic implementation that allows editing and previewing snippets in the browser itself. While services exist to achieve this, many developers may seek to create custom solutions.</p>
            <br>
@@ -132,13 +132,13 @@ Search       </button>
            <br>
            <p>For instance, invoking with:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsba17b20l">createCodeEditor(htmlCode, cssCode, jsCode, 'target-container');</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="ltah5h9pfj">createCodeEditor(htmlCode, cssCode, jsCode, 'target-container');</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
            <br>
            <h2 id="Styling-for-a-Clean-Design" class="pointer">Styling for a Clean Design<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Some CSS styles are provided for visual polish:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lsba17b2d6">#editor-container {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="ltah5h9pkj">#editor-container {
      height: 20rem;
  }
  
@@ -177,7 +177,7 @@ Search       </button>
            <br>
            <p>To preview compiled code, the script writes the HTML, CSS, and JS into a single HTML string. This gets written into an <span class="special_quote">&lt;iframe&gt;</span> to be rendered as a preview:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsba17b2i5">const resultHTML = `&lt;html&gt;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="ltah5h9q66">const resultHTML = `&lt;html&gt;
  &lt;head&gt;
      &lt;style&gt;${css}&lt;/style&gt;
  &lt;/head&gt;
@@ -196,15 +196,15 @@ Search       </button>
             <div class="tab" role="tab">
              <input type="radio" id="tab1-id-1" name="tab-group-1" role="tab" tabindex="0" aria-selected="true" checked="checked">
              <label for="tab1-id-1" tabindex="0" style="outline: none;">html</label>
-             <div class="content" role="tabpanel" aria-labelledby="tab1-id-1" id="lsba17b23r">
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="lsba17b4oh">&lt;h1&gt;Hello World&lt;/h1&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
+             <div class="content" role="tabpanel" aria-labelledby="tab1-id-1" id="ltah5h9q5k">
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-html" id="ltah5h9rjd">&lt;h1&gt;Hello World&lt;/h1&gt;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">html</span></span></pre>
              </div>
             </div>
             <div class="tab" role="tab">
              <input type="radio" id="tab1-id-2" name="tab-group-1" role="tab" tabindex="0" aria-selected="false">
              <label for="tab1-id-2" tabindex="0" style="outline: none;">css</label>
-             <div class="content" role="tabpanel" aria-labelledby="tab1-id-2" id="lsba17b286" hidden="">
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="lsba17b4ic">body {
+             <div class="content" role="tabpanel" aria-labelledby="tab1-id-2" id="ltah5h9qqr" hidden="">
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-css" id="ltah5h9r98">body {
      background: blue;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">css</span></span></pre>
              </div>
@@ -212,8 +212,8 @@ Search       </button>
             <div class="tab" role="tab">
              <input type="radio" id="tab1-id-3" name="tab-group-1" role="tab" tabindex="0" aria-selected="false">
              <label for="tab1-id-3" tabindex="0" style="outline: none;">js</label>
-             <div class="content" role="tabpanel" aria-labelledby="tab1-id-3" id="lsba17b3u3" hidden="">
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="lsba17b47u">console.log("Hello, World!");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
+             <div class="content" role="tabpanel" aria-labelledby="tab1-id-3" id="ltah5h9qws" hidden="">
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-js" id="ltah5h9sl4">console.log("Hello, World!");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">js</span></span></pre>
              </div>
             </div>
            </div>
@@ -230,13 +230,13 @@ Search       </button>
            <br>
            <details role="group">
             <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What is an iframe in HTML?</summary>
-            <div id="lsba17b3e4">
+            <div id="ltah5h9qvv">
              <p>An <span class="special_quote">iframe</span> , or inline frame, is an HTML element that embeds another HTML page within the current page. It creates a window within the parent page to display content from another source, commonly used for embedding videos, advertisements, and interactive content.</p>
             </div>
            </details>
            <details role="group">
             <summary role="button" aria-expanded="false" onclick="toggleExpanded()">What are the advantages and disadvantages of using iframes?</summary>
-            <div id="lsba17b39l">
+            <div id="ltah5h9q5c">
              <h3>Iframe Advantages</h3>
              <ul class="ul_class">
               <li> <strong>Easy to embed content:</strong> Simple way to embed content from other sources without modifying the parent page's code.</li>
@@ -253,7 +253,7 @@ Search       </button>
            </details>
            <details role="group">
             <summary role="button" aria-expanded="false" onclick="toggleExpanded()">Other Options for Snippet Editors with Live Preview</summary>
-            <div id="lsba17b3t8">
+            <div id="ltah5h9qhb">
              <p>A few online options offer more advanced features:</p>
              <br>
              <ul class="ul_class">
@@ -273,7 +273,7 @@ Search       </button>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lsba17arrh">
+          <div id="ltah5h9gpg">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -305,7 +305,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lsba17aozp" style="display: contents; line-height: 2rem;">
+          <ul id="ltah5h9ez5" style="display: contents; line-height: 2rem;">
            <li id="tagVar_html" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/html" class="btn-cta">html</a> </li>
            <li id="tagVar_css" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/css" class="btn-cta">css</a> </li>
            <li id="tagVar_web dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/web%20dev" class="btn-cta">web dev</a> </li>
@@ -344,7 +344,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lsba17auzx">
+           <div id="ltah5h9ib9">
             <p>sidebar</p>
            </div>
           </div>
@@ -352,7 +352,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="lsba17aly2">
+      <div id="ltah5h9a6b">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -365,7 +365,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lsba17b8wp">
+         <ul class="footer-section" id="ltah5h9w5b">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -385,7 +385,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lsba17b8wp{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#ltah5h9w5b{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -393,11 +393,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lsba17aqjt{ display: block;}#lsba17aozp{ display: block;}
+#ltah5h9ebr{ display: block;}#ltah5h9ez5{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lsba17b8wp{ display: flex; flex-direction: column;}
+#ltah5h9w5b{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

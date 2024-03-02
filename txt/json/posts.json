@@ -327,7 +327,7 @@
     "comments": true,
     "link": "/posts/js-and-forms",
     "prev_post": "/posts/js-and-dom",
-    "subseq_post": 0,
+    "subseq_post": "/posts/js-array-methods",
     "category": "JS basics",
     "category_title": "JS and Forms"
 
@@ -515,9 +515,29 @@
     "comments": true,
     "link": "/posts/rust-traits-generics",
     "prev_post": "/posts/rust-enums",
-    "subseq_post": 0,
+    "subseq_post": "/posts/rust-cargo-crates-modules",
     "category": "Rust basics",
     "category_title": "Traits and Generics"
+},
+{
+    "id": 26,
+    "post_title" : "Navigating Rust Projects: A Guide to Cargo, Crates, and Modules",
+    "description": "Explore the fundamentals of Rust project organization with our comprehensive guide on Cargo, Crates, and Modules. Learn to wield Rust's package manager, structure code efficiently, and share functionality seamlessly between projects.",
+    "authorid" : 1,
+    "date" : "Sat, 02 Mar 2024 19:09:55 GMT",
+    "tags": ["rust", "system dev", "modules", "packaging"],
+    "image": "/images/rust-cargo-crates-modules-banner-png.png" ,
+    "webp_image": "/images/rust-cargo-crates-modules-banner.webp",
+    "image_thumb": "/images/rust-cargo-crates-modules-banner-png_thumb.png",
+    "banner_alt": "A machine that looks like a room-sized 3d printer, but this machine is for handling packages.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/rust-cargo-crates-modules",
+    "prev_post": "/posts/rust-traits-generics",
+    "subseq_post": 0,
+    "category": "Rust basics",
+    "category_title": "Cargo, Crates, and Modules"
 }
 
 

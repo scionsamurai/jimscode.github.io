@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the fundamentals of Rust project organization with our comprehensive guide on Cargo, Crates, and Modules. Learn to wield Rust's package manager, structure code efficiently, and share functionality seamlessly between projects.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>Cargo, Crates, Modules - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+   </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');   </script>
+  </head>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="ltah3ztw39">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+</label>
+      </div>
+ <a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>      </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
+     </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
+     </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+ <a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>     </div>
+    <div id="ltah3ztwql">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Navigating Rust Projects: A Guide to Cargo, Crates, and Modules</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, 02 Mar 2024 19:09:55 GMT</p>
+        <picture class="banner_picture" id="ltah3zu0de">
+         <source srcset="/images/rust-cargo-crates-modules-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/rust-cargo-crates-modules-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="A machine that looks like a room-sized 3d printer, but this machine is for handling packages." class="banner-image">
+          </picture>
+          <br>
+          <div id="ltah3zu05m">
+<span id="ltah3zu8jo">           <br>
+           <h2 id="Introduction-to-Cargo" class="pointer">Introduction to Cargo<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Cargo is the Rust ecosystem's official package manager and build tool. For systems programmers coming to Rust, Cargo is analogous to build tools you may already be familiar with such as Make or Bazel. However, Cargo offers several key advantages:</p>
+           <br>
+           <h3>Simplicity of Getting Started</h3>
+           <br>
+           <p>Getting started with a new Rust project is as simple as running:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zuglc">cargo new my-project</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>This initializes a new project folder with the following:</p>
+           <ul class="ul_class">
+            <li>Default Rust source file ( <span class="special_quote">main.rs</span> )</li>
+            <li>Configuration file ( <span class="special_quote">Cargo.toml</span> )</li>
+            <li>Gitignore file</li>
+            <li>Other supporting files</li>
+           </ul>
+           <br>
+           <p>With just a single command, you can start coding right away without worrying about project setup.</p>
+           <br>
+           <h3>Handling Dependencies</h3>
+           <br>
+           <p>In Rust, reusable packages of code are called <strong>crates</strong> . As your project grows, you may want to split it into multiple crates or depend on external community crates.</p>
+           <br>
+           <p>Cargo automatically downloads and builds all dependencies defined in your <span class="special_quote">Cargo.toml</span> file. Some key advantages over manually handling dependencies:</p>
+           <ul class="ul_class">
+            <li>No need to manually hunt down copies of library source code</li>
+            <li>Crates are cached locally so they only get downloaded once</li>
+            <li>Updates to crates can be easily integrated via <span class="special_quote">cargo update</span> </li>
+           </ul>
+           <br>
+           <h3>Unified Build System</h3>
+           <br>
+           <p>Cargo provides a consistent build experience across development and production environments:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zugci">cargo build // Build for local testing
+ cargo run // Compile and run binary
+ cargo test // Run all tests
+ cargo doc // Generate documentation
+ cargo publish // Publish crate to share with others</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>There's no need to learn Make, CMake, Bazel, etc. The same <span class="special_quote">cargo</span> commands work everywhere.</p>
+           <br>
+           <h3>Structuring Projects with Cargo</h3>
+           <br>
+           <p>When you create a new Rust project with <span class="special_quote">cargo new</span> , it generates the following directory structure:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zugr1">my-project
+ |- Cargo.toml
+ |- src
+    |- main.rs
+ |- .gitignore</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>This provides a common starting point for all Rust projects. Let's take a closer look at what each generated file provides:</p>
+           <br>
+           <h4>Cargo.toml</h4>
+           <br>
+           <p>This file defines metadata about your project such as its name, version, authors, and dependencies. Some key sections:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-toml" id="ltah3zugpv">[package]
+ ## Package details - required
+ name = "my-project"
+ version = "0.1.0"
+ 
+ [dependencies]
+ ## External crate dependencies - optional
+ rand = "0.8.5"
+ 
+ [lib]
+ ## Build this project as a library - optional
+ name = "my_project"</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">toml</span></span></pre>
+           <br>
+           <h4>src/main.rs</h4>
+           <br>
+           <p>The <span class="special_quote">src</span> folder holds your Rust source code, starting with <span class="special_quote">main.rs</span> by default. This file contains the <span class="special_quote">main</span> function that serves as the entry point when building an executable.</p>
+           <br>
+           <h4>.gitignore</h4>
+           <br>
+           <p>This ignores files Cargo uses for caching/building so they aren't committed to git by accident.</p>
+           <br>
+           <p>Cargo provides a streamlined project structure focused on just the essentials. You can add additional source files, organize code into modules, configure builds, and manage dependencies entirely through <span class="special_quote">Cargo.toml</span> . This avoids a tangled mess of configuration files.</p>
+           <br>
+           <h2 id="Crates-in-Rust" class="pointer">Crates in Rust<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Previously we looked at how Cargo structures a Rust project at a high level. Now let's go deeper into <strong>crates</strong> - the standard compilation unit in Rust.</p>
+           <br>
+           <h3>What is a Crate?</h3>
+           <br>
+           <p>A crate can be thought of as equivalent to a library or package in other languages. At a high level, a crate:</p>
+           <ul class="ul_class">
+            <li>Encapsulates related functionality and data structures</li>
+            <li>Compiles to a static or dynamic library</li>
+            <li>Exposes APIs for other code to use</li>
+           </ul>
+           <br>
+           <p> <strong>In Rust, crates are the primary way code is shared between different projects.</strong> Publishing a crate to <a href="https://crates.io">crates.io</a> makes it available to other Rust developers.</p>
+           <br>
+           <h3>Anatomy of a Crate</h3>
+           <br>
+           <p>Under the hood a crate is a <strong>tree of modules</strong> that produces one or more library or executable artifacts when compiled by Cargo.</p>
+           <br>
+           <p>For example, this crate:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zuhh8">my-crate
+ |- src
+    |- lib.rs
+    |- tools.rs
+ |- tests
+    |- integration.rs
+ |- benches
+    |- performance.rs</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>Could produce:</p>
+           <ul class="ul_class">
+            <li>A library <span class="special_quote">libmy_crate.rlib</span> </li>
+            <li>An executable binary <span class="special_quote">my-tool</span> </li>
+            <li>Test and benchmark executables</li>
+           </ul>
+           <br>
+           <p>The key takeaway is that <strong>a crate allows keeping related functionality together</strong> while exposing desired APIs to consumers.</p>
+           <br>
+           <h2 id="Modules-in-Rust" class="pointer">Modules in Rust<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>In the previous section we saw how crates manage code at a high level. Now let's talk about <strong>modules</strong> - the way code is organized within a crate.</p>
+           <br>
+           <h3>Organizing Code with Modules</h3>
+           <br>
+           <p> <strong>Modules allow logically grouping related functionality</strong> , similar to namespaces in other languages. Some examples:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah3zuhnj">mod math {
+ // Math related functions
+ }
+ 
+ mod io {
+ // File and network I/O code
+ }
+ 
+ mod mocks {
+ // Testing and mocking functionality
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p> <strong>Modules create boundaries that control organization, scope, and privacy.</strong> By default, items defined in a module are private to that module. Public APIs are exposed through <span class="special_quote">pub use</span> .</p>
+           <br>
+           <p> <strong>While crates manage code sharing between projects, modules manage code sharing within a project.</strong> Segmenting code into modules with clear interfaces is crucial for maintaining large codebases in Rust.</p>
+           <br>
+           <h3>Paths for Accessing Modules</h3>
+           <br>
+           <p>We refer to modules using paths - similar to filesystem paths:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah3zuhfa">// Absolute path
+ crate::math::round(1.2345)
+ 
+ // Relative path
+ io::read_file("data.txt")</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The crate root is the top level module of your library or binary. <strong>Paths allow unambiguously accessing nested modules.</strong> </p>
+           <br>
+           <p>Proper use of modules and paths forms the basis of encapsulating and reusing code in idiomatic Rust.</p>
+           <br>
+           <h2 id="Package--Crate--and-Module-Relationships" class="pointer">Package, Crate, and Module Relationships<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Now that we've covered cargo, crates, and modules individually, let's talk about how they all fit together.</p>
+           <br>
+           <h3>Package Relationships</h3>
+           <br>
+           <p>A Rust <strong>package</strong> contains one or more crates inside the <span class="special_quote">src</span> folder:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zui1m">my-package
+ |- Cargo.toml
+ |- src
+    |- main-crate
+       |- Cargo.toml
+       |- src
+    |- utils-crate
+       |- Cargo.toml
+       |- src</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>The top-level <span class="special_quote">Cargo.toml</span> defines the package. Each crate folder also has its own <span class="special_quote">Cargo.toml</span> .</p>
+           <br>
+           <p> <strong>A key job of packages is to define relationships between multiple crates being developed together.</strong> This includes managing dependencies and build instructions.</p>
+           <br>
+           <h3>Crates as Trees of Modules</h3>
+           <br>
+           <p>Zooming into an individual crate, we can visualize it as a <strong>tree of modules</strong> :</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zuirc">my-crate
+ |- src
+    |- main.rs (crate root module)
+    |- parsers.rs (parsers module)
+       |- json.rs (nested module)
+    |- models.rs (models module)</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>The <span class="special_quote">main.rs</span> file typically contains the crate root module and pulls in all other modules. <strong>Modules allow logically segmenting code within the crate.</strong> </p>
+           <br>
+           <h3>Tying it Together</h3>
+           <br>
+           <p>The key takeaways when considering all three components:</p>
+           <ul class="ul_class">
+            <li> <strong>Packages:</strong> High-level collection of related crates and configuration</li>
+            <li> <strong>Crates:</strong> Unit of compilation and sharing between projects</li>
+            <li> <strong>Modules:</strong> Organization of code within a crate</li>
+           </ul>
+           <br>
+           <p>Rust's powerful module system sets it apart from other languages in managing complexity through explicit boundaries as projects scale.</p>
+           <br>
+           <h2 id="Code-Sharing-Between-Projects" class="pointer">Code Sharing Between Projects<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>A major advantage of Rust's crate system is the ability to easily share and reuse code between different projects.</p>
+           <br>
+           <h3>Leveraging Crates for Reuse</h3>
+           <br>
+           <p>As mentioned previously, published crates on https://crates.io are available for any Rust project to use. Some ways to leverage existing crates:</p>
+           <br>
+           <p> <strong>1. Finding functionality in crates</strong> </p>
+           <br>
+           <p>The site provides search and discovery tools to find crates providing needed functionality - no need to reinvent the wheel!</p>
+           <br>
+           <p> <strong>2. Specifying crates as dependencies</strong> </p>
+           <br>
+           <p>In your project's <span class="special_quote">Cargo.toml</span> file:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-toml" id="ltah3zuiqx">[dependencies]
+ serde = { version = "1.0", features = ["derive"] }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">toml</span></span></pre>
+           <br>
+           <p>Cargo will automatically download and compile the crate.</p>
+           <br>
+           <p> <strong>3. Using crates in code</strong> </p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah3zujqm">use serde::{Serialize, Deserialize};
+ 
+ #[derive(Serialize, Deserialize)]
+ struct MyData {...}</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Then build on top of crate functionality in your code!</p>
+           <br>
+           <h3>Creating Reusable Crates</h3>
+           <br>
+           <p>On the flip side, developers can create crates to extract and generalize reusable code from their projects:</p>
+           <p>1. <strong>Define API boundaries</strong> - Use modules to specify a public API.</p>
+           <p>2. <strong>Configure packaging</strong> - Set up compilation and artifacts in <span class="special_quote">Cargo.toml</span> .</p>
+           <p>3. <strong>Publish to crates.io</strong> - Make your crate available to others!</p>
+           <br>
+           <p>Publishing quality crates is a great way to contribute to the Rust ecosystem.</p>
+           <br>
+           <p>Overall crates enable a thriving, collaborative culture of code sharing and reuse between Rust projects.</p>
+           <br>
+           <h2 id="Practical-Tips-for-Effective-Project-Organization" class="pointer">Practical Tips for Effective Project Organization<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Now that we've covered the mechanics of how Cargo, crates, and modules work, let's discuss some best practices for organizing code effectively.</p>
+           <br>
+           <h3>Structuring Projects</h3>
+           <br>
+           <p>When structuring your Rust projects, keep these guidelines in mind:</p>
+           <ul class="ul_class">
+            <li>Split logically distinct functionality into separate crates</li>
+            <li>Further break down code by feature using modules/sub-modules</li>
+            <li>Favor small modules focused on specific tasks</li>
+            <li>Minimize dependencies between modules</li>
+            <li>Expose clean public APIs for consuming code</li>
+           </ul>
+           <br>
+           <p>Well-factored modules create clear boundaries and encapsulation. This pays dividends as the codebase evolves.</p>
+           <br>
+           <p>At the same time, be careful about taking modularity too far. Evaluating tradeoffs around cohesion and complexity is important.</p>
+           <br>
+           <h3>Evolution Over Time</h3>
+           <br>
+           <p>Focus on getting the high-level crate and module structure right initially, while keeping flexibility to tweak modules over time.</p>
+           <br>
+           <p>Resist overengineering folder hierarchies up front. Allow structure to emerge iteratively as understanding deepens.</p>
+           <br>
+           <p>The key is finding the right balance between planning and emerging design for your project's context.</p>
+           <br>
+           <p>Now let's shift gears and cover some commonly used cargo commands.</p>
+           <br>
+           <h2 id="Cargo-Commands-for-Project-Management" class="pointer">Cargo Commands for Project Management<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Cargo provides a wide range of commands for building, testing, and managing Rust projects. Here are some of the most common and useful ones to know.</p>
+           <br>
+           <h3>Compiling and Running</h3>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zujy5">cargo build   # Compile the current package
+ cargo run     # Compile and run binary
+ cargo check   # Check code without compiling
+ cargo clean   # Clean up built artifacts</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>Use these frequently during development to compile and test code increments.</p>
+           <br>
+           <h3>Testing</h3>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zujeo">cargo test           # Run all tests
+ cargo test --doc     # Test documentation samples
+ cargo test &lt;name&gt;    # Run a specific test</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>Testing key functionality in a loop is crucial during active development.</p>
+           <br>
+           <h3>Package Management</h3>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zujj4">cargo init           # Create a new package
+ cargo new &lt;name&gt;     # Create project from template
+ cargo update         # Update dependencies
+ cargo publish        # Publish a package publicly</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+           <br>
+           <p>Managing the lifecycle of packages, updates, and publishing.</p>
+           <br>
+           <h3>Additional Commands</h3>
+           <br>
+           <p>There are many more specialized cargo commands - these are just some everyday examples. The <span class="special_quote">cargo</span> docs cover all available options. Learn these over time as needed rather than upfront.</p>
+           <br>
+           <h2 id="Recap-and-Next-Steps" class="pointer">Recap and Next Steps<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Let's recap what we learned about Cargo, Crates, and Modules:</p>
+           <br>
+           <h3>Key Takeaways</h3>
+           <br>
+           <ul class="ul_class">
+            <li> <strong>Cargo</strong> - Rust's official package manager and build tool. It handles tasks like building, testing, dependency management, and publishing packages.</li>
+            <li> <strong>Crates</strong> - The compilation unit in Rust. Crates allow encapsulating and sharing related functionality.</li>
+            <li> <strong>Modules</strong> - Modules organize code within a crate by splitting functionality into logical groups.</li>
+            <li> <strong>Packages</strong> - Top-level containers that hold one or more crates as source. Useful for managing groups of crates together.</li>
+           </ul>
+           <br>
+           <p>Understanding the relationship between these concepts is key to structuring Rust projects successfully.</p>
+           <br>
+           <h3>What's Next</h3>
+           <br>
+           <p>With this foundation on project organization, some suggested next steps:</p>
+           <ul class="ul_class">
+            <li>Review the online Cargo guide and API docs</li>
+            <li>Experiment with configuring projects through Cargo.toml</li>
+            <li>Practice factoring projects into modules, structuring apps as workspaces</li>
+            <li>Read guides on Rust API design patterns</li>
+           </ul>
+           <br>
+           <p>There is always more to learn when it comes to architecting Rust codebases. But don't get blocked on over-engineering structure prematurely - start coding and refactor along the way!</p>
+           <br>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-traits-generics" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
+         </div>
+         <div class="share-links">
+          <div id="ltah3zu2k7">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">Facebook</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">Twitter</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">LinkedIn</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/rust-cargo-crates-modules&amp;media=https://www.jimscode.blog/images/rust-cargo-crates-modules-banner-png.png&amp;description=navigating%20rust%20projects%20a%20guide%20to%20cargo%20crates%20and%20modules" target="_blank">Pinterest</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">Reddit</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="whatsapp://send?text=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">WhatsApp</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="mailto:?subject=navigating%20rust%20projects%20a%20guide%20to%20cargo%20crates%20and%20modules&amp;body=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">Email</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/rust-cargo-crates-modules" target="_blank">Instagram</a> </li>
+           </ul>
+           <br>
+          </div>
+         </div>
+        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About: <a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a> </p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="ltah3ztzv7" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
+           <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
+           <li id="tagVar_modules" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/modules" class="btn-cta">modules</a> </li>
+           <li id="tagVar_packaging" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/packaging" class="btn-cta">packaging</a> </li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Introduction-to-Cargo">Introduction to Cargo</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Crates-in-Rust">Crates in Rust</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Modules-in-Rust">Modules in Rust</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Package--Crate--and-Module-Relationships">Package, Crate, and Module Relationships</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Code-Sharing-Between-Projects">Code Sharing Between Projects</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Practical-Tips-for-Effective-Project-Organization">Practical Tips for Effective Project Organization</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Cargo-Commands-for-Project-Management">Cargo Commands for Project Management</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Recap-and-Next-Steps">Recap and Next Steps</a> </li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product: <a href="#">Product Name</a> </p>
+           <div id="ltah3zu4i6">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div id="ltah3ztwi9">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="ltah3zuov3">
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use <a href="https://highlightjs.org">highlight.js</a> , © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#ltah3zuov3{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#ltah3zu0de{ display: block;}#ltah3ztzv7{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#ltah3zuov3{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
+<script>
+let giscusTheme = localStorage.getItem("theme");
+        let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "scionsamurai/jimscode.github.io",
+          "data-repo-id": "R_kgDOK8_rSw",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOK8_rS84Cb9LP",
+          "data-mapping": "pathname",
+          "data-strict": "1",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "crossorigin": "anonymous",
+          "async": "",
+        };
+        
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

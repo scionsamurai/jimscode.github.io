@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="lt9hh0xbst">
+    <div id="ltah4o5cp1">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="lt9hh0xbnk">
+    <div id="ltah4o5c8f">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,14 +93,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Mastering Enums and Pattern Matching in Rust: A System Developer's Guide</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sun, 11 Feb 2024 22:07:02 GMT</p>
-        <picture class="banner_picture" id="lt9hh0xfsp">
+        <picture class="banner_picture" id="ltah4o5fdb">
          <source srcset="/images/rust-enums-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/rust-enums-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Sectioned image with different seasons in each section." class="banner-image">
           </picture>
           <br>
-          <div id="lt9hh0xgky">
-<span id="lt9hh0xsc1">           <br>
+          <div id="ltah4o5g4w">
+<span id="ltah4o5tc8">           <br>
            <h2 id="Introduction-to-Enums-in-Rust" class="pointer">Introduction to Enums in Rust<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Enums are a powerful feature in Rust that allow you to define custom data types to represent a fixed set of possible values. Think of them like supercharged version of enums in other languages - they can store data and behavior associated with each variant.</p>
@@ -118,7 +118,7 @@ Search       </button>
            <h3>Declaring Enums</h3>
            <br>
            <p>Declaring an enum is easy - just use the <span class="special_quote">enum</span> keyword:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y5x3">enum WebEvent {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6918">enum WebEvent {
      PageLoad,
      Click,
      KeyPress(char),
@@ -128,7 +128,7 @@ Search       </button>
            <p>Enum variants can optionally have data associated with them. For example, the <span class="special_quote">KeyPress</span> variant here contains a <span class="special_quote">char</span> .</p>
            <br>
            <p>You can also specify explicit discriminant values for each variant:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y5gd">enum Number {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o69br">enum Number {
      Zero = 0,
      One = 1,
      Two = 2
@@ -139,15 +139,15 @@ Search       </button>
            <h3>Creating Enum Instances</h3>
            <br>
            <p>Once an enum is declared, we can create instances by specifying the variant we want:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y5dp">let page_load = WebEvent::PageLoad;
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o69d1">let page_load = WebEvent::PageLoad;
  
  let key_press = WebEvent::KeyPress('x');</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>If a variant has associated data, we provide that data when creating an instance:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y53q">let paste_event = WebEvent::Paste("Some text".to_string());</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o69h5">let paste_event = WebEvent::Paste("Some text".to_string());</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Enum instances are statically typed - the compiler knows this is a <span class="special_quote">WebEvent</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y58o">fn log(event: WebEvent) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6apn">fn log(event: WebEvent) {
      // ...
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -158,7 +158,7 @@ Search       </button>
            <p>In addition to storing data, we can also implement methods directly on enums to encapsulate behavior for each variant.</p>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y6o3">enum WebEvent {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6ac9">enum WebEvent {
      Click,
      KeyPress(char),
      Paste(String),
@@ -194,13 +194,13 @@ Search       </button>
            <h2 id="Associated-Data" class="pointer">Associated Data<span class="anchor-image">⚓</span></h2>
            <br>
            <p>We've seen basic associated data with enums like this:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y6g3">enum WebEvent {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6bpc">enum WebEvent {
      KeyPress(char),
      Paste(String),
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>But we can also use more complex types like structs and tuples:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y68q">struct PasteData {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6c5y">struct PasteData {
      text: String,
      source_app: String,
  }
@@ -219,7 +219,7 @@ Search       </button>
            <h2 id="Tuple-and-Struct-Enums" class="pointer">Tuple and Struct Enums<span class="anchor-image">⚓</span></h2>
            <br>
            <p>We can also use tuples and structs directly as enum variants:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y6a6">enum Color {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6cv7">enum Color {
      Rgb(u8, u8, u8),
      Hsv(u8, u8, u8)
  }
@@ -236,7 +236,7 @@ Search       </button>
            <h2 id="Introduction-to-Pattern-Matching" class="pointer">Introduction to Pattern Matching<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Pattern matching allows us to inspect an enum instance and take different actions depending on which variant it is. Here's an example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y701">fn inspect(event: WebEvent) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6cpm">fn inspect(event: WebEvent) {
      match event {
          WebEvent::PageLoad =&gt; println!("Page loaded"),
          WebEvent::Paste(text) =&gt; println!("Pasted: {}", text),
@@ -251,7 +251,7 @@ Search       </button>
            <h2 id="Matching-Enum-Variants" class="pointer">Matching Enum Variants<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Let's look closer at matching variants:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y7eq">enum WebEvent {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6c63">enum WebEvent {
      Click,
      KeyPress(char),
  }
@@ -277,7 +277,7 @@ Search       </button>
            <br>
            <p>When matching enum variants, we can also use a catch-all <span class="special_quote">_</span> pattern to handle multiple variants at once:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y8yx">fn inspect(event: WebEvent) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6c06">fn inspect(event: WebEvent) {
      match event {
          WebEvent::KeyPress(c) =&gt; {
              println!("Pressed {}", c)
@@ -293,7 +293,7 @@ Search       </button>
            <p>We can specify multiple non-exhaustive patterns:</p>
            <br>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y8oi">match event {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6co0">match event {
      WebEvent::Paste(_) | WebEvent::Click =&gt; {
          // Handle pastes and clicks
      }
@@ -309,7 +309,7 @@ Search       </button>
            <h2 id="Destructuring-Enum-Variants" class="pointer">Destructuring Enum Variants<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Pattern matching allows us to destructure enums to extract their internal data:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y81q">enum Shape {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6cr9">enum Shape {
      Rectangle { width: u32, height: u32 },
      Circle(u32),
  }
@@ -328,7 +328,7 @@ Search       </button>
            <p>Instead of using the whole <span class="special_quote">Rectangle</span> variant, we match on just the <span class="special_quote">width</span> and <span class="special_quote">height</span> fields. This avoids repetitive code.</p>
            <br>
            <p>Destructuring works similarly for tuple variants:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y9k0">fn rgb_to_hex(color: (u8, u8, u8)) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6co8">fn rgb_to_hex(color: (u8, u8, u8)) {
      match color {
          (r, g, b) =&gt; {
              println!("{}{}{}", r, g, b); // convert to hex
@@ -339,7 +339,7 @@ Search       </button>
            <h2 id="Matching-Complex-Enums" class="pointer">Matching Complex Enums<span class="anchor-image">⚓</span></h2>
            <br>
            <p>We can match enums with complex associated data too:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y919">enum Event {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6de9">enum Event {
      MouseClick { x: i64, y: i64 },
      KeyPress(char),
  }
@@ -364,7 +364,7 @@ Search       </button>
            <p>In addition to <span class="special_quote">match</span> expressions, we can also use pattern matching within <span class="special_quote">if let</span> and <span class="special_quote">while let</span> conditional statements.</p>
            <br>
            <p>For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y950">enum Shape {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6dum">enum Shape {
      Circle(u32),
      Rectangle(u32, u32)
  }
@@ -384,7 +384,7 @@ Search       </button>
            <h2 id="Looping-with-Pattern-Matching" class="pointer">Looping with Pattern Matching<span class="anchor-image">⚓</span></h2>
            <br>
            <p>We can also use pattern matching variants directly in loops:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y90m">let shapes = vec![Shape::Circle(3), Shape::Rectangle(4, 5)];
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6djh">let shapes = vec![Shape::Circle(3), Shape::Rectangle(4, 5)];
  
  for shape in shapes {
      match shape {
@@ -402,7 +402,7 @@ Search       </button>
            <h3>Looping While an Option Has a Value</h3>
            <br>
            <p>We can also use <span class="special_quote">while let</span> to loop over an option enum as long as it has a value:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0y9wp">let mut events = Some(vec![WebEvent::Click]);
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6d6e">let mut events = Some(vec![WebEvent::Click]);
  
  // Loop while events has some value
  while let Some(e) = events {
@@ -434,7 +434,7 @@ Search       </button>
            <p>We can combine enums and structs to create more intricate data models.</p>
            <br>
            <p>For example, we can represent web events happening within pages and sessions:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yai3">struct WebSession {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6ea0">struct WebSession {
      id: String,
      events: Vec&lt;WebEvent&gt;,
  }
@@ -451,7 +451,7 @@ Search       </button>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Now we can express relationships like "a key press event happened during session 123 on the homepage":</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yajy">let home_page = WebPage {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6erl">let home_page = WebPage {
      url: "/".to_string(),
      sessions: vec![
          WebSession {
@@ -470,7 +470,7 @@ Search       </button>
            <p>To add polymorphic behavior to such structures, we can utilize Rust's trait system.</p>
            <br>
            <p>For example, we can define a trait to encapsulate logic for logging events:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yawb">trait Log {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6ewf">trait Log {
      fn log(&amp;self);
  }
  
@@ -496,7 +496,7 @@ Search       </button>
            <p>Now <span class="special_quote">WebEvent</span> and <span class="special_quote">WebSession</span> both implement the <span class="special_quote">Log</span> behavior, keeping logging code reused and maintained in one place.</p>
            <br>
            <p>We can log an entire structure:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yar4">let session = WebSession {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6e1f">let session = WebSession {
      // ...
  };
  
@@ -515,7 +515,7 @@ Search       </button>
            </ul>
            <br>
            <p>Let's look at some examples:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0ya1m">// User ID from a database lookup
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6fl1">// User ID from a database lookup
  let user_id: Option&lt;i32&gt; = Some(5);
  
  // Results from a search query
@@ -525,7 +525,7 @@ Search       </button>
  let parsed_string: Option&lt;String&gt; = None;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>We can use <span class="special_quote">if let</span> to easily check if an Option contains data:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yal3">if let Some(id) = user_id {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6ftn">if let Some(id) = user_id {
  println!("User ID: {}", id);
  }
  
@@ -535,7 +535,7 @@ Search       </button>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>And <span class="special_quote">match</span> to handle both <span class="special_quote">Some</span> and <span class="special_quote">None</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yazp">match search_results {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6fvp">match search_results {
      Some(results) =&gt; { /* Show results */ },
      None =&gt; { /* No results */ },
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
@@ -545,7 +545,7 @@ Search       </button>
            <h3>Result and Option Enums</h3>
            <br>
            <p>Rust's standard library provides two helpful enums for error handling - <span class="special_quote">Result</span> and <span class="special_quote">Option</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0ya98">enum Result&lt;T, E&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6fgi">enum Result&lt;T, E&gt; {
      Ok(T),
      Err(E),
  }
@@ -558,7 +558,7 @@ Search       </button>
            <p>These express two common scenarios - an operation that may succeed ( <span class="special_quote">Ok</span> ) or fail ( <span class="special_quote">Err</span> ), and a value that may be present ( <span class="special_quote">Some</span> ) or missing ( <span class="special_quote">None</span> ).</p>
            <br>
            <p>For example, we could use them in our web event code:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yahc">fn parse_paste(text: &amp;str) -&gt; Result&lt;WebEvent, ParseError&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6f9i">fn parse_paste(text: &amp;str) -&gt; Result&lt;WebEvent, ParseError&gt; {
      // Try to parse...
      if valid {
          Ok(WebEvent::Paste(text.to_string()))
@@ -576,7 +576,7 @@ Search       </button>
            <h3>Custom Error Enums</h3>
            <br>
            <p>We can also create custom error enums for our domains:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yaz6">enum ParseEventError {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6f12">enum ParseEventError {
      InvalidJson,
      MissingFields,
  }
@@ -587,7 +587,7 @@ Search       </button>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>These can be used with <span class="special_quote">Result</span> to return structured errors:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0yas3">fn parse_event(json: &amp;str) -&gt; Result&lt;WebEvent, ParseEventError&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6fnh">fn parse_event(json: &amp;str) -&gt; Result&lt;WebEvent, ParseEventError&gt; {
      if missing_fields {
          Err(ParseEventError::MissingFields)
      } else {
@@ -606,7 +606,7 @@ Search       </button>
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Custom errors provide more context and structure than simple strings. And enums allow matching to handle errors differently:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="lt9hh0ya2u">match fetch_events() {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah4o6fvo">match fetch_events() {
      Ok(events) =&gt; { /* use events */ },
      Err(EventSourceError::IoError(e)) =&gt; { /* retry */ },
      Err(EventSourceError::RequestTimeout) =&gt; { /* increase timeout */ },
@@ -656,7 +656,7 @@ Search       </button>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="lt9hh0xhos">
+          <div id="ltah4o5iy1">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -688,7 +688,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="lt9hh0xdtv" style="display: contents; line-height: 2rem;">
+          <ul id="ltah4o5fjc" style="display: contents; line-height: 2rem;">
            <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
            <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
            <li id="tagVar_enums" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/enums" class="btn-cta">enums</a> </li>
@@ -736,7 +736,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="lt9hh0xkdo">
+           <div id="ltah4o5n6e">
             <p>sidebar</p>
            </div>
           </div>
@@ -744,7 +744,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="lt9hh0xbu4">
+      <div id="ltah4o5d3w">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -757,7 +757,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="lt9hh0yifp">
+         <ul class="footer-section" id="ltah4o6maz">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -777,7 +777,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#lt9hh0yifp{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#ltah4o6maz{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -785,11 +785,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#lt9hh0xfsp{ display: block;}#lt9hh0xdtv{ display: block;}
+#ltah4o5fdb{ display: block;}#ltah4o5fjc{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#lt9hh0yifp{ display: flex; flex-direction: column;}
+#ltah4o6maz{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>
