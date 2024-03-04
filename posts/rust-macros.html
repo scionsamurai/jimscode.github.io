@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en-US" id="top-of-site">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uncover the hidden potential of Rust macros with our comprehensive guide. From mastering procedural macros to understanding hygiene and debugging, empower yourself to write concise, powerful, and flexible system-level code.">
+  <meta name="author" content="Jimmy Ruikka">
+  <title>Rust Macros - JimsCode</title>
+<script src='/txt/js/highlight.js'>
+  </script>
+  <link rel='stylesheet' href='/txt/css/monokaisublime.css' type="text/css">
+<script>
+hljs.highlightAll();  </script>
+<script src='/txt/js/post.js'>
+  </script>
+<script src='/txt/js/site_funcs.js'>
+  </script>
+<script src='/txt/js/site_variables.js'>
+  </script>
+<script>
+window.addEventListener('load', function() {
+                var script = document.createElement('script');
+                script.src = '/txt/js/ongenerated.js';
+                document.body.appendChild(script);
+              });  </script>
+<script>
+window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.textContent = "setupTabs();addHeaderListeners();window.addEventListener('scroll', highlightActiveHeader);closeShareLinks(); updateCopyLinks();";
+            document.body.appendChild(script);
+          });  </script>
+  <link rel='stylesheet' href='/txt/css/global.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/post.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/footer.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/tabbedinfo.css' type="text/css">
+  <link rel='stylesheet' href='/txt/css/flipcard.css' type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HKH81XKEQN">
+   </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKH81XKEQN');   </script>
+  </head>
+  <body>
+   <input class="nodisplay" type="checkbox" id="sidebar_checkbox">
+   <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
+   <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
+   <div class="wrapper">
+    <div id="ltcd4kcbki">
+<span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
+      <div class="sidebar_checkbox_hack">
+       <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
+       <img src="/images/favicon-32x32.png" alt="Jims emoji icon">
+</label>
+      </div>
+ <a href="/" style="text-decoration: none;" class="home-link" data-original-css="text-decoration: none;"><span style="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;" data-original-css="width: auto; margin: 0; margin-left: 2rem; font-size: 1.35rem; color: black !important;">Jims Code Blog</span></a>      </div>
+     <div role="search" style="margin: auto 2rem auto 0;" class="navbar_right" id="search_area" data-original-css="margin: auto 2rem auto 0;">
+      <form method="get" action="http://www.google.com/search" class="no-js-search">
+       <input type="text" name="q" size="15" class="no-js-search__input" id="search">
+       <button type="submit" value="Search!" class="no-js-search__button">
+Search       </button>
+       <input type="checkbox" name="sitesearch" value="jimscode.blog" checked="" style="display: none;" class="no-js-search__checkbox" data-original-css="display: none;">
+      </form>
+     </div>
+</span>     <div class="color-pallete">
+      <label for="night"></label>
+      <label for="day"></label>
+     </div>
+     <div style="position: fixed;" id="star-area" data-original-css="position: fixed;">
+     </div>
+ <a href="#top-of-site" aria-label="Scroll to top" onclick="window.scrollTo(0,0)" onkeypress="if(event.keyCode===13){window.scrollTo(0,0)}" tabindex="0" style="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" class="pointer" id="arrow-div-id" data-original-css="background: var(--font-color); position: fixed; bottom: 2rem; left: 1rem; height: 3rem; width: 3rem; border-radius:5rem; text-align: center; z-index: 4; display: none;" data-conditional-scroll=" this.scrollY > 650:::display-block\|/">     <div style="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;" class="up arrow" id="backToTopArrow" data-original-css="width: 1rem; height: 1rem; border: solid var(--primary-clicked); border-width: 0 3px 3px 0; margin-top: 1rem;">
+     </div>
+     <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
+</a>     </div>
+    <div id="ltcd4kcbdc">
+     <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
+      <div class="banner">
+      </div>
+     </div>
+     <div role="main" class="main-content">
+      <div class="post-container">
+       <div class="post">
+        <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Macros in Rust: Empowering System Developers with Metaprogramming</h1>
+        <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Mon, 04 Mar 2024 02:42:40 GMT</p>
+        <picture class="banner_picture" id="ltcd4kcge2">
+         <source srcset="/images/rust-macros-banner.webp" type="image/webp" class="banner-image">
+          <source srcset="/images/rust-macros-banner-png.png" type="image/png" class="banner-image">
+           <img src="" alt="Image of humanoid robots working on an assembly line, assembling a small machine." class="banner-image">
+          </picture>
+          <br>
+          <div id="ltcd4kcg1k">
+<span id="ltcd4kcp92">           <br>
+           <h2 id="Introduction-to-Macros" class="pointer">Introduction to Macros<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Macros are a powerful feature in Rust that enable metaprogramming - generating code at compile time. They provide a way to abstract and reuse code in a very flexible manner.</p>
+           <br>
+           <h3>What are Macros?</h3>
+           <br>
+           <p>At a high level, macros can be thought of as functions that operate on Rust syntax structures and transform them, rather than operating on values. When invoked, macros receive a stream of tokens as input, which they can parse and manipulate, outputting a modified stream of tokens.</p>
+           <br>
+           <ul class="ul_class">
+            <li>Macros run at <strong>compile time</strong> , so they can generate extensive code with little runtime cost</li>
+            <li>Used for eliminating boilerplate code and reducing repetition</li>
+            <li>Common applications: deriving traits, conditional compilation, embedding DSLs</li>
+           </ul>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kd7tn">// Example of a macro to eliminate repetition
+ 
+ macro_rules! print_message {
+     ($msg:expr) =&gt; {
+         println!("Logging: {}", $msg)
+     }
+ }
+ 
+ fn main() {
+    print_message!("Starting up");
+    print_message!("Shutting down"); // No need to repeat println!
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <h3>Types of Macros</h3>
+           <br>
+           <p>There are two kinds of macros in Rust:</p>
+           <p>1. <strong>Declarative macros</strong> : Created using <span class="special_quote">macro_rules!</span> construct. Based on pattern matching and replacement.</p>
+           <p>2. <strong>Procedural macros</strong> : More complex compiled Rust code registered as compiler plugins. Often used for custom <span class="special_quote">derive</span> functionality.</p>
+           <br>
+           <p>Procedural macros are more flexible and powerful, but declarative macros are simpler to define.</p>
+           <br>
+           <h2 id="Procedural-Macros" class="pointer">Procedural Macros<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Procedural macros allow for more advanced compile-time code generation than declarative macros. They are written in Rust and loaded/registered with the compiler as plugins.</p>
+           <br>
+           <h3>Overview</h3>
+           <br>
+           <ul class="ul_class">
+            <li>Procedural macros receive a TokenStream as input which they can analyze and transform programmatically before outputting the modified tokens.</li>
+            <li>Commonly used for:</li>
+           </ul>
+           <div style="margin-left: 1.2rem;" class="indented_list" data-original-css="margin-left: 1.2rem;">
+            <ul class="ul_class">
+             <li>Custom derive functionality for traits</li>
+             <li>Conditional compilation depending on system attributes</li>
+             <li>Parsing domain-specific language code embedded in Rust</li>
+            </ul>
+           </div>
+           <ul class="ul_class">
+            <li>More complex to implement than declarative macros but extremely versatile.</li>
+            <li>Must reside in their own crate and be registered via attributes:</li>
+           </ul>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kd8gl">// Importing custom derive macro from external crate
+ 
+ #[derive(MyCustomDerive)]
+ struct MyStruct;</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <h3>Syntax</h3>
+           <br>
+           <p>Defining procedural macros involves implementing a trait from the syn crate:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kd8cw">use proc_macro;
+ use syn;
+ 
+ #[proc_macro_derive(MyCustomDerive)]
+ pub fn my_custom_derive(input: TokenStream) -&gt; TokenStream {
+    // Macro logic goes here
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The function is annotated with the relevant proc macro trait depending on the context:</p>
+           <ul class="ul_class">
+            <li> <span class="special_quote">proc_macro_derive</span> : For custom derive macros</li>
+            <li> <span class="special_quote">proc_macro</span> : For general attribute macros</li>
+           </ul>
+           <br>
+           <p>Within the function, the <span class="special_quote">syn</span> crate is used to parse the input TokenStream from Rust code and analyze or transform it before outputting the final TokenStream that gets compiled.</p>
+           <br>
+           <h3>Common Use Cases</h3>
+           <br>
+           <p>Some examples of procedural macros in action:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdbqm">// Custom derivation for Serialize trait
+ #[derive(Serialize)]
+ struct MyData;
+ 
+ // Conditional compilation based on OS
+ #[cfg(target_os = "linux")]
+ fn linux_specific() {}</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Procedural macros are extremely versatile for code generation tasks so these are just a sample of what's possible. Later sections will cover more advanced macro techniques.</p>
+           <br>
+           <h2 id="Declarative-Macros" class="pointer">Declarative Macros<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Declarative macros, also referred to as "macros by example", provide a simpler approach to meta-programming compared to procedural macros. They are defined using the <span class="special_quote">macro_rules!</span> construct and rely on pattern matching and replacement.</p>
+           <br>
+           <h3>Overview</h3>
+           <br>
+           <ul class="ul_class">
+            <li>Declarative macros take a set of matched tokens, transform them, and output the expansion at compile time.</li>
+            <li>They follow an intuitive syntax made up of two components:</li>
+           </ul>
+           <div style="margin-left: 1.2rem;" class="indented_list" data-original-css="margin-left: 1.2rem;">
+            <ul class="ul_class">
+             <li>A matcher ( <span class="special_quote">$()</span> syntax)</li>
+             <li>The templated code to expand to <span class="special_quote">{}</span> braces</li>
+            </ul>
+           </div>
+           <br>
+           <ul class="ul_class">
+            <li>Some examples of declarative macro use cases:</li>
+           </ul>
+           <div style="margin-left: 1.2rem;" class="indented_list" data-original-css="margin-left: 1.2rem;">
+            <ul class="ul_class">
+             <li>Repeat code with variations</li>
+             <li>Embed small DSLs (domain-specific languages)</li>
+             <li>Simplify mappings from one syntax to another</li>
+            </ul>
+           </div>
+           <br>
+           <h3>Syntax</h3>
+           <br>
+           <p>Defining declarative macros uses <span class="special_quote">macro_rules!</span> :</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdclv">macro_rules! print_message {
+    ($message:expr) =&gt; {
+       println!("Log: {}", $message)
+    };
+ }
+ 
+ print_message!("Hello World!");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The matcher <span class="special_quote">$message:expr</span> captures any Rust expression passed to the macro and inserts it into the expanded templated print statement when invoked.</p>
+           <br>
+           <p>Matcher patterns leverage the same syntax for capturing arguments as the <span class="special_quote">match</span> expression in Rust. Some examples:</p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdcfc">// Match specific argument types
+ $numer:expr
+ $string:expr
+ 
+ // Capture multiple arguments
+ ($a:expr, $b:expr)
+ 
+ // Rest arguments
+ $(*rest:expr)</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>Overall, declarative macros provide a simple yet flexible abstraction for handling repetitive code and hiding boilerplate through customized matching and expansion.</p>
+           <br>
+           <h2 id="Macro-Rules" class="pointer">Macro Rules<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Macro rules provide an alternate way to define declarative macros that can simplify some use cases compared to the standard <span class="special_quote">macro_rules!</span> syntax.</p>
+           <br>
+           <h3>Writing Macro Rules</h3>
+           <br>
+           <p>The <span class="special_quote">macro_rules</span> macro allows matching and replacement without needing to worry about delimiters or semicolons:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdce9">macro_rules! my_macro {
+     ( $x:expr ) =&gt; {
+         println!("x is: {}", $x);
+     };
+ 
+     ( $x:expr, $y:expr ) =&gt; {
+         println!("x is: {}, y is: {}", $x, $y);
+     }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The syntax for macro rules macros is clean and easy to write for simple match/replace use cases.</p>
+           <br>
+           <p>Macro rules also support repeating matches and template placeholders for repetition:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdcxy">{ $($x:expr),+ } =&gt; {
+     $(println!("{}", $x);)+
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The <span class="special_quote">$(...),+</span> syntax matches one or more occurrences of the pattern contained inside.</p>
+           <br>
+           <h3>Macros Within the Same Crate</h3>
+           <br>
+           <p>As of Rust 1.32, macros can be used in the same crate they are defined by exporting them:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdcjo">mod macros {
+    pub(crate) use my_macro;
+ 
+    macro_rules! my_macro {
+        // ...
+    }
+ }
+ 
+ macros::my_macro!() // Works!</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The <span class="special_quote">pub(crate)</span> makes the macro accessible to the rest of the crate.</p>
+           <br>
+           <p>Macro rules provide a concise, flexible way to define macros in Rust. They shine for simple match/replace cases compared to the more verbose <span class="special_quote">macro_rules!</span> syntax.</p>
+           <br>
+           <h2 id="Hygiene-in-Macros" class="pointer">Hygiene in Macros<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Hygiene refers to the way macros handle identifiers to avoid unintended variable capture or modification of values from the calling context. Hygienic macros ensure macros act like black boxes without leaking across contexts.</p>
+           <br>
+           <h3>Understanding Hygiene</h3>
+           <br>
+           <ul class="ul_class">
+            <li>By default, macros create their own local scope - they are hygienic.</li>
+            <li>This prevents macros from accidentally modifying variables in the calling code:</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdcpt">let x = 1;
+ 
+ macro_rules! my_macro {
+     () =&gt; {
+         let x = 2;
+         println!("{}", x); // Prints 2
+     }
+ }
+ 
+ my_macro!(); // Calling context's x remains 1</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <ul class="ul_class">
+            <li>Hygiene makes macros more reusable across contexts without worrying about name conflicts.</li>
+            <li>Certain use cases require non-hygienic behavior to modify the calling context:</li>
+           </ul>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdclj">macro_rules! mut_x {
+     () =&gt; {
+         let mut x = 1;
+     }
+ }
+ 
+ mut_x!();
+ x += 1; // Errors without non-hygienic macro</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <ul class="ul_class">
+            <li>Non-hygiene can be enabled in macros using <span class="special_quote">$crate</span> to reference the calling crate.</li>
+           </ul>
+           <br>
+           <h3>Managing Hygiene</h3>
+           <br>
+           <p>Some ways to manage hygiene within macros:</p>
+           <ul class="ul_class">
+            <li>Use <span class="special_quote">stringify!</span> to convert identifiers to strings to reinsert them.</li>
+            <li>Selectively modify the calling context with <span class="special_quote">$crate</span> .</li>
+            <li>Define separate mutable and immutable versions of macros.</li>
+            <li>Limit macro scope to minimize non-hygienic effects.</li>
+           </ul>
+           <br>
+           <p>Careful hygiene management ensures macros remain reusable and modular instead of tightly coupled to calling contexts. Non-hygiene should be limited to cases where needed to modify external names.</p>
+           <br>
+           <h2 id="Advanced-Macro-Concepts" class="pointer">Advanced Macro Concepts<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Once the basics of declarative and procedural macros are understood, there are several more advanced macro capabilities that enable extremely powerful code generation and abstraction abilities.</p>
+           <br>
+           <h3>Recursive Macros</h3>
+           <br>
+           <p>Macros can invoke themselves recursively to process data structures of arbitrary sizes:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdd12">macro_rules! print_tree {
+     (node $val:expr, $(subtree $sub:expr),*) =&gt; {
+         println!("{}", $val);
+         $(print_tree!(subtree $sub);)*
+     }
+ }
+ 
+ print_tree! {
+   node 1,
+   subtree 2,
+   subtree 3
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The <span class="special_quote">$(...)*</span> matcher allows matching zero or more comma separated <span class="special_quote">subtree</span> patterns, making the macro recursive.</p>
+           <br>
+           <p>Recursion enables processing tree-like data structures easily. Error handling also needs to be considered to prevent infinite expansion.</p>
+           <br>
+           <h3>Parameterized Macros</h3>
+           <br>
+           <p>Macros can also take more complex parameterized inputs:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdd5p">macro_rules! hashmap {
+    (key =&gt; $key:ty, value =&gt; $value:ty) =&gt; {
+        // Generate HashMap implementation
+    }
+ }
+ 
+ hashmap! {
+    key =&gt; u32,
+    value =&gt; String
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>This allows customizing implementations where parts can be substituted, reducing code repetition.</p>
+           <br>
+           <p>In general, macros add the ability to ingest code-like syntax and manipulate it through Matchers, Capturers, Repeaters and other parsing constructs, opening up wide possibilities for generative programming.</p>
+           <br>
+           <p>When combined with procedural macros and custom derivation, extremely concise yet tailored implementations can be derived from simple declarations.</p>
+           <br>
+           <h2 id="Macros-for-Code-Generation" class="pointer">Macros for Code Generation<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>One of the most powerful applications of macros is automating code generation for common patterns. This is especially useful for system programming where certain constructs follow a standard boilerplate pattern.</p>
+           <br>
+           <h3>Use Cases in System Development</h3>
+           <br>
+           <p>Some examples of boilerplate code that macros can generate in system development:</p>
+           <br>
+           <p> <strong>Thread Pools</strong> </p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdde8">thread_pool! {
+    pool_size: 8,
+    entry_fn: process_job,
+    error_handling: {
+       use log::error;
+       error!("Job processing failed!");
+    }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p> <strong>Custom Serialization</strong> </p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdexy">#[derive(Serialize, Deserialize)]
+ struct Data {
+    id: u32
+ }
+ 
+ serde_codegen!(Data); // Generates serialization logic</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p> <strong>Message Passing Infrastructure</strong> </p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kde02">message_pass! {
+    message InsertUser {
+       id: u32,
+       name: String,
+    }
+ 
+    message GetUser { id: u32 } -&gt; User
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>The procedural macro generates the messaging code along with handlers.</p>
+           <br>
+           <h3>Macros Across Crates</h3>
+           <br>
+           <p>Macros can also be shared across crates using <span class="special_quote">#[macro_export]</span> :</p>
+           <br>
+           <p> <strong>util crate</strong> </p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdekv">#[macro_export]
+ macro_rules! log_error {
+   ($msg:expr) =&gt; {
+      // logging implementation
+   }
+ }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p> <strong>main crate</strong> </p>
+           <br>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdelz">use util::log_error;
+ 
+ log_error!("OH NO!");</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <p>With this approach entire frameworks of generative code can be built, where projects only need to declare high-level constructs and boilerplate system code is derived for them.</p>
+           <br>
+           <h2 id="Debugging-and-Testing-Macros" class="pointer">Debugging and Testing Macros<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Since macros operate on code structures and generate extensive code, debugging them can be challenging compared to normal functions. Additionally, thorough testing is critical before relying on macro-generated code.</p>
+           <br>
+           <h3>Techniques for Debugging Macros</h3>
+           <br>
+           <p>Some tips for debugging macros:</p>
+           <ul class="ul_class">
+            <li>Use <span class="special_quote">println!</span> statements within macros to trace execution and print generated tokens</li>
+            <li>View expanded macro output code using <span class="special_quote">cargo expand</span> </li>
+            <li>Step through macro code with debugger breakpoints in procedural macros</li>
+            <li>For syntax errors, break macro into smaller test cases to isolate issue</li>
+            <li>Create sample invocations of macro to iterate development</li>
+           </ul>
+           <br>
+           <p>Additional code generation diagnostics can be enabled using:</p>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd4kdfh3">#![feature(trace_macros)]
+ 
+ trace_macros!(true);</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
+           <br>
+           <h3>Testing Macros</h3>
+           <br>
+           <p>Strategies for testing macros:</p>
+           <ul class="ul_class">
+            <li>Unit test macro execution and output for common cases</li>
+            <li>Generate code with macro and test resulting modules</li>
+            <li>Provide invalid inputs and expected compilation errors</li>
+            <li>Use macro in context of larger project as integration test</li>
+           </ul>
+           <br>
+           <p>Testing up front identifies issues early before functionality relies on macro-based implementations.</p>
+           <br>
+           <p>Macros require additional validation compared to functions, but catch issues early by testing thoroughly and tracing incremental output during development.</p>
+           <br>
+           <h2 id="Macros-vs-Functions" class="pointer">Macros vs Functions<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Macros and functions in Rust serve distinct purposes even though they can abstract code. Below is a comparison between macros and functions:</p>
+           <br>
+           <table>
+            <thead>
+             <tr>
+              <th>
+Feature              </th>
+              <th>
+Macros              </th>
+              <th>
+Functions              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <th>
+Invocation              </th>
+              <th>
+Declarative style: <span class="special_quote">my_macro! {}</span>               </th>
+              <th>
+Normal function calls: <span class="special_quote">my_func()</span>               </th>
+             </tr>
+             <tr>
+              <th>
+Arguments              </th>
+              <th>
+Take in tokens, pattern match code structures              </th>
+              <th>
+Take strongly typed data values              </th>
+             </tr>
+             <tr>
+              <th>
+Execution              </th>
+              <th>
+Run at <strong>compile-time</strong> , generate code              </th>
+              <th>
+Execute at <strong>runtime</strong> as CPU instructions              </th>
+             </tr>
+             <tr>
+              <th>
+Scope              </th>
+              <th>
+Introduce new hygienic scope              </th>
+              <th>
+Inherit outer scope, can modify external state              </th>
+             </tr>
+            </tbody>
+           </table>
+           <br>
+           <h3>When to Use Macros</h3>
+           <br>
+           <p>Use cases where macros shine over functions:</p>
+           <ul class="ul_class">
+            <li>Eliminate repetitive code/enforce patterns</li>
+            <li>Customize implementations based on arguments</li>
+            <li>Embed domain specific languages (DSLs)</li>
+            <li>Enable flexible conditional compilation</li>
+            <li>Derive boilerplate traits e.g. serialization</li>
+           </ul>
+           <br>
+           <p>Macros trade runtime performance for compile time flexibility through extensive code generation from concise declarations.</p>
+           <br>
+           <p>Functions are preferred for generic logic that should run performantly within normal Rust runtime environment.</p>
+           <br>
+           <p>Overall macro usage should be justified based on specific needs, not used arbitrarily. Signs macros may be helpful include boilerplate reduction and code generation requirements.</p>
+           <br>
+           <h2 id="Best-Practices-for-Macros" class="pointer">Best Practices for Macros<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>When leveraged effectively, macros can accelerate development and reduce duplication. However, some general guidelines should be followed to ensure maintainable and readable macro usage.</p>
+           <br>
+           <h3>Guidelines</h3>
+           <br>
+           <p> <strong>Limit Scope</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Define macros in modules and explicitly import them when needed</li>
+            <li>Avoid globally exposing all macros to minimize dependencies</li>
+           </ul>
+           <br>
+           <p> <strong>Favor Hygiene</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Ensure macros introduce local scope by default</li>
+            <li>Carefully manage interactions with outer context</li>
+           </ul>
+           <br>
+           <p> <strong>Validate Inputs</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Check for valid parameters and expected syntax patterns</li>
+            <li>Return clear errors on incorrect usage</li>
+           </ul>
+           <br>
+           <p> <strong>Test Thoroughly</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Unit test macro logic and outputs for common cases</li>
+            <li>Stress test edge cases and failure modes</li>
+           </ul>
+           <br>
+           <p> <strong>Document Public Macros</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Provide doc comments explaining usage and parameters</li>
+            <li>Note macro compilation requirements</li>
+           </ul>
+           <br>
+           <p> <strong>Use Judiciously</strong> </p>
+           <br>
+           <ul class="ul_class">
+            <li>Prefer functions over macros where possible</li>
+            <li>Justify uses of macros for code generation needs</li>
+           </ul>
+           <br>
+           <p>Following best practices ensures macros enhance codebases rather than causing confusion and brittleness from overuse.</p>
+           <br>
+           <h3>Macro Development Guidelines</h3>
+           <br>
+           <p>Some additional tips specifically for macro developers:</p>
+           <ul class="ul_class">
+            <li>Build incrementally and validate each expansion</li>
+            <li>Use <span class="special_quote">trace_macros!</span> for debugging</li>
+            <li>Refactor long macros into reusable components</li>
+            <li>Support conditional compilation features if applicable</li>
+           </ul>
+           <br>
+           <h2 id="Recap-and-Next-Steps" class="pointer">Recap and Next Steps<span class="anchor-image">⚓</span></h2>
+           <br>
+           <p>Macros are a unique feature in Rust that enable powerful compile-time code generation and abstraction abilities.</p>
+           <br>
+           <h3>Key Takeaways</h3>
+           <br>
+           <ul class="ul_class">
+            <li>Macros operate on syntax trees, transforming code rather than values</li>
+            <li>Declarative and procedural macros provide different approaches</li>
+            <li>Common use cases include eliminating boilerplate and customizing implementations</li>
+            <li>Hygiene introduces local scope to avoid unintended capture</li>
+            <li>Macros excel where extensive code generation is required</li>
+            <li>Follow best practices to keep macro usage maintainable</li>
+           </ul>
+           <br>
+           <h3>Exercises</h3>
+           <br>
+           <p>To practice macros:</p>
+           <ul class="ul_class">
+            <li>Implement a declarative macro for common logging functionality</li>
+            <li>Create a procedural macro to derive a custom trait like Display</li>
+            <li>Use macros to generate thread pool implementation</li>
+            <li>Stress test macro error handling</li>
+           </ul>
+           <br>
+           <p>These exercises reinforce key concepts and help build intuition.</p>
+           <br>
+           <h3>Further Learning</h3>
+           <br>
+           <p>To dive deeper into Rust macros:</p>
+           <ul class="ul_class">
+            <li>Read advanced macro techniques like recursion</li>
+            <li>Understand declarative macro matcher syntax</li>
+            <li>Explore niche applications like embedded domain specific languages</li>
+            <li>Research macro APIs and integration for common projects</li>
+           </ul>
+           <br>
+           <p>I hope this post provided a solid introduction to leveraging macros effectively in Rust! Let me know if you have any other questions.</p>
+           <br>
+</span>          </div>
+          <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-cargo-crates-modules" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+          <p></p>
+          <div class="giscus">
+          </div>
+          <p></p>
+         </div>
+         <div class="share-links">
+          <div id="ltcd4kci1s">
+           <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
+           <input type="checkbox" id="share-toggle">
+           <ul id="share-links">
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jimscode.blog/posts/rust-macros" target="_blank">Facebook</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://twitter.com/intent/tweet?url=https://www.jimscode.blog/posts/rust-macros" target="_blank">Twitter</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.linkedin.com/shareArticle?url=https://www.jimscode.blog/posts/rust-macros" target="_blank">LinkedIn</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://pinterest.com/pin/create/button/?url=https://www.jimscode.blog/posts/rust-macros&amp;media=https://www.jimscode.blog/images/rust-macros-banner-png.png&amp;description=macros%20in%20rust%20empowering%20system%20developers%20with%20metaprogramming" target="_blank">Pinterest</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.reddit.com/submit?url=https://www.jimscode.blog/posts/rust-macros" target="_blank">Reddit</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="whatsapp://send?text=https://www.jimscode.blog/posts/rust-macros" target="_blank">WhatsApp</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="mailto:?subject=macros%20in%20rust%20empowering%20system%20developers%20with%20metaprogramming&amp;body=https://www.jimscode.blog/posts/rust-macros" target="_blank">Email</a> </li>
+            <li style="list-style: none;" data-original-css="list-style: none;"> <a href="https://www.instagram.com/share?url=https://www.jimscode.blog/posts/rust-macros" target="_blank">Instagram</a> </li>
+           </ul>
+           <br>
+          </div>
+         </div>
+        </div>
+        <aside class="sidebar">
+         <br>
+         <div class="about-me">
+          <br>
+          <div class="avatar-container">
+           <img data-src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250" alt="Avatar" class="profile-picture" src="https://www.gravatar.com/avatar/26b9ca4353165489beae792f2aea7b21?s=250">
+          </div>
+          <p class="large-text">About: <a class="btn-cta pad" href="/authors/jimmy-ruikka">Jimmy Ruikka</a> </p>
+          <hr>
+          <p style="font-size: 14px;" data-original-css="font-size: 14px;">Within the realm of technology and innovation, a passionate individual emerges! Join the creator of JimsCode.Blog as he unravels the realms of technology.</p>
+         </div>
+         <br>
+         <div class="about-post">
+          <p class="large-text">Tags</p>
+          <hr>
+          <ul id="ltcd4kcf1m" style="display: contents; line-height: 2rem;">
+           <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
+           <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
+           <li id="tagVar_macros" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/macros" class="btn-cta">macros</a> </li>
+          </ul>
+          <br>
+         </div>
+         <div class="headers">
+          <div role="navigation" id="toc">
+           <h3>In this article</h3>
+           <hr>
+           <nav aria-label="Table of Contents">
+            <ul role="list">
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Introduction-to-Macros">Introduction to Macros</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Procedural-Macros">Procedural Macros</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Declarative-Macros">Declarative Macros</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Macro-Rules">Macro Rules</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Hygiene-in-Macros">Hygiene in Macros</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Advanced-Macro-Concepts">Advanced Macro Concepts</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Macros-for-Code-Generation">Macros for Code Generation</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Debugging-and-Testing-Macros">Debugging and Testing Macros</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Macros-vs-Functions">Macros vs Functions</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Best-Practices-for-Macros">Best Practices for Macros</a> </li>
+             <hr>
+             <li style="display: block;" role="listitem"> <a class="nav-link" tabindex="0" href="#Recap-and-Next-Steps">Recap and Next Steps</a> </li>
+            </ul>
+           </nav>
+          </div>
+          <div class="affiliate">
+           <h3>Affiliate links</h3>
+           <p>Check out this great product: <a href="#">Product Name</a> </p>
+           <div id="ltcd4kcjc0">
+            <p>sidebar</p>
+           </div>
+          </div>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div id="ltcd4kcb8v">
+       <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
+        <br>
+        <br>
+        <div class="footer-content">
+         <div class="footer-section">
+          <h4>About</h4>
+          <p style="font-size: 0.9rem;" data-original-css="font-size: 0.9rem;">Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</p>
+         </div>
+         <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: admin@jimscode.blog</p>
+         </div>
+         <ul class="footer-section" id="ltcd4kdqqz">
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
+          <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
+         </ul>
+         <div class="footer-disclaimer">
+          <p style="font-size: 0.82rem;" data-original-css="font-size: 0.82rem;"> <strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.</p>
+         </div>
+         <div class="footer-bottom">
+          <p>Portions of this website use <a href="https://highlightjs.org">highlight.js</a> , © 2023 Jims Code Blog</p>
+         </div>
+        </div>
+       </footer>
+      </div>
+<style>
+@media only screen and (max-width : 1350px) and (min-width : 950px) {
+#arrow-div-id{ right: 2.2rem; left: unset !important;}
+}
+
+@media only screen and (max-width : 750px) {
+#arrow-div-id{ display: none !important;}#ltcd4kdqqz{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+}
+
+@media only screen and (max-width : 1350px) {
+#TopArrowText{ right: 1rem;}
+}
+
+@media only screen and (min-width : 1px) {
+#ltcd4kcge2{ display: block;}#ltcd4kcf1m{ display: block;}
+}
+
+@media only screen and (min-width : 750px) {
+#ltcd4kdqqz{ display: flex; flex-direction: column;}
+}      </style>
+     </div>
+<script>
+toggle_nightmode();loadThemeCache();generateSearchElements('search_area'); updateComments();     </script>
+<script>
+let giscusTheme = localStorage.getItem("theme");
+        let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "scionsamurai/jimscode.github.io",
+          "data-repo-id": "R_kgDOK8_rSw",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOK8_rS84Cb9LP",
+          "data-mapping": "pathname",
+          "data-strict": "1",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-theme": giscusTheme && giscusTheme == "night" ? "noborder_gray" : "noborder_light",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "crossorigin": "anonymous",
+          "async": "",
+        };
+        
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.body.appendChild(giscusScript);     </script>
+    </body>
+   </html>

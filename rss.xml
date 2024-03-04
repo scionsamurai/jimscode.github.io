@@ -7,6 +7,17 @@
         <description>Embark on a coding journey with Jims Code Blog - your go-to destination for insightful tutorials, innovative projects, and the latest trends in the dynamic world of software development.</description>
         <language>en-US</language>
         <item>
+      <title>Macros in Rust: Empowering System Developers with Metaprogramming</title>
+      <link>https://www.jimscode.blog/posts/rust-macros</link>
+      <guid>https://www.jimscode.blog/posts/rust-macros</guid>
+      <pubDate>Mon, 04 Mar 2024 02:42:40 GMT</pubDate>
+      <description>Uncover the hidden potential of Rust macros with our comprehensive guide. From mastering procedural macros to understanding hygiene and debugging, empower yourself to write concise, powerful, and flexible system-level code.</description>
+      
+      <category>rust</category>
+<category>system dev</category>
+<category>macros</category>
+    </item>
+<item>
       <title>Navigating Rust Projects: A Guide to Cargo, Crates, and Modules</title>
       <link>https://www.jimscode.blog/posts/rust-cargo-crates-modules</link>
       <guid>https://www.jimscode.blog/posts/rust-cargo-crates-modules</guid>
@@ -163,16 +174,6 @@
       <guid>https://www.jimscode.blog/posts/javascript-functions-methods</guid>
       <pubDate>Sat, 30 Dec 2023 15:57:26 GMT</pubDate>
       <description>Learn how to use functions in JavaScript including declarations, arrow functions, callbacks and handy methods like forEach. Understand core concepts like scope, arguments and returns.</description>
-      
-      <category>javascript</category>
-<category>web dev</category>
-    </item>
-<item>
-      <title>Javascript Control Flow</title>
-      <link>https://www.jimscode.blog/posts/javascript-control-flow</link>
-      <guid>https://www.jimscode.blog/posts/javascript-control-flow</guid>
-      <pubDate>Thu, 28 Dec 2023 02:03:12 GMT</pubDate>
-      <description>Master control flow in JavaScript with this comprehensive guide. Learn all about for, while and do while loops, if else conditionals, switch statements, break, continue and more with examples.</description>
       
       <category>javascript</category>
 <category>web dev</category>

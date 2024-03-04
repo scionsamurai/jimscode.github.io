@@ -372,10 +372,15 @@ const custom_render_function = (input_unrendered_txt, target_div_id, open_files,
                     let new_list = [];
                     let in_code_block = false;
                     let open_list_block = false;
+                    let open_ol_list_block = false;
                     return_items_dict[inp_id]['folded_list'].forEach(line => {
                         line = line.replaceAll(/</g, "&lt;").replaceAll(/>/g, "&gt;");
                         if (open_list_block && !line.startsWith('- ')) {
                             open_list_block = false;
+                            new_list = [...new_list, '~:q |: ul :|'];
+                        }
+                        if (open_ol_list_block && !line.startsWith('* ')) {
+                            open_ol_list_block = false;
                             new_list = [...new_list, '~:q |: ul :|'];
                         }
                         
@@ -404,6 +409,12 @@ const custom_render_function = (input_unrendered_txt, target_div_id, open_files,
                                 new_list = [...new_list, `li# ${line.slice(2)}`];
                         } else if (line.startsWith('*') && line.endsWith('*') && line.includes('](')) {
                             new_list = [...new_list, `<a href="${line.split('(')[1].split(')')[0]}">${line.split(':')[0].slice(1)}</a>`];
+                        } else if (line.startsWith('* ')) {
+                            if (!open_ol_list_block) {
+                                open_ol_list_block = true;
+                                new_list = [...new_list, '~:q |: ul :| {: ul_class :}',  `li# ${line.slice(2)}`];
+                            } else
+                                new_list = [...new_list, `li# ${line.slice(2)}`];
                         } else {
                             new_list = [...new_list, line];
                         }

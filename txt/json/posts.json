@@ -535,9 +535,29 @@
     "comments": true,
     "link": "/posts/rust-cargo-crates-modules",
     "prev_post": "/posts/rust-traits-generics",
-    "subseq_post": 0,
+    "subseq_post": "/posts/rust-macros",
     "category": "Rust basics",
     "category_title": "Cargo, Crates, and Modules"
+},
+{
+    "id": 27,
+    "post_title" : "Macros in Rust: Empowering System Developers with Metaprogramming",
+    "description": "Uncover the hidden potential of Rust macros with our comprehensive guide. From mastering procedural macros to understanding hygiene and debugging, empower yourself to write concise, powerful, and flexible system-level code.",
+    "authorid" : 1,
+    "date" : "Mon, 04 Mar 2024 02:42:40 GMT",
+    "tags": ["rust", "system dev", "macros"],
+    "image": "/images/rust-macros-banner-png.png" ,
+    "webp_image": "/images/rust-macros-banner.webp",
+    "image_thumb": "/images/rust-macros-banner-png_thumb.png",
+    "banner_alt": "Image of humanoid robots working on an assembly line, assembling a small machine.",
+    "show_banner": true,
+    "trending": false,
+    "comments": true,
+    "link": "/posts/rust-macros",
+    "prev_post": "/posts/rust-cargo-crates-modules",
+    "subseq_post": 0,
+    "category": "Rust basics",
+    "category_title": "Rust Macros"
 }
 
 

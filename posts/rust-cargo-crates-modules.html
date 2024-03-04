@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="ltah3ztw39">
+    <div id="ltcd6q7xy5">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="ltah3ztwql">
+    <div id="ltcd6q7xrr">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,14 +93,14 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Navigating Rust Projects: A Guide to Cargo, Crates, and Modules</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, 02 Mar 2024 19:09:55 GMT</p>
-        <picture class="banner_picture" id="ltah3zu0de">
+        <picture class="banner_picture" id="ltcd6q82cd">
          <source srcset="/images/rust-cargo-crates-modules-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/rust-cargo-crates-modules-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="A machine that looks like a room-sized 3d printer, but this machine is for handling packages." class="banner-image">
           </picture>
           <br>
-          <div id="ltah3zu05m">
-<span id="ltah3zu8jo">           <br>
+          <div id="ltcd6q82jt">
+<span id="ltcd6q898j">           <br>
            <h2 id="Introduction-to-Cargo" class="pointer">Introduction to Cargo<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Cargo is the Rust ecosystem's official package manager and build tool. For systems programmers coming to Rust, Cargo is analogous to build tools you may already be familiar with such as Make or Bazel. However, Cargo offers several key advantages:</p>
@@ -109,7 +109,7 @@ Search       </button>
            <br>
            <p>Getting started with a new Rust project is as simple as running:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zuglc">cargo new my-project</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8i0s">cargo new my-project</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
            <br>
            <p>This initializes a new project folder with the following:</p>
            <ul class="ul_class">
@@ -135,7 +135,7 @@ Search       </button>
            <h3>Unified Build System</h3>
            <br>
            <p>Cargo provides a consistent build experience across development and production environments:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zugci">cargo build // Build for local testing
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8jql">cargo build // Build for local testing
  cargo run // Compile and run binary
  cargo test // Run all tests
  cargo doc // Generate documentation
@@ -146,7 +146,7 @@ Search       </button>
            <h3>Structuring Projects with Cargo</h3>
            <br>
            <p>When you create a new Rust project with <span class="special_quote">cargo new</span> , it generates the following directory structure:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zugr1">my-project
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8jwv">my-project
  |- Cargo.toml
  |- src
     |- main.rs
@@ -157,7 +157,7 @@ Search       </button>
            <h4>Cargo.toml</h4>
            <br>
            <p>This file defines metadata about your project such as its name, version, authors, and dependencies. Some key sections:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-toml" id="ltah3zugpv">[package]
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-toml" id="ltcd6q8jo9">[package]
  ## Package details - required
  name = "my-project"
  version = "0.1.0"
@@ -200,7 +200,7 @@ Search       </button>
            <p>Under the hood a crate is a <strong>tree of modules</strong> that produces one or more library or executable artifacts when compiled by Cargo.</p>
            <br>
            <p>For example, this crate:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zuhh8">my-crate
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8j76">my-crate
  |- src
     |- lib.rs
     |- tools.rs
@@ -225,7 +225,7 @@ Search       </button>
            <h3>Organizing Code with Modules</h3>
            <br>
            <p> <strong>Modules allow logically grouping related functionality</strong> , similar to namespaces in other languages. Some examples:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah3zuhnj">mod math {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd6q8kj1">mod math {
  // Math related functions
  }
  
@@ -244,7 +244,7 @@ Search       </button>
            <h3>Paths for Accessing Modules</h3>
            <br>
            <p>We refer to modules using paths - similar to filesystem paths:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah3zuhfa">// Absolute path
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd6q8kek">// Absolute path
  crate::math::round(1.2345)
  
  // Relative path
@@ -261,7 +261,7 @@ Search       </button>
            <h3>Package Relationships</h3>
            <br>
            <p>A Rust <strong>package</strong> contains one or more crates inside the <span class="special_quote">src</span> folder:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zui1m">my-package
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8k3b">my-package
  |- Cargo.toml
  |- src
     |- main-crate
@@ -278,7 +278,7 @@ Search       </button>
            <h3>Crates as Trees of Modules</h3>
            <br>
            <p>Zooming into an individual crate, we can visualize it as a <strong>tree of modules</strong> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zuirc">my-crate
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8k1z">my-crate
  |- src
     |- main.rs (crate root module)
     |- parsers.rs (parsers module)
@@ -313,14 +313,14 @@ Search       </button>
            <p> <strong>2. Specifying crates as dependencies</strong> </p>
            <br>
            <p>In your project's <span class="special_quote">Cargo.toml</span> file:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-toml" id="ltah3zuiqx">[dependencies]
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-toml" id="ltcd6q8ldn">[dependencies]
  serde = { version = "1.0", features = ["derive"] }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">toml</span></span></pre>
            <br>
            <p>Cargo will automatically download and compile the crate.</p>
            <br>
            <p> <strong>3. Using crates in code</strong> </p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah3zujqm">use serde::{Serialize, Deserialize};
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd6q8lae">use serde::{Serialize, Deserialize};
  
  #[derive(Serialize, Deserialize)]
  struct MyData {...}</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
@@ -373,7 +373,7 @@ Search       </button>
            <br>
            <h3>Compiling and Running</h3>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zujy5">cargo build   # Compile the current package
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8l4i">cargo build   # Compile the current package
  cargo run     # Compile and run binary
  cargo check   # Check code without compiling
  cargo clean   # Clean up built artifacts</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
@@ -382,7 +382,7 @@ Search       </button>
            <br>
            <h3>Testing</h3>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zujeo">cargo test           # Run all tests
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8mk0">cargo test           # Run all tests
  cargo test --doc     # Test documentation samples
  cargo test &lt;name&gt;    # Run a specific test</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
            <br>
@@ -390,7 +390,7 @@ Search       </button>
            <br>
            <h3>Package Management</h3>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltah3zujj4">cargo init           # Create a new package
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-shell" id="ltcd6q8mcz">cargo init           # Create a new package
  cargo new &lt;name&gt;     # Create project from template
  cargo update         # Update dependencies
  cargo publish        # Publish a package publicly</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">shell</span></span></pre>
@@ -431,14 +431,14 @@ Search       </button>
            <br>
 </span>          </div>
           <div style="display: flex; justify-content: space-around; margin-bottom: 1rem;" class="prev_next_buttons" data-original-css="display: flex; justify-content: space-around; margin-bottom: 1rem;">
-<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-traits-generics" class="btn-cta pad">Previous Post</a> </span><span style="display: none !important;" class="next_button" data-original-css="display: none !important;"> <a href="0" class="btn-cta pad">Next Post</a> </span>          </div>
+<span style="display: block;" class="prev_button" data-original-css="display: block;"> <a href="/posts/rust-traits-generics" class="btn-cta pad">Previous Post</a> </span><span style="display: block;" class="next_button" data-original-css="display: block;"> <a href="/posts/rust-macros" class="btn-cta pad">Next Post</a> </span>          </div>
           <p></p>
           <div class="giscus">
           </div>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="ltah3zu2k7">
+          <div id="ltcd6q841k">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -470,7 +470,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="ltah3ztzv7" style="display: contents; line-height: 2rem;">
+          <ul id="ltcd6q81cb" style="display: contents; line-height: 2rem;">
            <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
            <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
            <li id="tagVar_modules" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/modules" class="btn-cta">modules</a> </li>
@@ -505,7 +505,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="ltah3zu4i6">
+           <div id="ltcd6q85ww">
             <p>sidebar</p>
            </div>
           </div>
@@ -513,7 +513,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="ltah3ztwi9">
+      <div id="ltcd6q7yor">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -526,7 +526,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="ltah3zuov3">
+         <ul class="footer-section" id="ltcd6q8qlg">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -546,7 +546,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#ltah3zuov3{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#ltcd6q8qlg{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -554,11 +554,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#ltah3zu0de{ display: block;}#ltah3ztzv7{ display: block;}
+#ltcd6q82cd{ display: block;}#ltcd6q81cb{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#ltah3zuov3{ display: flex; flex-direction: column;}
+#ltcd6q8qlg{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>

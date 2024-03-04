@@ -57,7 +57,7 @@ window.dataLayer = window.dataLayer || [];
    <input class="nodisplay" type="radio" id="night" name="themecolor" value="night" onclick="updateThemeCache">
    <input onclick="updateThemeCache" class="nodisplay" type="radio" id="day" name="themecolor" value="day" checked="checked">
    <div class="wrapper">
-    <div id="ltah52qzco">
+    <div id="ltcd7t7068">
 <span role="navigation" style="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;" class="navbar" id="navID" data-original-css="display:flex; background: var(--primary); justify-content: space-between; padding: 1rem 0; position: relative; z-index: 5; width: 100vw; min-height: 1.2rem;">     <div style="padding: 0 8px;" class="name-and-icon" data-original-css="padding: 0 8px;">
       <div class="sidebar_checkbox_hack">
        <label for="sidebar_checkbox" onclick="window.scrollTo(0,0)" class="sidebar_button pointer">       <p class="emoji_active_memo">Back to Post</p>
@@ -83,7 +83,7 @@ Search       </button>
      </div>
      <p style="display: none;" id="TopArrowText" data-original-css="display: none;">Back to top</p>
 </a>     </div>
-    <div id="ltah52qzka">
+    <div id="ltcd7t70sv">
      <div style="min-height: 20rem" class="banner-div" data-original-css="min-height: 20rem">
       <div class="banner">
       </div>
@@ -93,28 +93,28 @@ Search       </button>
        <div class="post">
         <h1 style="display: inline-flex; justify-content: space-around; text-align: center;" class="threedtext" data-original-css="display: inline-flex; justify-content: space-around; text-align: center;">Unlocking Rust's Potential: Harnessing Traits and Generics for Efficient System Development</h1>
         <p style="font-size: 0.95rem;" data-original-css="font-size: 0.95rem;">Published: Sat, 02 Mar 2024 02:44:43 GMT</p>
-        <picture class="banner_picture" id="ltah52r4vg">
+        <picture class="banner_picture" id="ltcd7t756d">
          <source srcset="/images/rust-traits-generics-banner.webp" type="image/webp" class="banner-image">
           <source srcset="/images/rust-traits-generics-banner-png.png" type="image/png" class="banner-image">
            <img src="" alt="Robots reviewing the traits of a block." class="banner-image">
           </picture>
           <br>
-          <div id="ltah52r457">
-<span id="ltah52rf6y">           <h2 id="Introduction-to-Traits" class="pointer">Introduction to Traits<span class="anchor-image">⚓</span></h2>
+          <div id="ltcd7t75bl">
+<span id="ltcd7t7d0g">           <h2 id="Introduction-to-Traits" class="pointer">Introduction to Traits<span class="anchor-image">⚓</span></h2>
            <br>
            <p>Traits are one of Rust's most powerful features for code organization and reuse. You can think of traits like interfaces in other languages - they define functionality that can be shared across different data types. Mastering traits is key for writing flexible and modular Rust code.</p>
            <br>
            <h3>What are Traits?</h3>
            <br>
            <p>A trait essentially specifies a collection of method signatures. Here is an example of a simple <span class="special_quote">Summary</span> trait:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rr7u">trait Summary {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7pg7">trait Summary {
      fn summarize(&amp;self) -&gt; String;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>This trait defines a single <span class="special_quote">summarize</span> method that returns a <span class="special_quote">String</span> . On its own, the trait doesn't include any implementation logic. It just defines the method signature.</p>
            <br>
            <p>Traits can then be <strong>implemented</strong> for any custom data type like structs and enums. Here is an implementation of the <span class="special_quote">Summary</span> trait for a <span class="special_quote">NewsArticle</span> struct:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rrhn">struct NewsArticle {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7pmk">struct NewsArticle {
      headline: String,
      author: String,
      content: String
@@ -147,7 +147,7 @@ Search       </button>
            <h3>Providing Default Logic</h3>
            <br>
            <p>Here is an example <span class="special_quote">Summarizable</span> trait with a default implementation:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rr07">trait Summarizable {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7pqp">trait Summarizable {
      fn summarize(&amp;self) -&gt; String {
          String::from("(No summary)")
      }
@@ -156,7 +156,7 @@ Search       </button>
            <p>Now any type implementing <span class="special_quote">Summarizable</span> automatically gains a <span class="special_quote">summarize</span> method returning a default string without needing to explicitly implement it.</p>
            <br>
            <p>We can still override the default when implementing the trait for <span class="special_quote">NewsArticle</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rs4y">struct NewsArticle {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7p3p">struct NewsArticle {
      // fields...
  }
  
@@ -178,7 +178,7 @@ Search       </button>
            </ul>
            <br>
            <p>For example, we could have a <span class="special_quote">Publishable</span> trait for content we can publish in some form:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rscf">trait Publishable {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7p2b">trait Publishable {
      fn publish(&amp;self) -&gt; Result&lt;(), PublishError&gt; {
          Err(PublishError::NotImplemented)
      }
@@ -202,7 +202,7 @@ Search       </button>
            </ul>
            <br>
            <p>For example, we could have a <span class="special_quote">News</span> interface in Java, similar to a Rust trait:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-java" id="ltah52rs73">interface News {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-java" id="ltcd7t7pxu">interface News {
      String getHeadline();
      String getAuthor();
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">java</span></span></pre>
@@ -214,7 +214,7 @@ Search       </button>
            <h3>Trait Bounds</h3>
            <br>
            <p>Rust has an additional concept called <strong>trait bounds</strong> that serve as constraints on generics. For example:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rt7b">fn print_summary&lt;T: Summarizable&gt;(item: T) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7qk0">fn print_summary&lt;T: Summarizable&gt;(item: T) {
      println!("{}", item.summarize());
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -235,7 +235,7 @@ Search       </button>
            </ul>
            <br>
            <p>For example, any struct that allocates heap data should implement the <span class="special_quote">Drop</span> trait:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rtt2">struct Article {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7r41">struct Article {
      content: String
  }
  
@@ -256,19 +256,19 @@ Search       </button>
            <h3>What are Generics?</h3>
            <br>
            <p>Consider this function:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rt43">fn print_type(item: i32) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7r0b">fn print_type(item: i32) {
      println!("T: {}", item);
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>It only accepts an <span class="special_quote">i32</span> . We can generalize it with generics:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rt13">fn print_type&lt;T&gt;(item: T) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7r8r">fn print_type&lt;T&gt;(item: T) {
      println!("T: {}", item);
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>Now <span class="special_quote">T</span> is a placeholder representing any concrete type provided when calling <span class="special_quote">print_type</span> . So we can reuse the same function for multiple types without duplication!</p>
            <br>
            <p>Here is how it can be called for both <span class="special_quote">i32</span> and custom <span class="special_quote">NewsArticle</span> values:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rtrj">let article = NewsArticle::new();
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7rky">let article = NewsArticle::new();
  
  print_type(42); // Pass i32
  print_type(article); // Pass NewsArticle</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
@@ -291,7 +291,7 @@ Search       </button>
            <p>When working with generics, lifetimes often come into play as well. <strong>Lifetimes</strong> help Rust analyze relationships and enforce memory safety across function or struct references.</p>
            <br>
            <p>Consider this struct definition:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52ruqi">struct ArticleViewer&lt;'a&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7rya">struct ArticleViewer&lt;'a&gt; {
      article: &amp;'a NewsArticle
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -300,7 +300,7 @@ Search       </button>
            <p>By adding the lifetime <span class="special_quote">'a</span> , we tell Rust each <span class="special_quote">ArticleViewer</span> instance is tied to some particular <span class="special_quote">NewsArticle</span> reference guaranteed to live at least as long as it.</p>
            <br>
            <p>Now when we instantiate <span class="special_quote">ArticleViewer</span> , everything works safely:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rue3">let article = fetch_article(); // Returns reference with some lifetime
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7rs9">let article = fetch_article(); // Returns reference with some lifetime
  
  let viewer = ArticleViewer {
      article: &amp;article
@@ -324,12 +324,12 @@ Search       </button>
            <p>We've now seen both traits and generics in Rust. Another important technique is adding <strong>trait bounds</strong> to generic types and functions. Trait bounds constrain generics to only types implementing a given trait.</p>
            <br>
            <p>For example, consider this function:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52ru4u">fn print_summary&lt;T&gt;(item: T) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7sfg">fn print_summary&lt;T&gt;(item: T) {
      println!("{}", item.summarize()); // Error!
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>This fails because <span class="special_quote">T</span> could be any type, with no guarantee of having a <span class="special_quote">summarize</span> method. We can add a trait bound to constrain T:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52ru7d">fn print_summary&lt;T: Summary&gt;(item: T) {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7spt">fn print_summary&lt;T: Summary&gt;(item: T) {
      println!("{}", item.summarize()); // Works!
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -345,7 +345,7 @@ Search       </button>
            </ul>
            <br>
            <p>For example, we could have a <span class="special_quote">PublishingSystem</span> accepting generically any <span class="special_quote">Publishable</span> types:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rvc7">struct PublishingSystem&lt;T: Publishable&gt; {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7skw">struct PublishingSystem&lt;T: Publishable&gt; {
      items: Vec&lt;T&gt;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
@@ -358,13 +358,13 @@ Search       </button>
            <p> <strong>Associated types</strong> connect a type placeholder directly to a trait, enabling the trait to abstract over concrete types.</p>
            <br>
            <p>For example, consider a <span class="special_quote">NewsPublisher</span> trait:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rvx0">trait NewsPublisher {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7su5">trait NewsPublisher {
      // ??? some associated type instead of concrete type
      fn publish(&amp;self, article: &amp;??? ) -&gt; PublishResult;
  }</code><span class="hljs__link_and_copy nodisplay"><span class="link_and_copy__copy_link pointer">⎘&nbsp;</span><span class="link_and_copy__text">rust</span></span></pre>
            <br>
            <p>We want to generically publish some kind of news article type via this trait. We can define an associated type <span class="special_quote">Article</span> :</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rvfp">trait NewsPublisher {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7su1">trait NewsPublisher {
      type Article;
  
      fn publish(&amp;self, article: &amp;Self::Article) -&gt; PublishResult;
@@ -373,7 +373,7 @@ Search       </button>
            <p> <span class="special_quote">Self::Article</span> lets the trait declare a placeholder type while linking it to implementors of the trait.</p>
            <br>
            <p>Structs implementing <span class="special_quote">NewsPublisher</span> then provide concrete <span class="special_quote">Article</span> types:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rvj7">struct WebPublisher { // implements the trait
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7sc0">struct WebPublisher { // implements the trait
      type Article = WebArticle;
  
      // Publish WebArticle instances
@@ -401,7 +401,7 @@ Search       </button>
            <br>
            <p>For example, we could define a generic <span class="special_quote">Cache</span> struct that works with any types implementing a <span class="special_quote">Cacheable</span> trait:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rv9w">trait Cacheable {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7sfi">trait Cacheable {
     fn generate_key(&amp;self) -&gt; String;
  }
  
@@ -411,7 +411,7 @@ Search       </button>
            <br>
            <p> <span class="special_quote">Cache</span> acts as generic storage for any <span class="special_quote">Cacheable</span> type. Specific types like <span class="special_quote">NewsArticle</span> can implement the trait, then get cached:</p>
            <br>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rv3h">impl Cacheable for NewsArticle {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7srv">impl Cacheable for NewsArticle {
      fn generate_key(&amp;self) -&gt; String {
          self.headline.clone()
      }
@@ -444,7 +444,7 @@ Search       </button>
            <h3>Understanding Dynamic Dispatch</h3>
            <br>
            <p>Normally Rust resolves all calls statically at compile time for performance. However, by using <strong>trait objects</strong> we can opt-in to dynamic dispatch:</p>
-<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltah52rvxh">trait Publishable {
+<pre class="hljs-pre" style="position: relative;"><code class="hljs language-rust" id="ltcd7t7t2k">trait Publishable {
     fn publish(&amp;self);
  }
  
@@ -532,7 +532,7 @@ Search       </button>
           <p></p>
          </div>
          <div class="share-links">
-          <div id="ltah52r6dp">
+          <div id="ltcd7t76vo">
            <label for="share-toggle" class="btn-cta" id="share-btn">Share <span class="share_post_text">post?</span> </label>
            <input type="checkbox" id="share-toggle">
            <ul id="share-links">
@@ -564,7 +564,7 @@ Search       </button>
          <div class="about-post">
           <p class="large-text">Tags</p>
           <hr>
-          <ul id="ltah52r373" style="display: contents; line-height: 2rem;">
+          <ul id="ltcd7t735m" style="display: contents; line-height: 2rem;">
            <li id="tagVar_rust" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/rust" class="btn-cta">rust</a> </li>
            <li id="tagVar_system dev" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/system%20dev" class="btn-cta">system dev</a> </li>
            <li id="tagVar_traits" class="tagVar" style="display: contents; line-height: 2rem;"> <a href="/tags/traits" class="btn-cta">traits</a> </li>
@@ -604,7 +604,7 @@ Search       </button>
           <div class="affiliate">
            <h3>Affiliate links</h3>
            <p>Check out this great product: <a href="#">Product Name</a> </p>
-           <div id="ltah52r8ta">
+           <div id="ltcd7t79pz">
             <p>sidebar</p>
            </div>
           </div>
@@ -612,7 +612,7 @@ Search       </button>
         </aside>
        </div>
       </div>
-      <div id="ltah52r0qr">
+      <div id="ltcd7t7116">
        <footer role="contentinfo" style="padding: 20px; text-align: center;" data-original-css="padding: 20px; text-align: center;">
         <br>
         <br>
@@ -625,7 +625,7 @@ Search       </button>
           <h4>Contact</h4>
           <p>Email: admin@jimscode.blog</p>
          </div>
-         <ul class="footer-section" id="ltah52s0iu">
+         <ul class="footer-section" id="ltcd7t7xol">
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/about-us">About Us</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/privacy-policy">Privacy Policy</a> </li>
           <li style="list-style: none;" data-original-css="list-style: none;"> <a href="/terms-of-service">Terms of Service</a> </li>
@@ -645,7 +645,7 @@ Search       </button>
 }
 
 @media only screen and (max-width : 750px) {
-#arrow-div-id{ display: none !important;}#ltah52s0iu{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
+#arrow-div-id{ display: none !important;}#ltcd7t7xol{ font-size: 0.9rem; display: flex; justify-content: space-between; padding: 5px 0 5px 0;}
 }
 
 @media only screen and (max-width : 1350px) {
@@ -653,11 +653,11 @@ Search       </button>
 }
 
 @media only screen and (min-width : 1px) {
-#ltah52r4vg{ display: block;}#ltah52r373{ display: block;}
+#ltcd7t756d{ display: block;}#ltcd7t735m{ display: block;}
 }
 
 @media only screen and (min-width : 750px) {
-#ltah52s0iu{ display: flex; flex-direction: column;}
+#ltcd7t7xol{ display: flex; flex-direction: column;}
 }      </style>
      </div>
 <script>
