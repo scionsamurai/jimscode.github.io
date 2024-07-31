@@ -21,7 +21,7 @@
             [: font-size: 0.82rem; :]<strong>Disclaimer:</strong> The information provided on this blog is for educational and informational purposes related to coding and software development. We do not guarantee the accuracy, completeness, or reliability of any information presented. Readers are encouraged to conduct their own research, practice due diligence, and consult with professionals for coding-related decisions and implementation.
         ~:q |: div :|
         ~:q |: div :|{: footer-bottom :}
-            Portions of this website use <a href='https://highlightjs.org'>highlight.js</a>, &copy; 2023 {# website_name #}
+            Portions of this website use <a href='https://highlightjs.org'>highlight.js</a>, &copy; 2023 {# website_name #} <a href="/rss.xml"><icon class="rss">&nbsp;&nbsp;</icon></a>
         ~:q |: div :|
     ~:q |: div :|
 ~:q |: footer :|
