@@ -1,0 +1,12 @@
+
+body {
+    background: yellow;
+}
+
+h1, h2 {
+    color: brown;
+}
+
+p::before {
+    content: '♥ ';
+}

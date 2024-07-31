@@ -1,0 +1,17 @@
+.about-me {
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(
+      25deg,
+      var(--background-color-second) 75%,
+      rgba(255, 255, 255, 0) 83%
+    );
+    border-radius: var(--radius-6);
+    z-index: 1;
+    position: relative;
+    margin: 1rem 0;
+  }
+  
+  .author-link {
+    font-size: 1.3rem;
+  }

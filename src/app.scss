@@ -1,0 +1,326 @@
+@import 'styles/mixins';
+
+p {
+	margin: 0;
+	max-width: 865px;
+	box-sizing: border-box;
+	font-family: Helvetica, Arial;
+	font-weight: 400;
+	letter-spacing: normal;
+	/* line-height: 1.2rem; */
+	overflow-wrap: break-word;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	vertical-align: baseline;
+	word-break: break-word;
+}
+
+@media (max-width: 767px) {
+	/* p {
+		  font-size: 0.9rem;
+	  } */
+
+	p{
+		margin: 0 8px;
+		max-width: 865px;
+		box-sizing: border-box;
+		font-family: Helvetica, Arial;
+		font-weight: 400;
+		letter-spacing: normal;
+		/* line-height: 16px; */
+		overflow-wrap: break-word;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 0px;
+		vertical-align: baseline;
+		word-break: break-word;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	/* Headers */
+	h1 {
+		font-size: 1.6rem;
+	}
+	h2 {
+		font-size: 1.4rem;
+	}
+	h3 {
+		font-size: 1.2rem;
+	}
+	/* Paragraphs */
+	p,
+	ul {
+		font-size: 1rem;
+		line-height: 1.3;
+	}
+}
+ol, ul, pre, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+html {
+	/* Size variables */
+	--size-1: 0.25rem;
+	--size-2: 0.5rem;
+	--size-3: 0.75rem;
+	--size-4: 1rem;
+	--size-5: 1.25rem;
+	--size-6: 1.5rem;
+	--size-7: 1.75rem;
+	--size-8: 2rem;
+	--size-9: 2.25rem;
+	--size-10: 2.5rem;
+	--size-11: 2.75rem;
+	--size-12: 3rem;
+	--size-13: 3.5rem;
+	--size-14: 4rem;
+	--size-15: 4.5rem;
+	--size-16: 5rem;
+
+	/* Border radius variables */
+	--radius-1: 2px;
+	--radius-2: 4px;
+	--radius-3: 6px;
+	--radius-4: 8px;
+	--radius-5: 12px;
+	--radius-6: 16px;
+	--radius-7: 20px;
+	--radius-8: 24px;
+	--radius-round: 9999px;
+	accent-color: var(--link-color);
+	background-attachment: fixed;
+	background: var(--background);
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+* {
+
+	color: var(--font-color);
+}
+
+html:has([id='day']:checked) .share-links a:hover {
+	--brand: blue;
+}
+html:has([id='day']:checked) .main-content {
+	--background-color-second: var(--background);
+}
+
+[id='day']:not(:checked) ~ .starfield {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background);
+	z-index: -1;
+	overflow: hidden;
+	background-image: radial-gradient(1px 1px at 25px 5px, white, rgba(255, 255, 255, 0)),
+		radial-gradient(2px 2px at 40px 70px, #fffafa, rgba(255, 250, 250, 0)),
+		radial-gradient(1px 1px at 90px 10px, white, rgba(255, 255, 255, 0)),
+		radial-gradient(1.5px 1.5px at 130px 160px, #f0f8ff, rgba(240, 248, 255, 0)),
+		radial-gradient(1px 1px at 160px 200px, white, rgba(255, 255, 255, 0)),
+		radial-gradient(2.5px 2.5px at 200px 20px, #fffaf0, rgba(255, 250, 240, 0)),
+		radial-gradient(1px 1px at 220px 80px, white, rgba(255, 255, 255, 0)),
+		radial-gradient(1.5px 1.5px at 240px 180px, #f8f8ff, rgba(248, 248, 255, 0)),
+		radial-gradient(1px 1px at 70px 40px, white, rgba(255, 255, 255, 0)),
+		radial-gradient(2px 2px at 180px 120px, #fffafa, rgba(255, 250, 250, 0)),
+		radial-gradient(1.5px 1.5px at 210px 60px, #f0f8ff, rgba(240, 248, 255, 0)),
+		radial-gradient(1px 1px at 20px 200px, white, rgba(255, 255, 255, 0));
+	background-repeat: repeat;
+	background-size: 250px 250px;
+}
+body:not(.initial-load) [id='night']:checked ~ .starfield {
+	animation: easeIn 0.8s alternate;
+}
+.footer-section li {
+	list-style: none;
+}
+@keyframes easeIn {
+	0% {
+		opacity: 0.7;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes easeOut {
+	0% {
+		opacity: 0.7;
+		transform: scale(1);
+		background-color: black;
+		background-image: radial-gradient(1px 1px at 25px 5px, white, rgba(255, 255, 255, 0)),
+			radial-gradient(2px 2px at 40px 70px, #fffafa, rgba(255, 250, 250, 0)),
+			radial-gradient(1px 1px at 90px 10px, white, rgba(255, 255, 255, 0)),
+			radial-gradient(1.5px 1.5px at 130px 160px, #f0f8ff, rgba(240, 248, 255, 0)),
+			radial-gradient(1px 1px at 160px 200px, white, rgba(255, 255, 255, 0)),
+			radial-gradient(2.5px 2.5px at 200px 20px, #fffaf0, rgba(255, 250, 240, 0)),
+			radial-gradient(1px 1px at 220px 80px, white, rgba(255, 255, 255, 0)),
+			radial-gradient(1.5px 1.5px at 240px 180px, #f8f8ff, rgba(248, 248, 255, 0)),
+			radial-gradient(1px 1px at 70px 40px, white, rgba(255, 255, 255, 0)),
+			radial-gradient(2px 2px at 180px 120px, #fffafa, rgba(255, 250, 250, 0)),
+			radial-gradient(1.5px 1.5px at 210px 60px, #f0f8ff, rgba(240, 248, 255, 0)),
+			radial-gradient(1px 1px at 20px 200px, white, rgba(255, 255, 255, 0));
+		background-repeat: repeat;
+		background-size: 250px 250px;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.1);
+		background-color: black;
+	}
+}
+
+body:not(.initial-load) [id='day']:checked ~ .starfield {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background);
+	z-index: -1;
+	overflow: hidden;
+	animation: easeOut 0.8s alternate;
+}
+.twinkle {
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	background-color: white;
+	opacity: 0;
+	animation: twinkle 10s infinite;
+}
+
+.twinkle:nth-child(2n) {
+	animation-duration: 3s;
+	animation-delay: 5s;
+}
+
+.twinkle:nth-child(3n) {
+	animation-duration: 4s;
+	animation-delay: 3s;
+}
+
+.twinkle:nth-child(4n) {
+	animation-duration: 5s;
+	animation-delay: 7s;
+}
+
+.twinkle:nth-child(5n) {
+	animation-duration: 6s;
+	animation-delay: 4s;
+}
+
+@keyframes twinkle {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+img {
+	border-radius: 1rem;
+}
+
+li {
+	padding-inline-start: 0;
+}
+
+.nodisplay {
+	display: none;
+}
+.pointer {
+	cursor: pointer;
+}
+.flex {
+	display: flex;
+}
+.space-around {
+	justify-content: space-around;
+}
+[id='day']:checked ~ div pre, [id='day']:checked ~ div pre span {
+	background-color: var(--shiki-light-bg) !important;
+	color: var(--shiki-light) !important;
+}
+
+:root {
+
+	@include theme-vars('night');
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+
+		@include theme-vars('day');
+	}
+}
+
+div {
+	@include theme('theme:id:checked ~ target');
+}
+html {
+	@include theme("target:has(theme:id:checked)");
+}
+
+
+[id='day']:checked ~ div div [for='day'] {
+	display: none;
+}
+
+[id='night']:checked ~ div div [for='night'] {
+	display: none;
+}
+
+:any-link, :any-link * {
+	color: var(--link-color);
+}
+:any-link:visited, :any-link:visited * {
+	color: var(--link-color-clicked);
+}
+.btn-cta {
+	color: var(--brand);
+	background-color: var(--background-color-second);
+	text-decoration: none;
+	border: 2px solid var(--font-color);
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1.2rem;
+}
+
+.btn-cta:hover {
+	background-color: var(--background-color-dark-opposite);
+}
+[id='day']:checked ~ div .btn-cta:hover {
+	background-color: var(--background-color-second-opposite);
+}
+
+[id='night']:checked ~ div .table-of-contents li a {
+	color: #DDD270;
+}
+
+[id='night']:checked ~ div .headers #toc nav .active ul li a  {
+	color: #DDD270;
+}
+
+
+[id='day']:checked ~ div .table-of-contents li a {
+	color: var(--background-color-dark);
+}
+
+[id='day']:checked ~ div .headers #toc nav .active ul li a {
+	color: var(--background-color-dark);
+}

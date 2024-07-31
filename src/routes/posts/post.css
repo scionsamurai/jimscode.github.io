@@ -1,0 +1,121 @@
+.double-equals {
+	background-color: #272822;
+	color: #e14f62;
+	border-radius: 0.3rem;
+	white-space: pre-wrap;
+	padding: 3px;
+}
+
+.anchor-image {
+	display: none;
+	cursor: pointer;
+}
+
+h2:hover .anchor-image {
+	display: inline;
+}
+
+pre {
+	overflow: scroll;
+	position: relative;
+	padding: 1rem;
+	border-radius: var(--radius-7);
+}
+
+[data-lang='rust'] code span {
+	text-decoration: unset !important;
+}
+
+code {
+	font-size: 0.9rem;
+}
+@media screen and (max-width: 1150px) {
+	code {
+		font-size: 0.8rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	code {
+		font-size: 0.6rem;
+	}
+}
+.special_quote,
+code:not(pre code) {
+	background-color: #1d212b;
+	color: #e14f62;
+	border-radius: 0.3rem;
+	white-space: pre-wrap;
+	padding: 3px;
+	font-size: 1rem;
+}
+html:has([id='day']:checked) .special_quote,
+html:has([id='day']:checked) code:not(pre code) {
+	background-color: #f8f8f8;
+	color: #c443e4;
+}
+.header {
+	color: var(--brand);
+}
+
+.hljs__link_and_copy {
+	color: var(--font-color);
+	position: absolute;
+	top: 0.3rem;
+	right: 0.3rem;
+	background: var(--background-color-second);
+	padding: 5px;
+	display: flex;
+	font-size: 1rem;
+	border: solid 1px var(--text-2);
+}
+
+.link_and_copy__text {
+	pointer-events: none;
+}
+
+.link_and_copy__copy_link {
+	display: none;
+	font-size: 1.25rem;
+}
+
+.hljs-pre .hljs {
+	min-height: 1.8rem;
+}
+
+.hljs:hover + .hljs__link_and_copy .link_and_copy__copy_link,
+pre:hover .hljs__link_and_copy .link_and_copy__copy_link {
+	display: block;
+}
+
+.hljs__link_and_copy:hover .link_and_copy__copy_link {
+	display: block;
+}
+
+.table-of-contents {
+	transform: perspective(300px) rotateX(25deg);
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+	line-height: 1.2;
+}
+
+.table-of-contents::-webkit-scrollbar {
+	display: none;
+}
+
+.table-of-contents ul {
+	padding-left: 20px;
+}
+
+.table-of-contents a {
+	text-decoration: none;
+	display: inline-block; /* Allows the text to be affected by the parent's transform */
+}
+
+p,
+.post ul,
+.post ol {
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.1em;
+}

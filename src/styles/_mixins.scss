@@ -1,0 +1,44 @@
+
+@import 'variables';
+
+@mixin sticky-top($top: 5px) {
+	position: sticky;
+	top: $top;
+}
+
+@mixin theme-vars($theme) {
+	// Ensure the theme exists
+	@if map-has-key($themes, $theme) {
+	  $values: map-get($themes, $theme);
+  
+	  // Iterate through theme variables and output them
+	  @each $var, $value in $values {
+		#{$var}: #{$value};
+	  }
+	} @else {
+	  @warn "Theme '#{$theme}' not found in $themes map.";
+	}
+  }
+
+@mixin theme($selector) {
+  @each $theme, $values in $themes {
+    $new-selector: unquote(str-replace($selector, 'theme:id', "[id='#{$theme}']"));
+    $new-selector: unquote(str-replace($new-selector, 'for:theme', "[for='#{$theme}']"));
+    $new-selector: unquote(str-replace($new-selector, 'target', '&'));
+
+    #{$new-selector} {
+      @each $var, $value in $values {
+        #{$var}: #{$value};
+      }
+    }
+  }
+}
+
+// Helper function to replace strings
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}

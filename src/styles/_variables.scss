@@ -1,0 +1,35 @@
+$max-content-width: 800px;
+$max-main-width: 1200px;
+
+$themes: (
+	day: (
+		--brand: #e14f62,
+		--off-brand: #bc265a,
+		--text-1: rgb(31, 41, 55),
+		--text-2: rgb(55, 65, 81),
+		--background: hsl(245 35% 93%),
+		--font-color: black,
+		--opposite-font-color: rgba(190, 190, 190, 0.95),
+		--background-color-dark: rgba(10, 10, 10, 0.7),
+		--background-color-dark-opposite: rgba(250, 250, 250, 0.95),
+		--background-color-second: rgba(240, 240, 240, 0.95),
+		--link-color: #3b80f1,
+		--link-color-clicked: #1c45c7
+	),
+	night:
+	(
+		--brand: #51e9df,
+		--off-brand: #5cfff4,
+		--text-1: rgb(209, 213, 219),
+		--text-2: rgb(156, 163, 175),
+		--background: hsl(210, 25%, 12%),
+		--font-color: white,
+		--opposite-font-color: rgba(75, 75, 75, 0.7),
+		--background-color-dark: rgba(250, 250, 250, 0.95),
+		--background-color-dark-opposite: rgba(10, 10, 10, 0.7),
+		/* --background-color-second: rgba(50, 50, 50, 0.95), */ 
+        --background-color-second: rgba(250, 250, 250, 0.1),
+		--link-color: #93c72b,
+		--link-color-clicked: #729728
+	)
+);

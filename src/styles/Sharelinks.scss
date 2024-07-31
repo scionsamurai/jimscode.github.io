@@ -1,0 +1,140 @@
+@import 'mixins';
+
+.share-links {
+  z-index: 3;
+  margin-top: 5px;
+
+  > div {
+    @include sticky-top;
+    width: 2.5rem;
+  }
+}
+
+#share-btn {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  writing-mode: vertical-rl;
+  font-size: 1rem;
+}
+
+#share-toggle {
+  display: none;
+}
+
+#share-links {
+  display: none;
+  position: absolute;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  top: 55px;
+  left: -65px;
+  background-color: var(--background-color-dark-opposite);
+  border: 1px solid var(--font-color);
+  padding: 10px;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: skewY(15deg);
+
+  li {
+    display: block;
+    margin-bottom: 4px;
+    background-color: var(--opposite-font-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--background-color-second);
+    }
+
+    a {
+      // width: 100%;
+      display: inline-block;
+    }
+  }
+}
+
+#share-toggle:checked ~ #share-links {
+  display: block;
+}
+
+#share-toggle:not(:checked) ~ #share-links {
+  display: none;
+}
+
+.share_post_text {
+  display: none;
+}
+
+// Media queries
+@media screen and (max-width: 1310px) {
+  #share-links {
+    left: 0 !important;
+    width: 5rem;
+  }
+}
+@media screen and (max-width: 930px) {
+  // #share-btn {
+  //   // transform: translateX(40px);
+  // }
+  .share-links {
+    right: 0;
+  position: absolute;
+  top: 5px;
+  height: 100%;
+  }
+  #share-links {
+    transform: translateX(-60px) skewY(15deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .share-links {
+    display: none;
+  }
+  // #share-links {
+  //   transform: none !important;
+  //   width: 15rem;
+  //   left: 0.5rem !important;
+  // }
+
+  // #share-toggle:checked ~ #share-links {
+  //   display: flex !important;
+  //   top: -4px;
+
+  //   li {
+  //     position: relative;
+  //     font-size: 1.2rem;
+  //     writing-mode: vertical-lr;
+  //     margin: 0.25rem 0 0.25rem 0.5rem;
+  //   }
+  // }
+
+  // .share_post_text {
+  //   display: block;
+  // }
+
+  // #share-btn {
+  //   writing-mode: unset;
+  //   display: flex;
+  //   width: fit-content;
+  //   font-size: 1.2rem;
+  //   position: absolute;
+  //   top: -1rem;
+  //   left: 1rem;
+  // }
+}
+
+@media screen and (max-width: 365px) {
+  #share-toggle:checked ~ #share-links {
+    left: 1.8rem;
+
+    li {
+      margin-left: -50px;
+    }
+  }
+}
