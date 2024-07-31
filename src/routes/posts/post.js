@@ -104,3 +104,25 @@ export function closeMobileTableOfContents() {
         }
     });
 }
+
+export function changeGiscusTheme() {
+    const nightRadioButton = document.getElementById('night');
+    const isNightTheme = nightRadioButton.checked;
+
+    // Determine the Giscus theme based on the state of the radio button
+    const theme = isNightTheme ? 'noborder_gray' : 'noborder_light';
+
+    function sendMessage(message) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    sendMessage({
+        setConfig: {
+        theme: theme
+        }
+    });
+
+
+}

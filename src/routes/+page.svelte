@@ -14,7 +14,6 @@
 
 <Banner h1_text="Welcome!" p_text="Discover tips and tricks to aid you on your coding adventure!" />
 
-<!-- Posts -->
  <PostSection posts={posts} />
 
  <Pagination currentUrl={data.url} page={pagination.page} totalPages={pagination.totalPages} />
