@@ -8,10 +8,14 @@
 	import TableOfContents from '../TableOfContents.svelte'
 	import AuthorInfo from '../AuthorInfo.svelte'
 	import Comments from '../Comments.svelte'
+	import Contribute from '../Contribute.svelte'
 
 	import '../post.css'
 
 	export let data
+	console.log('dta.slug', data.slug)
+
+	const githubLink = `https://github.com/scionsamurai/jimscode.github.io/tree/main/src/posts/${data.slug}/${data.slug}.md`
 
 	onMount(() => {
 		updateCopyLinks()
@@ -41,9 +45,10 @@
 				image_path={data.meta.image}
 				post_slug={data.slug}
 			/>
-      {#if data.meta.comments}
-			  <Comments />
-      {/if}
+			<Contribute {githubLink} />
+			{#if data.meta.comments}
+				<Comments />
+			{/if}
 		</article>
 		<Sharelinks post_slug={data.slug} post_title={data.meta.title} image_path={data.meta.image} />
 	</div>
