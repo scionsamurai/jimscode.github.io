@@ -65,33 +65,7 @@
 		}
 	}
 }
-.toc-container {
-	@media (max-width: 1150px) {
-		position: relative;
-		margin-bottom: 1rem;
-	}
-}
 
-.toc-toggle-button {
-	display: none;
-	@media (max-width: 1150px) {
-		display: block;
-		padding: 0.5rem;
-		background-color: var(--brand);
-		color: white;
-		text-align: center;
-		cursor: pointer;
-	}
-}
-
-.toc-content {
-	@media (max-width: 1150px) {
-		display: none;
-		#toc-toggle:checked + .toc-toggle-button + & {
-			display: block;
-		}
-	}
-}
 
 :global(.toc-progress) {
 	height: 5px;
@@ -110,7 +84,7 @@
 		top: 2px;
 		width: 100%;
 		visibility: visible;
-
+		transform: translateX(-10px);
 	}
 
 }
@@ -154,11 +128,6 @@
 			transform: unset;
 		}
 	}
-}
-:global(#sidebar_checkbox:checked)  ~ div .toc-progress-bar {
-
-	width: 85%;
-	margin-inline: auto;
 }
 
 .table-of-contents {

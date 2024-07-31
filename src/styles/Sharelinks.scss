@@ -66,10 +66,6 @@
   display: none;
 }
 
-.share_post_text {
-  display: none;
-}
-
 // Media queries
 @media screen and (max-width: 1310px) {
   #share-links {
@@ -96,37 +92,6 @@
   .share-links {
     display: none;
   }
-  // #share-links {
-  //   transform: none !important;
-  //   width: 15rem;
-  //   left: 0.5rem !important;
-  // }
-
-  // #share-toggle:checked ~ #share-links {
-  //   display: flex !important;
-  //   top: -4px;
-
-  //   li {
-  //     position: relative;
-  //     font-size: 1.2rem;
-  //     writing-mode: vertical-lr;
-  //     margin: 0.25rem 0 0.25rem 0.5rem;
-  //   }
-  // }
-
-  // .share_post_text {
-  //   display: block;
-  // }
-
-  // #share-btn {
-  //   writing-mode: unset;
-  //   display: flex;
-  //   width: fit-content;
-  //   font-size: 1.2rem;
-  //   position: absolute;
-  //   top: -1rem;
-  //   left: 1rem;
-  // }
 }
 
 @media screen and (max-width: 365px) {

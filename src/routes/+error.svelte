@@ -1,6 +1,7 @@
 <script>
 	import * as config from '$lib/config'
 	import { page } from '$app/stores'
+	const alt_404 = "Image of male librarian surrounded by books, with the ones directly in front of him being opened. The librarian has an unsure look on his face."
 </script>
 
 <svelte:head>
@@ -17,10 +18,9 @@
 		<source srcset="/images/404-image.webp" type="image/webp" />
 		<source srcset="/images/404-image.png" type="image/png" />
 		<img
-			src="/images/404-image.png"
-			alt="Image of male librarian surrounded by books, with the ones directly in front of him being opened. The librarian has an unsure look on his face."
-			class="fourOhfour-image"
-		/>
+			src=""
+			alt={alt_404}
+			class="fourOhfour-image" />
 	</picture>
 </div>
 

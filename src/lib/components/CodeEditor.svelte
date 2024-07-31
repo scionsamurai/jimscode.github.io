@@ -100,16 +100,12 @@
 			{#if showEditorType === 'js'}
 				<textarea bind:value={jsCode} class="snippetEditor" spellcheck="false" style="display: {!showEditorType ? 'none' : 'block'};"></textarea>
 			{/if}
-			<iframe id="result-container" style="display: {showEditorType ? 'none' : 'block'};"></iframe>
+			<iframe id="result-container" title="Code Editor" style="display: {showEditorType ? 'none' : 'block'};"></iframe>
 		</div>
 	{/if}
 </div>
 
 <style>
-	.tagVar .btn-cta {
-		padding: 3px;
-	}
-
 	#snippetEditor-container {
 		height: 100vh !important;
 		background-color: var(--background-color-second);

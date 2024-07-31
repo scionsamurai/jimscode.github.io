@@ -189,7 +189,7 @@ The negation pseudo-class keeps your stylesheet DRY by letting later rules overr
 Structural pseudo-classes target elements based on their position and order within the document structure, rather than just their type, ID, class, or attributes. They provide powerful selectors relating to nested contextual patterns.
 
 Some commonly used structural pseudo-classes include:
-- `:root` - The top-level element, usually the <html> element
+- `:root` - The top-level element, usually the `<html>` element
 - `:empty` - Elements with no children
 - `:target` - The current URL hash target  
 - `:first-of-type` - The first sibling of its element type

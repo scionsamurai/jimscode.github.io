@@ -17,9 +17,3 @@
 <PostSection posts={data.posts} />
 
 <Pagination currentUrl={data.url} page={pagination.page} totalPages={pagination.totalPages} />
-
-<style>
-	#bannerID > * {
-		transform: translate(50px, 30px);
-	}
-</style>

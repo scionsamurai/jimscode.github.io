@@ -85,10 +85,6 @@
 		text-align: center;
 		z-index: 4;
 	}
-	/* Hide arrow-div-id if page is at top, for examle whenever we can't scroll any higher */
-	#arrow-div-id[aria-hidden='true'] {
-		display: none;
-	}
 	#backToTopArrow {
 		width: 1rem;
 		height: 1rem;

@@ -1,15 +1,15 @@
 <script>
 	export let summary
 
-	function toggleExpanded() {
+	function toggleExpanded(event) {
 		var summary = event.target
 		var expanded = summary.getAttribute('aria-expanded') === 'true' || false
 		summary.setAttribute('aria-expanded', !expanded)
 	}
 </script>
 
-<details role="group">
-	<summary role="button" aria-expanded="false" on:click={toggleExpanded}>
+<details>
+	<summary aria-expanded="false" on:click={toggleExpanded}>
 		{summary}
 	</summary>
 	<slot />

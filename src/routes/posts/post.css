@@ -39,6 +39,12 @@ code {
 		font-size: 0.6rem;
 	}
 }
+
+#sidebar_checkbox:checked  ~ div .toc-progress-bar {
+
+	width: 85%;
+	margin-inline: auto;
+}
 .special_quote,
 code:not(pre code) {
 	background-color: #1d212b;

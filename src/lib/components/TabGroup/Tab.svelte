@@ -15,7 +15,7 @@
 		aria-selected="true"
 		{checked}
 	/>
-	<label for={id} tabindex="0" style="outline: none;">
+	<label for={id} style="outline: none;">
 		{label}
 	</label>
 	<div class="content" role="tabpanel" aria-labelledby={id}>
