@@ -1,8 +1,12 @@
-const fs = require('fs').promises;
-const path = require('path');
-const sharp = require('sharp');
+import { promises as fs } from 'fs';
+import path from 'path';
+import sharp from 'sharp';
+import { fileURLToPath } from 'url';
 
-const sourceDir = './static/images';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const sourceDir = path.join(__dirname, 'static', 'images');
 const thumbnailSuffix = '_thumb';
 const exclusionList = ['stars.png', 'colormodebutton.png', 'android-chrome-192x192.png', 'android-chrome-512x512.png', 'apple-touch-icon.png', 'favicon-16x16.png', 'favicon-32x32.png', 'mstile-150x150.png'];
 

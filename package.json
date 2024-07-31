@@ -6,6 +6,7 @@
 		"generate-thumbnails": "node generate-thumbnails.js",
 		"prebuild": "npm run generate-thumbnails",
 		"dev": "vite dev --host",
+		"start": "node build",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
