@@ -8,10 +8,10 @@ categories:
   - webdev
   - markdown
 author_id: 1
-image: /images/html-css-essentials-banner-png.png
-webp_image: /images/html-css-essentials-banner.webp
-image_thumb: /images/html-css-essentials-banner-png_thumb.png
-banner_alt: /####---
+image: /images/mdsvex-header-extraction-banner-png.png
+webp_image: /images/mdsvex-header-extraction-banner.webp
+image_thumb: /images/mdsvex-header-extraction-banner-png_thumb.png
+banner_alt: "Image of type writer sitting on a paint splotch."
 show_banner: true
 comments: true
 published: true

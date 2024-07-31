@@ -12,7 +12,7 @@
       <li>Look for the pencil icon in the GitHub interface</li>
       <li>Make your changes and submit a pull request</li>
     </ol>
-    <a href={githubLink} class="edit-button">Edit on GitHub</a>
+    <a href={githubLink} target="_blank" class="edit-button">Edit on GitHub</a>
     <p class="alternative">
         <strong>Can't edit directly?</strong> Share your feedback or report issues in the comments below. We appreciate your input!
     </p>

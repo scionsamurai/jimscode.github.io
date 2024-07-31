@@ -35,13 +35,3 @@
 </script>
   
 <div class="giscus"></div>
-
-<style lang="scss">
-  .giscus {
-    margin-top: 3rem;
-
-    @media screen and (max-width: 768px) {
-      margin-top: 0;
-    }
-  }
-</style>

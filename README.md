@@ -18,8 +18,8 @@ Discover a variety of content, from in-depth tutorials and project experiences t
 
 ### Technology Stack
 
-- **Hosting:** GitHub Pages
-- **Generator:** Custom JavaScript static site generator (currently under testing, not ready for sharing)
+- **Hosting:** GitHub Pages + Cloudflare Pages
+- **Generator:** Sveltekit
 
 ## Community Engagement
 
