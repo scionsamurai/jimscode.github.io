@@ -8,7 +8,7 @@
 	<title>{config.siteName} - privacy policy</title>
 </svelte:head>
 
-<div class="main">
+<div class="main singlePage">
 	<br />
 	<h1 class="brand">{$page.status}: {$page.error?.message}</h1>
 	<br />
@@ -24,24 +24,15 @@
 	</picture>
 </div>
 
-<style>
+
+<style lang='scss'>
+	@import 'src/styles/SinglePage.scss';
+
 	.brand {
 		color: var(--brand);
 	}
 
 	.fourOhfour-image {
 		max-width: 100%;
-	}
-	.main {
-		margin-inline: auto;
-		width: 80%;
-
-		background: linear-gradient(
-			25deg,
-			var(--background-color-second) 75%,
-			rgba(255, 255, 255, 0) 87%
-		) !important;
-		padding: 0 3rem;
-		margin-bottom: 1rem;
 	}
 </style>

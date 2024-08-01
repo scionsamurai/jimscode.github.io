@@ -26,9 +26,9 @@ export async function GET({ fetch }) {
     const categories = [...new Set(posts.flatMap(post => post.categories))]
 
     const staticPages = [
-        '/about-us',
-        '/terms-of-service',
-        '/privacy-policy',
+        'about-us',
+        'terms-of-service',
+        'privacy-policy',
     ]
 
     const headers = { 'Content-Type': 'application/xml' }
@@ -42,7 +42,7 @@ export async function GET({ fetch }) {
                 <priority>1.0</priority>
             </url>
             <url>
-                <loc>${config.url}/blog</loc>
+                <loc>${config.url}blog</loc>
                 <changefreq>daily</changefreq>
                 <priority>1.0</priority>
             </url>
@@ -55,14 +55,14 @@ export async function GET({ fetch }) {
             `).join('')}
             ${categories.map(category => `
                 <url>
-                    <loc>${config.url}/categories/${encodeURIComponent(category)}</loc>
+                    <loc>${config.url}/categories/${encodeURIComponent(category.substring(1))}</loc>
                     <changefreq>weekly</changefreq>
                     <priority>0.7</priority>
                 </url>
             `).join('')}
             ${posts.map(post => `
                 <url>
-                    <loc>${config.url}${post.slug}</loc>
+                    <loc>${config.url}/posts/${post.slug}</loc>
                     <lastmod>${convertDateFormat(post.date)}</lastmod>
                     <changefreq>weekly</changefreq>
                     <priority>0.6</priority>

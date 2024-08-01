@@ -44,9 +44,10 @@
         <ul class="posts">
             {#each posts as item}
                 <li>
-                    <a href={item.url}>{item.title}</a>
+                    <a href='/posts/{item.url}'>{item.title}</a>
                     <span class="date">Last updated: {new Date(item.date).toLocaleDateString()}</span>
                 </li>
+                <br>
             {/each}
         </ul>
     </section>    
