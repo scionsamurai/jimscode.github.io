@@ -1,6 +1,24 @@
 import * as config from '$lib/config'
 import type { Post } from '$lib/types'
 
+function convertDateFormat(inputDate) {
+    // Parse the input date string
+    const date = new Date(inputDate);
+    
+    // Check if the date is valid
+    if (isNaN(date.getTime())) {
+        return "Invalid Date";
+    }
+    
+    // Get year, month, and day
+    const year = date.getUTCFullYear();
+    const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
+    const day = date.getUTCDate().toString().padStart(2, '0');
+    
+    // Return the formatted date string
+    return `${year}-${month}-${day}`;
+}
+
 export async function GET({ fetch }) {
     const response = await fetch('api/posts?limit=10000')
     const { posts }: { posts: Post[] } = await response.json()
@@ -45,7 +63,7 @@ export async function GET({ fetch }) {
             ${posts.map(post => `
                 <url>
                     <loc>${config.url}${post.slug}</loc>
-                    <lastmod>${post.date}</lastmod>
+                    <lastmod>${convertDateFormat(post.date)}</lastmod>
                     <changefreq>weekly</changefreq>
                     <priority>0.6</priority>
                 </url>
