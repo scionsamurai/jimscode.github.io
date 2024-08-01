@@ -392,43 +392,57 @@ Hold onto your keyboards, folks, because we're about to turbocharge our plugin! 
 
 ```javascript
 import { visit } from 'unist-util-visit';
+import { toString } from 'mdast-util-to-string';
 
 export function remarkExtractHeaders() {
     return (tree, file) => {
         file.data.headers = [];
+        let headerCounter = 0; // keep track of number of headers passed
+
+        const generateId = (text, index) => {
+            // Convert to lowercase and replace spaces with hyphens
+            let id = text.toLowerCase().replace(/\s+/g, '-');
+            
+            // Remove any characters that are not alphanumeric, underscore, or hyphen
+            id = id.replace(/[^a-z0-9_-]/g, '');
+            
+            // Ensure the ID doesn't start with a number or hyphen
+            id = id.replace(/^[0-9-]/, '');
+            
+            // Add the index
+            id += `-${index}`;
+            
+            // Ensure the ID is not empty
+            if (id === '') {
+                id = `header-${index}`;
+            }
+            
+            return id;
+        };
+
+        const getHeaderText = (node) => {
+            return toString(node);
+        };
+
+
+        // Function to add an ID to a node
+        const addIdToNode = (node, id) => {
+            node.data = node.data || {};
+            node.data.hProperties = node.data.hProperties || {};
+            node.data.hProperties.id = id;
+        };
+
     
         visit(tree, 'heading', (node) => {
             if (node.depth === 2) {
-                const headerText = node.children[0].value;
-                const generateId = (text) => {
-                    // Convert to lowercase and replace spaces with hyphens
-                    let id = text.toLowerCase().replace(/\s+/g, '-');
-                    
-                    // Remove any characters that are not alphanumeric, underscore, or hyphen
-                    id = id.replace(/[^a-z0-9_-]/g, '');
-                    
-                    // Ensure the ID doesn't start with a number or hyphen
-                    id = id.replace(/^[0-9-]/, '');
-                    
-                    // Add a random number
-                    id += `-${Math.floor(Math.random() * 10000)}`;
-                    
-                    // Ensure the ID is not empty
-                    if (id === '') 
-                        id = `id-${Math.floor(Math.random() * 10000)}`;
-                    
-                    
-                    return id;
-                };
+                const headerText = getHeaderText(node);
+                headerCounter++
                 
-                const headerId = generateId(headerText)
+                const headerId = generateId(headerText, headerCounter)
                 // Push object container header data instead of just string to file.data.headers
                 file.data.headers.push({ text: headerText, id: headerId });
-                
                 // Add an `id` property to the heading node
-                node.data = node.data || {};
-                node.data.hProperties = node.data.hProperties || {};
-                node.data.hProperties.id = headerId;
+                addIdToNode(node, headerId);
             }
         });
         
@@ -488,22 +502,28 @@ First, we need to modify our remark plugin to capture h3 headers and nest them u
 
 ```javascript
 import { visit } from 'unist-util-visit';
+import { toString } from 'mdast-util-to-string';
 
 export function remarkExtractHeaders() {
   return (tree, file) => {
     file.data.headers = [];
     let currentHeader = null; // Keep track of the current header object
+    let headerCounter = 0;
 
-    const generateId = (text) => {
+    const generateId = (text, index) => {
         let id = text.toLowerCase().replace(/\s+/g, '-');
         id = id.replace(/[^a-z0-9_-]/g, '');
         id = id.replace(/^[0-9-]/, '');
-        id += `-${Math.floor(Math.random() * 10000)}`;
-        if (id === '') 
-            id = `id-${Math.floor(Math.random() * 10000)}`;
-        
-        
+        id += `-${index}`;
+        if (id === '') {
+            id = `header-${index}`;
+        }
+
         return id;
+    };
+
+    const getHeaderText = (node) => {
+        return toString(node);
     };
 
     // Function to add an ID to a node
@@ -515,8 +535,9 @@ export function remarkExtractHeaders() {
 
     // Visit each heading node in the tree
     visit(tree, 'heading', (node) => {
-      const headerText = node.children[0].value;
-      const headerId = generateId(headerText); // Generate a unique ID for the header
+      const headerText = getHeaderText(node);
+      headerCounter++
+      const headerId = generateId(headerText, headerCounter); // Generate a unique ID for the header
 
       // Check if the heading is an h2 or higher level
       if (node.depth <= 2) {
@@ -531,7 +552,7 @@ export function remarkExtractHeaders() {
         addIdToNode(node, headerId); // Add the ID to the heading node
       } else if (node.depth === 3 && currentHeader) { // Check if the heading is an h3 and there is a current header
         const childText = headerText;
-        const childId = generateId(childText); // Generate a unique ID for the h3 header
+        const childId = generateId(childText, headerCounter); // Generate a unique ID for the h3 header
 
         currentHeader.children.push({
           text: childText,
