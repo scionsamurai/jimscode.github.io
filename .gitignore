@@ -5,9 +5,6 @@ node_modules
 .vercel
 /.svelte-kit
 /build
-*_thumb.jpg
-*_thumb.png
-*_thumb.jpeg
 
 # OS
 .DS_Store
