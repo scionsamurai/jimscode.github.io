@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Power and Performance: Mastering the Essentials of Rust for System Programming"
+title: "Mastering the Essentials of Rust for System Programming"
 description: Start your Rust journey now! This beginner-friendly guide equips you with the essential knowledge to write system software in Rust. Learn by building practical projects and unlock the potential of this versatile language.
 date: 'Wed, 07 Feb 2024 01:52:44 GMT'
 categories:

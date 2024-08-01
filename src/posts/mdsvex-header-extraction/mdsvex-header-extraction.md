@@ -1,5 +1,5 @@
 ---
-title: "Extracting Headers from Markdown in SvelteKit with mdsvex: A Custom Remark Plugin"
+title: "Extracting Headers from Markdown in SvelteKit with mdsvex"
 description: Learn how to create a custom remark plugin for SvelteKit that automatically extracts headers from your Markdown files, enabling dynamic table of contents and improved content navigation.
 date: 'Sun, 28 Jul 2024 22:39:58'
 categories:
@@ -81,10 +81,10 @@ If you need a refresher, here are some helpful resources:
    npm install mdsvex
    ```
 
-3. **Additional Dependencies**: For our custom remark plugin, we'll need one more package:
+3. **Additional Dependencies**: For our custom remark plugin, we'll need two more packages:
 
    ```
-   npm install unist-util-visit
+   npm install unist-util-visit mdast-util-to-string
    ```
 
 ### Configuration Check

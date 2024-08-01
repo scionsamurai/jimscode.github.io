@@ -1,5 +1,5 @@
 ---
-title: "Mastering Enums and Pattern Matching in Rust: A System Developer's Guide"
+title: "Mastering Enums and Pattern Matching in Rust"
 description: Unravel the complexities of Rust Enums and Pattern Matching in this in-depth exploration. Enhance your programming arsenal and gain confidence in handling diverse data structures for system-level tasks.
 date: 'Sun, 11 Feb 2024 22:07:02 GMT'
 categories:

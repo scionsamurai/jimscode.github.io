@@ -19,6 +19,7 @@
 		</div>
 		<ul class="footer-section">
 			<li><a href="/rss.xml" target="_blank">RSS</a></li>
+			<li><a href="/sitemap">Sitemap</a></li>
 			<li><a href="/about-us">About Us</a></li>
 			<li><a href="/privacy-policy">Privacy Policy</a></li>
 			<li><a href="/terms-of-service">Terms of Service</a></li>

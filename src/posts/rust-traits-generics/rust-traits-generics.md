@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Rust's Potential: Harnessing Traits and Generics for Efficient System Development"
+title: "Harnessing Rust's Traits and Generics for System Development"
 description: Uncover the full potential of Rust with our guide on traits and generics. From the basics to advanced concepts, learn how to create flexible, reusable code structures that optimize your system development workflow
 date: 'Sat, 02 Mar 2024 02:44:43 GMT'
 categories:

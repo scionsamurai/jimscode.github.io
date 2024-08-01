@@ -5,6 +5,7 @@
 	"scripts": {
 		"generate-thumbnails": "node generate-thumbnails.js",
 		"prebuild": "npm run generate-thumbnails",
+		"predev": "npm run generate-thumbnails",
 		"dev": "vite dev --host",
 		"start": "node build",
 		"build": "vite build",

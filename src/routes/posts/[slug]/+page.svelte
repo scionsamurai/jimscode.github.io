@@ -13,7 +13,6 @@
 	import '../post.css'
 
 	export let data
-	console.log('dta.slug', data.slug)
 
 	const githubLink = `https://github.com/scionsamurai/jimscode.github.io/tree/main/src/posts/${data.slug}/${data.slug}.md`
 
