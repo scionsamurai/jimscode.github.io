@@ -1,20 +1,16 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 
-    let sitemapData = [];
-
-    onMount(async () => {
-        const response = await fetch('/api/sitemap');
-        sitemapData = await response.json();
-    });
-
-    $: categories = sitemapData.filter(item => item.title.startsWith('Category:'));
-    $: posts = sitemapData.filter(item => item.date);
-    $: pages = sitemapData.filter(item => !item.title.startsWith('Category:') && !item.date);
+	export let data
+    const sitemapData = data.sitemapData;
+    
+    const categories = sitemapData.filter(item => item.title.startsWith('Category:'));
+    const posts = sitemapData.filter(item => item.date);
+    const pages = sitemapData.filter(item => !item.title.startsWith('Category:') && !item.date);
 </script>
 <div class="singlePage">
     <h1>Sitemap</h1>
-    <p>Here is a list of all the pages, categories and posts on this site.</p>
+    <p>Here are lists of all the pages, categories and posts on this site.</p>
     <p>Looking for the xml versions? It can be found <a href="sitemap.xml" target="_blank">here!</a></p>
     
     <section>

@@ -1,9 +1,11 @@
-import * as config from '$lib/config'
-import type { Post } from '$lib/types'
+import type { PageLoad } from './$types';
 
-export async function GET({ fetch }) {
-    const response = await fetch('/api/posts?limit=10000')
-    const { posts }: { posts: Post[] } = await response.json()
+export const load: PageLoad = async ({ fetch }) => {
+    const limit = '10000'; 
+
+    // Fetch posts for the author with pagination
+    const response = await fetch(`/api/posts?limit=${limit}`);
+    const { posts } = await response.json();
 
     const categories = [...new Set(posts.flatMap(post => post.categories))]
 
@@ -31,8 +33,9 @@ export async function GET({ fetch }) {
             categories: post.categories
         }))
     ]
+    return {
+        sitemapData
+    };
+};
 
-    return new Response(JSON.stringify(sitemapData), {
-        headers: { 'Content-Type': 'application/json' }
-    })
-}
+

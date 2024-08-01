@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = async ({ data, fetch, url }) => {
     const { authorKey, author } = data;
     const page = url.searchParams.get('page') || '1';
-    const limit = '10'; // You can make this dynamic if needed
+    const limit = '10'; 
 
     // Fetch posts for the author with pagination
     const response = await fetch(`/api/posts?author=${authorKey}&page=${page}&limit=${limit}`);
