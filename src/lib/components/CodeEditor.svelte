@@ -12,7 +12,7 @@
 	let showEditorType = 'html'
 
 	const fetchFileContent = async (fileHref, index) => {
-		const response = await fetch(`/posts/${slug}/${fileHref}`)
+		const response = await fetch(`/examples/${slug}/${fileHref}`)
 		const data = await response.text()
 		if (fileHref.toLowerCase().endsWith('css')) {
 			cssCode += data
