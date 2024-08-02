@@ -1,7 +1,7 @@
 ---
 title: "Extracting Headers from Markdown in SvelteKit with mdsvex"
 description: Learn how to create a custom remark plugin for SvelteKit that automatically extracts headers from your Markdown files, enabling dynamic table of contents and improved content navigation.
-date: 'Sun, 28 Jul 2024 22:39:58'
+date: 'Sun, 28 Jul 2024 22:39:58 GMT'
 categories:
   - svelte
   - sveltekit
