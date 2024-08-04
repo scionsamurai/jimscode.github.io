@@ -10,7 +10,7 @@ author_id: 1
 image: /images/cloudflare-d1-oauth-banner-png.png
 webp_image: /images/cloudflare-d1-oauth-banner.webp
 image_thumb: /images/cloudflare-d1-oauth-banner-png_thumb.png
-banner_alt: unset
+banner_alt: "Image of Svelte's S logo perched ontop of a cloudflare cloud"
 show_banner: true
 comments: true
 published: true
