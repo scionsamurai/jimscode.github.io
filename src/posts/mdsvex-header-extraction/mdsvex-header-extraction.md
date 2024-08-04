@@ -789,12 +789,12 @@ If you would prefer your table of contents to take up less space and scroll with
         padding: 1rem;
     }
     nav {
-		max-height: 10rem; /* updated size */
-		overflow: scroll;
-		width: fit-content;
-		position: fixed;
-		right: 0;
-	}
+        max-height: 10rem; /* updated size */
+        overflow: scroll;
+        width: fit-content;
+        position: fixed;
+        right: 0;
+    }
 </style>
 ```
 

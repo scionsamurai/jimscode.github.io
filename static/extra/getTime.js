@@ -15,7 +15,7 @@ export function getCurrentDateInLocaleString() {
 		.toLocaleString('en-US', options)
 		.replace(/,/g, '')
 		.split(' ')
-	const rearrangedDate = `${weekday}, ${date} ${month} ${year} ${time}`
+	const rearrangedDate = `${weekday}, ${date} ${month} ${year} ${time} GMT`
 
 	return rearrangedDate
 }

@@ -2,13 +2,13 @@
 
 Welcome to Jim's Code Blog repository! 🚀
 
-Explore the art and science of coding with Jimmy, a passionate coder specializing in languages like Python and Javascript. Jim's Code Blog is a dynamic space where creativity meets functionality. We share coding tutorials, insights into specific technologies, and discuss emerging industry trends.
+Explore the art and science of coding with Jimmy, a passionate coder specializing in languages like Rust, Python and Javascript. Jim's Code Blog is a dynamic space where creativity meets functionality. We share coding tutorials, insights into specific technologies, and discuss emerging industry trends.
 
 ## Author
 
 👨‍💻 **Jimmy**
 
-- Passionate coder with a focus on Python and Javascript.
+- Passionate coder with a focus on Rust, Python and Javascript.
 - Enjoys working with technologies like Docker, Ansible, and Linux.
 - Committed to simplifying coding concepts and inspiring fellow developers.
 
