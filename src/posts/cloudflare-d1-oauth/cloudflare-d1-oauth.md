@@ -94,20 +94,6 @@ While not strictly necessary, we recommend using a code editor with good TypeScr
 - [WebStorm](https://www.jetbrains.com/webstorm/)
 - [Sublime Text](https://www.sublimetext.com/) with the [Svelte plugin](https://packagecontrol.io/packages/Svelte)
 
-### GitHub OAuth Setup
-
-We'll need to create a new OAuth application in GitHub:
-
-1. Go to your GitHub account settings.
-2. Navigate to "Developer settings" > "OAuth Apps" > "New OAuth App".
-3. Fill in the application details:
-   - Application name: Choose a name (e.g., "My SvelteKit App")
-   - Homepage URL: For now, use `http://localhost:5173`
-   - Authorization callback URL: Set this to `http://localhost:5173/auth/callback/github`
-4. Click "Register application".
-5. You'll see your Client ID. Click "Generate a new client secret".
-6. Save both the Client ID and Client Secret - we'll need these later.
-
 ### Ready to Go!
 
 With these prerequisites in place, you're all set to embark on your journey of building a modern web application with SvelteKit, Cloudflare Pages, D1 storage, and OAuth authentication. In the next section, we'll start by setting up our SvelteKit project and configuring it for Cloudflare Pages deployment.
@@ -207,10 +193,7 @@ Now, let's make sure our project is properly configured for Cloudflare:
 
    ```toml
    name = "my-sveltekit-app"
-   compatibility_date = "2023-03-14"
-
-   [site]
-   bucket = "./build"
+   compatibility_date = "2024-08-04"
    ```
 
    Don't worry if some details are different - Cloudflare's CLI tool should have set this up correctly for you.
@@ -355,7 +338,7 @@ Now that we have our database, let's give it some structure. We'll create a simp
 1. In your terminal, run this command:
 
    ```
-   npx wrangler d1 execute my_db --command "CREATE TABLE IF NOT EXISTS users (email TEXT PRIMARY KEY, name TEXT, image TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
+   npx wrangler d1 execute my_sveltekit_db --command "CREATE TABLE IF NOT EXISTS users (email TEXT PRIMARY KEY, name TEXT, image TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
 
    ```
 
@@ -787,9 +770,9 @@ import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
-  const session = await event.locals.auth();
-  if (!session?.user) throw redirect(303, '/');
-  return { user: session.user };
+    const session = await event.locals.auth();
+    if (!session?.user) throw redirect(303, '/');
+    return { user: session.user };
 };
 ```
 
@@ -797,8 +780,8 @@ And `src/routes/profile/+page.svelte`:
 
 ```svelte
 <script lang="ts">
-  export let data;
-  const { user } = data;
+    export let data;
+    const { user } = data;
 </script>
 
 <h1>User Profile</h1>
@@ -838,7 +821,7 @@ The sky's the limit! Here are some ideas to take your app to the next level:
 
 ### Final Thoughts
 
-Building modern web applications doesn't have to be a headache. With SvelteKit, Cloudflare Pages, D1, and Durable Objects, we've created a powerful, scalable, and real-time capable application without breaking a sweat (okay, maybe a little sweat, but it was worth it!).
+Building modern web applications doesn't have to be a headache. With SvelteKit, D1, and  Cloudflare Pages, we've created a powerful, scalable, and real-time capable application without breaking a sweat (okay, maybe a little sweat, but it was worth it!).
 
 Remember, the best apps are those that continue to evolve. Keep learning, keep experimenting, and most importantly, keep having fun with it!
 

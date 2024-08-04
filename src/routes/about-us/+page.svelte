@@ -12,7 +12,6 @@
 </svelte:head>
 
 <div role="main" class="singlePage">
-	<h1>Welcome to {config.siteName}</h1>
 	<svelte:component this={data.content} slug={data.slug} />
 </div>
 
