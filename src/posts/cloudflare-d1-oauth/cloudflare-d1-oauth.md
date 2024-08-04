@@ -222,8 +222,6 @@ Before we can deploy our app, we need to log in to Wrangler:
 
 3. Once logged in, you'll see a success message in your terminal.
 
-Absolutely! Let's include a step for creating the GitHub repository before pushing your SvelteKit application. Here’s the revised version:
-
 ## Deploying Your SvelteKit App to Cloudflare Pages
 
 Let's deploy our SvelteKit app to Cloudflare Pages using GitHub. Follow these steps:
@@ -251,8 +249,6 @@ Now that you have a repository, you can push your SvelteKit project to it:
    git remote add origin https://github.com/yourusername/your-repo-name.git
    git push -u origin main
    ```
-
-Certainly! Here's the revised section with the bonus tip added:
 
 ### Step 3: Deploy to Cloudflare Pages
 
