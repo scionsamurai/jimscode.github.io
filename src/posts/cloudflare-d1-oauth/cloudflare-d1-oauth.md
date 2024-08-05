@@ -110,23 +110,11 @@ First things first, let's create our SvelteKit project using Cloudflare's handy 
 
 1. Run the following command:
    ```
-   npm create cloudflare@latest my-sveltekit-app
+   npm create cloudflare@latest my-svelte-app -- --framework=svelte
    ```
+2. Follow the prompts to customize your SvelteKit project. Feel free to accept the defaults for now - we can always tweak things later.
 
-2. When prompted, choose "SvelteKit" from the "Framework Starter" options. It should look something like this:
-   ```
-   ? What would you like to start with
-     └─○ Framework Starter
-   ```
-
-   ```
-   ? Which development framework do you want to use?
-     └─○ Svelte
-   ```
-
-3. Follow the prompts to customize your SvelteKit project. Feel free to accept the defaults for now - we can always tweak things later.
-
-4. Once the setup is complete, navigate to your new project directory:
+3. Once the setup is complete, navigate to your new project directory:
    ```
    cd my-sveltekit-app
    ```
@@ -566,61 +554,38 @@ Great! Now that we've confirmed our basic authentication is working, let's add t
 
 5. Update `src/auth.ts` to include callbacks:
 
-   ```typescript
-   // ... previous imports ...
+    ```typescript
+    // ... previous imports ...
+    import {getPlatformProxy} from 'wrangler';
+    import { saveUserToDatabase } from '$lib/db';
+    export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
+        // ... previous configuration ...
+        const authOptions = {
+            // ... previous options ...
+            callbacks: {
+                async signIn(data) {
+                    const { env } = await getPlatformProxy();
+                    const environment = dev ? env : event.platform?.env;
+                    await saveUserToDatabase(environment, data.user);
+                    return true;
+                },
+                async session({ session }) {
+                    const { user } = session;
+                    if (session?.user) {
+                        session.user.id = user.id;
+                    }
+                    return session;
+                }
+            }
+        };
+        return authOptions;
+    });
+    ```
 
-   async function saveUser(event, user) {
-       const response = await event.fetch('/api/save-user', {
-           method: 'POST',
-           headers: {
-               'Content-Type': 'application/json'
-           },
-           body: JSON.stringify(user)
-       });
-       if (!response.ok) {
-           throw new Error('Failed to save user');
-       }
-   }
-
-   export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
-       // ... previous configuration ...
-       const authOptions = {
-           // ... previous options ...
-           callbacks: {
-               async signIn({ user }) {
-                   await saveUser(event, user);
-                   return true;
-               },
-               async session({ session }) {
-                   const { user } = session;
-                   if (session?.user) {
-                       session.user.id = user.id;
-                   }
-                   return session;
-               }
-           }
-       };
-       return authOptions;
-   });
-   ```
-
-6. Create a new file `src/routes/api/save-user/+server.ts`:
+6. Create a new file `src/lib/db.ts`:
 
    ```typescript
-    import type { RequestHandler } from '@sveltejs/kit';
-
-    export const POST: RequestHandler = async ({ request, platform }) => {
-        try {
-            const user = await request.json();
-            const results = await saveUserToDatabase(platform?.env, user);
-            return new Response(JSON.stringify(results), { status: 201 });
-        } catch (error) {
-            console.error('Error saving user:', error);
-            return new Response('Internal Server Error', { status: 500 });
-        }
-    };
-
-    async function saveUserToDatabase(env, user) {
+    export async function saveUserToDatabase(env, user) {
         try {
             // Check if the user already exists by email
             const existingUser = await env.DB.prepare('SELECT name, image FROM users WHERE email = ?')
@@ -667,9 +632,10 @@ Great! Now that we've confirmed our basic authentication is working, let's add t
             throw new Error('Database operation failed');
         }
     }
+
    ```
 
-   This endpoint handles saving the user data to your database. Make sure you've implemented the `saveUserToDatabase` function in your `$lib/db.ts` file as discussed in previous sections.
+   This handles saving the user data to your database. 
 
 With these additions, your app will now attempt to save user data to the database upon successful authentication. To test this functionality:
 

@@ -50,7 +50,6 @@
 		z-index: 2;
 		padding: 20px;
 		text-align: center;
-		border-radius: var(--radius-8) var(--radius-8) 0 0;
 	}
 
 	.footer-content {
