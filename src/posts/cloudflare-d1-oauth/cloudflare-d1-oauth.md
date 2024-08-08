@@ -600,13 +600,13 @@ Great! Now that we've confirmed our basic authentication is working, let's add t
 
                 if (existingUser.name !== user.name) {
                     updateFields.push('name = ?');
-                    updateValues.push(`"${user.name}"`);
+                    updateValues.push(user.name);
                     updateNeeded = true;
                 }
 
                 if (existingUser.image !== user.image) {
                     updateFields.push('image = ?');
-                    updateValues.push(`"${user.image}"`);
+                    updateValues.push(user.image);
                     updateNeeded = true;
                 }
 
