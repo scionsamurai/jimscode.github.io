@@ -596,29 +596,31 @@ Great! Now that we've confirmed our basic authentication is working, let's add t
                 // User exists, update only if name or image has changed
                 let updateNeeded = false;
                 const updateFields = [];
+                const updateValues = [];
 
                 if (existingUser.name !== user.name) {
                     updateFields.push('name = ?');
-                    updateFields.push(user.name);
+                    updateValues.push(`"${user.name}"`);
                     updateNeeded = true;
                 }
 
                 if (existingUser.image !== user.image) {
                     updateFields.push('image = ?');
-                    updateFields.push(user.image);
+                    updateValues.push(`"${user.image}"`);
                     updateNeeded = true;
                 }
 
                 if (updateNeeded) {
                     const updateQuery = `UPDATE users SET ${updateFields.join(', ')} WHERE email = ?`;
                     const updateResult = await env.DB.prepare(updateQuery)
-                        .bind(...updateFields, user.email)
+                        .bind(...updateValues, user.email)
                         .run();
                     return { status: 'updated', results: updateResult };
                 }
 
                 return { status: 'no-change', results: null };
             } else {
+                console.log('usesr', user);
                 // User does not exist, insert a new record
                 const insertResult = await env.DB.prepare(
                     'INSERT INTO users (name, email, image) VALUES (?, ?, ?)'
