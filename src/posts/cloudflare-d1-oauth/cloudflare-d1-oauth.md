@@ -550,9 +550,120 @@ Now, let's test our GitHub authentication:
 
 3. After logging in, you should see your GitHub name displayed and a sign-out button.
 
-Great! Now that we've confirmed our basic authentication is working, let's add the user-saving functionality.
 
-5. Update `src/auth.ts` to include the signIn callback:
+### Adding a User Profile Page
+
+Let's create a profile page to display the user's information:
+
+Create `src/routes/profile/+page.server.ts`:
+
+```typescript
+import { redirect } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async (event) => {
+    const session = await event.locals.auth();
+    if (!session?.user) throw redirect(303, '/');
+    return { user: session.user };
+};
+```
+
+And `src/routes/profile/+page.svelte`:
+
+```svelte
+<script lang="ts">
+    export let data;
+    const { user } = data;
+</script>
+
+<h1>User Profile</h1>
+<img src={user.image} alt={user.name} style="width: 100px; height: 100px; border-radius: 50%;" />
+<p>Name: {user.name}</p>
+<p>Email: {user.email}</p>
+```
+
+### Testing Our User Functionality
+
+1. Start your development server:
+   ```
+   npm run dev
+   ```
+
+2. Visit `http://localhost:5173` and log in with GitHub.
+
+3. After logging in, visit `http://localhost:5173/profile`. You should see your profile information, including the last login time.
+
+### Protecting Routes
+
+Want to keep some pages for authenticated users only? No problemo!
+
+Create `src/routes/profile/+page.server.ts`:
+
+```typescript
+import { redirect } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async (event) => {
+  const session = await event.locals.auth();
+  if (!session?.user) throw redirect(303, '/');
+  return { user: session.user };
+};
+```
+
+Or if we wanted to protect our `src/routes/api/users/+server.ts` route:
+
+```typescript
+import type { RequestHandler } from '@sveltejs/kit';
+import { error, json } from '@sveltejs/kit';
+
+export const GET: RequestHandler = async ({ locals, platform }) => {
+    const session = await locals.auth();
+    
+    if (!session?.user) {
+        throw error(401, 'Unauthorized');
+    }
+
+    try {
+        const result = await platform.env.DB.prepare('SELECT * FROM users LIMIT 100').run();
+        return json(result);
+    } catch (err) {
+        console.error('Database query error:', err);
+        throw error(500, 'Internal Server Error');
+    }
+};
+```
+
+## Saving Authenticated Users in the Database
+
+Let's dive into the nitty-gritty of saving our authenticated users to our D1 database. This is where the magic of persistence meets the power of authentication!
+
+### Updating Our User Schema
+
+Let's ensure our `users` table can handle all the information we want to store:
+
+1. Create a new SQL file (e.g., `update_users_schema.sql`) in your project directory and add the following SQL command:
+
+   ```sql
+   DROP TABLE IF EXISTS users;
+   CREATE TABLE IF NOT EXISTS users (
+     email TEXT PRIMARY KEY,
+     name TEXT,
+     image TEXT,
+     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+     last_login DATETIME DEFAULT CURRENT_TIMESTAMP
+   );
+   ```
+
+2. Save the file and then run the following command using Wrangler to execute the SQL file:
+
+   ```
+   npx wrangler d1 execute my_sveltekit_db --file update_users_schema.sql
+   ```
+
+This approach allows you to keep your SQL commands organized in a file and makes it easier to manage and update your database schema.
+
+
+3. Update `src/auth.ts` to include the signIn callback:
 
     ```typescript
     // ... previous imports ...
@@ -575,7 +686,7 @@ Great! Now that we've confirmed our basic authentication is working, let's add t
     });
     ```
 
-6. Create a new file `src/lib/db.ts`:
+4. Create a new file `src/lib/db.ts`:
 
    ```typescript
     export async function saveUserToDatabase(env, user) {
@@ -641,57 +752,6 @@ With these additions, your app will now attempt to save user data to the databas
 5. You should see your user information displayed, confirming that the data was successfully saved to the database.
 
 Remember to thoroughly test this functionality and handle any potential errors that may occur during the save process. If you encounter any issues, review your code and database configuration to ensure everything is set up correctly.
-
-### Protecting Routes
-
-Want to keep some pages for authenticated users only? No problemo!
-
-Create `src/routes/protected/+page.server.ts`:
-
-```typescript
-import { redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
-
-export const load: PageServerLoad = async (event) => {
-  const session = await event.locals.auth();
-  if (!session?.user) throw redirect(303, '/');
-  return { user: session.user };
-};
-```
-
-And `src/routes/protected/+page.svelte`:
-
-```svelte
-<script lang="ts">
-  export let data;
-</script>
-
-<h1>Top Secret Area</h1>
-<p>Welcome to the cool kids club, {data.user.name}!</p>
-```
-
-Or if we wanted to protect our `src/routes/api/users/+server.ts` route:
-
-```typescript
-import type { RequestHandler } from '@sveltejs/kit';
-import { error, json } from '@sveltejs/kit';
-
-export const GET: RequestHandler = async ({ locals, platform }) => {
-    const session = await locals.auth();
-    
-    if (!session?.user) {
-        throw error(401, 'Unauthorized');
-    }
-
-    try {
-        const result = await platform.env.DB.prepare('SELECT * FROM users LIMIT 100').run();
-        return json(result);
-    } catch (err) {
-        console.error('Database query error:', err);
-        throw error(500, 'Internal Server Error');
-    }
-};
-```
 
 
 ### Configuring Authentication with Direct Database Storage
@@ -825,77 +885,6 @@ With these updates, your application will now store OAuth information directly i
    ```
 
    You should see your user info stored in the database. How cool is that?
-
-## Saving Authenticated Users in the Database
-
-Let's dive into the nitty-gritty of saving our authenticated users to our D1 database. This is where the magic of persistence meets the power of authentication!
-
-### Updating Our User Schema
-
-Let's ensure our `users` table can handle all the information we want to store:
-
-1. Create a new SQL file (e.g., `update_users_schema.sql`) in your project directory and add the following SQL command:
-
-   ```sql
-   DROP TABLE IF EXISTS users;
-   CREATE TABLE IF NOT EXISTS users (
-     email TEXT PRIMARY KEY,
-     name TEXT,
-     image TEXT,
-     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-     last_login DATETIME DEFAULT CURRENT_TIMESTAMP
-   );
-   ```
-
-2. Save the file and then run the following command using Wrangler to execute the SQL file:
-
-   ```
-   npx wrangler d1 execute my_sveltekit_db --file update_users_schema.sql
-   ```
-
-This approach allows you to keep your SQL commands organized in a file and makes it easier to manage and update your database schema.
-
-### Adding a User Profile Page
-
-Let's create a profile page to display the user's information:
-
-Create `src/routes/profile/+page.server.ts`:
-
-```typescript
-import { redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
-
-export const load: PageServerLoad = async (event) => {
-    const session = await event.locals.auth();
-    if (!session?.user) throw redirect(303, '/');
-    return { user: session.user };
-};
-```
-
-And `src/routes/profile/+page.svelte`:
-
-```svelte
-<script lang="ts">
-    export let data;
-    const { user } = data;
-</script>
-
-<h1>User Profile</h1>
-<img src={user.image} alt={user.name} style="width: 100px; height: 100px; border-radius: 50%;" />
-<p>Name: {user.name}</p>
-<p>Email: {user.email}</p>
-```
-
-### Testing Our User Saving Functionality
-
-1. Start your development server:
-   ```
-   npm run dev
-   ```
-
-2. Visit `http://localhost:5173` and log in with GitHub.
-
-3. After logging in, visit `http://localhost:5173/profile`. You should see your profile information, including the last login time.
 
 ## Conclusion: Your SvelteKit App is Ready to Conquer the Web!
 
