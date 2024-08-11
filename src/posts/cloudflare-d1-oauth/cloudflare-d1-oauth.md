@@ -758,7 +758,13 @@ Remember to thoroughly test this functionality and handle any potential errors t
 
 We've updated our authentication configuration to use `@auth/d1-adapter`, which allows us to save OAuth information directly to our database. This eliminates the need for a separate `saveUserToDatabase` function. Let's go through the updated setup:
 
-1. Update `src/auth.ts`:
+1. Install `@auth/d1-adapter`:
+
+   ```
+   npm install @auth/d1-adapter
+   ```
+
+2. Update `src/auth.ts`:
 
 ```typescript
 import { SvelteKitAuth } from '@auth/sveltekit';
@@ -812,7 +818,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
 
 This updated configuration uses the `D1Adapter` to directly interact with your database for storing authentication information. It also sets up database sessions and includes a callback to add the user ID to the session information.
 
-2. Initialize the database schema:
+3. Initialize the database schema:
 
 Before using this new method, you need to set up the required tables in your database. Run the following SQL commands to initialize the schema:
 
