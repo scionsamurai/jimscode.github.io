@@ -552,7 +552,7 @@ Now, let's test our GitHub authentication:
 
 Great! Now that we've confirmed our basic authentication is working, let's add the user-saving functionality.
 
-5. Update `src/auth.ts` to include callbacks:
+5. Update `src/auth.ts` to include the signIn callback:
 
     ```typescript
     // ... previous imports ...
@@ -568,13 +568,6 @@ Great! Now that we've confirmed our basic authentication is working, let's add t
                     const environment = dev ? env : event.platform?.env;
                     await saveUserToDatabase(environment, data.user);
                     return true;
-                },
-                async session({ session }) {
-                    const { user } = session;
-                    if (session?.user) {
-                        session.user.id = user.id;
-                    }
-                    return session;
                 }
             }
         };
@@ -676,6 +669,145 @@ And `src/routes/protected/+page.svelte`:
 <h1>Top Secret Area</h1>
 <p>Welcome to the cool kids club, {data.user.name}!</p>
 ```
+
+Or if we wanted to protect our `src/routes/api/users/+server.ts` route:
+
+```typescript
+import type { RequestHandler } from '@sveltejs/kit';
+import { error, json } from '@sveltejs/kit';
+
+export const GET: RequestHandler = async ({ locals, platform }) => {
+    const session = await locals.auth();
+    
+    if (!session?.user) {
+        throw error(401, 'Unauthorized');
+    }
+
+    try {
+        const result = await platform.env.DB.prepare('SELECT * FROM users LIMIT 100').run();
+        return json(result);
+    } catch (err) {
+        console.error('Database query error:', err);
+        throw error(500, 'Internal Server Error');
+    }
+};
+```
+
+
+### Configuring Authentication with Direct Database Storage
+
+We've updated our authentication configuration to use `@auth/d1-adapter`, which allows us to save OAuth information directly to our database. This eliminates the need for a separate `saveUserToDatabase` function. Let's go through the updated setup:
+
+1. Update `src/auth.ts`:
+
+```typescript
+import { SvelteKitAuth } from '@auth/sveltekit';
+import GitHub from '@auth/sveltekit/providers/github';
+import dotenv from 'dotenv';
+import { getPlatformProxy } from 'wrangler';
+import { D1Adapter } from '@auth/d1-adapter';
+
+// Load environment variables from .env file during development
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
+
+export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
+    const dev = process.env.NODE_ENV !== 'production';
+    let environment;
+    if (dev) {
+        const { env } = await getPlatformProxy();
+        environment = env;
+    } else {
+        environment = event.platform?.env;
+    }
+    const authOptions = {
+        providers: [
+            GitHub({
+                clientId: dev ? process.env.GITHUB_ID : event.platform?.env?.GITHUB_ID,
+                clientSecret: dev ? process.env.GITHUB_SECRET : event.platform?.env?.GITHUB_SECRET
+            })
+        ],
+        secret: dev ? process.env.AUTH_SECRET : event.platform?.env?.AUTH_SECRET,
+        trustHost: true,
+        adapter: D1Adapter(environment.DB),
+        session: {
+            strategy: 'database',
+            maxAge: 30 * 24 * 60 * 60, // 30 days
+            updateAge: 24 * 60 * 60 // update session age every 24 hours
+        },
+        callbacks: {
+            async session({ session, token }) {
+                // Include the user ID (sub) in the session
+                if (token?.sub) {
+                    session.user.id = token.sub;
+                }
+                return session;
+            }
+        }
+    };
+    return authOptions;
+});
+```
+
+This updated configuration uses the `D1Adapter` to directly interact with your database for storing authentication information. It also sets up database sessions and includes a callback to add the user ID to the session information.
+
+2. Initialize the database schema:
+
+Before using this new method, you need to set up the required tables in your database. Run the following SQL commands to initialize the schema:
+
+```sql
+DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS "sessions";
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS verification_tokens;
+
+CREATE TABLE IF NOT EXISTS "accounts" (
+  "id" TEXT NOT NULL,
+  "userId" TEXT NOT NULL DEFAULT NULL,
+  "type" TEXT NOT NULL DEFAULT NULL,
+  "provider" TEXT NOT NULL DEFAULT NULL,
+  "providerAccountId" TEXT NOT NULL DEFAULT NULL,
+  "refresh_token" TEXT DEFAULT NULL,
+  "access_token" TEXT DEFAULT NULL,
+  "expires_at" INTEGER DEFAULT NULL,
+  "token_type" TEXT DEFAULT NULL,
+  "scope" TEXT DEFAULT NULL,
+  "id_token" TEXT DEFAULT NULL,
+  "session_state" TEXT DEFAULT NULL,
+  "oauth_token_secret" TEXT DEFAULT NULL,
+  "oauth_token" TEXT DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS "sessions" (
+  "id" TEXT NOT NULL,
+  "sessionToken" TEXT NOT NULL,
+  "userId" TEXT NOT NULL DEFAULT NULL,
+  "expires" DATETIME NOT NULL DEFAULT NULL, 
+  PRIMARY KEY (sessionToken)
+);
+
+CREATE TABLE IF NOT EXISTS "users" (
+  "id" TEXT NOT NULL DEFAULT '',
+  "name" TEXT DEFAULT NULL,
+  "email" TEXT DEFAULT NULL,
+  "emailVerified" DATETIME DEFAULT NULL,
+  "image" TEXT DEFAULT NULL, 
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS "verification_tokens" (
+  "identifier" TEXT NOT NULL,
+  "token" TEXT NOT NULL DEFAULT NULL,
+  "expires" DATETIME NOT NULL DEFAULT NULL, 
+  PRIMARY KEY (token)
+);
+```
+
+These SQL commands create the necessary tables for storing authentication data, including user accounts, sessions, and verification tokens.
+
+With these updates, your application will now store OAuth information directly in your database using the `@auth/d1-adapter`. This approach simplifies the authentication process and eliminates the need for a custom user-saving function.
 
 ### Testing Our Authentication
 
