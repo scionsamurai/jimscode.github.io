@@ -4,7 +4,7 @@
 .main-content {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	max-width: $max-main-width;
 	margin: 0 auto;
 }
@@ -13,14 +13,14 @@
 	display: flex;
 	flex-flow: row-reverse;
 	position: relative;
-	max-width: 800px;
+	max-width: 1000px;
 }
 
 .post {
 	background: var(--background-color-second);
 	z-index: 2;
 	padding: 0 1rem;
-	max-width: $max-content-width;
+	max-width:1400px;
 	position: relative;
 	width: 100%;
 }
@@ -40,7 +40,7 @@
 }
 
 .sidebar {
-	width: 30%;
+	width: 27%;
 	margin-top: 5px;
 }
 

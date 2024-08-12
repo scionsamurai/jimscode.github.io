@@ -171,10 +171,6 @@
 		margin-top: 20px;
 		font-family: monospace;
 		white-space: pre-wrap;
-
-		& > div {
-			overflow-x: scroll;
-		}
 	}
 	.shadow {
 		position: absolute;
@@ -201,44 +197,10 @@
 		margin: 15px 0;
 	}
 
-	.instructions pre {
-		padding: 10px;
-		border-radius: 5px;
-		overflow-x: auto;
-	}
-
 	.note {
 		padding: 10px;
 		border-left: 5px solid #ffeeba;
 		margin-bottom: 20px;
 	}
 
-	#toc {
-		background-color: #f8f8f8;
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		padding: 10px;
-		margin-bottom: 20px;
-	}
-
-	#toc h2 {
-		margin-top: 0;
-	}
-
-	#toc ul {
-		list-style-type: none;
-		padding-left: 0;
-	}
-
-	#toc li {
-		margin-bottom: 5px;
-	}
-
-	.toc-level-2 {
-		margin-left: 0;
-	}
-
-	.toc-level-3 {
-		margin-left: 20px;
-	}
 </style>

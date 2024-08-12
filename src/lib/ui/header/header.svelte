@@ -72,7 +72,7 @@
 	}
 	nav {
 		width: 90%;
-		max-width: 1350px;
+		max-width: 1550px;
 		margin-inline: auto;
 		padding: 1rem;
 		border-radius: 1rem;
