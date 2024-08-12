@@ -5,7 +5,7 @@
 	import MobileShareLinks from '../MobileShareLinks.svelte'
 	import SEO from '../SEO.svelte'
 	import PostHeader from '../PostHeader.svelte'
-	import TableOfContents from '../TableOfContents.svelte'
+	import TableOfContents from '$lib/components/TableOfContents.svelte'
 	import AuthorInfo from '../AuthorInfo.svelte'
 	import Comments from '../Comments.svelte'
 	import Contribute from '../Contribute.svelte'

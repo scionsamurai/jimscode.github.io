@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte'
 	export let headers
 
+	
 	let activeHeader = ''
 	let tocElement
 	let progress = 0
