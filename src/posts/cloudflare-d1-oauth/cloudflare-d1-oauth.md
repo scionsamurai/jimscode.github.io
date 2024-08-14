@@ -106,18 +106,41 @@ Alright, folks! It's time to roll up our sleeves and dive into the exciting part
 
 ### Creating the Project
 
-First things first, let's create our SvelteKit project using Cloudflare's handy CLI tool. Open up your terminal and let's get cookin'!
+Let's start by creating our SvelteKit project using Cloudflare's CLI tool. This process might vary slightly depending on your preferences and any potential issues you might encounter.
 
-1. Run the following command:
+1. Open your terminal and run the following command:
    ```
    npm create cloudflare@latest my-svelte-app -- --framework=svelte
    ```
-2. Follow the prompts to customize your SvelteKit project. Feel free to accept the defaults for now - we can always tweak things later.
 
-3. Once the setup is complete, navigate to your new project directory:
+2. Follow the prompts to customize your SvelteKit project. You can accept the defaults for now - we can always adjust things later.
+
+3. Important note: During the setup process, you'll be asked if you want to deploy to Cloudflare Pages. 
+   - If you prefer to use Git integration with Cloudflare Pages (recommended for better version control), choose "No" at this prompt.
+   - If you choose "Yes", the project will be directly uploaded to Cloudflare Pages and you'll be able to skip the github/cloudflare deployment steps below.
+
+4. The installation process might freeze for some users after "installing dependencies". If this happens to you:
+   - Press CTRL+C to cancel the process
+   - Navigate to your project directory:
+     ```
+     cd my-svelte-app
+     ```
+   - Delete the `node_modules` folder:
+     ```
+     rm -rf node_modules
+     ```
+   - Reinstall the dependencies:
+     ```
+     npm install
+     ```
+
+5. If the installation completed successfully without freezing, simply navigate to your new project directory:
    ```
-   cd my-sveltekit-app
+   cd my-svelte-app
    ```
+
+By following these steps, you'll have your SvelteKit project set up and ready for further development. If you chose not to deploy directly to Cloudflare Pages, you can set up Git integration later, allowing you to push your code to a Git repository and have Cloudflare Pages automatically deploy from there.
+
 
 ### Project Structure Deep Dive
 
@@ -160,11 +183,9 @@ Now, let's make sure our project is properly configured for Cloudflare:
 
     /** @type {import('@sveltejs/kit').Config} */
     const config = {
-
         preprocess: vitePreprocess(),
 
         kit: {
-
             adapter: adapter({
                 routes: {
                     include: ['/*'],
@@ -271,12 +292,13 @@ npm ERR! notsup Actual:   {"npm":"9.6.7","node":"v18.17.1"}
 
 Follow these steps to resolve it:
 
-1. Go to the "Settings" page of your Cloudflare Pages project.
-2. Scroll down to the "Environment variables" section.
-3. Click on "Edit variables" for both "Production" and "Preview" environments.
-4. Find the `NODE_VERSION` variable and update its value to a compatible version (e.g., `20.9.0` or higher).
-5. Make sure to click the "Encrypt" checkbox next to the `NODE_VERSION` variable.
-6. Save your changes.
+1. Click the "continue with failed deployment" button.
+2. Go to the "Settings" page of your Cloudflare Pages project.
+3. Scroll down to the "Environment variables" section.
+4. Click on "Edit variables" for both "Production" and "Preview" environments.
+5. Find the `NODE_VERSION` variable and update its value to a compatible version (e.g., `20.9.0` or higher).
+6. Make sure to click the "Encrypt" checkbox next to the `NODE_VERSION` variable.
+7. Save your changes.
 
 </SummaryDetails>
 
@@ -315,25 +337,6 @@ First things first, let's create our database:
 5. Give your database a snazzy name. How about "my_sveltekit_db"?
 6. Click "Create" and watch the magic happen!
 
-### Setting Up Tables
-
-Now that we have our database, let's give it some structure. We'll create a simple "users" table to store our authenticated users. If you want to run any of these commands on the remote server (non-dev) you can add the "--remote" flag to the commands.
-
-1. In your terminal, run this command:
-
-   ```
-   npx wrangler d1 execute my_sveltekit_db --command "CREATE TABLE IF NOT EXISTS users (email TEXT PRIMARY KEY, name TEXT, image TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
-
-   ```
-
-2. If all goes well, you should see a success message. Let's verify by checking our table:
-
-   ```
-   npx wrangler d1 execute my_sveltekit_db --command "SELECT name FROM sqlite_master WHERE type='table' AND name='users'"
-   ```
-
-   You should see your "users" table listed. High five! ✋
-
 ### Connecting D1 to Our SvelteKit Project
 
 Now comes the fun part - linking our shiny new database to our SvelteKit app.
@@ -367,12 +370,36 @@ Now comes the fun part - linking our shiny new database to our SvelteKit app.
          env: {
            DB: D1Database;
          };
+
+        context: {
+            waitUntil(promise: Promise<any>): void;
+        };
+        caches: CacheStorage & { default: Cache };    
        }
      }
    }
 
    export {};
    ```
+
+### Setting Up Tables
+
+Now that we have our database, let's give it some structure. We'll create a simple "users" table to store our authenticated users. If you want to run any of these commands on the remote server (non-dev) you can add the "--remote" flag to the commands.
+
+1. In your terminal, run this command:
+
+   ```
+   npx wrangler d1 execute my_sveltekit_db --command "CREATE TABLE IF NOT EXISTS users (email TEXT PRIMARY KEY, name TEXT, image TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
+
+   ```
+
+2. If all goes well, you should see a success message. Let's verify by checking our table:
+
+   ```
+   npx wrangler d1 execute my_sveltekit_db --command "SELECT name FROM sqlite_master WHERE type='table' AND name='users'"
+   ```
+
+   You should see your "users" table listed. High five! ✋
 
 ### Testing Our Database Connection
 
@@ -406,52 +433,70 @@ Alright, security squad! It's time to add some street cred to our app with OAuth
 
 ### Setting Up GitHub OAuth
 
-First things first, let's get our GitHub OAuth credentials in order:
+We'll set up two sets of GitHub OAuth credentials: one for local development and another for production.
 
-1. Head over to your GitHub account and navigate to Settings > Developer settings > OAuth Apps.
-2. Click on "New OAuth App" (or use the one we created in the prerequisites).
+#### Local Development Credentials:
+
+1. Go to your GitHub account and navigate to Settings > Developer settings > OAuth Apps.
+2. Click on "New OAuth App".
 3. Fill in the details:
-   - Application name: "My Awesome SvelteKit App" (or whatever floats your boat)
-   - Homepage URL: `http://localhost:5173` (we'll change this later for production)
+   - Application name: "My SvelteKit App (Development)"
+   - Homepage URL: `http://localhost:5173`
    - Authorization callback URL: `http://localhost:5173/auth/callback/github`
 4. Click "Register application".
-5. You'll see your Client ID. Click "Generate a new client secret".
-6. Keep this page open, we'll need these credentials in a bit!
+5. Note down the Client ID and generate a new client secret.
+
+#### Production Credentials:
+
+1. Repeat the process, but use your production details:
+   - Application name: "My SvelteKit App (Production)"
+   - Homepage URL: `https://your-app-name.pages.dev` (your Cloudflare Pages domain)
+   - Authorization callback URL: `https://your-app-name.pages.dev/auth/callback/github`
+2. Register the application and note down the credentials.
 
 ### Installing the Auth Packages
 
-Time to beef up our project with some authentication muscle:
+Install the necessary authentication packages:
 
 ```
 npm install @auth/core @auth/sveltekit
-npm install -D dotenv
 ```
 
 ### Setting Up Environment Variables
 
-Let's keep our secrets secret:
+For local development:
 
 1. Create a `.env` file in your project root:
 
    ```
-   GITHUB_ID=your_github_client_id
-   GITHUB_SECRET=your_github_client_secret
+   GITHUB_ID=your_local_github_client_id
+   GITHUB_SECRET=your_local_github_client_secret
    AUTH_SECRET=your_random_secret_here
    ```
 
-   Replace `your_github_client_id` and `your_github_client_secret` with the values from GitHub. For `AUTH_SECRET`, use a random string (you can generate one with `openssl rand -base64 32`).
+   Replace the values with your local GitHub OAuth credentials. Generate `AUTH_SECRET` with `openssl rand -base64 32`.
 
-2. Add `.env` to your `.gitignore` file to keep your secrets out of version control.
+2. Add `.env` to your `.gitignore` file.
 
-When deploying to Cloudflare Pages, you can add these environment variables in the Cloudflare dashboard under your project's settings. Alternatively, you can add these variables to the `wrangler.toml` file, and they will be available during deployment. Please exercise caution when adding variables to the `wrangler.toml` file as they will be publicly visible if your GitHub repository is set to public. Consider setting your repository to private if you choose this route. Here’s how to add them to the `wrangler.toml` file:
+For production deployment on Cloudflare Pages:
 
-```toml
-[vars]
-AUTH_SECRET = "github_auth_secret"
-AUTH_TRUST_HOST = "true"
-GITHUB_ID = "github_id_generated_for_oauth"
-GITHUB_SECRET = "secret_generated_with_id"
-```
+1. Open your `wrangler.toml` file and add the following:
+
+   ```toml
+   [vars]
+   AUTH_SECRET = "your_production_auth_secret"
+   AUTH_TRUST_HOST = "true"
+   GITHUB_ID = "your_production_github_client_id"
+   GITHUB_SECRET = "your_production_github_client_secret"
+   ```
+
+   Replace the values with your production GitHub OAuth credentials.
+
+2. If your GitHub repository is public, consider setting it to private to protect your production credentials.
+
+Alternatively, you can set these environment variables in the Cloudflare dashboard under your project's settings for added security.
+
+By setting up separate OAuth credentials and using different configuration methods for local and production environments, you ensure a smooth development process and a secure production deployment.
 
 ### Configuring Authentication
 
@@ -460,29 +505,38 @@ Now, let's set up our authentication logic. We'll start with the basic GitHub OA
 1. Create a new file `src/auth.ts`:
 
    ```typescript
-   import { SvelteKitAuth } from '@auth/sveltekit';
-   import GitHub from '@auth/sveltekit/providers/github';
-   import dotenv from 'dotenv';
+    import { SvelteKitAuth } from "@auth/sveltekit";
+    import GitHub from '@auth/sveltekit/providers/github';
+    import { GITHUB_ID, GITHUB_SECRET, AUTH_SECRET } from '$env/static/private';
 
-   // Load environment variables from .env file during development
-   if (process.env.NODE_ENV !== 'production') {
-       dotenv.config();
-   }
+    export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
 
-   export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
-       const dev = process.env.NODE_ENV !== 'production';
-       const authOptions = {
-           providers: [
-               GitHub({
-                   clientId: dev ? process.env.GITHUB_ID : event.platform?.env?.GITHUB_ID,
-                   clientSecret: dev ? process.env.GITHUB_SECRET : event.platform?.env?.GITHUB_SECRET
-               })
-           ],
-           secret: dev ? process.env.AUTH_SECRET : event.platform?.env?.AUTH_SECRET,
-           trustHost: true
-       };
-       return authOptions;
-   });
+        const getEnv = (key) => {
+            if (event.platform?.env.CF_PAGES === 'true') {
+                return event.platform?.env[key];
+            } else {
+                switch(key) {
+                    case 'GITHUB_ID': return GITHUB_ID;
+                    case 'GITHUB_SECRET': return GITHUB_SECRET;
+                    case 'AUTH_SECRET': return AUTH_SECRET;
+                    default: return undefined;
+                }
+            }
+        };
+
+        const authOptions = {
+            providers: [
+                GitHub({
+                    clientId: getEnv('GITHUB_ID'),
+                    clientSecret: getEnv('GITHUB_SECRET')
+                })
+            ],
+            secret: getEnv('AUTH_SECRET'),
+            trustHost: true,
+        };
+
+        return authOptions;
+    });
    ```
 
    This file sets up the core authentication logic using SvelteKitAuth. It configures GitHub as the OAuth provider and handles environment variables for both development and production environments.
@@ -498,19 +552,20 @@ Now, let's set up our authentication logic. We'll start with the basic GitHub OA
 3. Create `src/routes/+layout.server.ts`:
 
    ```typescript
-   import type { LayoutServerLoad } from './$types';
+    import type { LayoutServerLoad } from './$types';
+    import { dev } from '$app/environment';
+    import { GITHUB_ID } from '$env/static/private';
 
-   export const load: LayoutServerLoad = async (event) => {
-       const dev = process.env.NODE_ENV !== 'production';
-       return {
-           session: await event.locals.auth(),
-           authProviders: {
-               github: {
-                   clientId: dev ? process.env.GITHUB_ID : event.platform?.env?.GITHUB_ID
-               }
-           }
-       };
-   };
+    export const load: LayoutServerLoad = async (event) => {
+        return {
+            session: await event.locals.auth(),
+            authProviders: {
+                github: {
+                    clientId: dev ? GITHUB_ID : event.platform?.env?.GITHUB_ID
+                }
+            }
+        };
+    };
    ```
 
    This layout server load function provides the session data and GitHub client ID to all routes in your app. It ensures that authentication state is available throughout your application.
@@ -539,16 +594,41 @@ Now, let's set up our authentication logic. We'll start with the basic GitHub OA
 
    This layout component provides a simple UI for signing in and out. It displays a welcome message and sign-out button when the user is authenticated, or a sign-in button when they're not.
 
-Now, let's test our GitHub authentication:
+### Testing GitHub Authentication
 
-1. Start your development server:
+To make our development process smoother, let's add a custom script to our `package.json` file:
+
+1. Open your `package.json` file and add the following script:
+
+   ```json
+   {
+     "scripts": {
+       // ... other scripts ...
+       "dev:full": "npm run build && wrangler pages dev .svelte-kit/cloudflare --port 5173"
+     }
+   }
    ```
-   npm run dev
+
+   This script combines the build process and starts the Wrangler Pages development server, making it easier to test our app with Cloudflare's environment.
+
+2. Now, let's test our GitHub authentication:
+
+   Start your development server using the new script:
+
+   ```
+   npm run dev:full
    ```
 
-2. Visit `http://localhost:5173` and try logging in with GitHub. You should be able to authenticate successfully.
+3. Visit `http://localhost:5173` in your browser and try logging in with GitHub. You should be able to authenticate successfully.
 
-3. After logging in, you should see your GitHub name displayed and a sign-out button.
+4. After logging in, you should see your GitHub name displayed and a sign-out button.
+
+5. We can also push our file changes to github to test the production environment.
+
+By using this `dev:full` script, we've simplified the process of starting our development server with Cloudflare's environment. This makes it easier to test features like authentication that might behave differently in a Cloudflare Pages context.
+
+Remember, this setup uses your local development GitHub OAuth credentials. When you deploy to production, Cloudflare Pages will use the production credentials we set up earlier.
+
 
 
 ### Adding a User Profile Page
@@ -558,12 +638,10 @@ Let's create a profile page to display the user's information:
 Create `src/routes/profile/+page.server.ts`:
 
 ```typescript
-import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
     const session = await event.locals.auth();
-    if (!session?.user) throw redirect(303, '/');
     return { user: session.user };
 };
 ```
@@ -586,7 +664,7 @@ And `src/routes/profile/+page.svelte`:
 
 1. Start your development server:
    ```
-   npm run dev
+   npm run dev:full
    ```
 
 2. Visit `http://localhost:5173` and log in with GitHub.
@@ -600,12 +678,12 @@ Want to keep some pages for authenticated users only? No problemo!
 Create `src/routes/profile/+page.server.ts`:
 
 ```typescript
-import { redirect } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit'; // import this
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
   const session = await event.locals.auth();
-  if (!session?.user) throw redirect(303, '/');
+  if (!session?.user) throw redirect(303, '/'); // and add this line
   return { user: session.user };
 };
 ```
@@ -635,168 +713,36 @@ export const GET: RequestHandler = async ({ locals, platform }) => {
 
 ## Saving Authenticated Users in the Database
 
-Let's dive into the nitty-gritty of saving our authenticated users to our D1 database. This is where the magic of persistence meets the power of authentication!
-
-### Updating Our User Schema
-
-Let's ensure our `users` table can handle all the information we want to store:
-
-1. Create a new SQL file (e.g., `update_users_schema.sql`) in your project directory and add the following SQL command:
-
-   ```sql
-   DROP TABLE IF EXISTS users;
-   CREATE TABLE IF NOT EXISTS users (
-     email TEXT PRIMARY KEY,
-     name TEXT,
-     image TEXT,
-     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-     last_login DATETIME DEFAULT CURRENT_TIMESTAMP
-   );
-   ```
-
-2. Save the file and then run the following command using Wrangler to execute the SQL file:
-
-   ```
-   npx wrangler d1 execute my_sveltekit_db --file update_users_schema.sql
-   ```
-
-This approach allows you to keep your SQL commands organized in a file and makes it easier to manage and update your database schema.
-
-
-3. Update `src/auth.ts` to include the signIn callback:
-
-    ```typescript
-    // ... previous imports ...
-    import {getPlatformProxy} from 'wrangler';
-    import { saveUserToDatabase } from '$lib/db';
-    export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
-        // ... previous configuration ...
-        const authOptions = {
-            // ... previous options ...
-            callbacks: {
-                async signIn(data) {
-                    const { env } = await getPlatformProxy();
-                    const environment = dev ? env : event.platform?.env;
-                    await saveUserToDatabase(environment, data.user);
-                    return true;
-                }
-            }
-        };
-        return authOptions;
-    });
-    ```
-
-4. Create a new file `src/lib/db.ts`:
-
-   ```typescript
-    export async function saveUserToDatabase(env, user) {
-        try {
-            // Check if the user already exists by email
-            const existingUser = await env.DB.prepare('SELECT name, image FROM users WHERE email = ?')
-                .bind(user.email)
-                .first();
-
-            if (existingUser) {
-                // User exists, update only if name or image has changed
-                let updateNeeded = false;
-                const updateFields = [];
-                const updateValues = [];
-
-                if (existingUser.name !== user.name) {
-                    updateFields.push('name = ?');
-                    updateValues.push(user.name);
-                    updateNeeded = true;
-                }
-
-                if (existingUser.image !== user.image) {
-                    updateFields.push('image = ?');
-                    updateValues.push(user.image);
-                    updateNeeded = true;
-                }
-
-                if (updateNeeded) {
-                    const updateQuery = `UPDATE users SET ${updateFields.join(', ')} WHERE email = ?`;
-                    const updateResult = await env.DB.prepare(updateQuery)
-                        .bind(...updateValues, user.email)
-                        .run();
-                    return { status: 'updated', results: updateResult };
-                }
-
-                return { status: 'no-change', results: null };
-            } else {
-                console.log('usesr', user);
-                // User does not exist, insert a new record
-                const insertResult = await env.DB.prepare(
-                    'INSERT INTO users (name, email, image) VALUES (?, ?, ?)'
-                )
-                    .bind(user.name, user.email, user.image)
-                    .run();
-                return { status: 'created', results: insertResult };
-            }
-        } catch (error) {
-            console.error('Error saving user to database:', error);
-            throw new Error('Database operation failed');
-        }
-    }
-
-   ```
-
-   This handles saving the user data to your database. 
-
-With these additions, your app will now attempt to save user data to the database upon successful authentication. To test this functionality:
-
-1. Log out of your application if you're currently logged in.
-2. Log in again using GitHub authentication.
-3. If no errors appear during this process, it's a good sign that things are working as expected.
-4. To further verify, navigate to `localhost:5173/api/users` in your browser.
-5. You should see your user information displayed, confirming that the data was successfully saved to the database.
-
-Remember to thoroughly test this functionality and handle any potential errors that may occur during the save process. If you encounter any issues, review your code and database configuration to ensure everything is set up correctly.
-
-
-### Configuring Authentication with Direct Database Storage
-
-We've updated our authentication configuration to use `@auth/d1-adapter`, which allows us to save OAuth information directly to our database. This eliminates the need for a separate `saveUserToDatabase` function. Let's go through the updated setup:
+Let's dive into the nitty-gritty of saving our authenticated users to our D1 database. This is where the magic of persistence meets the power of authentication! Let's go through the setup:
 
 1. Install `@auth/d1-adapter`:
 
    ```
-   npm install @auth/d1-adapter
+   npm install next-auth @auth/d1-adapter
    ```
 
 2. Update `src/auth.ts`:
 
 ```typescript
-import { SvelteKitAuth } from '@auth/sveltekit';
-import GitHub from '@auth/sveltekit/providers/github';
-import dotenv from 'dotenv';
-import { getPlatformProxy } from 'wrangler';
-import { D1Adapter } from '@auth/d1-adapter';
-
-// Load environment variables from .env file during development
-if (process.env.NODE_ENV !== 'production') {
-    dotenv.config();
-}
+// ... previous imports ...
+import { D1Adapter } from "@auth/d1-adapter";
 
 export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
-    const dev = process.env.NODE_ENV !== 'production';
-    let environment;
-    if (dev) {
-        const { env } = await getPlatformProxy();
-        environment = env;
-    } else {
-        environment = event.platform?.env;
-    }
+
+    const getEnv = (key) => {
+        // ... remains the same ...
+    };
+
     const authOptions = {
         providers: [
             GitHub({
-                clientId: dev ? process.env.GITHUB_ID : event.platform?.env?.GITHUB_ID,
-                clientSecret: dev ? process.env.GITHUB_SECRET : event.platform?.env?.GITHUB_SECRET
+                clientId: getEnv('GITHUB_ID'),
+                clientSecret: getEnv('GITHUB_SECRET')
             })
         ],
-        secret: dev ? process.env.AUTH_SECRET : event.platform?.env?.AUTH_SECRET,
+        secret: getEnv('AUTH_SECRET'),
         trustHost: true,
-        adapter: D1Adapter(environment.DB),
+        adapter: D1Adapter(event.platform?.env.DB),
         session: {
             strategy: 'database',
             maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -812,6 +758,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
             }
         }
     };
+
     return authOptions;
 });
 ```
@@ -880,7 +827,7 @@ With these updates, your application will now store OAuth information directly i
 1. Start your development server:
 
    ```
-   npm run dev
+   npm run dev:full
    ```
 
 2. Visit `http://localhost:5173` and try logging in with GitHub.
@@ -889,6 +836,9 @@ With these updates, your application will now store OAuth information directly i
    ```
    npx wrangler d1 execute my_sveltekit_db --command "SELECT * FROM users"
    ```
+
+4. To further verify, navigate to `localhost:5173/api/users` in your browser.
+5. You should see your user information displayed, confirming that the data was successfully saved to the database.
 
    You should see your user info stored in the database. How cool is that?
 

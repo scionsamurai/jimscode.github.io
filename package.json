@@ -6,7 +6,7 @@
 		"generate-thumbnails": "node generate-thumbnails.js",
 		"prebuild": "npm run generate-thumbnails",
 		"predev": "npm run generate-thumbnails",
-		"dev": "vite dev --host",
+		"dev": "vite dev --host --port 3000",
 		"start": "node build",
 		"build": "vite build",
 		"preview": "vite preview",
