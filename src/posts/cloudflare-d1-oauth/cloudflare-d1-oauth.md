@@ -749,6 +749,20 @@ export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
             updateAge: 24 * 60 * 60 // update session age every 24 hours
         },
         callbacks: {
+            async signIn({ user, account, profile }) { // optionally define allowed email domains or specific email addresses
+                
+                const allowedEmails = ['@yahoo.com', '@company.com', 'specific.user@gmail.com'];
+                
+                const isAllowedEmail = allowedEmails.some(email => 
+                    user.email.endsWith(email) || user.email === email
+                );
+
+                if (isAllowedEmail) {
+                    return true; // Allow sign-in
+                } else {
+                    return false; // Deny sign-in
+                }
+            },
             async session({ session, token }) {
                 // Include the user ID (sub) in the session
                 if (token?.sub) {
