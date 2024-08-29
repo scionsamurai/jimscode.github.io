@@ -767,8 +767,6 @@ This updated configuration uses the `D1Adapter` to directly interact with your d
 
 3. Initialize the database schema:
 
-Before using this new method, you need to set up the required tables in your database. Run the following SQL commands to initialize the schema:
-
 ```sql
 DROP TABLE IF EXISTS accounts;
 DROP TABLE IF EXISTS "sessions";
@@ -817,6 +815,13 @@ CREATE TABLE IF NOT EXISTS "verification_tokens" (
   PRIMARY KEY (token)
 );
 ```
+
+Before using this new method, you need to set up the required tables in your database. Save these commands to a file named "update_users_schema.sql" and then run the following command using Wrangler to execute the SQL file:
+
+   ```
+   npx wrangler d1 execute my_sveltekit_db --file update_users_schema.sql
+   ```
+
 
 These SQL commands create the necessary tables for storing authentication data, including user accounts, sessions, and verification tokens.
 

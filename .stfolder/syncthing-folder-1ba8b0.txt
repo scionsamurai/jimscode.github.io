@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: w2twg-3js94
+created: 2024-08-14T20:47:36-05:00
