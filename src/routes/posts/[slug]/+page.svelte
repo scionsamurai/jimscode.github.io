@@ -21,7 +21,7 @@
 		closeMobileTableOfContents()
 		closeShareLinks()
 
-		document.querySelectorAll('h2, h3, h4, h5, h6').forEach((header) => {
+		document.querySelectorAll('h2, h3').forEach((header) => {
 			if (header.classList.contains('dont-link')) return
 			const link = document.createElement('a')
 			link.className = 'header-link'
