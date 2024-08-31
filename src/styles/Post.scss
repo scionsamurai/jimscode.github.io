@@ -24,6 +24,10 @@
 	position: relative;
 	width: 100%;
 }
+.draft {
+	text-align: center;
+	background: red;
+}
 // Header Links
 :global(.header-link) {
 	opacity: 0;

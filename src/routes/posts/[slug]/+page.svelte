@@ -37,6 +37,9 @@
 <div role="main" class="main-content">
 	<div class="post-container">
 		<article class="post">
+			{#if !data.meta.published}
+				<p class="draft">Draft Warning: Until published these are minimally organized notes for {data.author.name}!</p>
+			{/if}
 			<PostHeader meta={data.meta} />
 			<svelte:component this={data.content} slug={data.slug} />
 			<MobileShareLinks
