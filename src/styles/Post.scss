@@ -55,6 +55,21 @@ article {
 		max-width: 750px;
 	}
 }
+@media screen and (min-width: 1350px) {
+	.main-content {
+		justify-content: center;
+	}
+	.post-container {
+		max-width: 900px;
+	}
+
+}
+@media screen and (min-width: 1560px) {
+	.main-content {
+		transform: translateX(35px);
+		justify-content: space-evenly;
+	}
+}
 
 @media screen and (max-width: 1150px) {
 	.post-container {

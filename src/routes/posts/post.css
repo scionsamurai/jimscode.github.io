@@ -11,6 +11,10 @@
 	cursor: pointer;
 }
 
+h4, h5, h6 {
+	font-size: 0.9rem;
+}
+
 h2:hover .anchor-image {
 	display: inline;
 }

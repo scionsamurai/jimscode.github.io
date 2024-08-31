@@ -231,13 +231,25 @@ Even though condition is false on first check, the code runs once before evaluat
 
 The do while loop is useful when code must run at least once such as menu prompts. The condition is then checked for additional loops.
 
+
 Here is a comparison table of the do...while, while, and for loops in JavaScript:
-| Feature || do...while || while || for |
-| How condition is checked | After the first iteration | Before the first iteration | Before the first iteration |
-| Guaranteed runs | At least once | Could run 0 times | Could run 0 times |   
-| Readability | Moderate | Good | Good |
-| Good for | Situations where you want the code to run at least once like menus | Unknown number of iterations based on condition | Known number of iterations |
-| Example | ` do { \\ run code } while (condition) ` | ` while (condition) { \\ run code } `  | ` for (init; condition; update) { \\ run code} ` ||
+<script>
+  import Group from '$lib/components/TabGroup/Group.svelte'
+  import Tab from '$lib/components/TabGroup/Tab.svelte'
+  import Table from '$lib/components/Table.svelte'
+  let group_name = 'tab-group-' + Math.random().toString(36).substr(2, 9)
+
+  let rows = [
+    ['How condition is checked', 'After the first iteration', 'Before the first iteration', 'Before the first iteration'],
+    ['Guaranteed runs', 'At least once', 'Could run 0 times', 'Could run 0 times'],
+    ['Readability', 'Moderate', 'Good', 'Good'],
+    ['Good for', 'Situations where you want the code to run at least once like menus', 'Unknown number of iterations based on condition', 'Known number of iterations'],
+    ['Example', '`do { \\ run code } while (condition)`', '`while (condition) { \\ run code }`', '`for (init; condition; update) { \\ run code}`']
+  ]
+  let headers = ['Feature', 'do...while', 'while', 'for'];
+</script>
+
+<Table {headers} {rows} highlight_first_row={true} />
 
 ## If Statements
 

@@ -1,5 +1,5 @@
 ---
-title: Post Title
+title: Managing Server-Side Memory Leaks in SvelteKit
 description: Description
 date: 'Sat, 04 Aug 2024 12:37:03 GMT'
 categories:
@@ -14,8 +14,6 @@ show_banner: true
 comments: true
 published: false
 ---
-
-# Managing Server-Side Memory Leaks in SvelteKit
 
 ## Introduction
 
@@ -654,16 +652,16 @@ The `sequence` utility function is provided by SvelteKit to compose multiple `ha
 
 - **Ensure Proper Cleanup:** If your hooks manage any resources or subscriptions (such as websockets or database connections), make sure to clean them up properly. Failing to do so can result in these resources remaining active even after the request has completed, causing memory and resource leaks.
 
-#### The `load` Function
+#### The `load` Function in SvelteKit
 
-The `load` function is used to fetch data needed for rendering pages. It runs on the server by default, making it a critical part of server-side rendering in SvelteKit. Proper management of data within the `load` function is essential to avoid memory leaks.
+The `load` function in SvelteKit is used to fetch data needed for rendering pages. It runs on the server by default when defined in `+page.server.js`, making it a crucial part of server-side rendering (SSR) in SvelteKit. However, it can also run on the client side when defined in `+page.js`. Proper management of data within the `load` function is essential to avoid memory leaks and ensure optimal performance.
 
 ```javascript
 // +page.server.js
 export async function load({ params, locals }) {
-    // Fetch data specific to the user, scoped to the request
+    // Fetch user-specific data, scoped to the request
     const data = await fetchDataForUser(params.userId);
-    
+
     // It's crucial not to store this data in a global or module-scoped variable
     return { userData: data };
 }
@@ -675,11 +673,108 @@ In this example, we fetch user-specific data within the `load` function. To prev
 
 ##### Handling Asynchronous Operations
 
-When working with asynchronous operations inside the `load` function, be mindful of their lifecycle:
+When working with asynchronous operations inside the `load` function, especially in client-side contexts, it is crucial to manage their lifecycle:
 
 - **Manage Long-Running Requests:** If you have long-running fetch requests, consider using an `AbortController` to cancel the request if the component is unmounted or if the user navigates away. This prevents unresolved promises from holding onto memory longer than necessary.
 
-By adhering to these guidelines and best practices, you can effectively use the `handle` hook and `load` function in SvelteKit without risking memory leaks. Proper management of data and resources ensures your application remains performant and stable, providing a better experience for your users.
+**Example with `AbortController`:**
+
+```javascript
+// +page.js
+export async function load({ params, fetch }) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(`/api/data/${params.userId}`, { signal });
+            return await response.json();
+        } catch (err) {
+            if (err.name === 'AbortError') {
+                console.log('Request was aborted');
+            } else {
+                console.error('Failed to fetch data:', err);
+            }
+        }
+    };
+
+    // Optionally abort request if certain conditions are met
+    if (shouldAbortRequest) {
+        controller.abort();
+    }
+
+    const data = await fetchData();
+
+    return { userData: data };
+}
+```
+
+By following these guidelines and best practices, you can use the `load` function effectively in SvelteKit without risking memory leaks. Proper management of data and resources ensures your application remains performant and stable, providing a better user experience.
+
+<SummaryDetails summary="In the 'AbortController' example, how does the request get canceled when the component becomes unmounted or if the user navigates away?">
+
+In SvelteKit, the `load` function doesn't directly monitor component lifecycles or handle unmounting events, as it primarily deals with data fetching at the routing level, not at the component level. However, to manage request cancellation properly when a user navigates away or when a component is unmounted, the mechanism involves integrating Svelte's lifecycle and navigation handling with JavaScript's `AbortController`.
+
+###### Understanding the Integration
+
+When the user navigates away from a page or a component using a SvelteKit route changes, the `load` function on the new route gets called. In client-side contexts, if the previous `load` function was still executing (e.g., fetching data), it could potentially continue running even after the user has moved away to a new route. Using `AbortController`, you can abort an ongoing fetch request if such navigation happens.
+
+###### How to Cancel the Request on Navigation
+
+To handle navigation events and cancel fetch requests in SvelteKit, you can use a combination of Svelte's `$page` store and `beforeNavigate` function to detect when navigation starts and abort the ongoing requests accordingly.
+
+###### Example of Aborting Fetch Requests on Navigation
+
+Here’s an enhanced example that demonstrates this:
+
+```javascript
+// +page.js
+import { beforeNavigate } from '$app/navigation';
+
+export async function load({ params, fetch }) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(`/api/data/${params.userId}`, { signal });
+            return await response.json();
+        } catch (err) {
+            if (err.name === 'AbortError') {
+                console.log('Request was aborted due to navigation change');
+            } else {
+                console.error('Failed to fetch data:', err);
+            }
+        }
+    };
+
+    // Detect navigation changes and abort ongoing requests
+    beforeNavigate(() => {
+        controller.abort();
+    });
+
+    const data = await fetchData();
+
+    return { userData: data };
+}
+```
+
+###### Explanation
+
+1. **`AbortController` and Signal**:
+   - We create an `AbortController` instance and pass its `signal` to the fetch request. This `signal` allows the fetch request to be canceled if `controller.abort()` is called.
+
+2. **`beforeNavigate` Hook**:
+   - The `beforeNavigate` function from Svelte's `$app/navigation` module lets us define a callback that is executed before a navigation change occurs. By calling `controller.abort()` inside this callback, we ensure that any ongoing fetch requests are canceled when the user navigates away from the current page.
+
+3. **Fetch Request Handling**:
+   - Inside the `fetchData` function, we use a `try-catch` block to handle any errors, including abort errors. When the fetch request is aborted, it throws an `AbortError`, which we catch and handle appropriately by logging a message or performing cleanup actions if necessary.
+
+###### Summary
+
+By using `AbortController` in combination with SvelteKit's navigation hooks, you can effectively manage and cancel ongoing fetch requests when a component unmounts or when the user navigates to a different page. This approach prevents memory leaks and ensures that your application remains performant by not holding onto unnecessary resources longer than needed.
+
+</SummaryDetails>
 
 ### Pitfalls to Watch Out For
 
