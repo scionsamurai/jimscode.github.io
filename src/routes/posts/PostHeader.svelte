@@ -11,7 +11,9 @@
 	<source srcset={meta.image} type="image/png" class="banner-image" />
 	<img src="" alt={meta.banner_alt} class="banner-image" />
 </picture>
+{#if meta.published}
 <p>Published: {formatDate(meta.date)}</p>
+{/if}
 <div class="categories" data-sveltekit-preload-data="false">
 	{#each meta.categories as category}
 		<a class="surface-4" href="/categories/{category}">#{category}</a>
