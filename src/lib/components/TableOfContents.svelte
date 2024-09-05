@@ -91,10 +91,21 @@
 		tocElement.appendChild(progressBarElement)
 	}
 </script>
+<script context="module">
+	let toc_expanded = localStorage.getItem('toc_expanded') === 'true';
+
+	document.documentElement.setAttribute('toc_expanded', toc_expanded);
+
+	function toggleTOC(event) {
+		toc_expanded = event.target.checked;
+		localStorage.setItem('toc_expanded', toc_expanded);
+		document.documentElement.setAttribute('toc_expanded', toc_expanded);
+	}
+</script>
 
 <label for="toggle_sidebar_on_mobile" class="mobile-toc-button">Table of Contents</label>
 <input type="checkbox" id="toggle_sidebar_on_mobile" class="nodisplay" />
-<input type="checkbox" id="sidebar_checkbox" class="nodisplay" />
+<input type="checkbox" id="sidebar_checkbox" class="nodisplay" checked={toc_expanded} on:change={toggleTOC} />
 <div class="headers">
 	<div role="navigation" id="toc">
 		<div class="flex space-around toc-top">
