@@ -13,6 +13,9 @@ banner_alt: "alt text"
 show_banner: true
 comments: true
 published: false
+needs_added:
+  - Section on using load function for data.
+  - Subsection on invalidating data in the load function and then soft navigating back to page with goto function
 ---
 
 In the world of modern web development, managing data flow effectively is crucial for building responsive, scalable, and maintainable applications. SvelteKit, with its powerful and flexible architecture, offers developers a variety of tools and patterns to handle data management elegantly. Whether you're new to SvelteKit or looking to optimize your existing applications, understanding these data flow mechanisms is key to unlocking the full potential of your projects.
