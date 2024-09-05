@@ -33,18 +33,18 @@ By the end of this guide, you’ll have a fully automated backup system in place
 <script>
     import SummaryDetails from '$lib/components/SummaryDetails.svelte'
 </script>
-<SummaryDetails summary="Can I restore my Cloudflare D1 database to a previous state using the Time Travel feature?">
+<SummaryDetails summary="Can I restore my Cloudflare D1 database to a previous state using the Time Travel feature?" h2=true>
 
 Cloudflare D1 databases have a feature called Time Travel that allows you to restore your database to any point within the last 30 days, but it does not provide direct downloads of backups[1][2]. Here's what you need to know about Time Travel and backups for D1 databases:
 
-## Time Travel Feature
+**Time Travel Feature**
 
 - Time Travel is D1's approach to backups and point-in-time recovery[1].
 - It allows you to restore a database to any minute within the last 30 days[1][2].
 - Time Travel is always on and does not need to be enabled manually[2].
 - It automatically creates bookmarks on your behalf, so you don't need to manually trigger or remember to initiate a backup[2].
 
-## Restoring a Database
+**Restoring a Database**
 
 While you can't directly download a Time Travel backup, you can restore your database to a specific point in time:
 
@@ -57,13 +57,13 @@ For example:
 wrangler d1 time-travel my-database --before-timestamp=1683570504
 ```
 
-## Important Notes
+**Important Notes**
 
 - Time Travel does not allow you to clone or fork an existing database to a new copy yet, though this feature is planned for the future[2].
 - You can restore a database back to a point in time up to 30 days in the past (Workers Paid plan) or 7 days (Workers Free plan)[2].
 - Database history and restoring a database incur no additional costs[2].
 
-## Alternative Backup Methods
+**Alternative Backup Methods**
 
 If you need a downloadable backup, you might consider:
 
@@ -82,7 +82,6 @@ Citations:
 [5] https://developers.cloudflare.com/d1/reference/backups/
 [6] https://blog.cloudflare.com/building-d1-a-global-database/
 [7] https://developers.cloudflare.com/d1/build-with-d1/import-export-data/
-[8] https://developers.cloudflare.com/d1/platform/alpha-migration/
 
 </SummaryDetails>
 

@@ -49,6 +49,7 @@
 			}
 		}
 	}
+	let toc_expanded = false;
 	onMount(() => {
 		addProgressBar()
 		addHeaderListeners()
@@ -70,11 +71,21 @@
 			if (element) observer.observe(element)
 		})
 
+		toc_expanded = localStorage.getItem('toc_expanded') === 'true';
+
+		document.documentElement.setAttribute('toc_expanded', toc_expanded);
+
 		return () => {
 			observer.disconnect()
 		}
 	})
 
+
+	function toggleTOC(event) {
+		toc_expanded = event.target.checked;
+		localStorage.setItem('toc_expanded', toc_expanded);
+		document.documentElement.setAttribute('toc_expanded', toc_expanded);
+	}
 	function updateProgress() {
 		const currentIndex = flattenedHeaders.findIndex((header) => header.id === activeHeader)
 		progress = ((currentIndex + 1) / flattenedHeaders.length) * 100
@@ -89,17 +100,6 @@
 		progressBarElement.className = 'toc-progress-bar'
 		progressBarElement.innerHTML = '<div class="toc-progress"></div>'
 		tocElement.appendChild(progressBarElement)
-	}
-</script>
-<script context="module">
-	let toc_expanded = localStorage.getItem('toc_expanded') === 'true';
-
-	document.documentElement.setAttribute('toc_expanded', toc_expanded);
-
-	function toggleTOC(event) {
-		toc_expanded = event.target.checked;
-		localStorage.setItem('toc_expanded', toc_expanded);
-		document.documentElement.setAttribute('toc_expanded', toc_expanded);
 	}
 </script>
 
