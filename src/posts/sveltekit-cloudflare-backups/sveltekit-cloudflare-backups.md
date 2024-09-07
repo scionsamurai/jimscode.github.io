@@ -98,31 +98,119 @@ Before we dive into the code, let's briefly discuss why a dedicated backup API i
 3. **Disaster Recovery**: In case of system failures, backups allow you to quickly restore your application to a working state.
 4. **Version Control**: Backups can serve as snapshots of your database at different points in time, useful for tracking changes or reverting to previous states.
 
-### Creating the Backup API Route
+Certainly! I'll update the section with the new considerations and make it flow more naturally as a blog post. Here's the revised version:
 
-Let's start by creating our backup API route. We'll place this in `src/routes/api/backup/+server.js`. This route will handle POST requests to trigger the backup process.
+## Creating a Secure Backup API Route for Your SvelteKit App
 
-Here's the full code for our backup API route:
+Hey there, fellow coders! Today, we're going to dive into creating a secure backup system for your SvelteKit application. We'll be using Cloudflare's D1 database and R2 storage, along with some nifty authentication to keep things locked down. Let's get started!
+
+First things first, we need to set up our backup API route. Create a new file at `src/routes/api/backup/+server.js`. This is where the magic happens!
+
+
 
 ```javascript
+// src/lib/TOTP.js
+export class TOTP {
+    constructor(secret, digits = 6, step = 30) {
+      this.secret = secret;
+      this.digits = digits;
+      this.step = step;
+    }
+  
+    async generateTOTP(time) {
+      let counter = Math.floor(time / this.step);
+      const data = new Uint8Array(8);
+      for (let i = 7; i >= 0; i--) {
+        data[i] = counter & 0xff;
+        counter >>= 8;
+      }
+  
+      const key = await crypto.subtle.importKey(
+        'raw',
+        this.base32ToUint8Array(this.secret),
+        { name: 'HMAC', hash: 'SHA-1' },
+        false,
+        ['sign']
+      );
+  
+      const signature = await crypto.subtle.sign('HMAC', key, data);
+      const dataView = new DataView(signature);
+      const offset = dataView.getUint8(19) & 0xf;
+      const otp = dataView.getUint32(offset) & 0x7fffffff;
+  
+      return (otp % Math.pow(10, this.digits)).toString().padStart(this.digits, '0');
+    }
+  
+    base32ToUint8Array(base32) {
+      const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+      let bits = 0;
+      let value = 0;
+      let index = 0;
+      const output = new Uint8Array(Math.ceil(base32.length * 5 / 8));
+  
+      for (let i = 0; i < base32.length; i++) {
+        value = (value << 5) | alphabet.indexOf(base32[i]);
+        bits += 5;
+        if (bits >= 8) {
+          output[index++] = (value >>> (bits - 8)) & 255;
+          bits -= 8;
+        }
+      }
+  
+      return output;
+    }
+  
+    async verify(token, time = Date.now()) {
+      const currentTime = Math.floor(time / 1000);
+      for (let i = -1; i <= 1; i++) {
+        const currentToken = await this.generateTOTP(currentTime + i * this.step);
+        if (token === currentToken) return true;
+      }
+      return false;
+    }
+  }
+  
+```
+
+
+Now, let's write our backup API code. Don't worry, we'll break it down step by step:
+
+```javascript
+// src/routes/api/backup/+server.ts
 import { json } from '@sveltejs/kit';
-import { totp } from 'otplib';
+import { TOTP_SECRET } from '$env/static/private';
+import { TOTP } from '$lib/TOTP';  // Adjust the import path as needed
 
-const SHARED_SECRET = process.env.TOTP_SECRET;
+export async function POST({ request, platform, locals }) {
+  const session = await locals.getSession();
+  const isCloudflarePages = session?.dev === 'true';
 
-export async function POST({ request, platform }) {
+  // Use the appropriate way to access the secret based on the environment
+  const secret = isCloudflarePages ? platform.env.TOTP_SECRET : TOTP_SECRET;
+
   if (!platform) {
     return json({ error: 'Not running on Cloudflare Pages' }, { status: 400 });
   }
 
   const authHeader = request.headers.get('authorization');
   if (!authHeader) {
-    return json({ error: 'Unauthorized' }, { status: 401 });
+    return json({ error: 'Unauthorized1' }, { status: 401 });
   }
-
   const token = authHeader.split(' ')[1];
-  if (!totp.check(token, SHARED_SECRET)) {
-    return json({ error: 'Unauthorized' }, { status: 401 });
+  // console.log('Received token:', token);
+  
+  const totp = new TOTP(secret);
+  // console.log('Current time:', Math.floor(Date.now() / 1000));
+
+  // Generate a token on the server side for comparison
+  const serverGeneratedToken = await totp.generateTOTP(Math.floor(Date.now() / 1000));
+  // console.log('Server generated token:', serverGeneratedToken);
+  
+  const isValid = await totp.verify(token);
+  // console.log('Token valid:', isValid);
+  
+  if (!isValid) {
+    return json({ error: 'Unauthorized: Invalid token' }, { status: 401 });
   }
 
   await backupDatabase(platform.env);
@@ -138,12 +226,12 @@ async function backupDatabase(env) {
     try {
       const data = await env.DB.prepare(`SELECT * FROM ${table}`).all();
       if (data.results.length > 0) {
-        const csv = convertToCSV(data.results);
-        await storeInR2(env, `${table}_${new Date().toISOString()}.csv`, csv);
+        const sqlInserts = convertToSQLInsertStatements(table, data.results);
+        await storeInR2(env, `${table}_${new Date().toISOString()}.sql`, sqlInserts);
       }
     } catch (error) {
       console.error(`Error backing up table ${table}:`, error);
-      throw error;  // Rethrow error to handle it in the POST handler
+      throw error;
     }
   }
 }
@@ -153,62 +241,94 @@ async function storeInR2(env, filename, content) {
     await env.MY_BUCKET.put(filename, content);
   } catch (error) {
     console.error(`Error storing file ${filename} in R2:`, error);
-    throw error;  // Ensure errors are propagated to be handled in the POST handler
+    throw error;
   }
 }
 
-function convertToCSV(arr) {
-  if (arr.length === 0) return '';
-  const array = [Object.keys(arr[0])].concat(arr);
-  return array.map(row => {
-    return Object.values(row).map(val => {
-      if (val === null || val === undefined) return '""';
-      return `"${String(val).replace(/"/g, '""')}"`;
-    }).join(',');
-  }).join('\n');
+function convertToSQLInsertStatements(tableName, data) {
+  let sqlStatements = '';
+  for (const row of data) {
+    const columns = Object.keys(row).join(', ');
+    const values = Object.values(row).map(val => 
+      val === null ? 'NULL' : `'${String(val).replace(/'/g, "''")}'`
+    ).join(', ');
+    sqlStatements += `INSERT INTO ${tableName} (${columns}) VALUES (${values});\n`;
+  }
+  return sqlStatements;
 }
 ```
 
-Now, let's break down the key components of this API route:
+Alright, let's break this down:
 
-#### TOTP Authentication
+1. **Environment Setup**: We're using `$env/static/private` to access our environment variables. This works great both in development and when deployed to Cloudflare Pages.
 
-Security is paramount when it comes to backup operations. We use TOTP authentication to ensure that only authorized requests can trigger a backup. Here's how it works:
+2. **Authentication**: We're using Time-based One-Time Password (TOTP) authentication. It's like having a super-secret handshake that changes every 30 seconds!
 
-1. We expect an `authorization` header in the incoming request.
-2. The header should contain a TOTP token generated using a shared secret.
-3. We validate this token using the `otplib` library.
+3. **Database Backup**: Our `backupDatabase` function goes through each table, grabs all the data, and turns it into SQL INSERT statements. It's like taking a snapshot of your database!
 
-This approach provides a time-sensitive, one-time use token for each backup request, significantly enhancing security compared to a static API key.
+4. **R2 Storage**: We're using Cloudflare's R2 storage to keep our backups safe and sound. Think of it as a secure cloud locker for your data.
 
-#### Database Backup Logic
+5. **SQL Generation**: To make it easy to restore your data we will create SQL INSERT statements.
 
-Once authenticated, the `backupDatabase` function is called. This function:
+Now, you might be wondering, "How do I set this up on my local machine for testing?" Great question! Here's how:
 
-1. Iterates over a predefined list of database tables.
-2. Retrieves all data from each table using a simple SELECT query.
-3. Converts the data to CSV format.
-4. Stores the CSV data in Cloudflare R2 storage.
+1. Create a `.env` file in your project root (if you haven't already).
+2. Add this line to your `.env` file:
+   ```
+   TOTP_SECRET=your_generated_secret_here
+   ```
+   Replace `your_generated_secret_here` with a real secret. You can generate one by running this in your terminal:
+   ```
+   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+   ```
+3. Don't forget to add `.env` to your `.gitignore` file. We don't want to accidentally share our secrets!
 
-#### CSV Conversion
+Remember, when you deploy to Cloudflare Pages, you'll need to add the `TOTP_SECRET` as an environment variable in your Cloudflare Pages project settings.
 
-The `convertToCSV` function handles the conversion of our database records to CSV format. It's designed to handle special cases such as:
 
-- Escaping quotes within data fields
-- Properly representing null or undefined values
-- Ensuring consistent formatting across all rows
+## Setting Up R2 and Environment Variables
 
-#### Storing Backups in R2
+Before our backup system can work, we need to set up Cloudflare R2 and configure some environment variables. Here's how:
 
-Finally, the `storeInR2` function takes care of storing our CSV files in Cloudflare R2. Each file is named using the table name and current timestamp, ensuring unique filenames for each backup.
+1. **Set up R2 at Cloudflare:**
+   - Log into your Cloudflare account and go to the R2 section.
+   - Click "Create bucket" and give it a name, like "my-app-backups".
+   - Note down the bucket name, you'll need it later.
 
-### Setting Up Environment Variables
+2. **Update your `wrangler.toml` file:**
+   Add these lines to your `wrangler.toml`:
 
-To make this API route functional, you'll need to configure a few environment variables in your Cloudflare Pages project:
+   ```toml
+   [[r2_buckets]]
+   binding = "MY_BUCKET"
+   bucket_name = "my-app-backups"
 
-- `TOTP_SECRET`: The shared secret used for TOTP authentication.
-- `DB`: Your D1 database binding (configured in `wrangler.toml`).
-- `MY_BUCKET`: Your R2 bucket binding (also configured in `wrangler.toml`).
+   [[d1_databases]]
+   binding = "DB"
+   database_name = "your-database-name"
+   database_id = "your-database-id"
+   ```
+
+   Replace "my-app-backups" with your actual bucket name, and fill in your database details.
+
+3. **Generate a TOTP secret:**
+   Run this Node.js command in your terminal:
+
+   ```
+   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+   ```
+
+   This will generate a random string to use as your TOTP secret.
+
+4. **Set up environment variables:**
+   - Go to your Cloudflare Pages project settings.
+   - Find the "Environment variables" section.
+   - Add a new variable named `TOTP_SECRET` and paste in the secret you generated.
+
+Now your backup API is set up and ready to go! Remember, keeping your TOTP_SECRET safe is crucial - it's like a password for your backup system.
+
+In the next part of our series, we'll look at how to automate this backup process so you don't have to manually trigger it each time.
+
 
 ### Testing Your Backup API
 
@@ -221,110 +341,33 @@ Before integrating this into an automated workflow, it's crucial to test the API
 Here's an example using curl:
 
 ```
-TOKEN=$(node -e "console.log(require('otplib').totp.generate(process.env.TOTP_SECRET))")
-curl -X POST https://your-site.com/api/backup \
+export TOKEN=$(node genTotp.js)
+curl -X POST http://localhost:5173/api/backup \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer $TOKEN" \
      -d '{"action": "backup"}'
 ```
 
-### Conclusion
+To utilize this curl command we will need to ensure we have the script below setup, and we will need to export our  TOTP_SECRET that we generated earlier so that this script has access to it.
+
+```javascript
+// genTotp.js
+import {TOTP} from './src/lib/TOTP.js';  // ES6 import
+const secret = process.env.TOTP_SECRET;
+const totp = new TOTP(secret);
+
+totp.generateTOTP(Math.floor(Date.now() / 1000)).then(token => {
+  console.log(token);
+});
+```
+
+```
+export TOTP_SECRET=the-totp-secret-we-generated-earlier-and-added-to-env-file
+```
 
 With this API route in place, you now have a secure, efficient way to trigger backups of your SvelteKit application's database. This lays the groundwork for implementing automated, scheduled backups, which we'll cover in the next section of this series.
 
 Remember, while this setup provides a solid foundation, always consider your specific security requirements and data regulations when implementing backup solutions in production environments.
-
-## Mastering CSV Export: Navigating Formatting Challenges
-
-When exporting data from your SvelteKit application, CSV (Comma-Separated Values) format often stands out as a go-to choice. Its simplicity and universal compatibility make it an attractive option. However, creating a truly robust CSV export function comes with its own set of challenges. Let's explore these challenges and how to overcome them effectively.
-
-### The Complexity Behind CSV Simplicity
-
-At first glance, CSV seems straightforward - just separate values with commas, right? But as your data grows more complex, you'll encounter several hurdles:
-
-1. **Handling Special Characters**: Commas and line breaks within data fields can disrupt the CSV structure.
-2. **Dealing with Quotes**: When data contains quotes, it requires special handling to maintain CSV integrity.
-3. **Representing Null Values**: Deciding how to represent null or undefined values consistently is crucial.
-
-Let's dive deeper into each of these challenges.
-
-#### The Comma Conundrum
-
-Consider a scenario where you're exporting user data, including addresses. An address like "123 Main St, Apt 4, Cityville" would break a simple comma-separated format. To solve this, we enclose such fields in quotes:
-
-```
-Name,Address,Phone
-John Doe,"123 Main St, Apt 4, Cityville",555-1234
-```
-
-#### Quoting the Quotes
-
-But what if the data itself contains quotes? Imagine a user comment:
-
-```
-"I love this app," said Jane. "It's so user-friendly!"
-```
-
-To handle this, we need to escape the internal quotes by doubling them:
-
-```
-User,Comment
-Jane,"""I love this app,"" said Jane. ""It's so user-friendly!"""
-```
-
-#### Null and Void
-
-Lastly, how should we represent null or undefined values? A common approach is to use empty quoted strings:
-
-```
-Name,Age,Email
-John Doe,30,johndoe@example.com
-Jane Smith,,"janesmith@example.com"
-```
-
-### Crafting a Robust CSV Converter
-
-To address these challenges, we've developed a custom `convertToCSV` function. This function handles:
-
-- Proper quoting of fields
-- Escaping of quotes within data
-- Consistent representation of null/undefined values
-
-Here's the function:
-
-```javascript
-function convertToCSV(arr) {
-  if (arr.length === 0) return '';
-  const array = [Object.keys(arr[0])].concat(arr);
-  return array.map(row => {
-    return Object.values(row).map(val => {
-      if (val === null || val === undefined) return '""';
-      return `"${String(val).replace(/"/g, '""')}"`;
-    }).join(',');
-  }).join('\n');
-}
-```
-
-This function does several key things:
-
-1. Handles empty arrays gracefully
-2. Creates a header row from object keys
-3. Wraps all values in quotes
-4. Escapes existing quotes in the data
-5. Represents null/undefined values as empty quoted strings
-
-### Why Proper Formatting Matters
-
-Investing time in proper CSV formatting pays off in several ways:
-
-1. **Data Integrity**: Ensures accurate interpretation of data by other systems.
-2. **Resilience**: Handles a wide variety of data types without breaking.
-3. **Interoperability**: Improves compatibility with various tools and platforms.
-4. **Error Reduction**: Minimizes issues during data import or analysis.
-
-By addressing these formatting challenges, you're not just creating a CSV file - you're ensuring that your data remains reliable and usable, regardless of its destination or purpose.
-
-In the next section, we'll explore how to integrate this robust CSV conversion into your backup system, ensuring your data exports are always clean, consistent, and ready for action.
 
 ## Automating Backups with GitHub Actions: Your Personal Data Guardian
 
@@ -394,7 +437,7 @@ Our job is named "backup" (creative, I know), and it's going to run on the lates
 
 2. **Setup Node.js**: We're setting up Node.js because, well, we love JavaScript!
 
-3. **Install otplib**: This is our secret weapon for generating those fancy TOTP tokens.
+3. **Add TOTP script**: This is our secret weapon for generating those fancy TOTP tokens.
 
 4. **Generate TOTP and Trigger Backup**: This is where the magic happens. We generate a TOTP token and use it to authenticate our backup request. It's like having a secret handshake with your server.
 
