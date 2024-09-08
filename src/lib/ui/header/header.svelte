@@ -64,7 +64,7 @@
 	.corner-color {
 		min-height: 20rem;
 		width: 100%;
-		z-index: -1;
+		z-index: 1; // needs to be greater than zero to avoid being covered by parent background
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -76,7 +76,8 @@
 		margin-inline: auto;
 		padding: 1rem;
 		border-radius: 1rem;
-		z-index: 20;
+		z-index: 2;
+    	position: relative;
 		transition:
 			background-color 0.3s ease,
 			color 0.3s ease;

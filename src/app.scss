@@ -112,9 +112,11 @@ body {
 html:has([id='day']:checked) .share-links a:hover {
 	--brand: blue;
 }
-html:has([id='day']:checked) .main-content {
-	--background-color-second: var(--background);
-}
+// html:has([id='day']:checked) {
+// 	.main-content {
+// 		--background-color-second: var(--background);
+// 	}
+// }
 
 [id='day']:not(:checked) ~ .starfield {
 	position: fixed;
@@ -182,6 +184,7 @@ body:not(.initial-load) [id='night']:checked ~ .starfield {
 		background-color: black;
 	}
 }
+
 
 body:not(.initial-load) [id='day']:checked ~ .starfield {
 	position: fixed;
