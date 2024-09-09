@@ -1,7 +1,7 @@
 ---
-title: "Back up Cloudflare D1 to SQL File in R2 with Sveltekit"
-description: Description
-date: 'Sat, 04 Aug 2024 12:37:03 GMT'
+title: "Backup Cloudflare D1 to SQL File in R2 with Sveltekit"
+description: "Elevate your SvelteKit and Cloudflare Pages application to the next level with our in-depth guide on implementing secure, automated backups. Building on our previous tutorial on deployment and OAuth, this post walks you through creating a bulletproof backup system using Cloudflare's powerful tools. Discover how to safeguard your users' data and ensure your app's reliability with step-by-step instructions"
+date: 'Mon, 09 Sep 2024 04:27:59 GMT'
 categories:
   - sveltekit
   - cloudflare
@@ -9,16 +9,13 @@ categories:
   - r2
   - backups
 author_id: 1
-image: /images/###########-banner-png.png
-webp_image: /images/###########-banner.webp
-image_thumb: /images/###########-banner-png_thumb.png
-banner_alt: "alt text"
+image: /images/cloudflare-backups-banner-png.png
+webp_image: /images/cloudflare-backups-banner.webp
+image_thumb: /images/cloudflare-backups-banner-png_thumb.png
+banner_alt: "Image of Svelte's S logo perched ontop of a cloudflare cloud"
 show_banner: true
 comments: true
-published: false
-needs_added:
-  - Needs to be tested
-  - Needs to be run through grammarly
+published: true
 ---
 
 ## Introduction
@@ -30,6 +27,8 @@ However, as your application evolves and manages increasingly critical data, it'
 In this post, we’ll build upon the foundation we established earlier by implementing an automated and secure backup process for your SvelteKit application. We'll be leveraging Cloudflare's R2 storage to store our backups and GitHub Actions to automate the process. To ensure that these backups are triggered securely, we'll employ TOTP (Time-based One-Time Password) authentication.
 
 By the end of this guide, you’ll have a fully automated backup system in place, safeguarding your data with regular, secure backups stored in the cloud—giving you peace of mind as your application continues to grow.
+
+The completed code can be viewed on [github](https://github.com/scionsamurai/auth-sveltekit-cloudflare-pages/tree/with-r2-backup).
 
 <script>
     import SummaryDetails from '$lib/components/SummaryDetails.svelte'
@@ -104,7 +103,7 @@ my-sveltekit-app/
 │   │   ├── +layout.svelte
 │   │   └── +layout.server.ts
 │   ├── lib/
-│   │   └── TOTP.ts                 # Create
+│   │   └── TOTP.js                 # Create
 │   ├── app.d.ts
 │   ├── app.html
 │   ├── auth.ts                     # Update
@@ -123,8 +122,8 @@ my-sveltekit-app/
 #### Key Files Breakdown:
 
 - `src/routes/api/backup/+server.ts`: The API route that handles database backups and interacts with Cloudflare R2 for storage.
-- `src/lib/TOTP.ts`: A custom utility file for handling TOTP (Time-based One-Time Password) verification, used for secure API access.
-- `genTotp.js`: A file for generating a TOTP token. Relies on 'TOTP.ts' file above, and TOTP_SECRET environment variable.
+- `src/lib/TOTP.js`: A custom utility file for handling TOTP (Time-based One-Time Password) verification, used for secure API access.
+- `genTotp.js`: A file for generating a TOTP token. Relies on 'TOTP.js' file above, and TOTP_SECRET environment variable.
 - `.github/workflows/backup.yml`: GitHub Actions workflow to automate backup operations.
 - `wrangler.toml`: Configuration for Cloudflare Workers and Pages, including environment variables for your application and R2 storage.
 
@@ -194,11 +193,6 @@ Before our backup system can work, we need to set up Cloudflare R2 and configure
    [[r2_buckets]]
    binding = "MY_BUCKET"
    bucket_name = "my-app-backups"
-
-   [[d1_databases]]
-   binding = "DB"
-   database_name = "your-database-name"
-   database_id = "your-database-id"
    ```
 
    Replace "my-app-backups" with your actual bucket name, and fill in your database details.
@@ -422,7 +416,7 @@ Now that we've implemented the `TOTP` class, it's important to test its function
 Here’s how you can write a test script for the `TOTP` class:
 
 ```javascript
-import { TOTP } from './TOTP.js';
+import { TOTP } from './src/lib/TOTP.js';
 
 const secret = 'JBSWY3DPEHPK3PXP';  // Example base32-encoded secret
 const totp = new TOTP(secret);
@@ -452,8 +446,12 @@ runTests();
 To run this test:
 
 1. Make sure Node.js is installed on your machine.
-2. Save the `TOTP.js` and the test script in the same directory.
+2. Save the script in the applications base directory.
 3. Run the test script with Node.js:
+
+```
+node TOTPTest.js
+```
 
 <SummaryDetails summary="The Complete TOTP Class">
 
@@ -661,7 +659,7 @@ export async function POST({ request, platform, locals }) {
 }
 ```
 
-<SummaryDetails summary="The Complete Endpoint">
+<SummaryDetails summary="The Complete Post Function">
 
 Here's how our complete `POST` function in `+server.ts` file looks:
 
@@ -742,11 +740,21 @@ This function takes an `env` parameter, which gives us access to our Cloudflare 
 For each table, we first want to get its schema. This will allow us to recreate the table structure during restoration:
 
 ```javascript
-const schemaResult = await env.DB.prepare(`SELECT sql FROM sqlite_master WHERE type='table' AND name=?`).bind(table).all();
-if (schemaResult.results.length > 0) {
-  const createTableStatement = schemaResult.results[0].sql;
-  backupContent += `DROP TABLE IF EXISTS ${table};\n`;
-  backupContent += `${createTableStatement};\n\n`;
+
+for (const table of tables) {
+    try {
+        const schemaResult = await env.DB.prepare(`SELECT sql FROM sqlite_master WHERE type='table' AND name=?`).bind(table).all();
+        if (schemaResult.results.length > 0) {
+            const createTableStatement = schemaResult.results[0].sql;
+            backupContent += `DROP TABLE IF EXISTS ${table};\n`;
+            backupContent += `${createTableStatement};\n\n`;
+        }
+
+        // next we'll fetch table data
+    } catch (error) {
+        console.error(`Error backing up table ${table}:`, error);
+        throw error;
+    }
 }
 ```
 
@@ -760,10 +768,19 @@ This code:
 Next, let's fetch the actual data from each table:
 
 ```javascript
-const data = await env.DB.prepare(`SELECT * FROM ${table}`).all();
-if (data.results.length > 0) {
-  backupContent += convertToSQLInsertStatements(table, data.results);
-  backupContent += '\n';
+for (const table of tables) {
+    try {
+        // retrieve table schema remains the same
+
+        const data = await env.DB.prepare(`SELECT * FROM ${table}`).all();
+        if (data.results.length > 0) {
+            backupContent += convertToSQLInsertStatements(table, data.results);
+            backupContent += '\n';
+        }
+    } catch (error) {
+        console.error(`Error backing up table ${table}:`, error);
+        throw error;
+    }
 }
 ```
 
@@ -921,28 +938,6 @@ async function backupDatabase(env) {
 }
 ```
 
-### Testing R2 Storage
-
-To test our R2 storage, we can add a simple retrieval function:
-
-```javascript
-async function retrieveFromR2(env, filename) {
-  try {
-    const object = await env.MY_BUCKET.get(filename);
-    if (object === null) {
-      console.log(`File ${filename} not found in R2`);
-      return null;
-    }
-    return await object.text();
-  } catch (error) {
-    console.error(`Error retrieving file ${filename} from R2:`, error);
-    throw error;
-  }
-}
-```
-
-You can call this function after your backup to verify that the file was stored correctly.
-
 With these implementations, we've now created a robust system for generating database backups and securely storing them in Cloudflare R2. This setup provides us with easily accessible, secure off-site backups of our entire database.
 
 ## Testing the Backup System
@@ -958,38 +953,23 @@ Assuming you've followed along from the previous post, you should already have y
 
 ### Executing a Backup
 
-Since the generated token is only valid for a short period of time, it is recommended to copy and execute all of the following commands together. This ensures that the export and curl commands are executed without delay.
+Let's simulate a backup scenario! To follow along, open two separate tabs or terminal windows. In the first window, navigate to your project's root directory and run `npm run dev:full` to start the development server.
 
-To trigger a backup we can run the commands below:
+Navigate to your project's root directory in the second window. For this window we'll need to grab that TOTP secret we generated earlier.  
 
-```
-export TOKEN=$(node genTotp.js)
-curl -X POST https://your-app.pages.dev/api/backup \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer $TOKEN" \
-     -d '{"action": "backup"}'
-```
+**Remember that TOTP secret?**
 
-Or the below commands if you are testing locally.
+Copy and paste the following command, replacing `the-totp-secret-we-generated-earlier` with your actual secret:
 
 ```
-export TOKEN=$(node genTotp.js)
-curl -X POST http://localhost:5173/api/backup \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer $TOKEN" \
-     -d '{"action": "backup"}'
+export TOTP_SECRET=the-totp-secret-we-generated-earlier
 ```
 
-This command:
-1. Generates a new TOTP token
-2. Sends a POST request to our backup endpoint
-3. Includes the token in the Authorization header
-
-To utilize this curl command we will need to ensure we have the script below setup, and we will need to export our  TOTP_SECRET that we generated earlier so that this script has access to it.
+Next, we'll need a handy script to generate a fresh TOTP token. Here's the script you can save as `genTotp.js`:
 
 ```javascript
 // genTotp.js
-import {TOTP} from './src/lib/TOTP.js';  // ES6 import
+import {TOTP} from './src/lib/TOTP.js';
 const secret = process.env.TOTP_SECRET;
 const totp = new TOTP(secret);
 
@@ -998,17 +978,51 @@ totp.generateTOTP(Math.floor(Date.now() / 1000)).then(token => {
 });
 ```
 
+**Time is of the essence!**
+
+Since TOTP tokens expire quickly, it's recommended to copy and execute all the following commands in rapid succession. This ensures the secret and token remain valid for the entire process.
+
+Ready to trigger a backup? Here's the magic spell:
+
 ```
-export TOTP_SECRET=the-totp-secret-we-generated-earlier
+export TOKEN=$(node genTotp.js)
+curl -X POST https://your-app.pages.dev/api/backup \\
+     -H "Content-Type: application/json" \\
+     -H "Authorization: Bearer $TOKEN" \\
+     -d '{"action": "backup"}'
 ```
 
-You should receive a success response if everything works correctly.
+This command performs three key actions:
+
+1. It generates a fresh TOTP token using `genTotp.js`.
+2. It sends a POST request to the `/api/backup` endpoint on your deployed application.
+3. It includes the generated token in the `Authorization` header to authenticate the request.
+
+If everything works as planned, you should see a successful response from the server!
+
+**Testing Locally?**
+
+No worries, we've got you covered! Use this command sequence instead if you're running your application locally:
+
+```
+export TOKEN=$(node genTotp.js)
+curl -X POST http://localhost:5173/api/backup \\
+     -H "Content-Type: application/json" \\
+     -H "Authorization: Bearer $TOKEN" \\
+     -d '{"action": "backup"}'
+```
+
+This approach achieves the same functionality, just targeting your local development environment.
 
 ### Verifying the Backup File in R2
 
-**The Fastest Verification:**
+**A Quick Visual Check:**
 
-For a quick visual check, log into your Cloudflare dashboard and head to the Workers section. In the "Storage" area, find the R2 bucket where your backups are stored. You’ll see a list of all the files inside. New backups will appear there, confirming they've made it to R2 safely. You can even download them directly from the dashboard if needed.
+For a fast and easy confirmation of a test from cloudflare pages, log into your Cloudflare dashboard and navigate to the Workers section. In the "Storage" area, locate the R2 bucket dedicated to your backups. A quick glance at the bucket's contents will reveal any newly uploaded backup files, indicating a successful transfer. If you need to download the files for further inspection or verification, you can do so directly from the dashboard.
+
+**Local Testing Tip:**
+
+If you're working locally, you can verify backup creation by checking the `.wrangler/state/v3/r2/[r2-name-binding]/blobs` folder. New backup files will be stored here, providing a convenient way to confirm their existence and inspect their contents.
 
 To programatically ensure our backup was stored correctly in R2, let's add a simple retrieval function to our API:
 
@@ -1028,11 +1042,19 @@ async function listBackups(env) {
 }
 ```
 
-Now you can list your backups:
+Now with this command you can list your backups:
 
 ```
 export TOKEN=$(node genTotp.js)
-curl -X GET https://your-app.pages.dev/api/backup \
+curl -X GET https://your-app.pages.dev/api/backup \\
+     -H "Authorization: Bearer $TOKEN"
+```
+
+Or with this command if you are testing locally:
+
+```
+export TOKEN=$(node genTotp.js)
+curl -X GET http://localhost:5173/api/backup \\
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -1044,6 +1066,7 @@ To verify the contents of a backup, let's add another endpoint to retrieve a spe
 
 ```javascript
 // In src/routes/api/backup/[filename]/+server.ts
+import { json } from '@sveltejs/kit';
 
 export async function GET({ params, platform, locals }) {
   // Add authentication here
@@ -1070,7 +1093,16 @@ async function retrieveFromR2(env, filename) {
 Now you can retrieve and inspect a specific backup file:
 
 ```
-curl -X GET https://your-app.pages.dev/api/backup/your_backup_filename.sql \
+export TOKEN=$(node genTotp.js)
+curl -X GET https://your-app.pages.dev/api/backup/your_backup_filename.sql \\
+     -H "Authorization: Bearer $TOKEN"
+```
+
+Or with these commands if running locally:
+
+```
+export TOKEN=$(node genTotp.js)
+curl -X GET http://localhost:5173/api/backup/your_backup_filename.sql \\
      -H "Authorization: Bearer $TOKEN"
 ```
 
@@ -1115,16 +1147,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20.13.1'
 
       - name: Generate TOTP and Trigger Backup
         env:
           TOTP_SECRET: ${{ secrets.TOTP_SECRET }}
         run: |
           TOKEN=$(node genTotp.js)
-          curl -X POST https://your-app.pages.dev/api/backup \
-          -H "Content-Type: application/json" \
-          -H "Authorization: Bearer $TOKEN" \
+          curl -X POST https://your-app.pages.dev/api/backup \\
+          -H "Content-Type: application/json" \\
+          -H "Authorization: Bearer $TOKEN" \\
           -d '{"action": "backup"}'
 ```
 
@@ -1158,7 +1190,7 @@ To test your automated backup:
 
 By implementing this automated backup system, you've significantly improved your data protection strategy. Your SvelteKit app on Cloudflare now has regular, automated backups, ensuring you always have recent data to fall back on if needed.
 
-## Security Best Practices
+## Security Best Practices and Next Steps
 
 When it comes to backups, security is paramount. Your backups contain sensitive data, and protecting them is just as important as protecting your live database. Let's explore some key security best practices for your backup system.
 
@@ -1182,96 +1214,6 @@ When it comes to backups, security is paramount. Your backups contain sensitive 
 2. **Secret Rotation**: Regularly rotate your TOTP secret. 
 
 3. **Secure Storage**: When storing the TOTP secret in Cloudflare, use encrypted environment variables.
-
-### Encryption at Rest
-
-While Cloudflare R2 provides encryption at rest, you can add an extra layer of security by encrypting your backups before storage. Here's how you can do this using the Web Crypto API, which is available in the Cloudflare Workers environment:
-
-```javascript
-async function encryptBackup(data, encryptionKey) {
-  // Convert the encryption key from hex to ArrayBuffer
-  const keyData = new Uint8Array(encryptionKey.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
-  
-  // Import the key
-  const key = await crypto.subtle.importKey(
-    "raw",
-    keyData,
-    { name: "AES-GCM" },
-    false,
-    ["encrypt"]
-  );
-
-  // Generate a random IV
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-
-  // Encrypt the data
-  const encryptedData = await crypto.subtle.encrypt(
-    { name: "AES-GCM", iv: iv },
-    key,
-    new TextEncoder().encode(data)
-  );
-
-  // Combine IV and encrypted data
-  const result = new Uint8Array(iv.length + encryptedData.byteLength);
-  result.set(iv);
-  result.set(new Uint8Array(encryptedData), iv.length);
-
-  return result;
-}
-
-// Use this function before storing in R2
-async function encryptAndStoreBackup(env, filename, backupContent) {
-  const encryptionKey = env.ENCRYPTION_KEY; // 32-byte hex string
-  const encryptedData = await encryptBackup(backupContent, encryptionKey);
-  await env.MY_BUCKET.put(filename, encryptedData);
-}
-```
-
-To use this:
-
-1. Generate a secure encryption key (32 bytes, represented as a 64-character hex string) and store it as an environment variable `ENCRYPTION_KEY`.
-2. Call `encryptAndStoreBackup` instead of directly storing the backup in R2.
-
-For decryption during restore operations:
-
-```javascript
-async function decryptBackup(encryptedData, encryptionKey) {
-  // Convert the encryption key from hex to ArrayBuffer
-  const keyData = new Uint8Array(encryptionKey.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
-  
-  // Import the key
-  const key = await crypto.subtle.importKey(
-    "raw",
-    keyData,
-    { name: "AES-GCM" },
-    false,
-    ["decrypt"]
-  );
-
-  // Extract IV and encrypted content
-  const iv = encryptedData.slice(0, 12);
-  const data = encryptedData.slice(12);
-
-  // Decrypt the data
-  const decryptedData = await crypto.subtle.decrypt(
-    { name: "AES-GCM", iv: iv },
-    key,
-    data
-  );
-
-  return new TextDecoder().decode(decryptedData);
-}
-
-async function retrieveAndDecryptBackup(env, filename) {
-  const encryptedData = await env.MY_BUCKET.get(filename);
-  const encryptionKey = env.ENCRYPTION_KEY;
-  return await decryptBackup(await encryptedData.arrayBuffer(), encryptionKey);
-}
-```
-
-This approach uses AES-GCM encryption, which is widely recommended for its security and performance. It's compatible with the Cloudflare Workers environment and provides a strong additional layer of protection for your backups.
-
-Remember to securely manage your encryption key. If you lose the key, you won't be able to decrypt your backups!
 
 ### Access Control
 
@@ -1317,32 +1259,6 @@ Remember to securely manage your encryption key. If you lose the key, you won't 
    ```
    npm audit
    ```
-
-### Data Minimization
-
-Only backup what you absolutely need. If your database contains sensitive information that isn't necessary for backups, consider excluding it:
-
-```javascript
-async function backupDatabase(env) {
-  const tables = ['users', 'posts', 'comments'];
-  let backupContent = '';
-
-  for (const table of tables) {
-    if (table === 'users') {
-      // Exclude sensitive fields from users table
-      const data = await env.DB.prepare('SELECT id, username, email FROM users').all();
-      backupContent += convertToSQLInsertStatements('users', data.results);
-    } else {
-      // Backup other tables normally
-      const data = await env.DB.prepare(`SELECT * FROM ${table}`).all();
-      backupContent += convertToSQLInsertStatements(table, data.results);
-    }
-  }
-
-  return backupContent;
-}
-```
-
 By implementing these security best practices, you're not just creating backups; you're creating a secure, robust system that protects your data at every step of the process. Remember, security is an ongoing process. Regularly review and update your security measures to stay ahead of potential threats.
 
 ## Conclusion
@@ -1355,10 +1271,6 @@ Let's recap the key points we've explored:
 2. We created a comprehensive backup function that interacts with Cloudflare D1 to extract and format our data.
 3. We leveraged Cloudflare R2 for secure and efficient storage of our backups.
 4. We automated our backup process using GitHub Actions, ensuring regular and consistent backups.
-5. We explored various performance optimization techniques to handle growing databases efficiently.
-6. We discussed important compliance and data governance considerations to protect our users and our business.
-
-Remember, a backup system is only as good as its ability to restore data when needed. Regularly test your restore process to ensure it works as expected. As your application evolves, so too should your backup strategy. Continuously monitor, test, and improve your system to keep pace with your growing needs.
 
 Building a robust backup system is a critical step in ensuring the reliability and trustworthiness of your SvelteKit application. By implementing the strategies and best practices outlined in this guide, you're not just protecting your data – you're safeguarding your users' trust and your application's future.
 
