@@ -1293,13 +1293,8 @@ To further your knowledge and stay up-to-date with the technologies and concepts
 - [TOTP RFC](https://datatracker.ietf.org/doc/html/rfc6238): The official RFC for Time-Based One-Time Password Algorithm.
 - [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/): Excellent resource for web application security best practices.
 
-### Database Backup Best Practices
-- [Database Backup Security Best Practices](https://www.digitalocean.com/community/tutorials/database-backup-security-best-practices): A comprehensive guide by DigitalOcean.
-- [SQL Backup and Restore](https://www.sqlshack.com/sql-backup-and-restore/): In-depth articles on SQL backup strategies.
-
 ### Data Protection and Compliance
 - [General Data Protection Regulation (GDPR)](https://gdpr.eu/): Official website for GDPR information.
-- [California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa): Official information on CCPA compliance.
 
 ### GitHub Actions
 - [GitHub Actions Documentation](https://docs.github.com/en/actions): Learn more about automating your workflows with GitHub Actions.
