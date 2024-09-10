@@ -20,7 +20,7 @@ published: true
 
 ## Introduction
 
-In our previous post, we delved into setting up authentication in a SvelteKit application using GitHub OAuth, hosted on Cloudflare Pages with a D1 database. This setup provided a robust foundation for securing user access to your application, integrating a seamless authentication flow with a database-backed session management system.
+In our [previous post](https://www.jimscode.blog/posts/cloudflare-d1-oauth), we delved into setting up authentication in a SvelteKit application using GitHub OAuth, hosted on Cloudflare Pages with a D1 database. This setup provided a robust foundation for securing user access to your application, integrating a seamless authentication flow with a database-backed session management system.
 
 However, as your application evolves and manages increasingly critical data, it's essential to ensure that your database is not only functional but also securely backed up. Regular backups are a crucial part of maintaining data integrity and ensuring that your application can recover from unexpected incidents, such as data corruption or accidental deletions.
 

@@ -5,6 +5,7 @@ date: 'Sat, 04 Aug 2024 12:37:03 GMT'
 categories:
   - sveltekit
   - oauth
+  - d1
   - cloudflare
 author_id: 1
 image: /images/cloudflare-d1-oauth-banner-png.png
