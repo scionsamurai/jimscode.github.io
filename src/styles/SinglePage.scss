@@ -17,3 +17,16 @@
         width: calc(90% - 2rem);
     }
 }
+:global(.header-link) {
+	opacity: 0;
+	transition: opacity 0.2s;
+	margin-left: 0.5em;
+}
+
+:global(h2:hover .header-link),
+:global(h3:hover .header-link),
+:global(h4:hover .header-link),
+:global(h5:hover .header-link),
+:global(h6:hover .header-link) {
+	opacity: 1;
+}

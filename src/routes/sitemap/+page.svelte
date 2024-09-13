@@ -7,6 +7,18 @@
     const categories = sitemapData.filter(item => item.title.startsWith('Category:'));
     const posts = sitemapData.filter(item => item.date);
     const pages = sitemapData.filter(item => !item.title.startsWith('Category:') && !item.date);
+
+
+	onMount(() => {
+		document.querySelectorAll('h2, h3').forEach((header) => {
+			if (header.classList.contains('dont-link')) return
+			const link = document.createElement('a')
+			link.className = 'header-link'
+			link.innerHTML = '#'
+			link.href = `#${header.id}`
+			header.appendChild(link)
+		})
+	})
 </script>
 <div class="singlePage">
     <h1>Sitemap</h1>
@@ -14,7 +26,7 @@
     <p>Looking for the xml versions? It can be found <a href="sitemap.xml" target="_blank">here!</a></p>
     
     <section>
-        <h2>Pages</h2>
+        <h2 id="pages">Pages</h2>
         <ul class="pages">
             {#each pages as item}
                 <a href={item.url}>
@@ -27,7 +39,7 @@
     </section>
     
     <section>
-        <h2>Categories</h2>
+        <h2 id="categories">Categories</h2>
         <ul class="categories">
             {#each categories as item}
                 <a href={item.url}>
@@ -40,7 +52,7 @@
     </section>
     
     <section>
-        <h2>Posts</h2>
+        <h2 id="posts">Posts</h2>
         <ul class="posts">
             {#each posts as item}
                 <li>

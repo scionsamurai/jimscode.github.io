@@ -54,6 +54,11 @@
 </noscript>
 
 <style>
+	main {
+		z-index: 1;
+  		position: relative; 
+		/* otherwise the about-us and other pages get top section overlapped by corner-color */
+	}
 	.up {
 		transform: rotate(-135deg);
 		-webkit-transform: rotate(-135deg);

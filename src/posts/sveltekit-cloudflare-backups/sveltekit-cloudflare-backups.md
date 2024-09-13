@@ -1002,7 +1002,7 @@ If everything works as planned, you should see a successful response from the se
 
 **Testing Locally?**
 
-No worries, we've got you covered! Use this command sequence instead if you're running your application locally:
+No worries, we've got you covered! Use this command sequence instead:
 
 ```
 export TOKEN=$(node genTotp.js)
