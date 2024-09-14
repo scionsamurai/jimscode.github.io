@@ -31,6 +31,7 @@ LLM-Assisted Ultra Learning is an innovative approach that leverages the power o
 Here's a quick comparison of traditional methods vs. LLM-Assisted Ultra Learning:
 
 <script>
+  import Table from '$lib/components/Table.svelte'
   let rows = [
     ['Content', 'Static, potentially outdated', 'Dynamic, up-to-date'],
     ['Structure', 'Rigid, predefined', 'Flexible, personalized'],
