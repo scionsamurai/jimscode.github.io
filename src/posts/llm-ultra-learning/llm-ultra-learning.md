@@ -31,7 +31,7 @@ LLM-Assisted Ultra Learning is an innovative approach that leverages the power o
 Here's a quick comparison of traditional methods vs. LLM-Assisted Ultra Learning:
 
 | Aspect | Traditional Methods | LLM-Assisted Ultra Learning |
-|--------|---------------------|---------------------------|
+||||
 | Content | Static, potentially outdated | Dynamic, up-to-date |
 | Structure | Rigid, predefined | Flexible, personalized |
 | Interaction | Passive consumption | Active engagement |
