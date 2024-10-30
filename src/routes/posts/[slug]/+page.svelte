@@ -14,7 +14,10 @@
 
 	export let data
 
-	const githubLink = `https://github.com/scionsamurai/jimscode.github.io/tree/main/src/posts/${data.slug}/${data.slug}.md`
+    const githubLink = data.meta.group 
+        ? `https://github.com/scionsamurai/jimscode.github.io/tree/main/src/posts/${data.meta.group}/${data.slug}/${data.slug}.md`
+        : `https://github.com/scionsamurai/jimscode.github.io/tree/main/src/posts/${data.slug}/${data.slug}.md`
+
 
 	onMount(() => {
 		updateCopyLinks()

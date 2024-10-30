@@ -2,8 +2,25 @@ import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
     try {
-        // Load the post
-        const post = await import(`../../../posts/${params.slug}/${params.slug}.md`);
+        
+        // First try to find the post in a direct path
+        let post;
+        let postGroups;
+        try {
+            post = await import(`../../../posts/${params.slug}/${params.slug}.md`);
+        } catch {
+            // If not found, search through group folders
+            // You'll need to maintain a mapping of posts to their groups
+            postGroups = await import('../../../lib/post-groups.json');
+
+            const groupName = postGroups?.default[params.slug]?.group;
+            
+            if (!groupName) {
+                throw new Error(404, `Could not find group for ${params.slug}`);
+            }
+            
+            post = await import(`../../../posts/${groupName}/${params.slug}/${params.slug}.md`);
+        }
 
         // Load the authors data
         const authorsModule = await import('../../../lib/authors.json');
@@ -20,12 +37,13 @@ export async function load({ params }) {
             content: post.default,
             slug: params.slug,
             meta: {
-                ...post.metadata
+                ...post.metadata,
+                group: postGroups?.default[params.slug]?.group // Include the group in metadata if needed
             },
             author
         };
     } catch (e) {
         console.error(e);
-        throw error(404, `Could not find ${params.slug}`);
+        throw new Error(404, `Could not find ${params.slug}`);
     }
 }

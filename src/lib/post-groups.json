@@ -1,0 +1,107 @@
+{
+  "adding-media-to-page": {
+    "group": "html-css"
+  },
+  "checkbox-hack-for-flash-card": {
+    "group": "html-css"
+  },
+  "creating-testing-html-files": {
+    "group": "html-css"
+  },
+  "css-combinators": {
+    "group": "html-css"
+  },
+  "design-staggered-layout-flexbox": {
+    "group": "html-css"
+  },
+  "html-and-css-essentials": {
+    "group": "html-css"
+  },
+  "html-semantics-organization": {
+    "group": "html-css"
+  },
+  "take-css-to-next-level": {
+    "group": "html-css"
+  },
+  "target-class-hack": {
+    "group": "html-css"
+  },
+  "text-basics": {
+    "group": "html-css"
+  },
+  "async-js": {
+    "group": "javascript"
+  },
+  "dates-times-with-js": {
+    "group": "javascript"
+  },
+  "javascript-basics": {
+    "group": "javascript"
+  },
+  "javascript-control-flow": {
+    "group": "javascript"
+  },
+  "javascript-functions-methods": {
+    "group": "javascript"
+  },
+  "js-and-dom": {
+    "group": "javascript"
+  },
+  "js-and-forms": {
+    "group": "javascript"
+  },
+  "js-array-methods": {
+    "group": "javascript"
+  },
+  "js-object-literals": {
+    "group": "javascript"
+  },
+  "object-oriented-js": {
+    "group": "javascript"
+  },
+  "snippet-editor-previewer": {
+    "group": "javascript"
+  },
+  "llm-ultra-learning": {
+    "group": "misc"
+  },
+  "rust-cargo-crates-modules": {
+    "group": "rust"
+  },
+  "rust-enums": {
+    "group": "rust"
+  },
+  "rust-essentials": {
+    "group": "rust"
+  },
+  "rust-macros": {
+    "group": "rust"
+  },
+  "rust-principles": {
+    "group": "rust"
+  },
+  "rust-structs-lifetimes": {
+    "group": "rust"
+  },
+  "rust-traits-generics": {
+    "group": "rust"
+  },
+  "cloudflare-d1-oauth": {
+    "group": "sveltekit"
+  },
+  "mdsvex-header-extraction": {
+    "group": "sveltekit"
+  },
+  "sveltekit-cloudflare-backups": {
+    "group": "sveltekit"
+  },
+  "sveltekit-cloudflare-backups-step-up": {
+    "group": "sveltekit"
+  },
+  "sveltekit-data-flow": {
+    "group": "sveltekit"
+  },
+  "sveltekit-memory-leaks": {
+    "group": "sveltekit"
+  }
+}

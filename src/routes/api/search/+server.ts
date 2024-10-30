@@ -50,7 +50,7 @@ function stripMarkdown(markdown: string) {
 
 
 export async function GET() {
-	const paths = import.meta.glob('/src/posts/*/*.md', { query: '?raw', import: 'default', eager: true })
+	const paths = import.meta.glob('/src/posts/*/*/*.md', { query: '?raw', import: 'default', eager: true })
 	const posts = Object.entries(paths)
 		.map(([path, content]) => {
 			const frontmatter = matter(content)
