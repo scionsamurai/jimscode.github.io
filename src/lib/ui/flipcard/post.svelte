@@ -47,7 +47,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="scss">
 	img {
 		max-width: 100%;
 	}
@@ -73,6 +73,13 @@
 	.btn-link {
 		min-height: 40px;
 		display: block;
+	}
+	a {
+		text-decoration: none;
+
+	}
+	a:hover {
+		text-decoration: underline;
 	}
 	.btn-link h2 {
 		text-align: center;
