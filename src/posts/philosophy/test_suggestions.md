@@ -73,7 +73,7 @@ Poetic expression has historically served as a primary medium for Taoist teachin
 
 The following poem, "The Flowing Way," demonstrates modern application of classical Taoist teaching methods:
 
-```verse
+```
 The Flowing Way
 
 Like water finding paths below,            // Wu Wei principle: natural action
@@ -189,7 +189,7 @@ Water embodies several key Taoist concepts:
 
 Consider this classical water meditation:
 
-```verse
+```
 Mountain Stream Wisdom
 
 Flowing water finds its way           // Natural navigation
@@ -354,7 +354,7 @@ The Taoist concept of emptiness (虛, xū) represents not absence but potentiali
 
 ### Poetic Expression
 
-```verse
+```
 Vessels of Emptiness
 
 Between the spokes, the hub holds space,     // Structural void principle
