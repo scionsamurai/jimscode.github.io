@@ -62,8 +62,14 @@
   "snippet-editor-previewer": {
     "group": "javascript"
   },
+  "books-footnotes": {
+    "group": "misc"
+  },
   "llm-ultra-learning": {
     "group": "misc"
+  },
+  "virtue-and-necessity": {
+    "group": "philosophy"
   },
   "rust-cargo-crates-modules": {
     "group": "rust"

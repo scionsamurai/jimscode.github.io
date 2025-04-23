@@ -15,6 +15,8 @@ comments: true
 published: true
 ---
 
+<div style="text-align: center;">
+
 ## Build Virtue, Love Necessity  
 *—Jimmy Ruikka*
 
@@ -45,6 +47,7 @@ Not every weight is meant to crush—
 Some build your strength with quiet hush.  
 So love necessity, embrace its call,  
 And stand with peace, come rise or fall.
+</div>
 
 ## Introduction  
 
