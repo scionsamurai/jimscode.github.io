@@ -16,7 +16,7 @@ published: true
 ---
 
 ## Build Virtue, Love Necessity  
-*—a meditation on character*
+*—Jimmy Ruikka*
 
 Your deeds reveal the truth of you,  
 And others' actions show theirs too.  
