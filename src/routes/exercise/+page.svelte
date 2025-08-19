@@ -8,10 +8,9 @@
 	<title>{config.siteName} - terms of service</title>
 </svelte:head>
 
-<iframe src="https://claude.site/public/artifacts/ae995591-1ed4-4a01-9ff2-5c6ef47ab163/embed" title="Claude Artifact" width="100%" height="800px" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
+<iframe src="https://claude.site/public/artifacts/ae995591-1ed4-4a01-9ff2-5c6ef47ab163/embed" title="Claude Artifact" width="100%" height="800px" style="padding-top: 20px;" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
 
-<link rel="stylesheet" href="https://claude.ai/public/artifacts/ae995591-1ed4-4a01-9ff2-5c6ef47ab163">Direct to app</link>
-
+<a href="https://claude.ai/public/artifacts/ae995591-1ed4-4a01-9ff2-5c6ef47ab163">Direct to App</a>
 <div role="main" class="singlePage">
 	<svelte:component this={data.content} slug={data.slug} />
 </div>
