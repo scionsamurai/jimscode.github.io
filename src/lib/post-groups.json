@@ -95,6 +95,9 @@
   "cloudflare-d1-oauth": {
     "group": "sveltekit"
   },
+  "cloudflare-d1-oauth-2025": {
+    "group": "sveltekit"
+  },
   "mdsvex-header-extraction": {
     "group": "sveltekit"
   },

@@ -13,8 +13,7 @@ export const load: PageLoad = async ({ fetch }) => {
         { url: '/', title: 'Home' },
         { url: '/about-us', title: 'About Us' },
         { url: '/terms-of-service', title: 'Terms of Service' },
-        { url: '/privacy-policy', title: 'Privacy Policy' },
-        { url: '/grammarly-hack', title: 'Grammarly Trick'}
+        { url: '/privacy-policy', title: 'Privacy Policy' }
     ]
 
     const categoryPages = categories.map(category => ({
